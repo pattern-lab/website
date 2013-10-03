@@ -173,6 +173,7 @@ pre {
       margin-right: 0.5em; }
       .nav li.right {
         float: right;
+        margin-left: 0.5em;
         margin-right: 0; } }
   @media all and (max-width: 40em) {
     .nav li:nth-child(1) a {

@@ -10,7 +10,11 @@
 <body>
     {% include header.html %}
 
-      {{content}}
+      	{% include docs-navigation.html %}
+      	
+		<div class="content">
+	      {{content | markdownify }}
+	  	</div>
 
     {% include footer.html %}
 
