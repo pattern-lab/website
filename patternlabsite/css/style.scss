@@ -528,11 +528,16 @@ pre {
 		margin-bottom: 1em;
 	}
 }
+
 .side-nav-title {
 	display: block;
 	font-weight: bold;
 	color: $gray-dark;
 	margin-bottom: 0.5em;
+}
+
+.side-nav-list {
+	font-size: 85%;
 }
 
 .content {

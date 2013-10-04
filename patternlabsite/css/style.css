@@ -382,6 +382,9 @@ pre {
   color: #222222;
   margin-bottom: 0.5em; }
 
+.side-nav-list {
+  font-size: 85%; }
+
 .content {
   margin-left: 20%;
   padding-left: 2em; }

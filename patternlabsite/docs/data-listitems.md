@@ -1,0 +1,111 @@
+---
+layout: docs
+title: Creating Lists with Pattern Lab's Default `listItems` Variable
+---
+
+# Creating Lists with Pattern Lab's Default `listItems` Variable
+Many more complicated patterns may include lists of objects. For example, comments or headlines. The PHP version of Pattern Lab comes with a simple way to fill out these lists with dynamic data so that you can quickly stub them out. The list data can be found in `source/_data/listitems.json` and is accessed in Mustache with the `listItems` key. Lists are randomized each time the Pattern Lab website is generated. 
+
+## Using listItems Attributes to Create a Simple List
+
+Let's look at a simple example of iterating over a list. In your template you might have:
+
+    <ul>
+    {{# listItems.four }}
+        <li> {{ title }} </li>
+    {{/ listItems.four }}
+    </ul>
+
+Let's break this down before showing the results. The `#` denotes that Mustache needs to loop over the given key that contains multiple values, in this case `listItems.four`, and write-out the corresponding value {{ title }}. A full list of attributes can be found below. The `/` denotes the end of the block that's being rendered. The PHP version of Pattern Lab supports the keys `one` through `twelve`. If you need more than twelve items for a given list you'll need to add your own data. **Important**: the keys `one` through `twelve` are Pattern Lab-specific and not a general feature of Mustache.
+
+The above would compile to:
+
+    <ul>
+        <li> Rebel Mission to Ord Mantell</li>
+        <li> Help, help, I'm being repressed!</li>
+        <li> Bacon ipsum dolor sit amet turducken strip steak beef ribs shank</li>
+        <li> Nullizzle shizznit velizzle, hizzle, suscipit own yo', gravida vizzle, arcu.</li>
+    </ul>
+
+If you wanted six items in your list you'd write:
+
+    <ul>
+    {{# listItems.six }}
+        <li> {{ title }} </li>
+    {{/ listItems.six }}
+    </ul>
+
+## Combining listItems with Partials
+
+Let's look at how we might build a comment thread using `listItems` and partials. First we'll start with an organism called `comment-thread` that looks like:
+
+    <section class="comments section">
+        <div class="comments-container" id="comments-container">
+            <h2 class="section-title">Comment List</h2>
+            <div class="comment-list">
+                {{# listItems.five }}
+                    {{> molecules-single-comment }} 
+                {{/ listItems.five }}
+            </div>
+        </div> 
+    </section>
+
+This organism is including the `single-comment` molecule ( `{{> molecules-single-comment}}` ) _within_ our block where we're iterating over five items from the `listItems` variable ( `{{# listItems.five }}` ). What this is doing is rendering the `single-comment` molecule five times with different data each time. Our `single-comment` molecule might look like this:
+
+    <div class="comment-container">
+        <div class="comment-meta">
+            {{> atoms-avatar }}
+            <h4 class="comment-name"><a href="{{ url }}">{{ name.first }} {{ name.last }}</a></h4>
+        </div>
+        <div class="comment-text">
+            <p>{{ description }} </p>
+        </div>
+    </div>
+
+Note how the Mustache variable names match up to the attributes available in our `listItems` variable. Again, each time the `single-comment` pattern is rendered those variables will have different data. Using a partial allows us to DRY up our code. We can even nest partials within partials as shown by `{{> atoms-avatar }}` in our example.
+
+**Important**: You don't have to use the default `listItems` variable to take advantage of this feature. You can also use this method with pattern-specific data files or the default `data.json` file.
+
+## The listItems Attributes
+
+The list text attributes were built using several lorem ipsum generators. The image attributes utilize [placeimg.com](http://placeimg.com). The names were generated with [Behind the Name](http://www.behindthename.com/). The available attributes are:
+
+    title
+    description
+    url
+    headline.short      (~37 characters long)
+    headline.long       (~72 characters long)
+    excerpt.short       (~150 characters long)
+    excerpt.medium      (~233 characters long)
+    excerpt.long        (~450 characters long)
+    img.avatar.src
+    img.avatar.alt
+    img.square.src
+    img.square.alt
+    img.rectangle.src   (4x3 aspect ratio)
+    img.rectangle.alt
+    name.first          (e.g. Junius)
+    name.firsti         (e.g. J)
+    name.middle         (e.g. Marius)
+    name.middlei        (e.g. M)
+    name.last           (e.g. Koolen)
+    name.lasti          (e.g. K)
+    year.long           (e.g. 2013)
+    year.short          (e.g. 13)
+    month.long          (e.g. January)
+    month.short         (e.g. Jan)
+    month.digit         (e.g. 01)
+    dayofweek.long      (e.g. Monday)
+    dayofweek.short     (e.g. Mon)
+    day.long            (e.g. 05)
+    day.short           (e.g. 5)
+    day.ordinal         (e.g. th)
+    hour.long           (e.g. 11)
+    hour.short          (e.g. 11)
+    hour.military       (e.g. 23)
+    hour.ampm           (e.g. pm)
+    minute.long         (e.g. 09)
+    minute.short        (e.g. 9)
+    seconds             (e.g. 52)
+
+The aspect ratio for `img.rectangle` is 4x3. Hopefully this gives pattern developers an easy way to build out dynamic lists for testing.
