@@ -10,6 +10,8 @@ $max-width: 37em;
 $bp-med : 34em;
 $bp-med-2 : 46em;
 $bp-large : 60em;
+$bp-header : 57em;
+$bp-xl : 98.75em;
 
 $border : 0.1rem;
 
@@ -61,6 +63,7 @@ p {
 }
 img, object, video {
 	max-width: 100%;
+	height: auto;
 	border: 0;
 }
 a img {
@@ -140,6 +143,7 @@ pre {
 	padding: 0.8em;
 }
 
+//Goes from one column to 2x2
 .g-2up {
 	@media all and (min-width: $bp-med) {
 		> .gi {
@@ -158,6 +162,7 @@ pre {
 	}
 }
 
+//Goes from one column to 3x3
 .g-3up {
 	@media all and (min-width: $bp-med) {
 		> .gi {
@@ -171,6 +176,7 @@ pre {
 	}
 }
 
+//Goes from one column to 2x2 to 4x4
 .g-4up {
 	@media all and (min-width: $bp-med) {
 		> .gi {
@@ -200,6 +206,46 @@ pre {
 }
 
 
+//Goes from one column to 2x2 to 3x3 to 4x4
+.g-4up-alt {
+	@media all and (min-width: $bp-med) {
+		> .gi {
+			float: left;
+		}
+	}
+
+	@media all and (min-width: $bp-med) and (max-width: $bp-med-2) {
+		> .gi {
+			width: 50%;
+			
+			&:nth-of-type(odd) {
+				clear: left;
+			}
+		}
+	}
+
+	@media all and (min-width: $bp-med-2) and (max-width: $bp-large) {
+		> .gi {
+			width: 33.333333333%;
+			
+			&:nth-of-type(3n+1) {
+				clear: left;
+			}
+		}
+	}
+
+	@media all and (min-width: $bp-large) {
+		> .gi {
+			width: 25%;
+			
+			&:nth-of-type(4n+1) {
+				clear: left;
+			}
+		}
+	}
+}
+
+
 /************End Layout**************/
 
 /************Structure**************/
@@ -211,11 +257,46 @@ pre {
 // Header
 .header {
 	position: relative;
-	padding: 0 calc(50% - 40em);
+	padding: 0;
+	overflow: hidden;
+	background: rgba(0,0,0,0.05);
 	
+	@media all and (min-width: $bp-header) {
+		padding: 2em 1em;
+	}
 
-	@media all and (min-width: 42em) {
-		background: rgba(0,0,0,0.05);
+	@media all and (min-width: $bp-xl) {
+		padding: 2em calc(50% - 40em) 2em;
+	}
+}
+
+.logo-header {
+	position: relative;
+	float: left;
+	margin: 0.5em 0 0 0.5em;
+	text-align: center;
+	
+	a {
+		display: block;
+		padding: 0.5em 0.5em 0.5em 2.5em;
+		color: $gray-dark;
+		position: relative;
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	.atom {
+		position: absolute; 
+		top: 0;
+		left: 0;
+		width: 2.4em;
+		height: 2.4em;
+	}
+
+	@media all and (min-width: $bp-header) {
+		margin: 0;
 	}
 }
 
@@ -229,12 +310,15 @@ pre {
 	  list-style: none;
 	}
 
+	h4 {
+		margin: 0;
+	}
+
 	li {
 	  width: 100%;
 	  display: block;
 
-
-	  @media all and (min-width: 42em) {
+	  @media all and (min-width: 57em) {
 	  	float: left;
 	  	width: auto;
 	  	margin-right: 0.5em;
@@ -281,6 +365,7 @@ pre {
 		display: block;
  		padding: 1em;
  	 	color: $gray-dark;
+ 	 	font-weight: bold;
  	 	background: rgba(0,0,0,0.05);
  	 	text-transform: lowercase;
 
@@ -298,7 +383,6 @@ pre {
 	}
 
 	@media all and (min-width: 42em) {
-		padding: 1em;
 		overflow: hidden;
 	}
 }
@@ -310,24 +394,19 @@ pre {
   display: block;
   overflow: hidden;
   zoom: 1;
+  clear: both;
 }
 
 .nav-toggle {
   padding: 1em;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+  float: right;
   display: block;
   text-transform: lowercase;
   text-align: center;
-  background: rgba(0,0,0,0.1);
+  font-weight: bold;
 
   &:hover, &:focus {
-  	background: rgba(0,0,0,0.2)
+  	background: rgba(0,0,0,0.05);
   }
 }
 
@@ -335,9 +414,10 @@ pre {
 	background: rgba(0,0,0,0.05);
 }
 
-@media screen and (min-width: 42em) {
+@media screen and (min-width: $bp-header) {
   .js .nav {
     position: relative;
+    clear: none;
   }
   .js .nav.closed {
     max-height: none;
@@ -377,47 +457,19 @@ pre {
 	}	
 }
 
+
+
 .atom {
 	display: block;
 	width: 5rem;
 	height: 5rem;
-	padding: 10px;
 	margin: 0 auto;
-	border-radius: 2.5rem;
-	background: $gray-dark;
+	background: url(/assets/icon-atom.svg) no-repeat;
+	background-size: 100% 100%;
 	-webkit-animation: rotation 10s linear infinite;
 	-moz-animation: rotation 10s linear infinite;
 	-o-animation: rotation 10s linear infinite;
 	animation: rotation 10s linear infinite;
-
-	&:before {
-		content: "";
-		display: block;
-		width: 2.5rem;
-		height: 2.5rem;
-		background: $gray-dark;
-		border: 10px solid $gray-light;
-		border-radius: 2rem;
-
-	}
-
-	&:after {
-		content: "";
-		display: block;
-		width: 1.2rem;
-		height: 1.2rem;
-		border-radius: 0.6rem;
-		background: $gray;
-		position: absolute;
-		left: -0.3rem;
-		top: 50%;
-	}
-
-	&:hover {
-		&:before {
-			background: $gray;
-		}
-	}
 }
 
 .tagline {
@@ -436,20 +488,24 @@ pre {
 // Main Content
 .main {
 	margin: 0 auto;
-	padding: 4em calc(50% - 40em);
-	background: rgba(0, 0, 0, 0.1);
 	overflow: hidden;
-}
-
-.home .main {
 	background: none;
 	padding: 0;
 }
 
-.section {
+.docs .main {
 	padding: 4em calc(50% - 40em);
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.section {
+	padding: 4em 1em;
 	overflow: hidden;
 	text-align: center;
+
+	@media all and (min-width: $bp-xl) {
+		padding: 4em calc(50% - 40em);
+	}
 }
 
 .section-1 {
@@ -507,7 +563,7 @@ pre {
 	margin-bottom: 2em;
 
 	li {
-		margin-bottom: 1em;
+		margin-bottom: 0.5em;
 	}
 }
 
@@ -604,12 +660,25 @@ pre {
 		&:last-child:after {
 			display: none;
 		}
+
+		&.inactive {
+			opacity: 0.3;
+		}
 	}
 
 	img {
 		display: block;
 		margin: 0 auto;
 		padding: 0 2em;
+	}
+
+	&.small {
+		max-width: 30em;
+		margin: 0 auto;
+
+		img {
+			padding: 0 1em;
+		}
 	}
 
 	@media all and (min-width: 45em) {
@@ -746,7 +815,45 @@ pre {
 .footer {
 	clear: both;
 	padding: 3em calc(50% - 40em);
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.45);
+
+	a {
+		color: #ccc;
+	}
+
+	.atomic-design {
+		margin-bottom: 1em;
+	}
+}
+
+.footer-nav {
+	text-align: center;
+	margin-bottom: 2em;
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: block;
+ 		padding: 0.5em 1em;
+ 	 	color: $gray-dark;
+ 	 	background: rgba(0,0,0,0.12);
+ 	 	text-transform: lowercase;
+
+ 	 	&:hover, &:focus {
+ 	 		background: rgba(0,0,0,0.2) !important;
+ 	 	}
+	}
+}
+
+.credits {
+	font-size: 85%;
+	text-align: center;
+
+	p {
+		margin: 0;
+	}
 }
 
 /************Animations**************/
@@ -767,10 +874,4 @@ pre {
 @keyframes rotation {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
-}
-
-//Todo
-.todo {
-	color: red;
-	font-weight: bold;
 }

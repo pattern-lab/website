@@ -2,154 +2,130 @@
 layout: default
 title: About Pattern Lab and Atomic Design
 ---
+
+<section class="section section-1">
+    <h1>About Atomic Design &amp; Pattern Lab</h1>
+    <p class="intro">Atomic design is a methodology for crafting web design systems. <br /><a href="#pattern-lab">Pattern Lab</a> is a tool for building atomic design systems.</p>
+    <ol class="atomic-design">
+      <li>
+        <a href="#atoms">
+            <img src="assets/icon-atom.svg" alt="Atom" />
+            <h4 class="atomic-label">Atoms</h4>
+        </a>
+      </li>
+      <li>
+        <a href="#molecules">
+            <img src="assets/icon-molecule.svg" alt="Molecule" />
+            <h4 class="atomic-label">Molecules</h4>
+        </a>
+      </li>
+      <li>
+        <a href="#organisms">
+            <img src="assets/icon-organism.svg" alt="Organism" />
+            <h4 class="atomic-label">Organisms</h4>
+        </a>
+      </li>
+      <li>
+        <a href="#templates">
+            <img src="assets/icon-template.svg" alt="Template" />
+            <h4 class="atomic-label">Templates</h4>
+        </a>
+      </li>
+      <li>
+        <a href="#pages">
+            <img src="assets/icon-page.svg" alt="Page" />
+            <h4 class="atomic-label">Pages</h4>
+        </a>
+      </li>
+    </ol> 
+</section>
+
+<section class="section section-2" id="atoms">
+    <h2 class="section-title">Atoms</h2>
     
-<h1>About Pattern Lab</h1>
+    <img src="assets/icon-atom.svg" alt="Atom"  class="section-icon" />
 
-About Atomic Design
-Intro paragraph
-    - Atoms
-    - Molecules 
-    - Organisms
-    - Templates
-    - Pages
+    <div class="section-text">
+        <p>Atoms are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button.</p>
+        <p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/atoms.jpg" alt="Atoms" width="1024" height="768" class="aligncenter size-full wp-image-5992"></p>
+        <p>Atoms can also include more abstract elements like color palettes, fonts and even more invisible aspects of an interface like animations.
+        </p>
+        <p>Like atoms in nature they’re fairly abstract and often not terribly useful on their own. However, they’re good as a reference in the context of a pattern library as you can see all your global styles laid out at a glance.
+        </p>
+    </div>
+</section>
 
-About Pattern Lab
+<section class="section section-3" id="molecules">
+    <h2 class="section-title">Molecules</h2>
+    
+    <img src="assets/icon-molecule.svg" alt="Atom"  class="section-icon" />
+    
+    <div class="section-text">
+        <p>Things start getting more interesting and tangible when we start combining atoms together. Molecules are groups of atoms bonded together and are the smallest fundamental units of a compound. These molecules take on their own properties and serve as the backbone of our design systems.</p>
+        <p>For example, a form label, input or button aren’t too useful by themselves, but combine them together as a form and now they can actually do something together.</p>
+        <p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/molecule.jpg" alt="molecule" width="1024" height="768" class="aligncenter size-full wp-image-5993"></p>
+        <p>Building up to molecules from atoms encourages a “do one thing and do it well” mentality. While molecules can be complex, as a rule of thumb they are relatively simple combinations of atoms built for reuse.</p>
+    </div>
+</section>
 
-http://bradfrostweb.com/blog/post/atomic-web-design/
+<section class="section section-4" id="organisms">
+    <h2 class="section-title">Organisms</h2>
 
-<div class="text">
-             <blockquote><p>We’re not designing pages, we’re designing systems of components.—<a href="http://bradfrostweb.com/blog/mobile/bdconf-stephen-hay-presents-responsive-design-workflow/">Stephen Hay</a></p>
-</blockquote>
-<p>As the craft of Web design continues to evolve, we’re recognizing the need to develop thoughtful design systems, rather than creating simple collections of web pages.
-</p>
-<p>A lot has been said about creating <a href="http://24ways.org/2012/design-systems/" title="http://24ways.org/2012/design-systems/">design systems</a>, and much of it focuses on establishing foundations for color, typography, grids, texture and the like. This type of thinking is certainly important, but I’m slightly less interested in these aspects of design because ultimately they are and will always be subjective. Lately I’ve been more interested in what our interfaces are comprised of and how we can construct design systems in a more methodical way.
-</p>
-<p>In searching for inspiration and parallels, I kept coming back to chemistry. The thought is that all matter (whether solid, liquid, gas, simple, complex, etc) is comprised of atoms. Those atomic units bond together to form molecules, which in turn combine into more complex organisms to ultimately create all matter in our universe.
-</p>
-<p>Similarly, interfaces are made up of smaller components. This means we can break entire interfaces down into fundamental building blocks and work up from there. That’s the basic gist of atomic design.
-</p>
-<div id="attachment_4899" class="wp-caption aligncenter" style="width: 1057px"><a href="http://joshduck.com/periodic-table.html" title="http://joshduck.com/periodic-table.html"><img src="http://bradfrostweb.com/wp-content/uploads/2012/11/Screen-Shot-2012-11-13-at-5.15.05-PM.png" alt="Periodic Table of the Elements" width="1047" height="736" class="size-full wp-image-4899"></a><p class="wp-caption-text">Josh Duck’s <a href="http://joshduck.com/periodic-table.html" title="http://joshduck.com/periodic-table.html">HTML Periodic Table</a> gives a great breakdown of web designers’ atomic elements.</p></div>
-<h2>What is Atomic Design</h2>
-<p>Atomic design is methodology for creating design systems. There are five distinct levels in atomic design:
-</p>
-<ol>
-<li><a href="#atoms">Atoms</a>
-</li>
-<li><a href="#molecules">Molecules</a>
-</li>
-<li><a href="#organisms">Organisms</a>
-</li>
-<li><a href="#templates">Templates </a>
-</li>
-<li><a href="#pages">Pages </a>
-</li>
-</ol>
-<p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/atomic-design-process.png" alt="The progression of atomic design: atoms to molecules to organiams to templates to pages" width="1024" height="768" class="size-large wp-image-5984"></p>
-<p>Let’s explore each stage in more detail.
-</p>
-<h3 id="atoms">Atoms</h3>
-<p>Atoms are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button.
-</p>
-<p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/atoms.jpg" alt="Atoms" width="1024" height="768" class="aligncenter size-full wp-image-5992"></p>
-<p>Atoms can also include more abstract elements like color palettes, fonts and even more invisible aspects of an interface like animations.
-</p>
-<p>Like atoms in nature they’re fairly abstract and often not terribly useful on their own. However, they’re good as a reference in the context of a pattern library as you can see all your global styles laid out at a glance.
-</p>
-<h3 id="molecules">Molecules</h3>
-<p>Things start getting more interesting and tangible when we start combining atoms together. Molecules are groups of atoms bonded together and are the smallest fundamental units of a compound. These molecules take on their own properties and serve as the backbone of our design systems.
-</p>
-<p>For example, a form label, input or button aren’t too useful by themselves, but combine them together as a form and now they can actually do something together.
-</p>
-<p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/molecule.jpg" alt="molecule" width="1024" height="768" class="aligncenter size-full wp-image-5993"></p>
-<p>Building up to molecules from atoms encourages a “do one thing and do it well” mentality. While molecules can be complex, as a rule of thumb they are relatively simple combinations of atoms built for reuse.
-</p>
-<p></p>
-<h3 id="organisms">Organisms</h3>
-<p>Molecules give us some building blocks to work with, and we can now combine them together to form organisms. Organisms are groups of molecules joined together to form a relatively complex, distinct section of an interface.</p>
-<p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/organism2.jpg" alt="organism" width="1024" height="113" class="aligncenter size-large wp-image-6002"></p>
-<p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/organism-examples.jpg" alt="organism-examples" width="1021" height="652" class="aligncenter size-large wp-image-6001"></p>
-<p>We’re starting to get increasingly concrete. A client might not be terribly interested in the molecules of a design system, but with organisms we can see the final interface beginning to take shape. Dan Mall (who I’m working with on several projects) uses <a href="http://danielmall.com/articles/rif-element-collages/" title="http://danielmall.com/articles/rif-element-collages/">element collages</a>, which articulate ideas for a few key organisms to facilitate client conversations and shape the visual direction (all without having to construct full comps).
-</p>
-<p>Organisms can consist of similar and/or different molecule types. For example, a masthead organism might consist of diverse components like a logo, primary navigation, search form, and list of social media channels. But a “product grid” organism might consist of the same molecule (possibly containing a product image, product title and price) repeated over and over again.
-</p>
-<p>
-Building up from molecules to organisms encourages creating standalone, portable, reusable components.
-</p>
-<h3 id="templates">Templates</h3>
-<p>At the template stage, we break our chemistry analogy to get into language that makes more sense to our clients and our final output. Templates consist mostly of groups of organisms stitched together to form pages. It’s here where we start to see the design coming together and start seeing things like layout in action.
-</p>
-<p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/template1.jpg" alt="template" width="1024" height="768" class="aligncenter size-large wp-image-6000"></p>
-<p>Templates are very concrete and provide context to all these relatively abstract molecules and organisms. Templates are also where clients start seeing the final design in place. In my experience working with this methodology, templates begin their life as HTML wireframes, but over time increase fidelity to ultimately become the final deliverable. Bearded Studio in Pittsburgh follow <a href="http://alistapart.com/article/responsive-comping-obtaining-signoff-with-mockups" title="http://alistapart.com/article/responsive-comping-obtaining-signoff-with-mockups">a similar process</a>, where designs start <a href="http://aafh-css.heroku.com/wireframes-no-mq" title="http://aafh-css.heroku.com/wireframes-no-mq">grayscale and layout-less</a> but <a href="http://aafh-css.heroku.com/wireframes" title="http://aafh-css.heroku.com/wireframes">slowly</a> <a href="http://aafh-css.heroku.com/v1" title="http://aafh-css.heroku.com/v1">increase</a> <a href="http://aafh-css.heroku.com/v2" title="http://aafh-css.heroku.com/v2">fidelity</a> until the <a href="http://aafh-css.heroku.com/v5" title="http://aafh-css.heroku.com/v5">final design</a> is in place.
-</p>
-<h3 id="pages">Pages</h3>
-<p>Pages are specific instances of templates. Here, placeholder content is replaced with real representative content to give an accurate depiction of what a user will ultimately see.
-</p>
-<p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/page1.jpg" alt="page" width="1024" height="768" class="aligncenter size-large wp-image-5999"></p>
-<p>Pages are the highest level of fidelity and because they’re the most tangible, it’s typically where most people in the process spend most of their time and what most reviews revolve around.
-</p>
-<p>The page stage is essential as it’s where we test the effectiveness of the design system. Viewing everything in context allows us to loop back to modify our molecules, organisms, and templates to better address the real context of the design.
-</p>
-<p>Pages are also the place to test variations in templates. For example, you might want to articulate what a headline containing 40 characters looks like, but also demonstrate what 340 characters looks like. What does it look like when a user has one item in their shopping cart versus 10 items with a discount code applied? Again, these specific instances influence how we loop back through and construct our system. </p>
-<h2>Why Atomic Design</h2>
-<p>In a lot of ways, this is how we’ve been doing things all along, even if we haven’t been consciously thinking about it in this specific way.
-</p>
-<p>Atomic design provides a clear methodology for crafting design systems. Clients and team members are able to better appreciate the concept of design systems by actually seeing the steps laid out in front of them.
-</p>
-<p>Atomic design gives us the ability to traverse from abstract to concrete. Because of this, we can create systems that promote consistency and scalability while simultaneously showing things in their final context. And by assembling rather than deconstructing, we’re crafting a system right out of the gate instead of cherry picking patterns after the fact.
-</p>
-<h2>Pattern Lab</h2>
-<p>In order to apply this methodology in my work, I (along with the help of the great <a href="http://dmolsen.com/" title="http://dmolsen.com/">Dave Olsen</a>) created a tool called <a href="http://patternlab.bradfrostweb.com" title="http://patternlab.bradfrostweb.com">Pattern Lab</a> to actually create these atomic design systems. I’ll cover Pattern Lab in detail later, but feel free to <a href="https://github.com/bradfrost/patternlab" title="https://github.com/bradfrost/patternlab">check it out on Github</a>.
-</p>
-<h2>Further Reading</h2>
-<ul>
-<li>So Andy Clarke has been setting the stage for these types of conversations for a long while now. In fact, he wrote a chapter for <em><a href="https://shop.smashingmagazine.com/smashing-book-3.html" title="https://shop.smashingmagazine.com/smashing-book-3.html">Smashing Book 3</a></em> called “Becoming Fabulously Flexible: Designing Atoms and Elements.” I had no idea that existed, so how about that! I highly encourage you to check that out. I also highly encourage you to take a look at his tool called <a href="http://malarkey.github.io/Rock-Hammer/" title="http://malarkey.github.io/Rock-Hammer/">Rock Hammer</a>, which is a great way to <a href="http://stuffandnonsense.co.uk/blog/about/rock-hammer-a-curated-responsive-project-library" title="http://stuffandnonsense.co.uk/blog/about/rock-hammer-a-curated-responsive-project-library">construct a pattern library</a> utilizing many of these principles.
-</li>
-<li><a href="http://www.youtube.com/watch?v=fqULJBBEVQE" title="http://www.youtube.com/watch?v=fqULJBBEVQE">Web Components: A Tectonic Shift for Web Development</a> – Web Components seem to dovetail really nicely into the concept of atomic design, and watching this video will show why web components
-</li>
-<li><a href="http://www.w3.org/DesignIssuesPrinciples.html#Modular" title="http://www.w3.org/DesignIssuesPrinciples.html#Modular">Modularity</a> Tim Berners-Lee discusses how modularity as an important design principle for the Web.
-</li>
-<li><a href="http://daverupert.com/2013/04/responsive-deliverables/" title="http://daverupert.com/2013/04/responsive-deliverables/">Responsive Deliverables</a> by Dave Rupert talks about the idea of constructing “Tiny Bootstraps, for Every Client”
-</li>
-</ul>
-<div class="embed-container">And here’s the video and slides from my talk on the subject at <a href="http://2013.beyondtellerrand.com/" title="http://2013.beyondtellerrand.com/">Beyond Tellerrand</a> in Germany.
-<p></p>
-<p><div class="fluid-width-video-wrapper" style="padding-top: 56.25%;"><iframe src="http://player.vimeo.com/video/67476280?title=0&amp;byline=0&amp;portrait=0&amp;color=9a151b" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" id="fitvid870732"></iframe></div>
-</p><p><a href="http://vimeo.com/67476280">Brad Frost – Atomic Design – beyond tellerrand 2013</a> from <a href="http://vimeo.com/beyondtellerrand">beyond tellerrand</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
-<p><iframe src="http://www.slideshare.net/slideshow/embed_code/22077743" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""> </iframe> </p>
-<p>I’m really excited to dive in deeper and develop more tools and thoughts around these concepts.</p>
-             <!--end content-->
+    <img src="assets/icon-organism.svg" alt="Atom"  class="section-icon" />
 
-                          
-             <!-- Fusion Ad -->
-             <div id="fusion_ad"><span class="fusionentire"><a href="http://adn.fusionads.net/click?creative_id=908&amp;publisher_id=223&amp;193491588092.3193" title="“Should I go Hybrid or Native?” Read Icenium’s free mobile guidance whitepaper" target="_top"><img src="http://adn.fusionads.net/creatives/908-824-130x100-icenium-whitepaper.jpg" class="fusionimg" alt="“Should I go Hybrid or Native?” Read Icenium’s free mobile guidance whitepaper" border="0" height="100" width="130"></a><a href="http://adn.fusionads.net/click?creative_id=908&amp;publisher_id=223&amp;193491588092.3193" class="fusiontext" title="“Should I go Hybrid or Native?” Read Icenium’s free mobile guidance whitepaper" target="_top">“Should I go Hybrid or Native?” Read Icenium’s free mobile guidance whitepaper</a></span>
-				<a href="http://fusionads.net">Powered by Fusion</a>
-			</div>
-             <script type="text/javascript">
-				(function(){
-				  var fusion = document.createElement('script');
-				  fusion.src = window.location.protocol + '//adn.fusionads.net/api/1.0/ad.js?zoneid=223&rand=' + Math.floor(Math.random()*9999999);
-				  fusion.async = true;
-				  (document.head || document.getElementsByTagName('head')[0]).appendChild(fusion);
-				})();
-			</script>
-			<!-- End Fusion Ad -->
+    <div class="section-text">
+        <p>Molecules give us some building blocks to work with, and we can now combine them together to form organisms. Organisms are groups of molecules joined together to form a relatively complex, distinct section of an interface.</p>
+        <p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/organism2.jpg" alt="organism" width="1024" height="113" class="aligncenter size-large wp-image-6002"></p>
+        <p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/organism-examples.jpg" alt="organism-examples" width="1021" height="652" class="aligncenter size-large wp-image-6001"></p>
+        <p>We’re starting to get increasingly concrete. A client might not be terribly interested in the molecules of a design system, but with organisms we can see the final interface beginning to take shape. Dan Mall (who I’m working with on several projects) uses <a href="http://danielmall.com/articles/rif-element-collages/" title="http://danielmall.com/articles/rif-element-collages/">element collages</a>, which articulate ideas for a few key organisms to facilitate client conversations and shape the visual direction (all without having to construct full comps).
+        </p>
+        <p>Organisms can consist of similar and/or different molecule types. For example, a masthead organism might consist of diverse components like a logo, primary navigation, search form, and list of social media channels. But a “product grid” organism might consist of the same molecule (possibly containing a product image, product title and price) repeated over and over again.
+        </p>
+        <p>
+        Building up from molecules to organisms encourages creating standalone, portable, reusable components.
+    </div>
+    
+</section>
 
-            			
-        </div><!--end text-->
+<section class="section section-5" id="templates">
+    <h2 class="section-title">Templates</h2>
 
-        
-        <footer class="post-footer lc">
-        	<div class="table">
-                            	<div class="td author-img">
-            		<a href="http://twitter.com/brad_frost"><img src="http://bradfrostweb.com/wp-content/themes/v6/images/brad_frost.jpg" alt="Brad Frost"></a>
-            	</div>
-                            	<div class="td">
+    <img src="assets/icon-template.svg" alt="Atom"  class="section-icon" />
 
-            		<p>Posted by Brad Frost on <a href="http://bradfrostweb.com/blog/post/atomic-web-design/"><time datetime="2013-06-10">06.10.13</time></a></p>
-            		<p>Tags: <a href="http://bradfrostweb.com/blog/tag/atomic-design/" rel="tag">atomic design</a>, <a href="http://bradfrostweb.com/blog/tag/design/" rel="tag">design</a>, <a href="http://bradfrostweb.com/blog/tag/methology/" rel="tag">methology</a>, <a href="http://bradfrostweb.com/blog/tag/pattern-library/" rel="tag">pattern library</a>, <a href="http://bradfrostweb.com/blog/tag/rwd/" rel="tag">rwd</a></p>
-            		<p><a href="http://twitter.com/brad_frost">@brad_frost on Twitter</a></p>
-            		<p><a href="http://feeds.feedburner.com/brad-frosts-blog">Subscribe via RSS</a></p>
-            	</div>
-            </div>
-        </footer><!--end .post-footer-->
-     </div>
+    <div class="section-text">
+        <p>At the template stage, we break our chemistry analogy to get into language that makes more sense to our clients and our final output. Templates consist mostly of groups of organisms stitched together to form pages. It’s here where we start to see the design coming together and start seeing things like layout in action.
+        </p>
+        <p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/template1.jpg" alt="template" width="1024" height="768" class="aligncenter size-large wp-image-6000"></p>
+        <p>Templates are very concrete and provide context to all these relatively abstract molecules and organisms. Templates are also where clients start seeing the final design in place. In my experience working with this methodology, templates begin their life as HTML wireframes, but over time increase fidelity to ultimately become the final deliverable. Bearded Studio in Pittsburgh follow <a href="http://alistapart.com/article/responsive-comping-obtaining-signoff-with-mockups" title="http://alistapart.com/article/responsive-comping-obtaining-signoff-with-mockups">a similar process</a>, where designs start <a href="http://aafh-css.heroku.com/wireframes-no-mq" title="http://aafh-css.heroku.com/wireframes-no-mq">grayscale and layout-less</a> but <a href="http://aafh-css.heroku.com/wireframes" title="http://aafh-css.heroku.com/wireframes">slowly</a> <a href="http://aafh-css.heroku.com/v1" title="http://aafh-css.heroku.com/v1">increase</a> <a href="http://aafh-css.heroku.com/v2" title="http://aafh-css.heroku.com/v2">fidelity</a> until the <a href="http://aafh-css.heroku.com/v5" title="http://aafh-css.heroku.com/v5">final design</a> is in place.
+        </p>
+    </div>
+</section>
+
+<section class="section section-6" id="pages">
+    <h2 class="section-title">Pages</h2>
+
+    <img src="assets/icon-page.svg" alt="Atom"  class="section-icon" />
+
+    <div class="section-text">
+        <p>Pages are specific instances of templates. Here, placeholder content is replaced with real representative content to give an accurate depiction of what a user will ultimately see.</p>
+        <p><img src="http://bradfrostweb.com/wp-content/uploads/2013/06/page1.jpg" alt="page" width="1024" height="768" class="aligncenter size-large wp-image-5999"></p>
+        <p>Pages are the highest level of fidelity and because they’re the most tangible, it’s typically where most people in the process spend most of their time and what most reviews revolve around.
+        </p>
+        <p>The page stage is essential as it’s where we test the effectiveness of the design system. Viewing everything in context allows us to loop back to modify our molecules, organisms, and templates to better address the real context of the design.
+        </p>
+        <p>Pages are also the place to test variations in templates. For example, you might want to articulate what a headline containing 40 characters looks like, but also demonstrate what 340 characters looks like. What does it look like when a user has one item in their shopping cart versus 10 items with a discount code applied? Again, these specific instances influence how we loop back through and construct our system. </p>
+        <h2>Why Atomic Design</h2>
+        <p>In a lot of ways, this is how we’ve been doing things all along, even if we haven’t been consciously thinking about it in this specific way.
+        </p>
+        <p>Atomic design provides a clear methodology for crafting design systems. Clients and team members are able to better appreciate the concept of design systems by actually seeing the steps laid out in front of them.
+        </p>
+        <p>Atomic design gives us the ability to traverse from abstract to concrete. Because of this, we can create systems that promote consistency and scalability while simultaneously showing things in their final context. And by assembling rather than deconstructing, we’re crafting a system right out of the gate instead of cherry picking patterns after the fact.
+        </p>
+    </div>
+</section>
+
+<section class="section section-7" id="pattern-lab">
+    <h2 class="section-title">Pattern Lab</h2>
+
+    <p>In order to apply this methodology in my work, I (along with the help of the great <a href="http://dmolsen.com/" title="http://dmolsen.com/">Dave Olsen</a>) created a tool called <a href="http://patternlab.bradfrostweb.com" title="http://patternlab.bradfrostweb.com">Pattern Lab</a> to actually create these atomic design systems. I’ll cover Pattern Lab in detail later, but feel free to <a href="https://github.com/bradfrost/patternlab" title="https://github.com/bradfrost/patternlab">check it out on Github</a>.</p>
+</section>
