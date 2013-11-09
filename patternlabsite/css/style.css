@@ -356,28 +356,28 @@ pre {
         padding: 4em calc(50% - 24em); } }
 
 .section-1 {
-  background: rgba(0, 0, 0, 0.1); }
+  background: rgba(0, 0, 0, 0.07); }
 
 .section-2 {
-  background: rgba(0, 0, 0, 0.12); }
+  background: rgba(0, 0, 0, 0.09); }
 
 .section-3 {
-  background: rgba(0, 0, 0, 0.14); }
+  background: rgba(0, 0, 0, 0.11); }
 
 .section-4 {
-  background: rgba(0, 0, 0, 0.16); }
+  background: rgba(0, 0, 0, 0.13); }
 
 .section-5 {
-  background: rgba(0, 0, 0, 0.18); }
+  background: rgba(0, 0, 0, 0.15); }
 
 .section-6 {
-  background: rgba(0, 0, 0, 0.2); }
+  background: rgba(0, 0, 0, 0.17); }
 
 .section-7 {
-  background: rgba(0, 0, 0, 0.22); }
+  background: rgba(0, 0, 0, 0.19); }
 
 .section-8 {
-  background: rgba(0, 0, 0, 0.24); }
+  background: rgba(0, 0, 0, 0.21); }
 
 .section-title {
   clear: both; }
@@ -607,7 +607,7 @@ pre {
 .footer {
   clear: both;
   padding: 3em calc(50% - 35em);
-  background: rgba(0, 0, 0, 0.26); }
+  background: rgba(0, 0, 0, 0.23); }
   .footer .atomic-design {
     margin-bottom: 1em; }
 
