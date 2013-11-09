@@ -114,57 +114,57 @@ pre {
   clear: both;
   padding: 0 0.8em; }
 
-.gi {
+.gi, .docs-index .docs-nav-section {
   padding: 0.8em; }
 
 @media all and (min-width: 34em) {
-  .g-2up > .gi {
+  .g-2up > .gi, .docs-index .g-2up > .docs-nav-section {
     float: left;
     width: 50%; }
-    .g-2up > .gi:nth-of-type(odd) {
+    .g-2up > .gi:nth-of-type(odd), .docs-index .g-2up > .docs-nav-section:nth-of-type(odd) {
       clear: left;
       padding-right: 0.5em; }
-    .g-2up > .gi:nth-of-type(even) {
+    .g-2up > .gi:nth-of-type(even), .docs-index .g-2up > .docs-nav-section:nth-of-type(even) {
       padding-left: 0.5em; } }
 
 @media all and (min-width: 34em) {
-  .g-3up > .gi {
+  .g-3up > .gi, .docs-index .g-3up > .docs-nav-section {
     float: left;
     width: 33.333333%; }
-    .g-3up > .gi:nth-of-type(3n+1) {
+    .g-3up > .gi:nth-of-type(3n+1), .docs-index .g-3up > .docs-nav-section:nth-of-type(3n+1) {
       clear: left; } }
 
 @media all and (min-width: 34em) {
-  .g-4up > .gi {
+  .g-4up > .gi, .docs-index .docs-nav ul > .gi, .docs-index .g-4up > .docs-nav-section, .docs-index .docs-nav ul > .docs-nav-section {
     float: left; } }
 @media all and (min-width: 34em) and (max-width: 60em) {
-  .g-4up > .gi {
+  .g-4up > .gi, .docs-index .docs-nav ul > .gi, .docs-index .g-4up > .docs-nav-section, .docs-index .docs-nav ul > .docs-nav-section {
     width: 50%; }
-    .g-4up > .gi:nth-of-type(odd) {
+    .g-4up > .gi:nth-of-type(odd), .docs-index .docs-nav ul > .gi:nth-of-type(odd), .docs-index .g-4up > .docs-nav-section:nth-of-type(odd), .docs-index .docs-nav ul > .docs-nav-section:nth-of-type(odd) {
       clear: left; } }
 @media all and (min-width: 60em) {
-  .g-4up > .gi {
+  .g-4up > .gi, .docs-index .docs-nav ul > .gi, .docs-index .g-4up > .docs-nav-section, .docs-index .docs-nav ul > .docs-nav-section {
     width: 25%; }
-    .g-4up > .gi:nth-of-type(4n+1) {
+    .g-4up > .gi:nth-of-type(4n+1), .docs-index .docs-nav ul > .gi:nth-of-type(4n+1), .docs-index .g-4up > .docs-nav-section:nth-of-type(4n+1), .docs-index .docs-nav ul > .docs-nav-section:nth-of-type(4n+1) {
       clear: left; } }
 
 @media all and (min-width: 34em) {
-  .g-4up-alt > .gi {
+  .g-4up-alt > .gi, .docs-index .g-4up-alt > .docs-nav-section {
     float: left; } }
 @media all and (min-width: 34em) and (max-width: 46em) {
-  .g-4up-alt > .gi {
+  .g-4up-alt > .gi, .docs-index .g-4up-alt > .docs-nav-section {
     width: 50%; }
-    .g-4up-alt > .gi:nth-of-type(odd) {
+    .g-4up-alt > .gi:nth-of-type(odd), .docs-index .g-4up-alt > .docs-nav-section:nth-of-type(odd) {
       clear: left; } }
 @media all and (min-width: 46em) and (max-width: 60em) {
-  .g-4up-alt > .gi {
+  .g-4up-alt > .gi, .docs-index .g-4up-alt > .docs-nav-section {
     width: 33.333333333%; }
-    .g-4up-alt > .gi:nth-of-type(3n+1) {
+    .g-4up-alt > .gi:nth-of-type(3n+1), .docs-index .g-4up-alt > .docs-nav-section:nth-of-type(3n+1) {
       clear: left; } }
 @media all and (min-width: 60em) {
-  .g-4up-alt > .gi {
+  .g-4up-alt > .gi, .docs-index .g-4up-alt > .docs-nav-section {
     width: 25%; }
-    .g-4up-alt > .gi:nth-of-type(4n+1) {
+    .g-4up-alt > .gi:nth-of-type(4n+1), .docs-index .g-4up-alt > .docs-nav-section:nth-of-type(4n+1) {
       clear: left; } }
 
 /************End Layout**************/
@@ -605,6 +605,7 @@ pre {
     .credit-info a:hover, .credit-info a:focus {
       color: #dddddd; }
 
+/* Documentation Home */
 /* Footer */
 .footer {
   clear: both;

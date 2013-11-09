@@ -865,6 +865,17 @@ pre {
 	}
 }
 
+/* Documentation Home */
+.docs-index {
+	.docs-nav ul {
+		@extend .g-4up;
+	}
+
+	.docs-nav-section {
+		@extend .gi;
+	}
+}
+
 /* Footer */
 .footer {
 	clear: both;
