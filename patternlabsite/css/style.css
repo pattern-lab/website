@@ -56,7 +56,7 @@ h1 {
   font-size: 3em;
   line-height: 1;
   letter-spacing: -0.02em;
-  margin-bottom: 0.2em; }
+  margin: 0 0 0.2em; }
 
 h2 {
   text-transform: lowercase;
@@ -96,6 +96,10 @@ input[type=search] {
 
 :-moz-placeholder {
   color: #808080; }
+
+code {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.2em; }
 
 pre {
   background: #222222;
@@ -177,9 +181,9 @@ pre {
   @media all and (min-width: 57em) {
     .header {
       padding: 2em 1em; } }
-  @media all and (min-width: 98.75em) {
+  @media all and (min-width: 85em) {
     .header {
-      padding: 2em calc(50% - 40em) 2em; } }
+      padding: 2em calc(50% - 35em) 2em; } }
 
 .logo-header {
   position: relative;
@@ -192,7 +196,7 @@ pre {
     color: #222222;
     position: relative; }
     .logo-header a:hover {
-      background: rgba(0, 0, 0, 0.2); }
+      background: rgba(0, 0, 0, 0.05); }
   .logo-header .atom {
     position: absolute;
     top: 0;
@@ -219,11 +223,7 @@ pre {
     .nav li {
       float: left;
       width: auto;
-      margin-right: 0.5em; }
-      .nav li.right {
-        float: right;
-        margin-left: 0.5em;
-        margin-right: 0; } }
+      margin-right: 0.5em; } }
   @media all and (max-width: 40em) {
     .nav li:nth-child(1) a {
       background: rgba(0, 0, 0, 0); }
@@ -249,9 +249,10 @@ pre {
       padding: 0.5em 1em; } }
 .nav.opened {
   max-height: 9999px; }
-@media all and (min-width: 42em) {
+@media all and (min-width: 57em) {
   .nav {
-    overflow: hidden; } }
+    overflow: hidden;
+    float: right; } }
 
 .js .nav {
   clip: rect(0 0 0 0);
@@ -338,43 +339,63 @@ pre {
   padding: 0; }
 
 .docs .main {
-  padding: 4em calc(50% - 40em);
+  padding: 4em 1em;
   background: rgba(0, 0, 0, 0.1); }
+  @media all and (min-width: 85em) {
+    .docs .main {
+      padding: 4em calc(50% - 35em); } }
 
 .section {
   padding: 4em 1em;
   overflow: hidden;
   text-align: center; }
-  @media all and (min-width: 98.75em) {
+  @media all and (min-width: 85em) {
     .section {
-      padding: 4em calc(50% - 40em); } }
+      padding: 4em calc(50% - 35em); }
+      .section.section-short {
+        padding: 4em calc(50% - 24em); } }
 
 .section-1 {
   background: rgba(0, 0, 0, 0.1); }
 
 .section-2 {
-  background: rgba(0, 0, 0, 0.13); }
+  background: rgba(0, 0, 0, 0.12); }
 
 .section-3 {
-  background: rgba(0, 0, 0, 0.17); }
+  background: rgba(0, 0, 0, 0.14); }
 
 .section-4 {
-  background: rgba(0, 0, 0, 0.2); }
+  background: rgba(0, 0, 0, 0.16); }
 
 .section-5 {
-  background: rgba(0, 0, 0, 0.24); }
+  background: rgba(0, 0, 0, 0.18); }
 
 .section-6 {
-  background: rgba(0, 0, 0, 0.28); }
+  background: rgba(0, 0, 0, 0.2); }
 
 .section-7 {
-  background: rgba(0, 0, 0, 0.31); }
+  background: rgba(0, 0, 0, 0.22); }
 
 .section-8 {
-  background: rgba(0, 0, 0, 0.36); }
+  background: rgba(0, 0, 0, 0.24); }
 
 .section-title {
   clear: both; }
+
+.section-icon {
+  max-width: 20em;
+  display: block;
+  margin: 0 auto; }
+  @media all and (min-width: 34em) {
+    .section-icon {
+      float: left;
+      margin: 0; } }
+
+.section-text {
+  text-align: left; }
+  @media all and (min-width: 34em) {
+    .section-text {
+      padding-left: 21em; } }
 
 /************End Structure**************/
 /************Text**************/
@@ -392,29 +413,38 @@ pre {
     margin-bottom: 0.5em; }
 
 /************End Text**************/
-.side-nav {
-  padding: 1em;
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-  float: left;
-  width: 20%; }
-  .side-nav li {
-    margin-bottom: 0.5em;
-    line-height: 1.2; }
-  .side-nav ul {
-    margin-bottom: 1em; }
+@media all and (min-width: 60em) {
+  .l-two-col {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row-reverse; } }
 
-.side-nav-title {
+.content h2 {
+  font-size: 2em; }
+@media all and (min-width: 60em) {
+  .content {
+    flex: 1;
+    padding-left: 2em; } }
+
+@media all and (min-width: 60em) {
+  .sidebar {
+    width: 14em;
+    border-right: 1px solid rgba(0, 0, 0, 0.2); } }
+
+.docs-nav li {
+  margin-bottom: 0.5em;
+  line-height: 1.2; }
+.docs-nav ul {
+  margin-bottom: 2em; }
+
+.docs-nav-title {
   display: block;
   font-weight: bold;
   color: #222222;
-  margin-bottom: 0.5em; }
+  margin-bottom: 0.4em; }
 
-.side-nav-list {
+.docs-nav-list {
   font-size: 85%; }
-
-.content {
-  margin-left: 20%;
-  padding-left: 2em; }
 
 /************Buttons**************/
 .btn-group {
@@ -576,10 +606,8 @@ pre {
 /* Footer */
 .footer {
   clear: both;
-  padding: 3em calc(50% - 40em);
-  background: rgba(0, 0, 0, 0.45); }
-  .footer a {
-    color: #ccc; }
+  padding: 3em calc(50% - 35em);
+  background: rgba(0, 0, 0, 0.26); }
   .footer .atomic-design {
     margin-bottom: 1em; }
 
@@ -591,6 +619,7 @@ pre {
   .footer-nav a {
     display: block;
     padding: 0.5em 1em;
+    font-weight: bold;
     color: #222222;
     background: rgba(0, 0, 0, 0.12);
     text-transform: lowercase; }

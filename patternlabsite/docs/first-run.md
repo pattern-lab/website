@@ -4,7 +4,7 @@ title: Generating Pattern Lab for the First Time
 ---
 
 # Generating Pattern Lab for the First Time
-__By default, a number of important pages, including the main page, **aren't** built when you first download the PHP version of Pattern Lab. Before you visit your install of Pattern Lab you'll need to make sure all of the necessary pages have been built. 
+By default, a number of important pages, including the main page, **aren't** built when you first download the PHP version of Pattern Lab. Before you visit your install of Pattern Lab you'll need to make sure all of the necessary pages have been built. 
 
 ## How to Generate the Pattern Lab Website
 

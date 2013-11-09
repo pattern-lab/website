@@ -7,11 +7,13 @@ $dim : rgba(0,0,0,0.5);
 
 $max-width: 37em;
 
+$calc-pad : 35em;
+
 $bp-med : 34em;
 $bp-med-2 : 46em;
 $bp-large : 60em;
 $bp-header : 57em;
-$bp-xl : 98.75em;
+$bp-xl : 85em;
 
 $border : 0.1rem;
 
@@ -74,7 +76,7 @@ h1 {
 	font-size: 3em;
 	line-height: 1;
 	letter-spacing: -0.02em;
-	margin-bottom: 0.2em;
+	margin: 0 0 0.2em;
 }
 h2 {
 	text-transform: lowercase;
@@ -121,6 +123,11 @@ input[type=search] {
 }
 :-moz-placeholder {  
     color: #808080;
+}
+
+code {
+	background: rgba(0,0,0,0.1);
+	padding: 0.2em;
 }
 
 pre {
@@ -266,7 +273,7 @@ pre {
 	}
 
 	@media all and (min-width: $bp-xl) {
-		padding: 2em calc(50% - 40em) 2em;
+		padding: 2em calc(50% - #{$calc-pad}) 2em;
 	}
 }
 
@@ -283,7 +290,7 @@ pre {
 		position: relative;
 
 		&:hover {
-			background: rgba(0, 0, 0, 0.2);
+			background: rgba(0, 0, 0, 0.05);
 		}
 	}
 
@@ -318,16 +325,10 @@ pre {
 	  width: 100%;
 	  display: block;
 
-	  @media all and (min-width: 57em) {
+	  @media all and (min-width: $bp-header) {
 	  	float: left;
 	  	width: auto;
 	  	margin-right: 0.5em;
-
-	  	&.right {
-	  		float: right;
-	  		margin-left: 0.5em;
-	  		margin-right: 0;
-	  	}
 	  }
 
 	  @media all and (max-width: 40em) {
@@ -382,8 +383,9 @@ pre {
 	  max-height: 9999px;
 	}
 
-	@media all and (min-width: 42em) {
+	@media all and (min-width: $bp-header) {
 		overflow: hidden;
+		float: right;
 	}
 }
 
@@ -494,8 +496,12 @@ pre {
 }
 
 .docs .main {
-	padding: 4em calc(50% - 40em);
+	padding: 4em 1em;
 	background: rgba(0, 0, 0, 0.1);
+
+	@media all and (min-width: $bp-xl) {
+		padding: 4em calc(50% - #{$calc-pad});
+	}
 }
 
 .section {
@@ -504,7 +510,11 @@ pre {
 	text-align: center;
 
 	@media all and (min-width: $bp-xl) {
-		padding: 4em calc(50% - 40em);
+		padding: 4em calc(50% - #{$calc-pad});
+
+		&.section-short {
+			padding: 4em calc(50% - 24em);
+		}
 	}
 }
 
@@ -513,35 +523,55 @@ pre {
 }
 
 .section-2 {
-	background: rgba(0,0,0,0.13);
+	background: rgba(0,0,0,0.12);
 }
 
 .section-3 {
-	background: rgba(0,0,0,0.17);
+	background: rgba(0,0,0,0.14);
 }
 
 .section-4 {
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.16);
 }
 
 .section-5 {
-	background: rgba(0,0,0,0.24);
+	background: rgba(0,0,0,0.18);
 }
 
 .section-6 {
-	background: rgba(0,0,0,0.28);
+	background: rgba(0,0,0,0.2);
 }
 
 .section-7 {
-	background: rgba(0,0,0,0.31);
+	background: rgba(0,0,0,0.22);
 }
 .section-8 {
-	background: rgba(0,0,0,0.36);
+	background: rgba(0,0,0,0.24);
 }
 
 //Section Header
 .section-title {
 	clear: both;
+}
+
+//Section Icons for About Page
+.section-icon {
+	max-width: 20em;
+	display: block;
+	margin: 0 auto;
+
+	@media all and (min-width: $bp-med) {
+		float: left;
+		margin: 0;
+	}
+}
+
+.section-text {
+	text-align: left;
+	
+	@media all and (min-width: $bp-med) {
+		padding-left: 21em;
+	}
 }
 
 /************End Structure**************/
@@ -569,11 +599,34 @@ pre {
 
 /************End Text**************/
 
-.side-nav {
-	padding: 1em;
-	border-right: 1px solid rgba(0,0,0,0.2);
-	float: left;
-	width: 20%;
+.l-two-col {
+	@media all and (min-width: $bp-large) {
+		display: -webkit-flex;
+  		display: flex;
+  		flex-direction: row-reverse;
+	}
+}
+
+.content {
+	h2 {
+		font-size: 2em;
+	}
+	
+	@media all and (min-width: $bp-large) {
+		flex: 1;
+		padding-left: 2em;
+	}
+	
+}
+
+.sidebar {
+	@media all and (min-width: $bp-large) {
+		width: 14em;
+		border-right: 1px solid rgba(0,0,0,0.2);
+	}
+}
+
+.docs-nav {
 
 	li {
 		margin-bottom: 0.5em;
@@ -581,25 +634,22 @@ pre {
 	}
 
 	ul {
-		margin-bottom: 1em;
+		margin-bottom: 2em;
 	}
 }
 
-.side-nav-title {
+.docs-nav-title {
 	display: block;
 	font-weight: bold;
 	color: $gray-dark;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.4em;
 }
 
-.side-nav-list {
+.docs-nav-list {
 	font-size: 85%;
 }
 
-.content {
-	margin-left: 20%;
-	padding-left: 2em;
-}
+
 
 
 /************Buttons**************/
@@ -814,12 +864,8 @@ pre {
 /* Footer */
 .footer {
 	clear: both;
-	padding: 3em calc(50% - 40em);
-	background: rgba(0,0,0,0.45);
-
-	a {
-		color: #ccc;
-	}
+	padding: 3em calc(50% - #{$calc-pad});
+	background: rgba(0,0,0,0.26);
 
 	.atomic-design {
 		margin-bottom: 1em;
@@ -837,6 +883,7 @@ pre {
 	a {
 		display: block;
  		padding: 0.5em 1em;
+ 		font-weight: bold;
  	 	color: $gray-dark;
  	 	background: rgba(0,0,0,0.12);
  	 	text-transform: lowercase;
