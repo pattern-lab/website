@@ -507,7 +507,10 @@ pre {
 .section {
 	padding: 4em 1em;
 	overflow: hidden;
-	text-align: center;
+
+	h1 {
+		text-align: center;
+	}
 
 	@media all and (min-width: $bp-xl) {
 		padding: 4em calc(50% - #{$calc-pad});
@@ -552,6 +555,7 @@ pre {
 //Section Header
 .section-title {
 	clear: both;
+	text-align: center;
 }
 
 //Section Icons for About Page

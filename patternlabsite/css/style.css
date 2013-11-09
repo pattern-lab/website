@@ -347,8 +347,9 @@ pre {
 
 .section {
   padding: 4em 1em;
-  overflow: hidden;
-  text-align: center; }
+  overflow: hidden; }
+  .section h1 {
+    text-align: center; }
   @media all and (min-width: 85em) {
     .section {
       padding: 4em calc(50% - 35em); }
@@ -380,7 +381,8 @@ pre {
   background: rgba(0, 0, 0, 0.21); }
 
 .section-title {
-  clear: both; }
+  clear: both;
+  text-align: center; }
 
 .section-icon {
   max-width: 20em;
