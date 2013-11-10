@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Converting Old Patterns
+title: Converting Old Patterns | Pattern Lab
 ---
 
 # Converting Old Patterns

@@ -87,6 +87,10 @@ blockquote {
   blockquote p {
     margin-bottom: 0; }
 
+small {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.8); }
+
 input[type=search] {
   -webkit-appearance: none;
   border-radius: 0; }
@@ -98,7 +102,7 @@ input[type=search] {
   color: #808080; }
 
 code {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
   padding: 0.2em; }
 
 pre {
@@ -339,8 +343,11 @@ pre {
   padding: 0; }
 
 .docs .main {
-  padding: 4em 1em;
+  padding: 2em 1em;
   background: rgba(0, 0, 0, 0.1); }
+  @media all and (min-width: 60em) {
+    .docs .main {
+      padding: 4em 1em; } }
   @media all and (min-width: 85em) {
     .docs .main {
       padding: 4em calc(50% - 35em); } }
@@ -348,8 +355,9 @@ pre {
 .section {
   padding: 4em 1em;
   overflow: hidden; }
-  .section h1 {
-    text-align: center; }
+  @media all and (min-width: 60em) {
+    .section h1 {
+      text-align: center; } }
   @media all and (min-width: 85em) {
     .section {
       padding: 4em calc(50% - 35em); }
@@ -421,12 +429,36 @@ pre {
     display: flex;
     flex-direction: row-reverse; } }
 
-.content h2 {
-  font-size: 2em; }
-@media all and (min-width: 60em) {
-  .content {
-    flex: 1;
-    padding-left: 2em; } }
+.content {
+  counter-reset: big-nums; }
+  .content h2 {
+    font-size: 1.5em;
+    margin: 1em 0; }
+  .content ul {
+    margin: 0 0 1em 1em;
+    list-style: square; }
+  .content ol {
+    margin: 0 0 1em 0; }
+    .content ol li {
+      counter-increment: big-nums;
+      position: relative;
+      padding-left: 2em; }
+    .content ol li:before {
+      content: counter(big-nums);
+      display: block;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 0 0.5em;
+      border-radius: 1em;
+      position: absolute;
+      top: 0;
+      left: 0; }
+  .content li {
+    margin-bottom: 0.5em; }
+  @media all and (min-width: 60em) {
+    .content {
+      flex: 1;
+      padding-left: 2em; } }
 
 @media all and (min-width: 60em) {
   .sidebar {
@@ -446,7 +478,7 @@ pre {
   margin-bottom: 0.4em; }
 
 .docs-nav-list {
-  font-size: 85%; }
+  font-size: 80%; }
 
 /************Buttons**************/
 .btn-group {

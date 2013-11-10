@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Hiding Patterns in the Navigation
+title: Hiding Patterns in the Navigation | Pattern Lab
 ---
 
 # Hiding Patterns in the Navigation

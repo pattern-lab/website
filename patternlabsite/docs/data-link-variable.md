@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Linking to Patterns with Pattern Lab's Default `link` Variable 
+title: Linking to Patterns with Pattern Lab's Default `link` Variable | Pattern Lab
 ---
 
 # Linking to Patterns with Pattern Lab's Default `link` Variable

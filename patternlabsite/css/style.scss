@@ -114,6 +114,11 @@ blockquote {
 	}
 }
 
+small {
+	font-style: italic;
+	color: rgba(0,0,0,0.8);
+}
+
 input[type=search] {
 	-webkit-appearance: none;
 	border-radius: 0;
@@ -126,7 +131,7 @@ input[type=search] {
 }
 
 code {
-	background: rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.05);
 	padding: 0.2em;
 }
 
@@ -496,8 +501,12 @@ pre {
 }
 
 .docs .main {
-	padding: 4em 1em;
+	padding: 2em 1em;
 	background: rgba(0, 0, 0, 0.1);
+
+	@media all and (min-width: $bp-large) {
+		padding: 4em 1em;
+	}
 
 	@media all and (min-width: $bp-xl) {
 		padding: 4em calc(50% - #{$calc-pad});
@@ -509,7 +518,9 @@ pre {
 	overflow: hidden;
 
 	h1 {
-		text-align: center;
+		@media all and (min-width: $bp-large) {
+			text-align: center;
+		}
 	}
 
 	@media all and (min-width: $bp-xl) {
@@ -612,8 +623,43 @@ pre {
 }
 
 .content {
+	counter-reset: big-nums;
+
 	h2 {
-		font-size: 2em;
+		font-size: 1.5em;
+		margin: 1em 0;
+	}
+
+	ul {
+		margin: 0 0 1em 1em;
+		list-style: square;
+	}
+
+	ol {
+		margin: 0 0 1em 0;
+		
+		li {
+			counter-increment: big-nums;
+			position: relative;
+			padding-left: 2em;
+		}
+
+		li:before {
+			content: counter(big-nums);
+			display: block;
+			background: rgba(0,0,0,0.5);
+			color: #fff;
+			padding: 0 0.5em;
+			border-radius: 1em;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+		}
+	}
+
+	li {
+		margin-bottom: 0.5em;
 	}
 	
 	@media all and (min-width: $bp-large) {
@@ -650,7 +696,7 @@ pre {
 }
 
 .docs-nav-list {
-	font-size: 85%;
+	font-size: 80%;
 }
 
 

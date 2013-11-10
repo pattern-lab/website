@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Adding New Patterns
+title: Adding New Patterns | Pattern Lab
 ---
 
 # Adding New Patterns

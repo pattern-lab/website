@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Linking Directly to a Pattern
+title: Linking Directly to a Pattern | Pattern Lab
 ---
 
 # Linking Directly to a Pattern

@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Multi browser & Multi device Testing with Page Follow
+title: Multi browser & Multi device Testing with Page Follow | Pattern Lab
 ---
 
 # Multi browser & Multi device Testing with Page Follow

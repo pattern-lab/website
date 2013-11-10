@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Reorganizing Patterns
+title: Reorganizing Patterns | Pattern Lab
 ---
 
 # Reorganizing Patterns

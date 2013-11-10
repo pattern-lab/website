@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Creating Pattern-specific Values
+title: Creating Pattern-specific Values | Pattern Lab
 ---
 
 # Creating Pattern-specific Values

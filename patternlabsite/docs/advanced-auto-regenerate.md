@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Watching for Changes and Auto Regenerating Patterns
+title: Watching for Changes and Auto Regenerating Patterns | Pattern Lab
 ---
 
 # Watching for Changes and Auto Regenerating Patterns

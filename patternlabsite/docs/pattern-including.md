@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Including Patterns
+title: Including Patterns | Pattern Lab
 ---
 
 # Including Patterns

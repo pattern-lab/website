@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: How Patterns Are Organized  
+title: How Patterns Are Organized | Pattern Lab
 ---
 
 # How Patterns Are Organized    

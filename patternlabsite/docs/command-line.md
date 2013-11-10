@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Using The Command Line Options
+title: Using The Command Line Options | Pattern Lab
 ---
 
 # Using The Command Line Options

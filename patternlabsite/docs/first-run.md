@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Generating Pattern Lab for the First Time
+title: Generating Pattern Lab for the First Time | Pattern Lab
 ---
 
 # Generating Pattern Lab for the First Time

@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Modifying the Pattern Header & Footer 
+title: Modifying the Pattern Header & Footer | Pattern Lab
 ---
 
 # Modifying the Pattern Header & Footer 

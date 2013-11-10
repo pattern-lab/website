@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Managing Pattern Assets
+title: Managing Pattern Assets | Pattern Lab
 ---
 
 # Managing Pattern Assets

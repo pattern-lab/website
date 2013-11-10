@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Introduction to JSON & Mustache Variables
+title: Introduction to JSON & Mustache Variables | Pattern Lab
 ---
 
 # Introduction to JSON & Mustache Variables

@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Auto Reloading the Browser Window When Changes Are Made
+title: Auto Reloading the Browser Window When Changes Are Made | Pattern Lab
 ---
 
 # Auto Reloading the Browser Window When Changes Are Made

@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Creating Lists with Pattern Lab's Default `listItems` Variable
+title: Creating Lists with Pattern Lab's Default `listItems` Variable | Pattern Lab
 ---
 
 # Creating Lists with Pattern Lab's Default `listItems` Variable

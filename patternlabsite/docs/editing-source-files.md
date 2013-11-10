@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Editing Pattern Lab Source Files
+title: Editing Pattern Lab Source Files | Pattern Lab
 ---
 
 # Editing Pattern Lab Source Files
