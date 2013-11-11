@@ -117,7 +117,7 @@ pre {
 .g {
   text-align: left;
   clear: both;
-  padding: 0 0.8em; }
+  margin: 0 -0.8em; }
 
 .gi, .docs-index .docs-nav-section {
   padding: 0.8em; }
@@ -646,8 +646,9 @@ pre {
 .footer-nav {
   text-align: center;
   margin-bottom: 2em; }
-  .footer-nav li {
-    display: inline-block; }
+  @media all and (min-width: 50em) {
+    .footer-nav li {
+      display: inline-block; } }
   .footer-nav a {
     display: block;
     padding: 0.5em 1em;
