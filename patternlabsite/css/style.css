@@ -644,7 +644,6 @@ pre {
     margin-bottom: 1em; }
 
 .footer-nav {
-  text-align: center;
   margin-bottom: 2em; }
   @media all and (min-width: 50em) {
     .footer-nav li {
@@ -658,10 +657,14 @@ pre {
     text-transform: lowercase; }
     .footer-nav a:hover, .footer-nav a:focus {
       background: rgba(0, 0, 0, 0.2) !important; }
+  @media all and (min-width: 50em) {
+    .footer-nav {
+      text-align: center; } }
 
 .credits {
   font-size: 85%;
-  text-align: center; }
+  text-align: center;
+  padding: 0 0.8em; }
   .credits p {
     margin: 0; }
 
