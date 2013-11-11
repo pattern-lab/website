@@ -488,6 +488,9 @@ pre {
   text-align: center;
   margin: 1em 0;
   padding: 1em 0 2em; }
+  .btn-group .btn {
+    display: inline-block;
+    margin: 0 0.25em; }
 
 .btn {
   text-transform: lowercase;
