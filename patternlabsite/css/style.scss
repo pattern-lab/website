@@ -139,6 +139,7 @@ pre {
 	background: $gray-dark;
 	color: $white;
 	padding: 0.5rem;
+	white-space: normal;
 }
 /************End Global**************/
 
@@ -153,6 +154,10 @@ pre {
 
 .gi {
 	padding: 0.8em;
+
+	p {
+		font-size: 85%;
+	}
 }
 
 //Goes from one column to 2x2
@@ -715,7 +720,6 @@ pre {
 	padding: 1rem;
 	background: $gray-dark;
 	color: $white;
-	transition: background 0.15s ease-out;
 
 	&:hover {
 		background: $gray;
@@ -737,23 +741,23 @@ pre {
 
 	li {
 		position: relative;
-		margin: 0 auto 2em;
-		width: 17em;
+		float: left;
+		width: 20%;
 		text-align: center;
 
 		&:after {
 			content: "";
 			position: absolute;
-			top: 110%;
-			left: 50%;
+			top: 35%;
+			left: 100%;
 			display: block;
 			width: 0;
 			height: 0;
-			margin-left: -8px;
+			margin-left: -4px;
 			pointer-events: none;
-			border-left: 8px solid transparent;
-			border-right: 8px solid transparent;
-			border-top: 10px solid $gray;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-left: 10px solid $gray;
 
 		}
 
@@ -769,7 +773,11 @@ pre {
 	img {
 		display: block;
 		margin: 0 auto;
-		padding: 0 2em;
+		padding: 0 0.5em;
+
+		@media all and (min-width: 45em) {
+			padding: 0 2em;
+		}
 	}
 
 	&.small {
@@ -783,19 +791,19 @@ pre {
 
 	@media all and (min-width: 45em) {
 		li {
-			float: left;
-			width: 20%;
-			margin-bottom: 0;
+			
+
 
 			&:after {
-				top: 35%;
-				left: 100%;
-				border-top: 8px solid transparent;
-				border-bottom: 8px solid transparent;
-				border-left: 10px solid $gray;
+				
 			}
 		}
-		
+	}
+
+	@media all and (max-width: 45em) {
+		h4 {
+			display: none;
+		}
 	}
 }
 

@@ -108,7 +108,8 @@ code {
 pre {
   background: #222222;
   color: white;
-  padding: 0.5rem; }
+  padding: 0.5rem;
+  white-space: normal; }
 
 /************End Global**************/
 /************Layout**************/
@@ -120,6 +121,8 @@ pre {
 
 .gi, .docs-index .docs-nav-section {
   padding: 0.8em; }
+  .gi p, .docs-index .docs-nav-section p {
+    font-size: 85%; }
 
 @media all and (min-width: 34em) {
   .g-2up > .gi, .docs-index .g-2up > .docs-nav-section {
@@ -491,8 +494,7 @@ pre {
   font-weight: bold;
   padding: 1rem;
   background: #222222;
-  color: white;
-  transition: background 0.15s ease-out; }
+  color: white; }
   .btn:hover {
     background: gray;
     color: white; }
@@ -508,22 +510,22 @@ pre {
   overflow: hidden; }
   .atomic-design li {
     position: relative;
-    margin: 0 auto 2em;
-    width: 17em;
+    float: left;
+    width: 20%;
     text-align: center; }
     .atomic-design li:after {
       content: "";
       position: absolute;
-      top: 110%;
-      left: 50%;
+      top: 35%;
+      left: 100%;
       display: block;
       width: 0;
       height: 0;
-      margin-left: -8px;
+      margin-left: -4px;
       pointer-events: none;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 10px solid gray; }
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 10px solid gray; }
     .atomic-design li:last-child:after {
       display: none; }
     .atomic-design li.inactive {
@@ -531,23 +533,18 @@ pre {
   .atomic-design img {
     display: block;
     margin: 0 auto;
-    padding: 0 2em; }
+    padding: 0 0.5em; }
+    @media all and (min-width: 45em) {
+      .atomic-design img {
+        padding: 0 2em; } }
   .atomic-design.small {
     max-width: 30em;
     margin: 0 auto; }
     .atomic-design.small img {
       padding: 0 1em; }
-  @media all and (min-width: 45em) {
-    .atomic-design li {
-      float: left;
-      width: 20%;
-      margin-bottom: 0; }
-      .atomic-design li:after {
-        top: 35%;
-        left: 100%;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-left: 10px solid gray; } }
+  @media all and (max-width: 45em) {
+    .atomic-design h4 {
+      display: none; } }
 
 .section-icon .atom {
   float: left;
