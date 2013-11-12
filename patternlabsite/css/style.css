@@ -523,6 +523,11 @@ pre {
 		flex: 1;
       padding-left: 2em; } }
 
+@media all and (max-width: 60em) {
+  .sidebar {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 2em;
+    padding-top: 2em; } }
 @media all and (min-width: 60em) {
   .sidebar {
     width: 14em;
