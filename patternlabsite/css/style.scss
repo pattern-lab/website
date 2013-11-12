@@ -73,16 +73,24 @@ a img {
 	outline: 0;
 }
 h1 {
-	font-size: 3em;
+	font-size: 2.3em;
 	line-height: 1;
 	letter-spacing: -0.02em;
 	margin: 0 0 0.2em;
+
+	@media all and (min-width: $bp-med) {
+		font-size: 3em;
+	}
 }
 h2 {
 	text-transform: lowercase;
-	font-size: 3em;
+	font-size: 2em;
 	line-height: 1.1;
 	margin: 0 0 0.4em;
+
+	@media all and (min-width: $bp-med) {
+		font-size: 3em;
+	}
 }
 h3 {
 	font-size: 1.3em;
@@ -521,7 +529,7 @@ pre {
 	overflow: hidden;
 
 	h1 {
-		@media all and (min-width: $bp-large) {
+		@media all and (min-width: $bp-med) {
 			text-align: center;
 		}
 	}
@@ -530,12 +538,14 @@ pre {
 		padding: 4em 1em;
 	}
 
-	@media all and (min-width: $bp-xl) {
-		padding: 4em calc(50% - #{$calc-pad});
-
+	@media all and (min-width: $bp-large) {
 		&.section-short {
 			padding: 4em calc(50% - 24em);
 		}
+	}
+
+	@media all and (min-width: $bp-xl) {
+		padding: 4em calc(50% - #{$calc-pad});
 	}
 }
 
@@ -577,22 +587,26 @@ pre {
 }
 
 //Section Icons for About Page
-.section-icon {
-	max-width: 20em;
-	display: block;
-	margin: 0 auto;
-
-	@media all and (min-width: $bp-med) {
-		float: left;
-		margin: 0;
+.section-wrap {
+	@media all and (min-width: $bp-large) {
+		display: -webkit-flex;
+  		display: flex;
+  		align-content: flex-start;
 	}
 }
 
-.section-text {
-	text-align: left;
-	
-	@media all and (min-width: $bp-med) {
-		padding-left: 21em;
+.section-icon {
+	width: 16em;
+	display: block;
+	margin: 0 auto;
+}
+
+.section-text {	
+
+	@media all and (min-width: $bp-large) {
+  		-webkit-flex: 1;
+  		flex: 1;
+  		padding-left: 2em;
 	}
 }
 
@@ -617,10 +631,11 @@ pre {
 	margin-bottom: 2em;
 
 	li {
-		
+		border-bottom: 1px solid $gray;
 
 		@media all and (min-width: 50em) {
 			display: inline-block;
+			border: 0;
 		}
 	}
 
@@ -736,6 +751,7 @@ pre {
 	}
 	
 	@media all and (min-width: $bp-large) {
+		-webkit-flex: 1;.
 		flex: 1;
 		padding-left: 2em;
 	}
@@ -894,6 +910,9 @@ pre {
 }
 
 .section-icon {
+	display: block;
+	margin-bottom: 1em;
+
 	.atom {
 		float: left;
 		margin: 0 2em 0 0;

@@ -53,16 +53,22 @@ a img {
   outline: 0; }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.3em;
   line-height: 1;
   letter-spacing: -0.02em;
   margin: 0 0 0.2em; }
+  @media all and (min-width: 34em) {
+    h1 {
+      font-size: 3em; } }
 
 h2 {
   text-transform: lowercase;
-  font-size: 3em;
+  font-size: 2em;
   line-height: 1.1;
   margin: 0 0 0.4em; }
+  @media all and (min-width: 34em) {
+    h2 {
+      font-size: 3em; } }
 
 h3 {
   font-size: 1.3em;
@@ -358,17 +364,18 @@ pre {
 .section {
   padding: 2em 1em;
   overflow: hidden; }
-  @media all and (min-width: 60em) {
+  @media all and (min-width: 34em) {
     .section h1 {
       text-align: center; } }
   @media all and (min-width: 34em) {
     .section {
       padding: 4em 1em; } }
+  @media all and (min-width: 60em) {
+    .section.section-short {
+      padding: 4em calc(50% - 24em); } }
   @media all and (min-width: 85em) {
     .section {
-      padding: 4em calc(50% - 35em); }
-      .section.section-short {
-        padding: 4em calc(50% - 24em); } }
+      padding: 4em calc(50% - 35em); } }
 
 .section-1 {
   background: rgba(0, 0, 0, 0.07); }
@@ -398,20 +405,22 @@ pre {
   clear: both;
   text-align: center; }
 
+@media all and (min-width: 60em) {
+  .section-wrap {
+    display: -webkit-flex;
+    display: flex;
+    align-content: flex-start; } }
+
 .section-icon {
-  max-width: 20em;
+  width: 16em;
   display: block;
   margin: 0 auto; }
-  @media all and (min-width: 34em) {
-    .section-icon {
-      float: left;
-      margin: 0; } }
 
-.section-text {
-  text-align: left; }
-  @media all and (min-width: 34em) {
-    .section-text {
-      padding-left: 21em; } }
+@media all and (min-width: 60em) {
+  .section-text {
+    -webkit-flex: 1;
+    flex: 1;
+    padding-left: 2em; } }
 
 /* Footer */
 .footer {
@@ -427,9 +436,12 @@ pre {
 
 .footer-nav {
   margin-bottom: 2em; }
-  @media all and (min-width: 50em) {
-    .footer-nav li {
-      display: inline-block; } }
+  .footer-nav li {
+    border-bottom: 1px solid gray; }
+    @media all and (min-width: 50em) {
+      .footer-nav li {
+        display: inline-block;
+        border: 0; } }
   .footer-nav a {
     display: block;
     padding: 0.5em 1em;
@@ -506,7 +518,9 @@ pre {
     margin-bottom: 0.5em; }
   @media all and (min-width: 60em) {
     .content {
-      flex: 1;
+      -webkit-flex: 1;
+      .
+		flex: 1;
       padding-left: 2em; } }
 
 @media all and (min-width: 60em) {
@@ -602,13 +616,16 @@ pre {
     .atomic-design h4 {
       display: none; } }
 
-.section-icon .atom {
-  float: left;
-  margin: 0 2em 0 0; }
-.section-icon h3 {
-  margin-top: 0; }
-.section-icon p {
-  padding-left: 7em; }
+.section-icon {
+  display: block;
+  margin-bottom: 1em; }
+  .section-icon .atom {
+    float: left;
+    margin: 0 2em 0 0; }
+  .section-icon h3 {
+    margin-top: 0; }
+  .section-icon p {
+    padding-left: 7em; }
 
 /* Credit Section */
 .credit {
