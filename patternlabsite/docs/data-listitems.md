@@ -10,13 +10,13 @@ Many more complicated patterns may include lists of objects. For example, commen
 
 Let's look at a simple example of iterating over a list. In your template you might have:
 
-    <ul>
+    {% raw %}<ul>
     {{# listItems.four }}
         <li> {{ title }} </li>
     {{/ listItems.four }}
-    </ul>
+    </ul>{% endraw %}
 
-Let's break this down before showing the results. The `#` denotes that Mustache needs to loop over the given key that contains multiple values, in this case `listItems.four`, and write-out the corresponding value {{ title }}. A full list of attributes can be found below. The `/` denotes the end of the block that's being rendered. The PHP version of Pattern Lab supports the keys `one` through `twelve`. If you need more than twelve items for a given list you'll need to add your own data. **Important**: the keys `one` through `twelve` are Pattern Lab-specific and not a general feature of Mustache.
+Let's break this down before showing the results. The `#` denotes that Mustache needs to loop over the given key that contains multiple values, in this case `listItems.four`, and write-out the corresponding value `{% raw %}{{ title }}{% endraw %}`. A full list of attributes can be found below. The `/` denotes the end of the block that's being rendered. The PHP version of Pattern Lab supports the keys `one` through `twelve`. If you need more than twelve items for a given list you'll need to add your own data. **Important**: the keys `one` through `twelve` are Pattern Lab-specific and not a general feature of Mustache.
 
 The above would compile to:
 
@@ -29,11 +29,11 @@ The above would compile to:
 
 If you wanted six items in your list you'd write:
 
-    <ul>
+    {% raw %}<ul>
     {{# listItems.six }}
         <li> {{ title }} </li>
     {{/ listItems.six }}
-    </ul>
+    </ul>{% endraw %}
 
 ## Combining listItems with Partials
 
@@ -43,16 +43,16 @@ Let's look at how we might build a comment thread using `listItems` and partials
         <div class="comments-container" id="comments-container">
             <h2 class="section-title">Comment List</h2>
             <div class="comment-list">
-                {{# listItems.five }}
+                {% raw %}{{# listItems.five }}
                     {{> molecules-single-comment }} 
-                {{/ listItems.five }}
+                {{/ listItems.five }}{% endraw %}
             </div>
         </div> 
     </section>
 
-This organism is including the `single-comment` molecule ( `{{> molecules-single-comment}}` ) _within_ our block where we're iterating over five items from the `listItems` variable ( `{{# listItems.five }}` ). What this is doing is rendering the `single-comment` molecule five times with different data each time. Our `single-comment` molecule might look like this:
+This organism is including the `single-comment` molecule ( `{% raw %}{{> molecules-single-comment}}{% endraw %}` ) _within_ our block where we're iterating over five items from the `listItems` variable ( `{% raw %}{{# listItems.five }}{% endraw %}` ). What this is doing is rendering the `single-comment` molecule five times with different data each time. Our `single-comment` molecule might look like this:
 
-    <div class="comment-container">
+    {% raw %}<div class="comment-container">
         <div class="comment-meta">
             {{> atoms-avatar }}
             <h4 class="comment-name"><a href="{{ url }}">{{ name.first }} {{ name.last }}</a></h4>
@@ -60,9 +60,9 @@ This organism is including the `single-comment` molecule ( `{{> molecules-single
         <div class="comment-text">
             <p>{{ description }} </p>
         </div>
-    </div>
+    </div>{% endraw %}
 
-Note how the Mustache variable names match up to the attributes available in our `listItems` variable. Again, each time the `single-comment` pattern is rendered those variables will have different data. Using a partial allows us to DRY up our code. We can even nest partials within partials as shown by `{{> atoms-avatar }}` in our example.
+Note how the Mustache variable names match up to the attributes available in our `listItems` variable. Again, each time the `single-comment` pattern is rendered those variables will have different data. Using a partial allows us to DRY up our code. We can even nest partials within partials as shown by `{% raw %}{{> atoms-avatar }}{% endraw %}` in our example.
 
 **Important**: You don't have to use the default `listItems` variable to take advantage of this feature. You can also use this method with pattern-specific data files or the default `data.json` file.
 

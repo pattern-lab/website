@@ -28,7 +28,7 @@ In our pattern-specific data file, `article.json`, we'd simply copy that structu
         "src": "../../images/a-team-hero.jpg"
     }
 
-Now the article pattern will display an image of the A-Team when using `{{ landscape-4x3.src }}`. All other patterns using `{{ landscape-4x3.src }}` will display the default 4x3 image. Also, note that we **didn't** override the `landscape-4x3.alt` attribute. If we were to use that attribute in our pattern the default value, "Landscape 4x3 Image", would be displayed. 
+Now the article pattern will display an image of the A-Team when using `{% raw %}{{ landscape-4x3.src }}{% endraw %}`. All other patterns using `{% raw %}{{ landscape-4x3.src }}{% endraw %}` will display the default 4x3 image. Also, note that we **didn't** override the `landscape-4x3.alt` attribute. If we were to use that attribute in our pattern the default value, "Landscape 4x3 Image", would be displayed. 
 
 **Important note:** You don't have to override every attribute. You can limit the data in your pattern-specific data file to just those variables you want. The PHP version of Pattern Lab will fallback to using the default attributes from `data.json` if the attributes aren't defined in the pattern-specific data file.
 

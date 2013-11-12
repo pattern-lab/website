@@ -32,4 +32,4 @@ Yes.
 
 Assuming you use the partials shorthand then, no, you don't have to worry about including the numbering in the pattern partial. The PHP version  of Pattern Lab will find the pattern regardless of its numbering. For example, the partial call would look like this for `definition.mustache`, `03-definition.mustache` or `10-definition.mustache`:
 
-    {{> atoms-definition }} 
+    {% raw %}{{> atoms-definition }}{% endraw %}

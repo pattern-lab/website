@@ -10,6 +10,6 @@ You may have invested time in building patterns for Brad's original edition of P
 
 The new Mustache-based shorthand partials syntax would be:
 
-    {{> atoms-logo }}
+    {% raw %}{{> atoms-logo }}{% endraw %}
 
 The only real difference between the two is that the pattern type, e.g. `atoms`, has to be exact when using the Mustache partials syntax. Otherwise, it should be very easy to convert between the two formats.
