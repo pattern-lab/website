@@ -410,6 +410,7 @@ pre {
 }
 
 .nav-toggle {
+  @extend .icon-menu;
   padding: 1em;
   float: right;
   display: block;
@@ -519,13 +520,17 @@ pre {
 }
 
 .section {
-	padding: 4em 1em;
+	padding: 2em 1em;
 	overflow: hidden;
 
 	h1 {
 		@media all and (min-width: $bp-large) {
 			text-align: center;
 		}
+	}
+
+	@media all and (min-width: $bp-med) {
+		padding: 4em 1em;
 	}
 
 	@media all and (min-width: $bp-xl) {
@@ -714,8 +719,16 @@ pre {
 	padding: 1em 0 2em;
 
 	.btn {
-		display: inline-block;
-		margin: 0 0.25em;
+		display: block;
+		margin-bottom: 0.5em;
+	}
+	
+
+	@media all and (min-width: 42em) {
+		.btn {
+			display: inline-block;
+			margin: 0 0.25em;
+		}
 	}
 }
 
@@ -832,57 +845,6 @@ pre {
 	}
 }
 
-/* Why Section */
-.dave-rupert-quote {
-	display: block;
-	background: url(../assets/img_daverupert.png) no-repeat;
-	background-size: 20% auto;
-	padding-left: calc(20% + 1em);
-	max-width: 40em;
-	margin: 0 auto 2em;
-	height: 15em;
-}
-
-.quote-bubble {
-	font-family: Georgia, serif;
-	font-weight: bold;
-	position: relative;
-	background: #fff;
-	border: 4px solid #222;
-	padding: 1em;
-	color: #222;
-
-	cite {
-		&:before {
-			content: "-";
-		}
-	}
-}
-.quote-bubble:after, .quote-bubble:before {
-	right: 100%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-}
-
-.quote-bubble:after {
-	border-color: rgba(34, 34, 34, 0);
-	border-right-color: #fff;
-	border-width: 15px;
-	top: 50%;
-	margin-top: -30px;
-}
-.quote-bubble:before {
-	border-color: rgba(255, 255, 255, 0);
-	border-right-color: #222;
-	border-width: 22px;
-	top: 50%;
-	margin-top: -37px;
-}
-
 /* Credit Section */
 .credit {
 	overflow: hidden;
@@ -943,11 +905,16 @@ pre {
 /* Footer */
 .footer {
 	clear: both;
-	padding: 3em calc(50% - #{$calc-pad});
+	padding: 1em calc(50% - #{$calc-pad});
 	background: rgba(0,0,0,0.23);
 
 	.atomic-design {
 		margin-bottom: 1em;
+	}
+
+	@media all and (min-width: 40em) {
+		padding-top: 4em;
+		padding-bottom: 4em;
 	}
 }
 
