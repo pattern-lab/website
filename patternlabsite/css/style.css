@@ -413,8 +413,51 @@ pre {
     .section-text {
       padding-left: 21em; } }
 
+/* Footer */
+.footer {
+  clear: both;
+  padding: 1em calc(50% - 35em);
+  background: rgba(0, 0, 0, 0.23); }
+  .footer .atomic-design {
+    margin-bottom: 1em; }
+  @media all and (min-width: 40em) {
+    .footer {
+      padding-top: 4em;
+      padding-bottom: 4em; } }
+
+.footer-nav {
+  margin-bottom: 2em; }
+  @media all and (min-width: 50em) {
+    .footer-nav li {
+      display: inline-block; } }
+  .footer-nav a {
+    display: block;
+    padding: 0.5em 1em;
+    font-weight: bold;
+    color: #222222;
+    background: rgba(0, 0, 0, 0.12);
+    text-transform: lowercase; }
+    .footer-nav a:hover, .footer-nav a:focus {
+      background: rgba(0, 0, 0, 0.2) !important; }
+  @media all and (min-width: 50em) {
+    .footer-nav {
+      text-align: center; } }
+
+.credits {
+  font-size: 85%;
+  text-align: center;
+  padding: 0 0.8em; }
+  .credits p {
+    margin: 0; }
+
 /************End Structure**************/
 /************Text**************/
+.block-link {
+  display: block;
+  color: #222222; }
+  .block-link:hover, .block-link:focus {
+    background: rgba(0, 0, 0, 0.05); }
+
 .intro {
   font-size: 1.8rem; }
   @media all and (min-width: 34em) {
@@ -494,7 +537,7 @@ pre {
   .btn-group .btn {
     display: block;
     margin-bottom: 0.5em; }
-  @media all and (min-width: 42em) {
+  @media all and (min-width: 40em) {
     .btn-group .btn {
       display: inline-block;
       margin: 0 0.25em; } }
@@ -604,43 +647,6 @@ pre {
       color: #dddddd; }
 
 /* Documentation Home */
-/* Footer */
-.footer {
-  clear: both;
-  padding: 1em calc(50% - 35em);
-  background: rgba(0, 0, 0, 0.23); }
-  .footer .atomic-design {
-    margin-bottom: 1em; }
-  @media all and (min-width: 40em) {
-    .footer {
-      padding-top: 4em;
-      padding-bottom: 4em; } }
-
-.footer-nav {
-  margin-bottom: 2em; }
-  @media all and (min-width: 50em) {
-    .footer-nav li {
-      display: inline-block; } }
-  .footer-nav a {
-    display: block;
-    padding: 0.5em 1em;
-    font-weight: bold;
-    color: #222222;
-    background: rgba(0, 0, 0, 0.12);
-    text-transform: lowercase; }
-    .footer-nav a:hover, .footer-nav a:focus {
-      background: rgba(0, 0, 0, 0.2) !important; }
-  @media all and (min-width: 50em) {
-    .footer-nav {
-      text-align: center; } }
-
-.credits {
-  font-size: 85%;
-  text-align: center;
-  padding: 0 0.8em; }
-  .credits p {
-    margin: 0; }
-
 /************Animations**************/
 @-webkit-keyframes rotation {
   0% {
@@ -699,7 +705,7 @@ pre {
 .icon-arrow-down:before {
   content: "\e602"; }
 
-.icon-menu:before, .nav-toggle:before {
+.icon-menu:before {
   content: "\e603"; }
 
 .icon-download:before {
