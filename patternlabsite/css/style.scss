@@ -583,7 +583,10 @@ pre {
 //Section Header
 .section-title {
 	clear: both;
-	text-align: center;
+	@media all and (min-width: $bp-med) {
+		text-align: center;
+	}
+	
 }
 
 //Section Icons for About Page

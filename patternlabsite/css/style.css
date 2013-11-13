@@ -402,8 +402,10 @@ pre {
   background: rgba(0, 0, 0, 0.21); }
 
 .section-title {
-  clear: both;
-  text-align: center; }
+  clear: both; }
+  @media all and (min-width: 34em) {
+    .section-title {
+      text-align: center; } }
 
 @media all and (min-width: 60em) {
   .section-wrap {
