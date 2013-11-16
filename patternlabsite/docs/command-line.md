@@ -8,7 +8,12 @@ If you're using Mac OS X all of the options for using the PHP version of Pattern
 
     php builder/builder.php -g
       Iterates over the 'source' directories & files and generates the entire site a single time.
-        
+      It also cleans the 'public' directory.
+
+    php builder/builder.php -gc
+      Iterates over the 'source' directories & files and generates the entire site a single time.
+      It also cleans the 'public' directory as well as generates CSS for each pattern.
+
     php builder/builder.php -w
       Generates the site like the -g flag and then watches for changes in the 'source' directories &
       files. Will re-generate files if they've changed.
