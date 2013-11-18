@@ -109,13 +109,15 @@ input[type=search] {
 
 code {
   background: rgba(0, 0, 0, 0.05);
-  padding: 0.2em; }
+  //padding: 0.2em; 
+}
 
 pre {
   background: #222222;
   color: white;
   padding: 0.5rem;
-  white-space: normal; }
+  white-space: pre;
+  overflow: auto; }
 
 /************End Global**************/
 /************Layout**************/

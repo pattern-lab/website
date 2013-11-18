@@ -4,7 +4,7 @@ title: Linking Directly to a Pattern | Pattern Lab
 ---
 
 # Linking Directly to a Pattern
-You can link directly to any pattern listed on the Pattern Lab website. This might be useful when asking clients for feedback on a particular template or page pattern.
+You can link directly to any pattern listed on the Pattern Lab website. This might be useful when asking clients for feedback on a particular template or page pattern. If you want to [link from one pattern to another use the `link` variable](/docs/data-link-variable.html).
 
 ## Copy & Paste
 
@@ -18,7 +18,7 @@ It's also very easy to create a link manually. Simply append `?p=pattern-name` t
 
 The direct link feature supports the [shorthand partials syntax](https://github.com/pattern-lab/patternlab-php/wiki/Including-One-Pattern-Within-Another) found in the PHP version of Pattern Lab. Just provide part of a pattern name and Pattern Lab will attempt to resolve it. 
 
-## Other Options
+## Other Link Options: Width, Hay Mode, Disco Mode
 
 Pattern Lab also supports setting other attributes via a link. These options can be used while setting the default pattern. They are:
 
