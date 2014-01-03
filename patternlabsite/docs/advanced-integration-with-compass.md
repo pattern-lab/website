@@ -14,7 +14,7 @@ Setting up Compass to work with the PHP version of Pattern Lab should be really 
 1. Open Terminal on a Mac
 2. `gem install compass` (if you don't have it)
 3. `cd <patternlab-project-folder>`
-4. `compass create --bare --sass-dir "source/css" --css-dir "source/css" --javascripts-dir "source/js" --images-dir "source/images"`
+4. `compass create --bare --sass-dir "source/css" --css-dir "source/css" --javascripts-dir "source/js" --images-dir "source/images" --fonts-dir "source/fonts"`
 
 You should be ready to rock & roll.
 
