@@ -44,4 +44,4 @@ By default, the PHP version of Pattern Lab monitors the following files:
 
 ## Ignoring Other Directories & File Extensions 
 
-Instructions on how to ignore assets in other directories or with other file extensions can be found in "[Managing Assets for a Pattern](https://github.com/pattern-lab/patternlab-php/wiki/Managing-Assets-for-a-Pattern)".
+Instructions on how to ignore assets in other directories or with other file extensions can be found in "[Managing Assets for a Pattern](/docs/pattern-managing-assets.html)".

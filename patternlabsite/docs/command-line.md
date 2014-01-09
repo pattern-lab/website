@@ -18,6 +18,9 @@ If you're using Mac OS X all of the options for using the PHP version of Pattern
       Generates the site like the -g flag and then watches for changes in the 'source' directories &
       files. Will re-generate files if they've changed.
 
+    php builder/builder.php -wr
+      In addition to the -w flag features it will also automatically start the auto-reload server.
+
     php listeners/contentSyncBroadcasterServer.php
       Starts the WebSocket-based server to monitor for and notify browsers of changes to content. Browser
       windows will re-load.

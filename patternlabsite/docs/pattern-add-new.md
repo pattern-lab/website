@@ -17,5 +17,5 @@ If we want to add a new pattern we simply tack it onto the end:
     02-block-hero.mustache
     03-new-pattern.mustache
 
-The numbering controls where the pattern will show up in the navigation so if you need it to show up higher in the navigation [you can reorganize it](https://github.com/pattern-lab/patternlab-php/wiki/Reorganizing-Patterns).
+The numbering controls where the pattern will show up in the navigation so if you need it to show up higher in the navigation [you can reorganize it](/docs/pattern-reorganizing.html).
 

@@ -16,7 +16,7 @@ It's also very easy to create a link manually. Simply append `?p=pattern-name` t
 
     ?p=templates-article
 
-The direct link feature supports the [shorthand partials syntax](https://github.com/pattern-lab/patternlab-php/wiki/Including-One-Pattern-Within-Another) found in the PHP version of Pattern Lab. Just provide part of a pattern name and Pattern Lab will attempt to resolve it. 
+The direct link feature supports the [shorthand partials syntax](/docs/pattern-including.html) found in the PHP version of Pattern Lab. Just provide part of a pattern name and Pattern Lab will attempt to resolve it. 
 
 ## Other Link Options: Width, Hay Mode, Disco Mode
 
