@@ -22,6 +22,18 @@ Your browser should now be listening for auto-reload events and the Pattern Lab 
 
 **Important:** If you find that content sync is not working properly please make sure your browser [supports WebSockets](http://caniuse.com/websockets).
 
+## How to Start the Watch & Auto-Reload Server at the Same Time
+
+To start the watch and auto-reload services together on Mac OS X you can do the following:
+
+1. Open `scripts/`
+2. Double-click `startWatcherWithAutoReload.command`
+3. Refresh the Pattern Lab site
+
+You can also start the watch from the command line. To do so open Terminal and navigate to the root of the `patternlab-php` directory. Type:
+
+    php builder/builder.php -wr
+
 ## How to Stop the Service
 
-To stop the service on Mac OS X you can press `CTRL+C` in the Terminal window where the process is running.
+To stop the service on Mac OS X you can press `CTRL+C` in the Terminal window where the process is running. If you've used the method above to start the watch and the auto-reload server they  will both shut down when using `CTRL+C`.
