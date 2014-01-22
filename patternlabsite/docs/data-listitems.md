@@ -82,39 +82,43 @@ The list text attributes were built using several lorem ipsum generators. The im
     title
     description
     url
-    headline.short      (~37 characters long)
-    headline.long       (~72 characters long)
-    excerpt.short       (~150 characters long)
-    excerpt.medium      (~233 characters long)
-    excerpt.long        (~450 characters long)
+    headline.short         (~37 characters long)
+    headline.medium        (~72 characters long)
+    excerpt.short          (~150 characters long)
+    excerpt.medium         (~233 characters long)
+    excerpt.long           (~450 characters long)
     img.avatar.src
     img.avatar.alt
     img.square.src
     img.square.alt
-    img.rectangle.src   (4x3 aspect ratio)
+    img.rectangle.src      (4x3 aspect ratio)
     img.rectangle.alt
-    name.first          (e.g. Junius)
-    name.firsti         (e.g. J)
-    name.middle         (e.g. Marius)
-    name.middlei        (e.g. M)
-    name.last           (e.g. Koolen)
-    name.lasti          (e.g. K)
-    year.long           (e.g. 2013)
-    year.short          (e.g. 13)
-    month.long          (e.g. January)
-    month.short         (e.g. Jan)
-    month.digit         (e.g. 01)
-    dayofweek.long      (e.g. Monday)
-    dayofweek.short     (e.g. Mon)
-    day.long            (e.g. 05)
-    day.short           (e.g. 5)
-    day.ordinal         (e.g. th)
-    hour.long           (e.g. 11)
-    hour.short          (e.g. 11)
-    hour.military       (e.g. 23)
-    hour.ampm           (e.g. pm)
-    minute.long         (e.g. 09)
-    minute.short        (e.g. 9)
-    seconds             (e.g. 52)
+    img.landscape-4x3.src
+    img.landscape-4x3.src
+    img.landscape-16x9.src
+    img.landscape-16x9.alt
+    name.first             (e.g. Junius)
+    name.firsti            (e.g. J)
+    name.middle            (e.g. Marius)
+    name.middlei           (e.g. M)
+    name.last              (e.g. Koolen)
+    name.lasti             (e.g. K)
+    year.long              (e.g. 2013)
+    year.short             (e.g. 13)
+    month.long             (e.g. January)
+    month.short            (e.g. Jan)
+    month.digit            (e.g. 01)
+    dayofweek.long         (e.g. Monday)
+    dayofweek.short        (e.g. Mon)
+    day.long               (e.g. 05)
+    day.short              (e.g. 5)
+    day.ordinal            (e.g. th)
+    hour.long              (e.g. 11)
+    hour.short             (e.g. 11)
+    hour.military          (e.g. 23)
+    hour.ampm              (e.g. pm)
+    minute.long            (e.g. 09)
+    minute.short           (e.g. 9)
+    seconds                (e.g. 52)
 
 The aspect ratio for `img.rectangle` is 4x3. Hopefully this gives pattern developers an easy way to build out dynamic lists for testing.
