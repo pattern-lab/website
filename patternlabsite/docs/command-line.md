@@ -21,6 +21,9 @@ If you're using Mac OS X all of the options for using the PHP version of Pattern
     php core/builder.php -wr
       In addition to the -w flag features it will also automatically start the auto-reload server.
 
+    php core/builder.php -v
+      Prints out the current version of Pattern Lab.
+
     php core/autoReloadServer.php
       Starts the WebSocket-based server to monitor for and notify browsers of changes to content. Browser
       windows will re-load.
