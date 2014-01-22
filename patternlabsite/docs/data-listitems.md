@@ -66,6 +66,15 @@ Note how the Mustache variable names match up to the attributes available in our
 
 **Important**: You don't have to use the default `listItems` variable to take advantage of this feature. You can also use this method with pattern-specific data files or the default `data.json` file.
 
+## Overriding the Defaults with Pattern-specific listItems
+
+In much the [same way that one can override values](/docs/data-pattern-specific.html) in `_data.json` with pattern-specific data you can also override `_listitems.json`. The same principles apply but it's a slightly different naming convention. For example, if you wanted to provide pattern-specific `listItem` data for the `article` pattern under the pattern type `pages` your `pages` directory would look like this:
+
+    pages/article.mustache
+    pages/article.listitems.json
+
+Otherwise [the same rules for overriding defaults](/docs/data-pattern-specific.html) for `_data.json` apply to `_listitems.json`.
+
 ## The listItems Attributes
 
 The list text attributes were built using several lorem ipsum generators. The image attributes utilize [placeimg.com](http://placeimg.com). The names were generated with [Behind the Name](http://www.behindthename.com/). The available attributes are:
