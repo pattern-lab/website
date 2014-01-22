@@ -10,13 +10,13 @@ As of v0.6.0 the PHP version of Pattern Lab includes support for the [CSS Rule S
 
 To generate your Pattern Lab site with CSS support on Mac OS X you can do the following:
 
-1. Open `scripts/`
+1. Open `core/scripts/`
 2. Double-click `generateSiteWithCSS.command`
 3. Refresh the Pattern Lab site
 
 You can also start the service from the command line. To do so open Terminal and navigate to the root of the patternlab-php directory. Type:
 
-    php builder/builder.php -gc
+    php core/builder.php -gc
 
 ## Important Note About Performance
 

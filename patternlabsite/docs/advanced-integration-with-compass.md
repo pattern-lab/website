@@ -26,9 +26,9 @@ Compass will only recompile your SCSS. To get Pattern Lab to rebuild your entire
 2. `cd <patternlab-project-folder>`
 3. `compass watch source`
 4. Open a new tab in Terminal
-5. `php builder/builder.php -w`
+5. `php core/builder.php -w`
 6. Open a new tab in Terminal
-7. `php listeners/contentSyncBroadcasterServer.php`
+7. `php core/autoReloadServer.php`
 8. Reload your browser
 
 As you make changes to the SCSS files Compass will recompile them and, seeing the changes to `styles.css`, the PHP version of Pattern Lab will rebuild the entire site. It should also reload the Pattern Lab website.

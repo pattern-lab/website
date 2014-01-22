@@ -10,13 +10,13 @@ Rather than manually refreshing your browser when your patterns or CSS change yo
 
 To start the service on Mac OS X you can do the following:
 
-1. Open `scripts/`
+1. Open `core/scripts/`
 2. Double-click `startAutoReloadServer.command`
 3. Refresh the Pattern Lab site
 
 You can also start the service from the command line. To do so open Terminal and navigate to the root of the patternlab-php directory. Type:
 
-    php listeners/contentSyncBroadcasterServer.php
+    php core/autoReloadServer.php
 
 Your browser should now be listening for auto-reload events and the Pattern Lab website toolbar should note that "Auto-Reload" is now "On." For this feature to work you **must** have the PHP version of Pattern Lab watching for changes. [Learn how to set this up](/docs/advanced-auto-regenerate.html).
 
@@ -26,13 +26,13 @@ Your browser should now be listening for auto-reload events and the Pattern Lab 
 
 To start the watch and auto-reload services together on Mac OS X you can do the following:
 
-1. Open `scripts/`
+1. Open `core/scripts/`
 2. Double-click `startWatcherWithAutoReload.command`
 3. Refresh the Pattern Lab site
 
 You can also start the watch from the command line. To do so open Terminal and navigate to the root of the `patternlab-php` directory. Type:
 
-    php builder/builder.php -wr
+    php core/builder.php -wr
 
 ## How to Stop the Service
 
