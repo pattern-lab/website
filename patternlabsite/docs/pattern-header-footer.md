@@ -3,11 +3,22 @@ layout: docs
 title: Modifying the Pattern Header & Footer | Pattern Lab
 ---
 
+**Note:** *The _meta patterns were introduced in v0.7.0 of the PHP version of Pattern Lab.*
+
 # Modifying the Pattern Header & Footer 
-When the PHP version of Pattern Lab compiles each pattern it appends a standard header and footer onto each. The header and footer can be found in:
 
-    source/_patternlab-files/pattern-header-footer/
+To add your own assets like JavaScripts and CSS to your patterns' header and footer you can modify two files:
 
-If you want to include a standard JavaScript library for every pattern or if you want to add a custom CSS file to each simply edit the appropriate file.
+* `source/_patterns/00-atoms/00-meta/_00-head.mustache`
+* `source/_patterns/00-atoms/00-meta/_01-foot.mustache`
 
-**Important:** Please refrain from removing the JavaScript in the footer. This code helps make several of the Pattern Lab features like Page Follow work properly.
+These files are added to every rendered pattern, "view all" page and style guide. To see your changes simply re-generate your site.
+
+## Important: Don't Remove Two Things...
+
+**Do not remove the following two lines in these patterns:**
+
+* `{% raw %}{% pattern-lab-head %}{% endraw %}` in `_00-head.mustache`
+* `{% raw %}{% pattern-lab-foot %}{% endraw %}` in `_00-foot.mustache`
+
+Pattern Lab will stop working if you do.

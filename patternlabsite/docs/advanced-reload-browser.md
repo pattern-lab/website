@@ -4,9 +4,10 @@ title: Auto Reloading the Browser Window When Changes Are Made | Pattern Lab
 ---
 
 # Auto Reloading the Browser Window When Changes Are Made
+
 Rather than manually refreshing your browser when your patterns or CSS change you can have the PHP version of Pattern Lab auto-reload your browser window for you. 
 
-## How to Start the Service
+## How to Start the Auto-Reload Server
 
 To start the service on Mac OS X you can do the following:
 
@@ -22,7 +23,7 @@ Your browser should now be listening for auto-reload events and the Pattern Lab 
 
 **Important:** If you find that content sync is not working properly please make sure your browser [supports WebSockets](http://caniuse.com/websockets).
 
-## How to Start the Watch & Auto-Reload Server at the Same Time
+## How to Start the Watcher & Auto-Reload Server at the Same Time
 
 To start the watch and auto-reload services together on Mac OS X you can do the following:
 

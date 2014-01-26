@@ -7,7 +7,7 @@ title: Multi browser & Multi device Testing with Page Follow | Pattern Lab
 
 The PHP version of Pattern Lab's Page Follow feature gives developers the ability to have one browser control other browsers that connect to the Pattern Lab website. When a browser first connects to the Pattern Lab website they'll be redirected to the last visited pattern. Navigating to a new pattern will update all connected browsers. This should be especially useful when testing patterns across multiple devices.
 
-## How to Start the Service
+## How to Start the Page Follow Server
 
 To start the service on Mac OS X you can do the following:
 
