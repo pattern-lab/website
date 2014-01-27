@@ -18,4 +18,4 @@ More information on each part:
 
 If you want to have spaces in your pattern sub-type or pattern names use a `-` (dash). For example, if you want a pattern to be displayed in the drop-down as "Hamburger Navigation" name it `hamburger-navigation.mustache`.
 
-By default, the patterns are organized alphabetically. If you want more control over organizing your patterns and pattern sub-types please refer to "[Reorganizing Patterns](https://github.com/pattern-lab/patternlab-php/wiki/Reorganizing-Patterns)."
+By default, the patterns are organized alphabetically. If you want more control over organizing your patterns and pattern sub-types please refer to "[Reorganizing Patterns](/docs/pattern-reorganizing.html)."

@@ -3,11 +3,9 @@ layout: docs
 title: Integration with Compass | Pattern Lab
 ---
 
+**Note:** *These directions incomplete. They are not meant to imply that Compass is officially supported with Pattern Lab. They should be modified to fit your instance of the PHP version of Pattern Lab.*
+
 # Integration with Compass
-
-**Note:** These directions are rough. They worked for me but YMMV. We also have to streamline the workflow.
-
-## Setting Up Compass
 
 Setting up Compass to work with the PHP version of Pattern Lab should be really straightforward. To set-up a Compass config that uses SCSS and _doesn't_ install any starter stylesheets do the following:
 
@@ -16,7 +14,7 @@ Setting up Compass to work with the PHP version of Pattern Lab should be really 
 3. `cd <patternlab-project-folder>/source`
 4. `compass create --bare --sass-dir "css" --css-dir "css" --javascripts-dir "js" --images-dir "images"`
 
-You should be ready to rock & roll.
+The directories provided in step #4 are based on the default install of the PHP version of Pattern Lab and should be updated to reflect your directory structure. Also, if you need Compass to watch other directories or implement features modify step #4 as appropriate. 
 
 ## Workflow with Pattern Lab
 
@@ -26,9 +24,7 @@ Compass will only recompile your SCSS. To get Pattern Lab to rebuild your entire
 2. `cd <patternlab-project-folder>`
 3. `compass watch source`
 4. Open a new tab in Terminal
-5. `php builder/builder.php -w`
-6. Open a new tab in Terminal
-7. `php listeners/contentSyncBroadcasterServer.php`
-8. Reload your browser
+5. `php core/builder.php -wr`
+6. Reload your browser
 
 As you make changes to the SCSS files Compass will recompile them and, seeing the changes to `styles.css`, the PHP version of Pattern Lab will rebuild the entire site. It should also reload the Pattern Lab website.
