@@ -109,13 +109,13 @@ input[type=search] {
 
 code {
   background: rgba(0, 0, 0, 0.05);
-  //padding: 0.2em; 
+  padding: 0.3em; 
 }
 
 pre {
   background: #222222;
   color: white;
-  padding: 0.5rem;
+  padding: 1rem;
   white-space: pre;
   overflow: auto; }
 
@@ -496,14 +496,22 @@ pre {
 
 .content {
   counter-reset: big-nums; }
+   p {
+	counter-reset: big-nums;
+   }
+	pre code {
+		padding: 0;
+	}
+  .content h1 {
+    margin-bottom: 0.6em; }
   .content h2 {
     font-size: 1.5em;
-    margin: 1em 0; }
+    margin: 1.2em 0 0.6em 0; }
   .content ul {
-    margin: 0 0 1em 1em;
+    margin: 1.5em 1em;
     list-style: square; }
   .content ol {
-    margin: 0 0 1em 0; }
+    margin: 1.5em 1em; }
     .content ol li {
       counter-increment: big-nums;
       position: relative;
@@ -526,6 +534,9 @@ pre {
       .
 		flex: 1;
       padding-left: 2em; } }
+.content .highlight {
+	margin: 1.5em 0;
+}
 
 @media all and (max-width: 60em) {
   .sidebar {
