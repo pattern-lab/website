@@ -55,4 +55,4 @@ Now when we generate our site we'll have our homepage template rendered twice. O
 
 ## Using Pseudo-Patterns as Pattern Partials
 
-You can use pseudo-patterns as pattern partials. Simply replace the tilde with a hyphen. For example, our pseudo pattern `00-homepage~emergency.json` can be included in other patterns as `{% raw %}{{> templates-homepage-emergency }}{% endraw %}`.
+Pseudo-patterns **cannot** be used as pattern partials. The data included in the pseudo-pattern, the bit that actually controls the magic, cannot be accessed when rendering the pattern partial.

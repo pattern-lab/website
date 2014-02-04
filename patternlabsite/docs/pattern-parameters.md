@@ -7,13 +7,21 @@ title: Using Pattern Parameters | Pattern Lab
 
 # Using Pattern Parameters
 
-Pattern parameters are a simple way to include data when using pattern partials rather than having to use a [pattern-specific JSON file](/docs/data-pattern-specific.html). They are especially useful when you have a pattern partial that you need to include multiple times in a molecule, template, or page but you need to supply distinct values for each pattern partial instance. Pattern parameters do have their limitations though. To use pattern parameters you must use the [pattern partial syntax](/docs/pattern-including.html). Also, pattern parameters do not support sub-lists and the use of long strings of text can be unwieldy.
+Pattern parameters are a simple mechanism for replacing Mustache variables via attributes on a pattern partial tag rather than having to use a [pattern-specific JSON file](/docs/data-pattern-specific.html). They are especially useful when you want to supply distinct values for Mustache variables in a specific pattern partial instance that may be included multiple times in a molecule, template, or page. Pattern parameters **do not** currently support the following:
+
+* sections (e.g. using a boolean to show/hide some part of pattern),
+* sub-lists (e.g. iteration of a section),
+* and the use of long strings of text can be unwieldy
+
+Pattern parameters are Pattern Lab-specific and do not take advantage of the traditional Mustache syntax.
 
 ## The Pattern Parameter Syntax
 
 The attributes listed in the pattern parameters should match Mustache variable names in your pattern. The values listed for each attribute will replace the Mustache variables. For example:
 
     {% raw %}{{> patternType-pattern(attribute1: value, attribute2: "value string") }}{% endraw %}
+
+Again, pattern parameters are a simple find and replace of Mustache variables with the supplied values.
 
 ## Adding Pattern Parameters to Your Pattern Partial
 
