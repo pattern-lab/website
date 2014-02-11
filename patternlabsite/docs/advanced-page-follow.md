@@ -15,7 +15,7 @@ To start the service on Mac OS X you can do the following:
 2. Double-click `startPageFollowServer.command`
 3. Refresh the Pattern Lab site
 
-You can also start the service from the command line. To do so open Terminal and navigate to the root of the patternlab-php directory. Type:
+For Linux and Windows users you can also start the service from the command line. To do so open your command prompt and navigate to the root of the patternlab-php directory. Type:
 
     php core/pageFollowServer.php
 
