@@ -31,8 +31,9 @@ If you edited the pattern header and footer found in `source/_patternlab-files/p
 
 ## Cleaning Up Folders from pre-v0.7.0 Editions
 
-If you want to you can clean-up some of the directories that are left-over after upgrading pre-v0.7.0 editions of the PHP version of Pattern Lab. You can delete the following directories as they reference old paths or are no longer used:
+If you want to you can clean-up some of the directories that are left-over after upgrading pre-v0.7.0 editions of the PHP version of Pattern Lab. You can delete the following as they reference old paths or are no longer used:
 
 * `builder/`
 * `listeners/`
 * `scripts/`
+* `source/_patternlab-files/`
