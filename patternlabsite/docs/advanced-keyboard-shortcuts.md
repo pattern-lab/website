@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: Pattern Lab's Special Keyboard Shortcuts | Pattern Lab
+title: Keyboard Shortcuts | Pattern Lab
 ---
 
-# Pattern Lab's Special Keyboard Shortcuts
+# Keyboard Shortcuts
 
 Pattern Lab comes with support for a number of special keyboard shortcuts to make using Pattern Lab easier. These are broken up by where they work or are most useful.
 
