@@ -14,7 +14,7 @@ If you'd rather use the command line or are using Linux or Windows you can use t
 The generate command generates an entire site a single time. By default it removes old content in `public/`, compiles the patterns and moves content from `source/` into `public/`. Options can be mixed and matched.
 
     Usage:
-      php core/builder.php --generate [--patternsonly|-p] [--nocache|-n] [--enablecss|-c] 
+      php core/builder.php --generate|-g [--patternsonly|-p] [--nocache|-n] [--enablecss|-c] 
     
     Available options:
       --patternsonly (-p)    Generate only the patterns. Does NOT clean public/.
@@ -41,7 +41,7 @@ The generate command generates an entire site a single time. By default it remov
 The watch command builds Pattern Lab, watches for changes in `source/` and regenerates Pattern Lab when there are any. Options can be mixed and matched.
 
     Usage:
-      php core/builder.php --watch [--patternsonly|-p] [--autoreload|-r] 
+      php core/builder.php --watch|-w [--patternsonly|-p] [--autoreload|-r] 
     
     Available options:
       --patternsonly (-p)    Watches only the patterns. Does NOT clean public/.
@@ -63,7 +63,7 @@ The watch command builds Pattern Lab, watches for changes in `source/` and regen
 The version command prints out the current version of Pattern Lab.
 
     Usage:
-      php core/builder.php --version 
+      php core/builder.php --version|-v
     
 
 ## Starting the Auto-Reload and Page Follow Services
