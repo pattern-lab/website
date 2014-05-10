@@ -30,3 +30,7 @@ To ignore more directories just edit the `id` variable in `config/config.ini`. F
     id = "scss,test"
 
 **Important:** The PHP version of Pattern Lab will only ignore exact matches of ignored directories. For example, if you had a directory named `cool_scss` it, and the assets underneath it, _would_ be moved to `public/` even though `scss` was in the name of the directory.
+
+## Adding Assets to the Pattern Header &amp; Footer
+
+Static assets like Javascript and CSS **are not** added automagically to your patterns. You need to add them manually to the [shared pattern header and footer](/docs/pattern-header-footer.html).

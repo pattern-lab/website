@@ -17,7 +17,6 @@ Pattern parameters are Pattern Lab-specific and do not take advantage of the tra
 * [The Pattern Parameter Syntax](#pattern-parameter-syntax)
 * [Adding Pattern Parameters to Your Pattern Partial](#adding-pattern-parameters)
 * [Toggling Sections with Pattern Parameters](#toggling-sections)
-* [The styleModifier Shorthand Syntax](#stylemodifier-syntax)
 
 ## <span id="pattern-parameter-syntax"></span>The Pattern Parameter Syntax 
 
@@ -84,38 +83,4 @@ By default, if we don't have an `emergency` attribute in our `data.json` or the 
 
 Again, because pattern parameters aren't leveraging Mustache this may not fit the normal Mustache workflow. We still wanted to offer a way to quickly turn on and off sections of an included pattern.
 
-## <span id="stylemodifier-syntax"></span>The Special styleModifier Shorthand Syntax
 
-One of the expected common use cases of pattern parameters is to easily modify a class for a pattern. This way we can avoid creating multiple patterns and instead simply modify a base pattern via a class. The basic syntax:
-
-    {% raw %}{{> patternType-pattern:styleModifier }}{% endraw %}
-
-Let's add a `styleModifier` Mustache variable to our message pattern. For this feature to work the Mustache variable *has* to be called `styleModifier`.
-
-    {% raw %}<div class="message {{ styleModifier }}">{{ message }}</div>{% endraw %}
-
-Now let's include the pattern partial:
-
-    {% raw %}<div>
-        {{> atoms-message:error }}
-    </div>{% endraw %}
-
-This would render as:
-
-    {% raw %}<div>
-        <div class="message error"></div>
-    </div>{% endraw %}
-
-We forgot to provide a message so we can do that too:
-
-    {% raw %}<div>
-        {{> atoms-message:error(message: "some error message") }}
-    </div>{% endraw %}
-
-Which would render as:
-
-    <div>
-        <div class="message error">some error message</div>
-    </div>
-
-This feature is in anticipation of a future release of the PHP version of Pattern Lab that will include support for [KSS](http://warpspire.com/kss/).

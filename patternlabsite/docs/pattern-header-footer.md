@@ -7,7 +7,7 @@ title: Modifying the Pattern Header & Footer | Pattern Lab
 
 # Modifying the Pattern Header & Footer 
 
-To add your own assets like JavaScripts and CSS to your patterns' header and footer you can modify two files:
+To add your own assets like JavaScript and CSS to your patterns' header and footer you need to modify two files:
 
 * `source/_patterns/00-atoms/00-meta/_00-head.mustache`
 * `source/_patterns/00-atoms/00-meta/_01-foot.mustache`
