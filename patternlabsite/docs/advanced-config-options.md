@@ -9,9 +9,9 @@ Pattern Lab comes with a simple configuration file that allows you to modify cer
      * Configuration Options for Pattern Lab
      * If config.ini doesn't exist Pattern Lab will try to create a new version
      */
-    
-    v  = "0.7.8"
-    
+
+    v  = "0.7.9"
+
     // file extensions to ignore when building or watching the source dir, separate with a comma
     ie = "scss,DS_Store,less"
     
