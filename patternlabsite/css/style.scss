@@ -811,6 +811,25 @@ pre {
 
 .docs-nav-list {
 	font-size: 80%;
+
+	.selected {
+		position: relative;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 2px;
+			left: -1em;
+			display: block;
+			width: 0;
+			height: 0;
+			margin-left: -4px;
+			pointer-events: none;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-left: 10px solid $gray;
+		}
+	}
 }
 
 
