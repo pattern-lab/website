@@ -3,7 +3,7 @@ layout: docs
 title: Integration with Compass | Pattern Lab
 ---
 
-**Note:** *These directions incomplete. They are not meant to imply that Compass is officially supported with Pattern Lab. They should be modified to fit your instance of the PHP version of Pattern Lab.*
+**Note:** *These directions are incomplete. They are not meant to imply that Compass is officially supported with Pattern Lab. They should be modified to fit your instance of the PHP version of Pattern Lab.*
 
 # Integration with Compass
 
