@@ -1,6 +1,6 @@
 ---
 layout: docs-node
-title: Auto-Reloading the Browser Window When Changes Are Made | Pattern Lab
+title: Auto-Reloading the Browser Window When Changes Are Made | Pattern Lab Node
 ---
 
 # Auto-Reloading the Browser Window When Changes Are Made
