@@ -16,5 +16,5 @@ Installing the Node version of Pattern Lab with either a direct download from Gi
 ## npm
 
 1. Make sure Node and npm are installed. A great guide can be found here: [https://docs.npmjs.com/getting-started/installing-node](https://docs.npmjs.com/getting-started/installing-node)
-2. From the directory you want to install Pattern Lab Node within, run `npm install patternlab-node`
+2. From the directory you want to install Pattern Lab within, run `npm install patternlab-node`
 3. [Generate Pattern Lab Node for the first time](/docs/node/first-run.html).

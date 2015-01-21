@@ -5,7 +5,7 @@ title: Auto-Reloading the Browser Window When Changes Are Made | Pattern Lab Nod
 
 # Auto-Reloading the Browser Window When Changes Are Made
 
-Pattern Lab Node ships with three grunt tasks that effectively watch the source code and reload the live site whenever changes are detected. The configuration is all set up for you already in the `Gruntfile.js`.
+Pattern Lab ships with three grunt tasks that effectively watch the source code and reload the live site whenever changes are detected. The configuration is all set up for you already in the `Gruntfile.js`.
 
 First, the `watch` task, with the livereload option:
 

@@ -1,0 +1,20 @@
+---
+layout: docs-node
+title: Generating Pattern Lab Node for the First Time | Pattern Lab Node
+---
+
+# Generating Pattern Lab for the First Time
+By default, a number of important pages, including the main page, **aren't** built when you first download the Node version of Pattern Lab. Before you visit your install of Pattern Lab you'll need to make sure all of the necessary pages have been built. 
+
+## How to Generate the Pattern Lab Website
+
+To generate the Pattern Lab website do the following:
+
+1. Open `core/scripts/`
+2. Double-click `generateSite.command`
+
+You can also generate the Pattern Lab website from the command line. To do so open Terminal and navigate to the root of the patternlab-php directory. Type:
+
+    php core/builder.php -g
+
+The site should now be generated and available for browsing.
