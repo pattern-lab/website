@@ -1007,6 +1007,10 @@ pre {
 	.docs-nav-section {
 		@extend .gi;
 	}
+	//hide the key on the node partial when on the index, as it's mentioned earlier, but needed on the individual pages
+	&.node .key{
+		display: none;
+	}
 }
 
 /************Animations**************/
