@@ -109,8 +109,7 @@ input[type=search] {
 
 code {
   background: rgba(0, 0, 0, 0.05);
-  padding: 0.3em; 
-}
+  padding: 0.3em; }
 
 pre {
   background: #222222;
@@ -241,7 +240,7 @@ pre {
       margin-right: 0.5em; } }
   @media all and (max-width: 40em) {
     .nav li:nth-child(1) a {
-      background: rgba(0, 0, 0, 0); }
+      background: transparent; }
     .nav li:nth-child(2) a {
       background: rgba(0, 0, 0, 0.02); }
     .nav li:nth-child(3) a {
@@ -478,7 +477,9 @@ pre {
   font-size: 1.8rem; }
   @media all and (min-width: 34em) {
     .intro {
-      text-align: center; }
+      text-align: center;
+      max-width: 25em;
+      margin: 0 auto; }
       .intro.left {
         text-align: left; } }
 
@@ -496,12 +497,10 @@ pre {
 
 .content {
   counter-reset: big-nums; }
-   p {
-	counter-reset: big-nums;
-   }
-	pre code {
-		padding: 0;
-	}
+  .content p {
+    counter-reset: big-nums; }
+  .content pre code {
+    padding: 0; }
   .content h1 {
     margin-bottom: 0.6em; }
   .content h2 {
@@ -531,12 +530,10 @@ pre {
   @media all and (min-width: 60em) {
     .content {
       -webkit-flex: 1;
-      .
-		flex: 1;
+      flex: 1;
       padding-left: 2em; } }
-.content .highlight {
-	margin: 1.5em 0;
-}
+  .content .highlight {
+    margin: 1.5em 0; }
 
 @media all and (max-width: 60em) {
   .sidebar {
@@ -557,7 +554,7 @@ pre {
 .docs-nav-title {
   display: block;
   font-weight: bold;
-  color: #222;
+  color: #222222;
   margin-bottom: 0.4em; }
 
 .docs-nav-list {
@@ -576,7 +573,7 @@ pre {
       pointer-events: none;
       border-top: 8px solid transparent;
       border-bottom: 8px solid transparent;
-      border-left: 10px solid #808080; }
+      border-left: 10px solid gray; }
 
 /************Buttons**************/
 .btn-group {
@@ -706,28 +703,24 @@ pre {
 
   100% {
     -webkit-transform: rotate(360deg); } }
-
 @-moz-keyframes rotation {
   0% {
     -moz-transform: rotate(0deg); }
 
   100% {
     -moz-transform: rotate(360deg); } }
-
 @-o-keyframes rotation {
   0% {
     -o-transform: rotate(0deg); }
 
   100% {
     -o-transform: rotate(360deg); } }
-
 @keyframes rotation {
   0% {
     transform: rotate(0deg); }
 
   100% {
     transform: rotate(360deg); } }
-
 /************Icon Fonts**************/
 @font-face {
   font-family: 'icons';
@@ -735,7 +728,6 @@ pre {
   src: url("../assets/fonts/icons.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/icons.ttf") format("truetype"), url("../assets/fonts/icons.woff") format("woff"), url("../assets/fonts/icons.svg#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 [class*="icon-"] {
   font-family: 'icons';
   speak: none;
