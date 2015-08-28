@@ -1,0 +1,39 @@
+<h1 id="adding-annotations">Adding Annotations</h1>
+
+<p>Annotations provide an easy way to add notes to elements within a pattern and they can be found in <code>source/_data/annotations.js</code>. They’re <em>not</em> pattern-specific. Rather, they’re added to patterns using the same selector syntax you’d use for jQuery or CSS. </p>
+
+<h2 id="explaining-annotations">Explaining Annotations</h2>
+
+<p>To explain how annotations are structured here is the annotation that’s added to the logo:</p>
+
+<p><code>
+{
+	"el": ".logo",
+ 	"title" : "Logo",
+ 	"comment": "The logo image is an SVG file, which ensures that the logo displays crisply even on high resolution displays. A PNG fallback is provided for browsers that don't support SVG images.&lt;/p&gt;&lt;p&gt;Further reading: &lt;a href=\"http://bradfrostweb.com/blog/mobile/hi-res-optimization/\"&gt;Optimizing Web Experiences for High Resolution Screens&lt;/a&gt;&lt;/p&gt;"
+}
+</code></p>
+
+<p>Breaking down the JSON:</p>
+
+<ul>
+  <li><strong>el</strong> - the selector to be used to attach the annotation to a pattern</li>
+  <li><strong>title</strong> - the title for a given annotation</li>
+  <li><strong>comment</strong> - the description for a given annotation</li>
+</ul>
+
+<h2 id="making-changes-to-annotations">Making Changes to Annotations</h2>
+
+<p>In order to make changes or additions to annotations simply edit the <code>annotations.js</code> file. Once your changes have been made just make sure your site has been re-generated.</p>
+
+<h2 id="viewing-annotations">Viewing Annotations</h2>
+
+<p>In order to view annotations you’ll need to click “Annotations” under the “eye” icon in the Pattern Lab toolbar. Depending on which view you’re on the annotations will look slightly different. </p>
+
+<h3 id="pattern-only-view">Pattern-only View</h3>
+
+<p>After clicking the “annotations” menu item you can mouse over elements that have annotations and your cursor will turn to a question mark. If you click the element then the annotation should pop up.</p>
+
+<h3 id="style-guide-and-list-view">Style Guide and List View</h3>
+
+<p>After clicking the “annotations” menu item the annotations should show up listed under the appropriate patterns.</p>

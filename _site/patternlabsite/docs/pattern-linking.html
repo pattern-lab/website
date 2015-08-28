@@ -1,0 +1,95 @@
+<h1 id="pattern-labs-special-query-string-variables">Pattern Lab’s Special Query String Variables</h1>
+
+<p>Pattern Lab comes with support for a number of special query string variables to help you share patterns with clients. These query string variables include ways to link to patterns, set the Pattern Lab viewport to a specific width, open various views as well as start Hay and disco modes on page load. There are lots of options:</p>
+
+<ul>
+  <li><a href="#link-pattern">Linking to Specific Patterns</a></li>
+  <li><a href="#default-width">Setting the Default Width for the Viewport</a></li>
+  <li><a href="#annotations-view">Opening Annotations View on Page Load</a></li>
+  <li><a href="#code-view">Opening Code View on Page Load</a></li>
+  <li><a href="#hay-mode">Starting Hay Mode on Page Load</a></li>
+  <li><a href="#disco-mode">Starting Disco Mode on Page Load</a></li>
+</ul>
+
+<h2 id="span-idlink-patternspanlinking-to-specific-patterns"><span id="link-pattern"></span>Linking to Specific Patterns</h2>
+
+<p>You can link directly to any pattern listed on the Pattern Lab website. This might be useful when asking clients for feedback on a particular template or page pattern. If you want to <a href="/docs/data-link-variable.html">link from one pattern to another use the <code>link</code> variable</a>.</p>
+
+<h3 id="copy--paste">Copy &amp; Paste</h3>
+
+<p>The simplest method is to copy the address found in the address bar.</p>
+
+<h3 id="manually-creating-the-link">Manually Creating the Link</h3>
+
+<p>It’s also very easy to create a link manually. Simply append <code>?p=pattern-name</code> to the end of the address for your Pattern Lab website. For example, if we wanted to link to the <code>templates-article</code> pattern we’d add the following to the address for our Pattern Lab website:</p>
+
+<pre><code>?p=templates-article
+</code></pre>
+
+<p>The direct link feature supports the <a href="/docs/pattern-including.html">shorthand partials syntax</a> found in the PHP version of Pattern Lab. Just provide part of a pattern name and Pattern Lab will attempt to resolve it. </p>
+
+<h2 id="span-iddefault-widthspansetting-the-default-width-for-the-viewport"><span id="default-width"></span>Setting the Default Width for the Viewport</h2>
+
+<p>You can load a specific viewport size by using the <code>w</code> query string variable.</p>
+
+<pre><code>http://patternlab.localhost/?w=320   (sets the viewport to 320px)
+http://patternlab.localhost/?w=400px (sets the viewport to 400px)
+http://patternlab.localhost/?w=40em  (sets the viewport to 40em or 640px)
+</code></pre>
+
+<p>And it works with the <code>p</code> query string variable so you can also do:</p>
+
+<pre><code>http://patternlab.localhost/?p=atoms-landscape-4x3&amp;w=400px
+</code></pre>
+
+<h2 id="span-idannotations-viewspanopening-annotations-view-on-page-load"><span id="annotations-view"></span>Opening Annotations View on Page Load</h2>
+
+<p>When sending a particular pattern to a client for review you may not want to include directions for how to open annotations. You can force the annotations view to open on page load by using the <code>view</code> query string variables with the values <code>annotations</code> or <code>a</code>:</p>
+
+<pre><code>http://patternlab.localhost/?p=templates-homepage&amp;view=annotations
+http://patternlab.localhost/?p=templates-homepage&amp;view=a
+</code></pre>
+
+<p>You can also force the annotations panel to scroll to a particular item by including the query string variable <code>number</code>. To scroll to the fifth element in the list of annotations you’d do the following:</p>
+
+<pre><code>http://patternlab.localhost/?p=templates-homepage&amp;view=annotations&amp;number=5
+</code></pre>
+
+<h2 id="span-idcode-viewspanopening-code-view-on-page-load"><span id="code-view"></span>Opening Code View on Page Load</h2>
+
+<p>When sending a particular pattern to a client for review you may not want to include directions for how to open the code view. You can force the code view to open on page load by using the <code>view</code> query string variables with the values <code>code</code> or <code>c</code>:</p>
+
+<pre><code>http://patternlab.localhost/?p=templates-homepage&amp;view=code
+http://patternlab.localhost/?p=templates-homepage&amp;view=c
+</code></pre>
+
+<p>You can also force the HTML tab mark-up to be highlighted for copying by including the query string variable <code>copy</code>.</p>
+
+<pre><code>http://patternlab.localhost/?p=templates-homepage&amp;view=code&amp;copy=true
+</code></pre>
+
+<h2 id="span-idhay-modespanstarting-hay-mode-on-page-load"><span id="hay-mode"></span>Starting Hay Mode on Page Load</h2>
+
+<p>You can start Hay mode automatically when the page is loaded by using the <code>h</code> or <code>hay</code> query string variables.</p>
+
+<pre><code>http://patternlab.localhost/?h=true
+http://patternlab.localhost/?hay=true
+</code></pre>
+
+<p>And it works with the <code>p</code> query string variable so you can also do:</p>
+
+<pre><code>http://patternlab.localhost/?p=atoms-landscape-4x3&amp;h=true
+</code></pre>
+
+<h2 id="span-iddisco-modespanstarting-disco-mode-on-page-load"><span id="disco-mode"></span>Starting Disco Mode on Page Load</h2>
+
+<p>You can start disco mode automatically when the page is loaded by using the <code>d</code> or <code>disco</code> query string variables.</p>
+
+<pre><code>http://patternlab.localhost/?d=true
+http://patternlab.localhost/?disco=true
+</code></pre>
+
+<p>And it works with the <code>p</code> query string variable so you can also do:</p>
+
+<pre><code>http://patternlab.localhost/?p=atoms-landscape-4x3&amp;d=true
+</code></pre>

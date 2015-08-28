@@ -1,0 +1,23 @@
+<p><strong>Note:</strong> <em>The meta patterns were introduced in v0.7.0 of the PHP version of Pattern Lab.</em></p>
+
+<h1 id="modifying-the-pattern-header--footer">Modifying the Pattern Header &amp; Footer</h1>
+
+<p>To add your own assets like JavaScript and CSS to your patterns’ header and footer you need to modify two files:</p>
+
+<ul>
+  <li><code>source/_patterns/00-atoms/00-meta/_00-head.mustache</code></li>
+  <li><code>source/_patterns/00-atoms/00-meta/_01-foot.mustache</code></li>
+</ul>
+
+<p>These files are added to every rendered pattern, “view all” page and style guide. To see your changes simply re-generate your site.</p>
+
+<h2 id="important-dont-remove-two-things">Important: Don’t Remove Two Things…</h2>
+
+<p><strong>Do not remove the following two lines in these patterns:</strong></p>
+
+<ul>
+  <li><code>{% pattern-lab-head %}</code> in <code>_00-head.mustache</code></li>
+  <li><code>{% pattern-lab-foot %}</code> in <code>_00-foot.mustache</code></li>
+</ul>
+
+<p>Pattern Lab will stop working if you do.</p>

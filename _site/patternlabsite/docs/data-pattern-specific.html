@@ -1,0 +1,35 @@
+<h1 id="creating-pattern-specific-values">Creating Pattern-specific Values</h1>
+<p>Setting up data variables and values for your atoms, molecules, and organisms using the central <code>data.json</code> may work just fine. When fleshing out templates &amp; pages, where data may need to be unique to each page but each will still use the same molecules and organisms, the central <code>data.json</code> file can become cumbersome. In order to work around this the PHP version of Pattern Lab allows you to define pattern-specific JSON files that allow you to override the default values found in <code>source/_data/data.json</code> or <code>source/_data/listitems.json</code>.</p>
+
+<h2 id="setting-up-pattern-specific-data">Setting Up Pattern-specific Data</h2>
+
+<p>In order to tell the PHP version of Pattern Lab to use a pattern-specific JSON file to override the default variables just give the JSON file the same name as the pattern and put it in the same directory as the pattern. For example, if you wanted to provide pattern-specific data for the <code>article</code> pattern under the pattern type <code>pages</code> your <code>pages</code> directory would look like this:</p>
+
+<pre><code>pages/article.mustache
+pages/article.json
+</code></pre>
+
+<h2 id="overriding-the-default-variables">Overriding the Default Variables</h2>
+
+<p>Overriding the default variables using the pattern-specific data is a just a matter of giving the variables you want to override the same names and structure in your pattern-specific data as they appear in the central data file. For example, the 4x3 landscape image source may look like this in <code>data.json</code>:</p>
+
+<pre><code>"landscape-4x3": {
+    "src": "../../images/fpo-landscape-4x3.jpg",
+    "alt": "Landscape 4x3 Image"
+}
+</code></pre>
+
+<p>In our pattern-specific data file, <code>article.json</code>, we’d simply copy that structure and provide our own information:</p>
+
+<pre><code>"landscape-4x3": {
+    "src": "../../images/a-team-hero.jpg"
+}
+</code></pre>
+
+<p>Now the article pattern will display an image of the A-Team when using <code>{{ landscape-4x3.src }}</code>. All other patterns using <code>{{ landscape-4x3.src }}</code> will display the default 4x3 image. Also, note that we <strong>didn’t</strong> override the <code>landscape-4x3.alt</code> attribute. If we were to use that attribute in our pattern the default value, “Landscape 4x3 Image”, would be displayed. </p>
+
+<p><strong>Important note:</strong> You don’t have to override every attribute. You can limit the data in your pattern-specific data file to just those variables you want. The PHP version of Pattern Lab will fallback to using the default attributes from <code>data.json</code> if the attributes aren’t defined in the pattern-specific data file.</p>
+
+<h2 id="working-with-partials">Working With Partials</h2>
+
+<p>Pattern-specific data is only loaded for the overall pattern and not for any related partials. For example, the pages template, <code>article</code>, might include the molecule, <code>block-hero</code>. <code>block-hero</code> may have its own pattern-specific data file, <code>block-hero.json</code>. The PHP version of Pattern Lab <strong>will not</strong> use the <code>block-hero</code> data when rendering <code>article</code>. It will only use <code>article.json</code> (if available) and <code>data.json</code>. </p>

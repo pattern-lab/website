@@ -1,0 +1,126 @@
+<h1 id="creating-lists-with-pattern-labs-default-listitems-variable">Creating Lists with Pattern Lab’s Default <code>listItems</code> Variable</h1>
+<p>Many more complicated patterns may include lists of objects. For example, comments or headlines. The PHP version of Pattern Lab comes with a simple way to fill out these lists with dynamic data so that you can quickly stub them out. The list data can be found in <code>source/_data/listitems.json</code> and is accessed in Mustache with the <code>listItems</code> key. Lists are randomized each time the Pattern Lab website is generated. </p>
+
+<h2 id="using-listitems-attributes-to-create-a-simple-list">Using listItems Attributes to Create a Simple List</h2>
+
+<p>Let’s look at a simple example of iterating over a list. In your template you might have:</p>
+
+<pre><code>&lt;ul&gt;
+{{# listItems.four }}
+    &lt;li&gt; {{ title }} &lt;/li&gt;
+{{/ listItems.four }}
+&lt;/ul&gt;
+</code></pre>
+
+<p>Let’s break this down before showing the results. The <code>#</code> denotes that Mustache needs to loop over the given key that contains multiple values, in this case <code>listItems.four</code>, and write-out the corresponding value <code>{{ title }}</code>. A full list of attributes can be found below. The <code>/</code> denotes the end of the block that’s being rendered. The PHP version of Pattern Lab supports the keys <code>one</code> through <code>twelve</code>. If you need more than twelve items for a given list you’ll need to add your own data. <strong>Important</strong>: the keys <code>one</code> through <code>twelve</code> are Pattern Lab-specific and not a general feature of Mustache.</p>
+
+<p>The above would compile to:</p>
+
+<pre><code>&lt;ul&gt;
+    &lt;li&gt; Rebel Mission to Ord Mantell&lt;/li&gt;
+    &lt;li&gt; Help, help, I'm being repressed!&lt;/li&gt;
+    &lt;li&gt; Bacon ipsum dolor sit amet turducken strip steak beef ribs shank&lt;/li&gt;
+    &lt;li&gt; Nullizzle shizznit velizzle, hizzle, suscipit own yo', gravida vizzle, arcu.&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>If you wanted six items in your list you’d write:</p>
+
+<pre><code>&lt;ul&gt;
+{{# listItems.six }}
+    &lt;li&gt; {{ title }} &lt;/li&gt;
+{{/ listItems.six }}
+&lt;/ul&gt;
+</code></pre>
+
+<h2 id="combining-listitems-with-partials">Combining listItems with Partials</h2>
+
+<p>Let’s look at how we might build a comment thread using <code>listItems</code> and partials. First we’ll start with an organism called <code>comment-thread</code> that looks like:</p>
+
+<pre><code>&lt;section class="comments section"&gt;
+    &lt;div class="comments-container" id="comments-container"&gt;
+        &lt;h2 class="section-title"&gt;Comment List&lt;/h2&gt;
+        &lt;div class="comment-list"&gt;
+            {{# listItems.five }}
+                {{&gt; molecules-single-comment }} 
+            {{/ listItems.five }}
+        &lt;/div&gt;
+    &lt;/div&gt; 
+&lt;/section&gt;
+</code></pre>
+
+<p>This organism is including the <code>single-comment</code> molecule ( <code>{{&gt; molecules-single-comment}}</code> ) <em>within</em> our block where we’re iterating over five items from the <code>listItems</code> variable ( <code>{{# listItems.five }}</code> ). What this is doing is rendering the <code>single-comment</code> molecule five times with different data each time. Our <code>single-comment</code> molecule might look like this:</p>
+
+<pre><code>&lt;div class="comment-container"&gt;
+    &lt;div class="comment-meta"&gt;
+        {{&gt; atoms-avatar }}
+        &lt;h4 class="comment-name"&gt;&lt;a href="{{ url }}"&gt;{{ name.first }} {{ name.last }}&lt;/a&gt;&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class="comment-text"&gt;
+        &lt;p&gt;{{ description }} &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Note how the Mustache variable names match up to the attributes available in our <code>listItems</code> variable. Again, each time the <code>single-comment</code> pattern is rendered those variables will have different data. Using a partial allows us to DRY up our code. We can even nest partials within partials as shown by <code>{{&gt; atoms-avatar }}</code> in our example.</p>
+
+<p><strong>Important</strong>: You don’t have to use the default <code>listItems</code> variable to take advantage of this feature. You can also use this method with pattern-specific data files or the default <code>data.json</code> file.</p>
+
+<h2 id="overriding-the-defaults-with-pattern-specific-listitems">Overriding the Defaults with Pattern-specific listItems</h2>
+
+<p>In much the <a href="/docs/data-pattern-specific.html">same way that one can override values</a> in <code>_data.json</code> with pattern-specific data you can also override <code>_listitems.json</code>. The same principles apply but it’s a slightly different naming convention. For example, if you wanted to provide pattern-specific <code>listItem</code> data for the <code>article</code> pattern under the pattern type <code>pages</code> your <code>pages</code> directory would look like this:</p>
+
+<pre><code>pages/article.mustache
+pages/article.listitems.json
+</code></pre>
+
+<p>Otherwise <a href="/docs/data-pattern-specific.html">the same rules for overriding defaults</a> for <code>_data.json</code> apply to <code>_listitems.json</code>.</p>
+
+<h2 id="the-listitems-attributes">The listItems Attributes</h2>
+
+<p>The list text attributes were built using several lorem ipsum generators. The image attributes utilize <a href="http://placeimg.com">placeimg.com</a>. The names were generated with <a href="http://www.behindthename.com/">Behind the Name</a>. The available attributes are:</p>
+
+<pre><code>title
+description
+url
+headline.short         (~37 characters long)
+headline.medium        (~72 characters long)
+excerpt.short          (~150 characters long)
+excerpt.medium         (~233 characters long)
+excerpt.long           (~450 characters long)
+img.avatar.src
+img.avatar.alt
+img.square.src
+img.square.alt
+img.rectangle.src      (4x3 aspect ratio)
+img.rectangle.alt
+img.landscape-4x3.src
+img.landscape-4x3.src
+img.landscape-16x9.src
+img.landscape-16x9.alt
+name.first             (e.g. Junius)
+name.firsti            (e.g. J)
+name.middle            (e.g. Marius)
+name.middlei           (e.g. M)
+name.last              (e.g. Koolen)
+name.lasti             (e.g. K)
+year.long              (e.g. 2013)
+year.short             (e.g. 13)
+month.long             (e.g. January)
+month.short            (e.g. Jan)
+month.digit            (e.g. 01)
+dayofweek.long         (e.g. Monday)
+dayofweek.short        (e.g. Mon)
+day.long               (e.g. 05)
+day.short              (e.g. 5)
+day.ordinal            (e.g. th)
+hour.long              (e.g. 11)
+hour.short             (e.g. 11)
+hour.military          (e.g. 23)
+hour.ampm              (e.g. pm)
+minute.long            (e.g. 09)
+minute.short           (e.g. 9)
+seconds                (e.g. 52)
+</code></pre>
+
+<p>The aspect ratio for <code>img.rectangle</code> is 4x3. Hopefully this gives pattern developers an easy way to build out dynamic lists for testing.</p>

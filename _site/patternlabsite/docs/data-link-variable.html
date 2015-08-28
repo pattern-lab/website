@@ -1,0 +1,17 @@
+<h1 id="linking-to-patterns-with-pattern-labs-default-link-variable">Linking to Patterns with Pattern Lab’s Default <code>link</code> Variable</h1>
+<p>You can build patterns that link to one another to help simulate using a real website. This is especially useful when working with the Pages and Templates pattern types. Rather than having to remember the actual path to a pattern you can use the same shorthand syntax you’d use to include one pattern within another. <strong>Important:</strong> Pattern links <em>do not</em> support the same fuzzy matching of names as the shorthand partials syntax does. The basic format is:</p>
+
+<pre><code>{{ link.pattern-name }}
+</code></pre>
+
+<p>For example, if you wanted to add a link to the <code>article</code> template from your <code>blog</code> template you could write the following:</p>
+
+<pre><code>&lt;a href="{{ link.templates-article }}"&gt;Article Headline&lt;/a&gt;
+</code></pre>
+
+<p>This would compile to:</p>
+
+<pre><code>&lt;a href="/patterns/templates-layouts-article/templates-layouts-article.html"&gt;Article Headline&lt;/a&gt;
+</code></pre>
+
+<p>As you can see, it’s a much easier way of linking patterns to one another.</p>

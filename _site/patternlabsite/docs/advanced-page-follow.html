@@ -1,0 +1,30 @@
+<h1 id="multi-browser--multi-device-testing-with-page-follow">Multi browser &amp; Multi device Testing with Page Follow</h1>
+
+<p>The PHP version of Pattern Lab’s Page Follow feature gives developers the ability to have one browser control other browsers that connect to the Pattern Lab website. When a browser first connects to the Pattern Lab website they’ll be redirected to the last visited pattern. Navigating to a new pattern will update all connected browsers. This should be especially useful when testing patterns across multiple devices.</p>
+
+<h2 id="how-to-start-the-page-follow-server">How to Start the Page Follow Server</h2>
+
+<p>To start the service on Mac OS X you can do the following:</p>
+
+<ol>
+  <li>Open <code>core/scripts/</code></li>
+  <li>Double-click <code>startPageFollowServer.command</code></li>
+  <li>Refresh the Pattern Lab site</li>
+</ol>
+
+<p>For Linux and Windows users you can also start the service from the command line. To do so open your command prompt and navigate to the root of the patternlab-php directory. Type:</p>
+
+<pre><code>php core/pageFollowServer.php
+</code></pre>
+
+<p>Your browser should now be listening for Page Follow events and the Pattern Lab toolbar should note that “Page Follow” is now “On.” Any other browser that visits the Pattern Lab site should now be redirected to the last visited pattern. When one browser views another pattern they should all be updated.</p>
+
+<h2 id="how-to-stop-the-service">How to Stop the Service</h2>
+
+<p>To stop the service on Mac OS X you can press CTRL+C in the Terminal window where the process is running.</p>
+
+<h2 id="viewing-the-pattern-lab-website-on-your-mobile-device">Viewing the Pattern Lab Website on Your Mobile Device</h2>
+
+<p>There is a <a href="/docs/pattern-mobile-view.html">separate article on this topic</a>.</p>
+
+<p><strong>Important:</strong> If you find that page follow is not working properly please make sure your browser <a href="http://caniuse.com/websockets">supports WebSockets</a>.</p>

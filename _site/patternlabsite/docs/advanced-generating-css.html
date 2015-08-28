@@ -1,0 +1,25 @@
+<p><strong>Note:</strong> <em>The <a href="https://github.com/dmolsen/css-rule-saver">CSS Rule Saver</a> library and CSS generation feature was added in v0.6.0 of the PHP version of Pattern Lab.</em></p>
+
+<h1 id="generating-css">Generating CSS</h1>
+
+<p>When using this feature, Pattern Lab can display only those CSS rules that affect a given pattern on the pattern detail view. This might be useful if you have a large Sass-generated CSS file or framework but only need a sub-set of styles that may affect a small piece of mark-up or pattern.</p>
+
+<h2 id="how-to-generate-the-css">How to Generate the CSS</h2>
+
+<p>To generate your Pattern Lab site with CSS support on Mac OS X you can do the following:</p>
+
+<ol>
+  <li>Open <code>core/scripts/</code></li>
+  <li>Double-click <code>generateSiteWithCSS.command</code></li>
+  <li>Refresh the Pattern Lab site</li>
+</ol>
+
+<p>For Linux and Windows users you can also start the service from the command line. To do so open your command prompt and navigate to the root of the patternlab-php directory. Type:</p>
+
+<pre><code>php core/builder.php -gc
+</code></pre>
+
+<h2 id="important-note-about-performance">Important Note About Performance</h2>
+
+<p>It may take several seconds for the PHP version of Pattern Lab to generate a site when it’s also calculating the CSS rules. Be patient.</p>
+

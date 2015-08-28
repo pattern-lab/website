@@ -1,0 +1,50 @@
+<h1 id="watching-for-changes-and-auto-regenerating-patterns">Watching for Changes and Auto Regenerating Patterns</h1>
+<p>The PHP version of Pattern Lab has the ability to watch for changes to patterns and select files. When these files change, it will automatically rebuild the entire Pattern Lab website. You simply make your changes, save the file, and the PHP version of Pattern Lab will take care of the rest.</p>
+
+<h2 id="how-to-start-the-watch">How to Start the Watch</h2>
+
+<p>To start the watch service on Mac OS X you can do the following:</p>
+
+<ol>
+  <li>Open <code>core/scripts/</code></li>
+  <li>Double-click <code>startWatcher.command</code></li>
+</ol>
+
+<p>For Linux and Windows users you can start the watch from the command line. To do so open your command prompt and navigate to the root of the <code>patternlab-php</code> directory. Type:</p>
+
+<pre><code>php core/builder.php -w
+</code></pre>
+
+<h2 id="how-to-start-the-watch--auto-reload-server-at-the-same-time">How to Start the Watch &amp; Auto-Reload Server at the Same Time</h2>
+
+<p>Rather than manually refreshing your browser when your patterns or CSS change you can have the PHP version of Pattern Lab auto-reload your browser window for you when it’s in watch mode. To start the watch and auto-reload services together on Mac OS X you can do the following:</p>
+
+<ol>
+  <li>Open <code>core/scripts/</code></li>
+  <li>Double-click <code>startWatcherWithAutoReload.command</code></li>
+  <li>Refresh the Pattern Lab site</li>
+</ol>
+
+<p>For Linux and Windows users you can start the watch from the command line. To do so open your command prompt and navigate to the root of the <code>patternlab-php</code> directory. Type:</p>
+
+<pre><code>php core/builder.php -wr
+</code></pre>
+
+<h2 id="how-to-stop-the-watch">How to Stop the Watch</h2>
+
+<p>To stop watching files on Mac OS X you can press<code>CTRL+C</code> in the Terminal window where the process is running. If you’ve used the method above to start the auto-reload server it will also shut down when using <code>CTRL+C</code>.</p>
+
+<h2 id="the-default-files-that-are-watched">The Default Files That Are Watched</h2>
+
+<p>By default, the PHP version of Pattern Lab monitors the following files:</p>
+
+<ul>
+  <li>all of the patterns under <code>source/_patterns</code></li>
+  <li>all of the JSON files under <code>source/_data/</code> </li>
+  <li>any directory in <code>source/</code> without an <code>_</code> (underscore) or that doesn’t match a directory name found in the <code>id</code> variable in <code>config/config.ini</code></li>
+  <li>any file in <code>source/</code> with a file extension that doesn’t match one found in the <code>ie</code> variable in <code>config/config.ini</code></li>
+</ul>
+
+<h2 id="ignoring-other-directories--file-extensions">Ignoring Other Directories &amp; File Extensions</h2>
+
+<p>Instructions on how to ignore assets in other directories or with other file extensions can be found in “<a href="/docs/pattern-managing-assets.html">Managing Assets for a Pattern</a>”.</p>

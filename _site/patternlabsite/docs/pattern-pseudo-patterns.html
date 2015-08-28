@@ -1,0 +1,58 @@
+<p><strong>Note:</strong> <em>Pseudo-patterns were introduced in v0.7.0 of the PHP version of Pattern Lab.</em></p>
+
+<h1 id="using-pseudo-patterns">Using Pseudo-Patterns</h1>
+
+<p>Pseudo-patterns are meant to give developers the ability to build multiple and unique <strong>rendered</strong> patterns off of one base pattern and its mark-up while giving them control over the data that is injected into the base pattern. This feature is especially useful when developing template- and page-style patterns.</p>
+
+<h2 id="the-pseudo-pattern-syntax">The Pseudo-Pattern Syntax</h2>
+
+<p>Pseudo-patterns are, essentially, the pattern-specific JSON files that would accompany a pattern. Rather than require a Mustache pattern, though, pseudo-patterns are hinted so a developer can reference a shared pattern. The basic syntax:</p>
+
+<pre><code>patternName~pseudoPatternName.json
+</code></pre>
+
+<p>The tilde, <code>~</code>, and JSON extension denotes that this is a pseudo-pattern. <code>patternName</code> is the parent pattern that will be used when rendering the pseudo-pattern. <code>patternName</code> and <code>pseudoPatternName</code> are combined when adding the pseudo-pattern to the navigation.</p>
+
+<p>The JSON file itself works exactly like the <a href="/docs/data-pattern-specific.html">pattern-specific JSON file</a>. It has the added benefit that the pseudo-pattern will also import any values from the parent pattern’s pattern-specific JSON file.</p>
+
+<h2 id="adding-pseudo-patterns-to-your-project">Adding Pseudo-Patterns to Your Project</h2>
+
+<p>Adding a pseudo-pattern is as simple as naming it correctly and following the <a href="/docs/data-pattern-specific.html">pattern-specific JSON file</a> instructions for organizing its content. Let’s look at a simple example where we want to show an emergency notification on our homepage template. Our <code>03-templates/</code> directory might look like this:</p>
+
+<pre><code>00-homepage.mustache
+01-blog.mustache
+02-article.mustache
+</code></pre>
+
+<p>Our <code>00-homepage.mustache</code> template might look like this:</p>
+
+<pre><code>&lt;div id="main-container"&gt;
+    {{# emergency }}
+        &lt;div class="emergency"&gt;Oh Noes! Emergency!&lt;/div&gt;
+    {{/ emergency }}
+    { ...a bunch of other content... }
+&lt;/div&gt;
+</code></pre>
+
+<p>If our <code>_data.json</code> file doesn’t give a value for <code>emergency</code> that section will never show up when <code>00-homepage.mustache</code> is rendered.</p>
+
+<p>We want to show both the regular and emergency states of the homepage but we don’t want to duplicate the entire <code>00-homepage.mustache</code> template. That would be a maintenance nightmare. So let’s add our pseudo-pattern:</p>
+
+<pre><code>00-homepage.mustache
+00-homepage~emergency.json
+01-blog.mustache
+02-article.mustache
+</code></pre>
+
+<p>In our pseudo-pattern, <code>00-homepage~emergency.json</code>, we add our <code>emergency</code> attribute:</p>
+
+<pre><code>{
+    "emergency": true
+}
+</code></pre>
+
+<p>Now when we generate our site we’ll have our homepage template rendered twice. Once as the regular template and once as a pseudo-pattern showing the emergency section. Note that the pseudo-pattern will show up in our navigation as <code>Homepage Emergency</code>.</p>
+
+<h2 id="using-pseudo-patterns-as-pattern-partials">Using Pseudo-Patterns as Pattern Partials</h2>
+
+<p>Pseudo-patterns <strong>cannot</strong> be used as pattern partials. The data included in the pseudo-pattern, the bit that actually controls the magic, cannot be accessed when rendering the pattern partial.</p>

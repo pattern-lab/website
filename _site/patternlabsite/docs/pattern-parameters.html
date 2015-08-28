@@ -1,0 +1,91 @@
+<p><strong>Note:</strong> <em>Pattern parameters were introduced in v0.7.0 of the PHP version of Pattern Lab.</em></p>
+
+<h1 id="using-pattern-parameters">Using Pattern Parameters</h1>
+
+<p>Pattern parameters are a simple mechanism for replacing Mustache variables via attributes on a pattern partial tag rather than having to use a <a href="/docs/data-pattern-specific.html">pattern-specific JSON file</a>. They are especially useful when you want to supply distinct values for Mustache variables in a specific pattern partial instance that may be included multiple times in a molecule, template, or page. Pattern parameters <strong>do not</strong> currently support the following:</p>
+
+<ul>
+  <li>sub-lists (e.g. iteration of a section),</li>
+  <li>and the use of long strings of text can be unwieldy</li>
+</ul>
+
+<p>Pattern parameters are Pattern Lab-specific and do not take advantage of the traditional Mustache syntax. Learn more about pattern parameters:</p>
+
+<ul>
+  <li><a href="#pattern-parameter-syntax">The Pattern Parameter Syntax</a></li>
+  <li><a href="#adding-pattern-parameters">Adding Pattern Parameters to Your Pattern Partial</a></li>
+  <li><a href="#toggling-sections">Toggling Sections with Pattern Parameters</a></li>
+</ul>
+
+<h2 id="span-idpattern-parameter-syntaxspanthe-pattern-parameter-syntax"><span id="pattern-parameter-syntax"></span>The Pattern Parameter Syntax</h2>
+
+<p>The attributes listed in the pattern parameters should match Mustache variable names in your pattern. The values listed for each attribute will replace the Mustache variables. For example:</p>
+
+<pre><code>{{&gt; patternType-pattern(attribute1: value, attribute2: "value string") }}
+</code></pre>
+
+<p>Again, pattern parameters are a simple find and replace of Mustache variables with the supplied values.</p>
+
+<h2 id="span-idadding-pattern-paramtersspanadding-pattern-parameters-to-your-pattern-partial"><span id="adding-pattern-paramters"></span>Adding Pattern Parameters to Your Pattern Partial</h2>
+
+<p>Let’s look at a simple example for how we might use pattern parameters. First we’ll set-up a pattern that might be included multiple times. We’ll make it a simple “message” pattern with a single Mustache variable of <code>message</code>.</p>
+
+<pre><code>&lt;div class="message"&gt;{{ message }}&lt;/div&gt;
+</code></pre>
+
+<p>We’ll organize it under Atoms &gt; Global and call it “message” so it’ll have the pattern partial of <code>atoms-message</code>.</p>
+
+<p>Now let’s create a pattern that includes our message pattern partial multiple times. It might look like this.</p>
+
+<pre><code>&lt;div class="main-container"&gt;
+    {{&gt; atoms-message }}
+    &lt;div&gt;
+       A bunch of extra information
+    &lt;/div&gt;
+    {{&gt; atoms-message }}
+&lt;/div&gt;
+</code></pre>
+
+<p>Using <code>data.json</code> or a pattern-specific JSON file we wouldn’t be able to supply separate messages to each pattern partial. For example, if we defined <code>message</code> in our <code>data.json</code> as “this is an alert” then “this is an alert” would show up twice when our parent pattern was rendered.</p>
+
+<p>Instead we can use pattern parameters to supply unique messages for each instance. So let’s show what that would look like:</p>
+
+<pre><code>&lt;div class="main-container"&gt;
+    {{&gt; atoms-message(message: "this is an alert message") }}
+    &lt;div&gt;
+        A bunch of extra information
+    &lt;/div&gt;
+    {{&gt; atoms-message(message: "this is an informational message") }}
+&lt;/div&gt;
+</code></pre>
+
+<p>Now each pattern would have its very own message.</p>
+
+<h2 id="span-idtoggling-sectionsspantoggling-sections-with-pattern-parameters"><span id="toggling-sections"></span>Toggling Sections with Pattern Parameters</h2>
+
+<p>While pattern parameters are not a one-to-one match for Mustache they do offer the ability to toggle sections of content. For example we might have the following in a generic header pattern called <code>organisms-header</code>:</p>
+
+<pre><code>&lt;div class="main-container"&gt;
+    {{# emergency }}
+        &lt;div class="alert"&gt;Emergency!!!&lt;/div&gt;
+    {{/ emergency }}
+    &lt;div class="header"&gt;
+        ... stuff ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>We call the header pattern in a template like so:</p>
+
+<pre><code>{{&gt; organisms-header }}
+... stuff ...
+</code></pre>
+
+<p>By default, if we don’t have an <code>emergency</code> attribute in our <code>data.json</code> or the pattern-specific JSON file for the template the emergency alert will never be rendered. Instead of modifying either of those two files we can use a boolean pattern param to show it instead like so:</p>
+
+<pre><code>{{&gt; organisms-header(emergency: true) }}
+... stuff ...
+</code></pre>
+
+<p>Again, because pattern parameters aren’t leveraging Mustache this may not fit the normal Mustache workflow. We still wanted to offer a way to quickly turn on and off sections of an included pattern.</p>
+

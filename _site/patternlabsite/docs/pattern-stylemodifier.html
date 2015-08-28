@@ -1,0 +1,49 @@
+<p><strong>Note:</strong> <em>styleModifiers were introduced in v0.7.0 of the PHP version of Pattern Lab.</em></p>
+
+<h1 id="using-stylemodifiers">Using styleModifiers</h1>
+
+<p>styleModifiers allow you to create a base pattern that you can easily modify by adding a class name to the pattern partial. </p>
+
+<h2 id="syntax">Syntax</h2>
+
+<p>The basic syntax:</p>
+
+<pre><code>{{&gt; patternType-pattern:styleModifier }}
+</code></pre>
+
+<h2 id="example">Example</h2>
+
+<p>Let’s look at a simple example where we add a <code>styleModifier</code> Mustache variable to a pattern called <code>atoms-message</code>. For this feature to work the Mustache variable <em>has</em> to be called <code>styleModifier</code>.</p>
+
+<pre><code>&lt;div class="message {{ styleModifier }}"&gt;{{ message }}&lt;/div&gt;
+</code></pre>
+
+<p>Now let’s include the pattern partial:</p>
+
+<pre><code>&lt;div&gt;
+    {{&gt; atoms-message:error }}
+&lt;/div&gt;
+</code></pre>
+
+<p>This would render as:</p>
+
+<pre><code>&lt;div&gt;
+    &lt;div class="message error"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>We forgot to provide a message so we can do that too with <a href="/docs/pattern-parameters.html">pattern parameters</a>:</p>
+
+<pre><code>&lt;div&gt;
+    {{&gt; atoms-message:error(message: "some error message") }}
+&lt;/div&gt;
+</code></pre>
+
+<p>Which would render as:</p>
+
+<pre><code>&lt;div&gt;
+    &lt;div class="message error"&gt;some error message&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>This feature is in anticipation of a future release of the PHP version of Pattern Lab that will include support for <a href="http://warpspire.com/kss/">KSS</a>.</p>

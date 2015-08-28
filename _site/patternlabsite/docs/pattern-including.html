@@ -1,0 +1,68 @@
+<h1 id="including-patterns">Including Patterns</h1>
+<p>To use one pattern within another, for example to create a molecule from several atoms, you can either use:</p>
+
+<ul>
+  <li>a shorthand partials syntax or </li>
+  <li>the default <a href="http://mustache.github.io/mustache.5.html">Mustache</a> partials syntax.</li>
+</ul>
+
+<h2 id="the-shorthand-partials-syntax">The Shorthand Partials Syntax</h2>
+
+<p>The shorthand partials syntax mimics the format that was found in the <code>inc()</code> function from the original version of Pattern Lab. It allows for partials to be less verbose than the default Mustache partials syntax. The shorthand syntax uses the following format:</p>
+
+<pre><code>{{&gt; [patternType]-[patternName] }}
+</code></pre>
+
+<p>For example, let’s say we wanted to include the following pattern in a molecule:</p>
+
+<pre><code>00-atoms/03-images/02-landscape-16x9.mustache
+</code></pre>
+
+<p>The pattern type is <code>atoms</code> and the pattern name is <code>landscape-16x9</code>. Pattern sub-types are <em>never</em> used in this format and any digits for re-ordering are <em>dropped</em>. The shorthand partial syntax would be:</p>
+
+<pre><code>{{&gt; atoms-landscape-16x9 }}
+</code></pre>
+
+<p>Patterns can be re-ordered via the digits without requiring you to update any patterns. </p>
+
+<p>The shorthand syntax also allows for fuzzy matching on pattern names. This means that, if you feel your pattern name is going to be unique within a given pattern type, you can supply just the unique part of the pattern name and the partial will be included correctly. For example, using the shorthand syntax this partial could be written as:</p>
+
+<pre><code>{{&gt; atoms-16x9 }}
+</code></pre>
+
+<p><strong>Important:</strong> If you include <code>16x9</code> in another pattern the PHP version of Pattern Lab may find that first depending on how your patterns are organized.</p>
+
+<h2 id="the-default-mustache-partials-syntax">The Default Mustache Partials Syntax</h2>
+
+<p>The PHP version of Pattern Lab also supports the default Mustache partials syntax if you need more specificity when adding partials to your templates. The syntax is simply the path to the partial minus the <code>.mustache</code> extension. For example, let’s say we wanted to include the following pattern in a molecule:</p>
+
+<pre><code>00-atoms/03-images/02-landscape-16x9.mustache
+</code></pre>
+
+<p>The default Mustache partial syntax would be:</p>
+
+<pre><code>{{&gt; 00-atoms/03-images/02-landscape-16x9 }}
+</code></pre>
+
+<p><strong>Important:</strong> Unlike the shorthand partials syntax the default Mustache partials syntax <strong>must</strong> include any digits for reordering. If pattern names are updated then the partial paths also need to be updated.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>Here are some examples of how to include patterns as well as some gotchas.</p>
+
+<pre><code>// partials to match
+00-atoms/00-global/04-test-with-picture.mustache
+00-atoms/00-global/05-test.mustache
+00-atoms/00-global/06-test.mustache
+00-atoms/00-global/test.mustache
+
+// using the shorthand partials syntax
+{{&gt; atoms-test }}                 // will match 00-atoms/00-global/05-test.mustache
+                                  // using the shorthand syntax you'll never be able to match 06-test nor test in this scenario
+{{&gt; atoms-test-with-picture }}    // will match 00-atoms/00-global/04-test-with-picture.mustache 
+{{&gt; atoms-test-wit }}             // will match 00-atoms/00-global/04-test-with-picture.mustache
+
+// using the default mustache partials syntax
+{{&gt; atoms/global/05-test }}       // won't match anything because atoms &amp; global are missing their digits
+{{&gt; 00-atoms/00-global/06-test }} // will match 00-atoms/00-global/06-test.mustache
+</code></pre>
