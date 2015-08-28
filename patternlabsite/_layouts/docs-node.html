@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{{ page.title }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="docs">
+    {% include header.html %}
+    <div class="l-two-col">
+  		<div class="content">
+       {{content}}
+    	</div><!--end .content-->
+
+      <div class="sidebar">
+        {% include docs-navigation-node.html %}
+      </div><!--end .sidebar-->
+    </div><!--end .l-two-col-->
+
+    {% include footer.html %}
+
+

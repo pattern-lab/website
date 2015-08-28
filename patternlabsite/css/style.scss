@@ -1,3 +1,7 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
 $gray-light : #ddd;
 $gray : #808080;
 $gray-dark: #222;
@@ -1027,6 +1031,10 @@ pre {
 
 	.docs-nav-section {
 		@extend .gi;
+	}
+	//hide the key on the node partial when on the index, as it's mentioned earlier, but needed on the individual pages
+	&.node .sub-only{
+		display: none;
 	}
 }
 
