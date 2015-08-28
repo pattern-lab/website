@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 # This is the Front Matter block for Jekyll to properly read this file
+=======
+# Front matter comment to ensure Jekyll properly reads file.
+>>>>>>> dc349a4bf941e46787f037d2716b0c56d4dc49e7
 ---
 
 $gray-light : #ddd;
@@ -1032,6 +1036,10 @@ pre {
 
 	.docs-nav-section {
 		@extend .gi;
+	}
+	//hide the key on the node partial when on the index, as it's mentioned earlier, but needed on the individual pages
+	&.node .sub-only{
+		display: none;
 	}
 }
 
