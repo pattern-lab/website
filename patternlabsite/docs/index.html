@@ -5,13 +5,17 @@ title: Pattern Lab Documentation
 
 
       	
- <section class="section section-1 docs-index">
-  <h1>Pattern Lab Documentation</h1>
-  {% include docs-navigation.html %}
+<section class="banner docs-index">
+  <h1>Pattern Lab PHP Documentation</h1>
 </section>
-
- <section class="section section-2 docs-index node">
-  <h1>Pattern Lab Node Documentation</h1>
-  <p>Pattern Lab Node is a port of Pattern Lab PHP. Implementation differs in places. Linked documentation to the PHP version is noted with an intersection (&cap;) below. Be mindful of which implementation directory you are in when hopping between intersected documentation.</p>
-  {% include docs-navigation-node.html %}
+<section class="docs-index">
+	{% include docs-navigation.html %}
 </section>
+<section class="banner docs-index">
+	<h1>Pattern Lab Node Documentation</h1>
+	<p>Pattern Lab Node is a port of Pattern Lab PHP. Implementation differs in places. Linked documentation to the PHP version is noted with an intersection (&cap;) below. Be mindful of which implementation directory you are in when hopping between intersected documentation.</p>
+</section>
+<section class="docs-index node">
+	{% include docs-navigation-node.html %}
+</section>
+	  

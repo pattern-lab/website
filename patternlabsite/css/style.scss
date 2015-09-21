@@ -2,6 +2,7 @@
 # This is the Front Matter block for Jekyll to properly read this file
 ---
 
+$gray-lighter: #e5e5e5;
 $gray-light : #ddd;
 $gray : #808080;
 $gray-dark: #222;
@@ -82,16 +83,18 @@ h1 {
 	line-height: 1;
 	letter-spacing: -0.02em;
 	margin: 0 0 0.2em;
-
+	text-transform: lowercase;
+	
 	@media all and (min-width: $bp-med) {
-		font-size: 3em;
+		font-size: 2.5em;
 	}
 }
 h2 {
 	text-transform: lowercase;
-	font-size: 2em;
 	line-height: 1.1;
-	margin: 0 0 0.4em;
+	font-size: 1.5em;
+	margin: 1.2em 0 0.6em 0;
+	text-align: left;
 
 	@media all and (min-width: $bp-med) {
 		font-size: 3em;
@@ -290,10 +293,10 @@ pre {
 	position: relative;
 	padding: 0;
 	overflow: hidden;
-	background: rgba(0,0,0,0.05);
+	background: $gray-dark;
 	
 	@media all and (min-width: $bp-header) {
-		padding: 2em 1em;
+		padding: 1em 1em;
 	}
 
 	@media all and (min-width: $bp-xl) {
@@ -309,19 +312,23 @@ pre {
 	
 	a {
 		display: block;
-		padding: 0.5em 0.5em 0.5em 2.5em;
-		color: $gray-dark;
+		padding: 0.5em 0.5em 0.5em 2.7em;
+		color: $white;
 		position: relative;
 
 		&:hover {
-			background: rgba(0, 0, 0, 0.05);
+			background: $gray;
+			border-radius: 10px;
 		}
 	}
 
 	.atom {
-		position: absolute; 
+		
+		position: absolute;
+		background: url(/assets/icon-atom-header.svg) no-repeat; 
 		top: 0;
 		left: 0;
+		background-size: 100% 100%;
 		width: 2.4em;
 		height: 2.4em;
 	}
@@ -333,12 +340,20 @@ pre {
 
 /*! responsive-nav.js 1.0.23 by @viljamis http://responsive-nav.com/ */
 .nav { 
+	
 	ul {
 	  margin: 0;
 	  padding: 0;
 	  width: 100%;
-	  display: block;
+	  display: flex;
 	  list-style: none;
+	  flex-wrap: wrap;
+	  z-index: 500;  
+	
+	  @media all and (min-width: $bp-header) {
+		display: block;
+
+	  }
 	}
 
 	h4 {
@@ -347,7 +362,11 @@ pre {
 
 	li {
 	  width: 100%;
-	  display: block;
+	  flex: 1 0 auto;
+	  
+	  @media all and (min-width: 300px) and (max-width: $bp-header) {
+		  width: 50%;
+	  }
 
 	  @media all and (min-width: $bp-header) {
 	  	float: left;
@@ -389,13 +408,15 @@ pre {
 	a {
 		display: block;
  		padding: 1em;
- 	 	color: $gray-dark;
+ 	 	color: $white;
  	 	font-weight: bold;
  	 	background: rgba(0,0,0,0.05);
  	 	text-transform: lowercase;
+ 	 	border-radius: 10px;
+ 	 	transition: background 0.1s ease;
 
  	 	&:hover, &:focus {
- 	 		background: rgba(0,0,0,0.2) !important;
+ 	 		background: $gray !important;
  	 	}
 
  	 	@media all and (min-width: 42em) {
@@ -424,6 +445,7 @@ pre {
 }
 
 .nav-toggle {
+  color: $white;
   padding: 1em;
   float: right;
   display: block;
@@ -432,11 +454,14 @@ pre {
   font-weight: bold;
 
   &:hover, &:focus {
-  	background: rgba(0,0,0,0.05);
+	color: white;
+  	background: $gray;
+  	border-radius: 10px;
   }
 }
 
 .closed .nav-toggle {
+	color: $white;
 	background: rgba(0,0,0,0.05);
 }
 
@@ -444,6 +469,7 @@ pre {
   .js .nav {
     position: relative;
     clear: none;
+    overflow: visible;
   }
   .js .nav.closed {
     max-height: none;
@@ -517,6 +543,12 @@ pre {
 	padding: 0;
 }
 
+.banner {
+	background: $gray-lighter;
+	padding: 1.5em 1em;
+	overflow: hidden;
+}
+
 .docs .main {
 	padding: 2em 1em;
 	background: rgba(0, 0, 0, 0.1);
@@ -531,68 +563,30 @@ pre {
 }
 
 .section {
-	padding: 2em 1em;
+	padding: 1em 1em;
 	overflow: hidden;
-
-	h1 {
-		@media all and (min-width: $bp-med) {
-			text-align: center;
-		}
-	}
-
-	@media all and (min-width: $bp-med) {
-		padding: 4em 1em;
+	clear: both;
+	
+	p {
+		margin: 0;
 	}
 
 	@media all and (min-width: $bp-large) {
 		&.section-short {
-			padding: 4em calc(50% - 24em);
+			padding: 2em calc(50% - 24em);
 		}
 	}
 
 	@media all and (min-width: $bp-xl) {
-		padding: 4em calc(50% - #{$calc-pad});
+		padding: 2em calc(50% - #{$calc-pad});
 	}
-}
-
-.section-1 {
-	background: rgba(0,0,0,0.07);
-}
-
-.section-2 {
-	background: rgba(0,0,0,0.09);
-}
-
-.section-3 {
-	background: rgba(0,0,0,0.11);
-}
-
-.section-4 {
-	background: rgba(0,0,0,0.13);
-}
-
-.section-5 {
-	background: rgba(0,0,0,0.15);
-}
-
-.section-6 {
-	background: rgba(0,0,0,0.17);
-}
-
-.section-7 {
-	background: rgba(0,0,0,0.19);
-}
-.section-8 {
-	background: rgba(0,0,0,0.21);
 }
 
 //Section Header
 .section-title {
 	clear: both;
-	@media all and (min-width: $bp-med) {
-		text-align: center;
-	}
-	
+	font-size: 2em;
+	margin: 0 0 0.4em;	
 }
 
 //Section Icons for About Page
@@ -620,44 +614,66 @@ pre {
 }
 
 
+
 /* Footer */
 .footer {
 	clear: both;
 	padding: 1em calc(50% - #{$calc-pad});
-	background: rgba(0,0,0,0.23);
+	background: $gray-dark;
 
 	.atomic-design {
 		margin-bottom: 1em;
 	}
 
 	@media all and (min-width: 40em) {
-		padding-top: 4em;
-		padding-bottom: 4em;
+		padding-top: 1em;
+		padding-bottom: 1em;
 	}
 }
 
 .footer-nav {
 	margin-bottom: 2em;
+	
+	ul {
+	  margin: 0;
+	  padding: 0;
+	  width: 100%;
+	  display: flex;
+	  list-style: none;
+	  flex-wrap: wrap;
+	  z-index: 500;  
+		
+		@media all and (min-width: $bp-header) {
+		flex: 1;
+	    }
+	}
 
 	li {
-		border-bottom: 1px solid $gray;
-
-		@media all and (min-width: 50em) {
-			display: inline-block;
-			border: 0;
-		}
-	}
+	  width: 100%;
+	  flex: 1 0 auto;
+	  
+		  @media all and (min-width: 300px) and (max-width: $bp-header) {
+			  width: 50%;
+		  }
+	
+		  @media all and (min-width: $bp-header) {
+		  	width: auto;
+		  	margin-right: 0.5em;
+		  }
+	  
+	  }
 
 	a {
 		display: block;
  		padding: 0.5em 1em;
  		font-weight: bold;
- 	 	color: $gray-dark;
- 	 	background: rgba(0,0,0,0.12);
+ 	 	color: $white;
+ 	 	background: $gray-dark;
  	 	text-transform: lowercase;
 
  	 	&:hover, &:focus {
- 	 		background: rgba(0,0,0,0.2) !important;
+ 	 		background: $gray !important;
+ 	 		border-radius: 10px;
  	 	}
 	}
 
@@ -673,6 +689,11 @@ pre {
 
 	p {
 		margin: 0;
+		color: $white;
+	}
+	
+	a {
+		color: $gray;
 	}
 }
 
@@ -690,17 +711,9 @@ pre {
 }
 
 .intro {
-	font-size: 1.8rem;
-
-	@media all and (min-width: $bp-med) {
-		text-align: center;
-		max-width: 25em;
-		margin: 0 auto;
-
-		&.left {
-			text-align: left;
-		}
-	}
+	font-size: 1.5rem;
+	line-height: 1.3;
+	max-width: 25em;
 }
 
 .list {
@@ -732,15 +745,6 @@ pre {
 		padding: 0;
 	}
 	
-	h1 {
-		margin-bottom: 0.6em;
-	}
-	
-	h2 {
-		font-size: 1.5em;
-		margin: 1.2em 0 0.6em 0;
-	}
-
 	ul {
 		margin: 1.5em 3em;
 		list-style: square;
@@ -1026,6 +1030,7 @@ pre {
 
 /* Documentation Home */
 .docs-index {
+	overflow: hidden;
 	.docs-nav ul {
 		@extend .g-4up;
 	}
