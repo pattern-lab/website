@@ -652,34 +652,31 @@ pre {
 	  width: 100%;
 	  flex: 1 0 auto;
 	  
-		  @media all and (min-width: 300px) and (max-width: $bp-header) {
+		  @media all and (min-width: 300px) and (max-width: 650px) {
 			  width: 50%;
 		  }
 	
-		  @media all and (min-width: $bp-header) {
+		  @media all and (min-width: 650px) {
 		  	width: auto;
-		  	margin-right: 0.5em;
 		  }
 	  
 	  }
 
 	a {
 		display: block;
- 		padding: 0.5em 1em;
  		font-weight: bold;
  	 	color: $white;
  	 	background: $gray-dark;
+ 	 	text-align: center;
  	 	text-transform: lowercase;
+ 	 	transition: background 0.1s ease;
+ 	 	border-radius: 10px;
 
  	 	&:hover, &:focus {
  	 		background: $gray !important;
- 	 		border-radius: 10px;
  	 	}
 	}
 
-	@media all and (min-width: 50em) {
-		text-align: center;
-	}
 }
 
 .credits {
@@ -717,7 +714,7 @@ pre {
 }
 
 .list {
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 
 	li {
 		margin-bottom: 0.5em;
@@ -801,15 +798,14 @@ pre {
 	}
 }
 
-.docs-nav {
-
+.docs-nav {	
 	li {
 		margin-bottom: 0.5em;
 		line-height: 1.2;
 	}
 
 	ul {
-		margin-bottom: 2em;
+		margin-bottom: 1em;
 	}
 }
 
@@ -843,7 +839,13 @@ pre {
 	}
 }
 
-
+.docs-index {
+	
+	.docs-nav-list {
+		font-size: 100%;
+		
+	}
+}
 
 
 /************Buttons**************/
@@ -938,9 +940,9 @@ pre {
 	}
 
 	&.small {
-		max-width: 30em;
+		max-width: 25em;
 		margin: 0 auto;
-
+				 
 		img {
 			padding: 0 1em;
 		}
