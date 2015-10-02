@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Auto Reloading the Browser Window When Changes Are Made | Pattern Lab
+heading: Auto Reloading the Browser Window When Changes Are Made
 ---
 
-# Auto Reloading the Browser Window When Changes Are Made
 
 Rather than manually refreshing your browser when your patterns or CSS change you can have the PHP version of Pattern Lab auto-reload your browser window for you. 
 

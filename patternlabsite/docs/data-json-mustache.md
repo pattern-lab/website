@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Introduction to JSON & Mustache Variables | Pattern Lab
+heading: Introduction to JSON & Mustache Variables
 ---
 
-# Introduction to JSON & Mustache Variables
 The best reference for this topic is the [Mustache documentation](http://mustache.github.io/mustache.5.html) but this should provide a good beginner's primer.
 
 ## Simple Variables

@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Adding Annotations | Pattern Lab
+heading: Adding Annotations
 ---
 
-# Adding Annotations
 
 Annotations provide an easy way to add notes to elements within a pattern and they can be found in `source/_data/annotations.js`. They're _not_ pattern-specific. Rather, they're added to patterns using the same selector syntax you'd use for jQuery or CSS. 
 

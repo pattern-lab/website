@@ -1,8 +1,8 @@
 ---
 layout: docs
 title: Requirements | Pattern Lab
+heading: Requirements
 ---
-# Requirements
 
 The requirements for the PHP version of Pattern Lab vary depending on what features you want to use.
 

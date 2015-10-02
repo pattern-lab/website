@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Using Pattern States | Pattern Lab
+heading: Using Pattern States
 ---
 
 **Note:** *Pattern states were introduced in v0.7.5 of the PHP version of Pattern Lab.*
 
-# Using Pattern States
 
 Pattern states provide your team and your client a simple visual of the current state of patterns in Pattern Lab. Pattern states can track progress of a pattern from development, through client review, to completion or they can be used to give certain patterns specific classes. It's important to note that the state of a pattern can be influenced by its pattern partials.
 

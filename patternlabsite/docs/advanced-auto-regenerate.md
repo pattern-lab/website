@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Watching for Changes and Auto Regenerating Patterns | Pattern Lab
+heading: Watching for Changes and Auto Regenerating Patterns
 ---
 
-# Watching for Changes and Auto Regenerating Patterns
 The PHP version of Pattern Lab has the ability to watch for changes to patterns and select files. When these files change, it will automatically rebuild the entire Pattern Lab website. You simply make your changes, save the file, and the PHP version of Pattern Lab will take care of the rest.
 
 ## How to Start the Watch

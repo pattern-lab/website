@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: How Patterns Are Organized | Pattern Lab
+heading: How Patterns Are Organized   
 ---
-
-# How Patterns Are Organized    
+ 
 Patterns are organized in a nested folder structure that helps the PHP version of Pattern Lab automatically find and build assets like the "view all" pages and the drop down navigation. The pattern directories are set-up using the following naming convention: 
 
     source/_patterns/[patternType]/[patternSubType]/[patternName].mustache

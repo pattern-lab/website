@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Upgrading Pattern Lab | Pattern Lab
+heading: Upgrading Pattern Lab
 ---
 
-# Upgrading Pattern Lab
 
 To upgrade the PHP version of Pattern Lab do the following:
 

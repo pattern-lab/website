@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Using Pattern Parameters | Pattern Lab
+heading: Using Pattern Parameters
 ---
 
 **Note:** *Pattern parameters were introduced in v0.7.0 of the PHP version of Pattern Lab.*
 
-# Using Pattern Parameters
 
 Pattern parameters are a simple mechanism for replacing Mustache variables via attributes on a pattern partial tag rather than having to use a [pattern-specific JSON file](/docs/data-pattern-specific.html). They are especially useful when you want to supply distinct values for Mustache variables in a specific pattern partial instance that may be included multiple times in a molecule, template, or page. Pattern parameters **do not** currently support the following:
 

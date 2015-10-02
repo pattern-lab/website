@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Creating Lists with Pattern Lab's Default `listItems` Variable | Pattern Lab
+heading: Creating Lists with Pattern Lab's Default `listItems` Variable
 ---
 
-# Creating Lists with Pattern Lab's Default `listItems` Variable
 Many more complicated patterns may include lists of objects. For example, comments or headlines. The PHP version of Pattern Lab comes with a simple way to fill out these lists with dynamic data so that you can quickly stub them out. The list data can be found in `source/_data/listitems.json` and is accessed in Mustache with the `listItems` key. Lists are randomized each time the Pattern Lab website is generated. 
 
 ## Using listItems Attributes to Create a Simple List

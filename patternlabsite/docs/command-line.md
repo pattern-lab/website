@@ -1,9 +1,8 @@
 ---
 layout: docs
 title: Using The Command Line Options | Pattern Lab
+heading: Using The Command Line Options
 ---
-
-# Using The Command Line Options
 
 If you're using Mac OS X all of the options for using the PHP version of Pattern Lab are available under the `core/scripts/` directory. Simply double-click on the appropriate `.command` file and the service should run. 
 

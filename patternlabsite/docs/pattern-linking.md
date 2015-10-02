@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Pattern Lab's Special Query String Variables | Pattern Lab
+heading: Pattern Lab's Special Query String Variables
 ---
 
-# Pattern Lab's Special Query String Variables
 
 Pattern Lab comes with support for a number of special query string variables to help you share patterns with clients. These query string variables include ways to link to patterns, set the Pattern Lab viewport to a specific width, open various views as well as start Hay and disco modes on page load. There are lots of options:
 

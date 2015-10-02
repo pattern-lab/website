@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Installation | Pattern Lab
+heading: Installation
 ---
 
-# Installation
 
 In order to install the PHP version of Pattern Lab, first make sure you have the [required version of PHP](/docs/requirements.html) and then:
 

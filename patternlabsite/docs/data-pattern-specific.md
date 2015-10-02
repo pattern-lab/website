@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Creating Pattern-specific Values | Pattern Lab
+heading: Creating Pattern-specific Values
 ---
 
-# Creating Pattern-specific Values
 Setting up data variables and values for your atoms, molecules, and organisms using the central `data.json` may work just fine. When fleshing out templates & pages, where data may need to be unique to each page but each will still use the same molecules and organisms, the central `data.json` file can become cumbersome. In order to work around this the PHP version of Pattern Lab allows you to define pattern-specific JSON files that allow you to override the default values found in `source/_data/data.json` or `source/_data/listitems.json`.
 
 ## Setting Up Pattern-specific Data

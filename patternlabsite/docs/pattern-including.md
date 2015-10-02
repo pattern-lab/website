@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Including Patterns | Pattern Lab
+heading: Including Patterns
 ---
 
-# Including Patterns
 To use one pattern within another, for example to create a molecule from several atoms, you can either use:
 
 * a shorthand partials syntax or 

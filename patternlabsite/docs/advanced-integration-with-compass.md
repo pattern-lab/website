@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Integration with Compass | Pattern Lab
+heading: Integration with Compass
 ---
 
 **Note:** *These directions incomplete. They are not meant to imply that Compass is officially supported with Pattern Lab. They should be modified to fit your instance of the PHP version of Pattern Lab.*
 
-# Integration with Compass
 
 Setting up Compass to work with the PHP version of Pattern Lab should be really straightforward. To set-up a Compass config that uses SCSS and _doesn't_ install any starter stylesheets do the following:
 

@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Using styleModifiers | Pattern Lab
+heading: Using styleModifiers
 ---
 
 **Note:** *styleModifiers were introduced in v0.7.0 of the PHP version of Pattern Lab.*
 
-# Using styleModifiers
 
 styleModifiers allow you to create a base pattern that you can easily modify by adding a class name to the pattern partial. 
 

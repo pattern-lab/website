@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Modifying the Pattern Header & Footer | Pattern Lab
+heading: Modifying the Pattern Header & Footer 
 ---
 
 **Note:** *The _meta patterns were introduced in v0.7.0 of the PHP version of Pattern Lab.*
 
-# Modifying the Pattern Header & Footer 
 
 To add your own assets like JavaScript and CSS to your patterns' header and footer you need to modify two files:
 

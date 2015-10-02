@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Converting Old Patterns | Pattern Lab
+heading: Converting Old Patterns
 ---
 
-# Converting Old Patterns
 
 You may have invested time in building patterns for Brad's original edition of Pattern Lab but now want to convert them so they can be used with the new PHP version of Pattern Lab. To convert them all you need to do is swap out the old `inc()` calls for the Mustache-based [shorthand partials syntax](/docs/pattern-including.html). For example, let's say this was a call to a pattern using the original syntax:
 

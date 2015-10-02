@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Using Pseudo-Patterns | Pattern Lab
+heading: Using Pseudo-Patterns
 ---
 
 **Note:** *Pseudo-patterns were introduced in v0.7.0 of the PHP version of Pattern Lab.*
 
-# Using Pseudo-Patterns
 
 Pseudo-patterns are meant to give developers the ability to build multiple and unique **rendered** patterns off of one base pattern and its mark-up while giving them control over the data that is injected into the base pattern. This feature is especially useful when developing template- and page-style patterns.
 

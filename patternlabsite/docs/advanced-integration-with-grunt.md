@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Integration with Grunt | Pattern Lab
+heading: Integration with Grunt
 ---
 
 **Note:** _These directions may be incomplete. They also require **v0.7.9** of the PHP version of Pattern Lab._
 
-# Integration with Grunt
 
 Setting up Grunt to work with the PHP version of Pattern Lab should be straightforward. To do so please do the following:
 

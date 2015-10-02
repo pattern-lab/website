@@ -1,9 +1,9 @@
 ---
 layout: docs
 title: Reorganizing Patterns | Pattern Lab
+heading: Reorganizing Patterns
 ---
 
-# Reorganizing Patterns
 By default, the PHP version of Pattern Lab organizes patterns alphabetically when displaying them in the drop-down navigation, pattern sub-type "view all" pages, and the style guide. This may not meet your needs. You can re-order pattern sub-types and patterns by prefixing them with two digit numbers. We'll look at how we can re-organize patterns as an example. Using alphabetical ordering the `lists` pattern sub-type in `atoms` looks like:
 
     definition.mustache
