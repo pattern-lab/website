@@ -11,7 +11,8 @@ $black: #000;
 $white : #fff;
 $dim : rgba(0,0,0,0.5);
 
-$max-width: 37em;
+$max-width : 37em;
+$calc-width : calc(50% - 27em);
 
 $calc-pad : 35em;
 
@@ -97,7 +98,7 @@ h2 {
 	text-align: left;
 
 	@media all and (min-width: $bp-med) {
-		font-size: 3em;
+		font-size: 2em;
 	}
 }
 h3 {
@@ -290,25 +291,23 @@ pre {
 
 // Header
 .header {
+	display: flex;
+	flex-direction: row;
 	position: relative;
-	padding: 0;
-	overflow: hidden;
+	padding: 1em; 
 	background: $gray-dark;
+	z-index: 500;
 	
-	@media all and (min-width: $bp-header) {
-		padding: 1em 1em;
-	}
 
-	@media all and (min-width: $bp-xl) {
-		padding: 2em calc(50% - #{$calc-pad}) 2em;
-	}
+
+
 }
 
 .logo-header {
 	position: relative;
-	float: left;
-	margin: 0.5em 0 0 0.5em;
-	text-align: center;
+	margin: 0;
+	padding: 0 $calc-width;
+
 	
 	a {
 		display: block;
@@ -333,28 +332,13 @@ pre {
 		height: 2.4em;
 	}
 
-	@media all and (min-width: $bp-header) {
-		margin: 0;
-	}
+
 }
 
 /*! responsive-nav.js 1.0.23 by @viljamis http://responsive-nav.com/ */
 .nav { 
-	
-	ul {
-	  margin: 0;
-	  padding: 0;
-	  width: 100%;
-	  display: flex;
-	  list-style: none;
-	  flex-wrap: wrap;
-	  z-index: 500;  
-	
-	  @media all and (min-width: $bp-header) {
-		display: block;
-
-	  }
-	}
+	margin-left: auto;
+	position: relative;
 
 	h4 {
 		margin: 0;
@@ -362,55 +346,60 @@ pre {
 
 	li {
 	  width: 100%;
-	  flex: 1 0 auto;
+	  display: inline-block;
+	  flex: 1;
 	  
-	  @media all and (min-width: 300px) and (max-width: $bp-header) {
-		  width: 50%;
-	  }
 
-	  @media all and (min-width: $bp-header) {
-	  	float: left;
+	  @media all and (min-width: 790px) {
 	  	width: auto;
 	  	margin-right: 0.5em;
 	  }
-
-	  @media all and (max-width: 40em) {
-		&:nth-child(1) {
-			a {
-				background: rgba(0,0,0,0.0);
-			}
+	}
+	
+	.nav-link  {
+		display: block;
+		
+		@media all and (min-width: 790px) {
+			display: none;
 		}
-
-		&:nth-child(2) {
-			a {
-				background: rgba(0,0,0,0.02);
-			}
+		
+	}
+	
+	.nav-list {
+		
+		display: none;
+		margin-right: 0;
+		padding: 0;
+		list-style: none;
+		z-index: 500; 
+	
+		@media all and (min-width: 790px) {
+			display: inline-block;
 		}
-		&:nth-child(3) {
-			a {
-				background: rgba(0,0,0,0.04);
-			}
+		
+	}
+	
+	.active {
+		display: block;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		background: $gray-dark;
+		border-radius: 10px;
+		
+		@media all and (min-width: 790px) {
+			display: inline-block;
+			position: static;
 		}
-		&:nth-child(4) {
-			a {
-				background: rgba(0,0,0,0.06);
-			}
-		}
-		&:nth-child(5) {
-			a {
-				background: rgba(0,0,0,0.08);
-			}
-		}
-	  	
-	  }
+		
 	}
 
 	a {
 		display: block;
- 		padding: 1em;
+ 		padding: 0.5em 0.5em;
  	 	color: $white;
  	 	font-weight: bold;
- 	 	background: rgba(0,0,0,0.05);
+ 	 	background: $gray-dark;
  	 	text-transform: lowercase;
  	 	border-radius: 10px;
  	 	transition: background 0.1s ease;
@@ -419,7 +408,7 @@ pre {
  	 		background: $gray !important;
  	 	}
 
- 	 	@media all and (min-width: 42em) {
+ 	 	@media all and (min-width: 885px) {
 			padding: 0.5em 1em;
 		}
 	}
@@ -430,7 +419,6 @@ pre {
 
 	@media all and (min-width: $bp-header) {
 		overflow: hidden;
-		float: right;
 	}
 }
 
@@ -438,6 +426,8 @@ pre {
   clip: rect(0 0 0 0);
   max-height: 0;
   position: absolute;
+  top: 100%;
+  right: 0;
   display: block;
   overflow: hidden;
   zoom: 1;
@@ -445,8 +435,9 @@ pre {
 }
 
 .nav-toggle {
+  margin-left: auto;	
   color: $white;
-  padding: 1em;
+  padding: 0.5em;
   float: right;
   display: block;
   text-transform: lowercase;
@@ -465,7 +456,7 @@ pre {
 	background: rgba(0,0,0,0.05);
 }
 
-@media screen and (min-width: $bp-header) {
+@media screen and (min-width: 790px) {
   .js .nav {
     position: relative;
     clear: none;
@@ -488,7 +479,6 @@ pre {
 
 .logo {
 	text-transform: lowercase;
-	
 	margin: 0 auto;
 	font-size: 3rem;
 	position: relative;
@@ -545,22 +535,15 @@ pre {
 
 .banner {
 	background: $gray-lighter;
-	padding: 1.5em 1em;
+	padding: 1em 1em;
 	overflow: hidden;
+	
+	@media all and (min-width: 1080px) {
+		padding: 1em $calc-width;
+	}
+	
 }
 
-.docs .main {
-	padding: 2em 1em;
-	background: rgba(0, 0, 0, 0.1);
-
-	@media all and (min-width: $bp-large) {
-		padding: 4em 1em;
-	}
-
-	@media all and (min-width: $bp-xl) {
-		padding: 4em calc(50% - #{$calc-pad});
-	}
-}
 
 .section {
 	padding: 1em 1em;
@@ -577,9 +560,11 @@ pre {
 		}
 	}
 
-	@media all and (min-width: $bp-xl) {
-		padding: 2em calc(50% - #{$calc-pad});
+	@media all and (min-width: 1080px) {
+		padding: 1em $calc-width;
 	}
+
+	
 }
 
 //Section Header
@@ -632,31 +617,32 @@ pre {
 }
 
 .footer-nav {
-	margin-bottom: 2em;
-	
+	margin-bottom: 1em;
 	ul {
-	  margin: 0;
+	  margin: 0 auto;
 	  padding: 0;
-	  width: 100%;
+	  
 	  display: flex;
 	  list-style: none;
 	  flex-wrap: wrap;
-	  z-index: 500;  
+	  z-index: 500; 
 		
-		@media all and (min-width: $bp-header) {
+		@media all and (min-width: 700px) {
 		flex: 1;
+		width: 750px;
 	    }
+	    
 	}
 
 	li {
 	  width: 100%;
 	  flex: 1 0 auto;
 	  
-		  @media all and (min-width: 300px) and (max-width: 650px) {
+		  @media all and (min-width: 300px) and (max-width: 760px) {
 			  width: 50%;
 		  }
 	
-		  @media all and (min-width: 650px) {
+		  @media all and (min-width: 760px) {
 		  	width: auto;
 		  }
 	  
@@ -671,15 +657,18 @@ pre {
  	 	text-transform: lowercase;
  	 	transition: background 0.1s ease;
  	 	border-radius: 10px;
+ 	 	padding: 0.5em 0;
 
  	 	&:hover, &:focus {
  	 		background: $gray !important;
  	 	}
+ 	 	
 	}
 
 }
 
 .credits {
+	margin-bottom: 1em;
 	font-size: 85%;
 	text-align: center;
 	padding: 0 0.8em;
@@ -727,11 +716,12 @@ pre {
 	@media all and (min-width: $bp-large) {
 		display: -webkit-flex;
   		display: flex;
-  		flex-direction: row-reverse;
+  		flex-direction: row;
 	}
 }
 
 .content {
+	padding: 1em 1em;
 	counter-reset: big-nums;
 	
 	p {
@@ -774,10 +764,13 @@ pre {
 		margin-bottom: 0.5em;
 	}
 	
+	@media all and (min-width: 1080px) {
+		padding: 1em $calc-width;
+	}
 	@media all and (min-width: $bp-large) {
 		-webkit-flex: 1;
 		flex: 1;
-		padding-left: 2em;
+		padding-right: 2em;
 	}
 	
 	.highlight {
@@ -787,6 +780,9 @@ pre {
 }
 
 .sidebar {
+	padding: 2em 0;
+	margin-right: 1em;
+	
 	@media all and (max-width: $bp-large) {
 		border-top: 1px solid rgba(0,0,0,0.2);
 		margin-top: 2em;
@@ -794,11 +790,13 @@ pre {
 	}
 	@media all and (min-width: $bp-large) {
 		width: 14em;
-		border-right: 1px solid rgba(0,0,0,0.2);
+		border-left: 1px solid rgba(0,0,0,0.2);
 	}
 }
 
 .docs-nav {	
+	margin-left: 2em;
+	
 	li {
 		margin-bottom: 0.5em;
 		line-height: 1.2;
@@ -807,6 +805,8 @@ pre {
 	ul {
 		margin-bottom: 1em;
 	}
+	
+	
 }
 
 .docs-nav-title {
@@ -834,17 +834,21 @@ pre {
 			pointer-events: none;
 			border-top: 8px solid transparent;
 			border-bottom: 8px solid transparent;
-			border-left: 10px solid $gray;
+			border-left: 10px solid $gray-dark;
 		}
 	}
 }
 
 .docs-index {
-	
-	.docs-nav-list {
-		font-size: 100%;
+	padding: 1em 1em;
 		
+	.docs-nav-list {
+		font-size: 100%;	
 	}
+	@media all and (min-width: 1080px) {
+	padding: 1em $calc-width;
+	}
+	
 }
 
 
@@ -1141,3 +1145,6 @@ pre {
 .icon-arrow-up-right:before {
 	content: "\e60f";
 }
+
+
+	
