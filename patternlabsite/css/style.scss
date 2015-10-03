@@ -23,29 +23,30 @@ $bp-header : 57em;
 $bp-xl : 85em;
 
 $border : 0.1rem;
+$border-radius: 10px;
 
 /************Reset**************/
-* { 
-	-moz-box-sizing: border-box; 
-	-webkit-box-sizing: border-box; 
-	box-sizing: border-box; 
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
-html, body, div, object, iframe, fieldset { 
-	margin: 0; 
-	padding: 0; 
+html, body, div, object, iframe, fieldset {
+	margin: 0;
+	padding: 0;
 	border: 0;
-} 
-ol, ul { 
+}
+ol, ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-} 
-table { 
-	border-collapse: collapse; 
-	border-spacing: 0; 
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 header, footer, nav, section, article, hgroup, figure {
-	display: block;	
+	display: block;
 }
 legend {
 	display: none;
@@ -85,7 +86,7 @@ h1 {
 	letter-spacing: -0.02em;
 	margin: 0 0 0.2em;
 	text-transform: lowercase;
-	
+
 	@media all and (min-width: $bp-med) {
 		font-size: 2.5em;
 	}
@@ -143,7 +144,7 @@ input[type=search] {
 ::-webkit-input-placeholder {
 	color: #808080;
 }
-:-moz-placeholder {  
+:-moz-placeholder {
     color: #808080;
 }
 
@@ -184,7 +185,7 @@ pre {
 		> .gi {
 			float: left;
 			width: 50%;
-			
+
 			&:nth-of-type(odd) {
 				clear: left;
 				padding-right: 0.5em;
@@ -203,7 +204,7 @@ pre {
 		> .gi {
 			float: left;
 			width: 33.333333%;
-			
+
 			&:nth-of-type(3n+1) {
 				clear: left;
 			}
@@ -222,7 +223,7 @@ pre {
 	@media all and (min-width: $bp-med) and (max-width: $bp-large) {
 		> .gi {
 			width: 50%;
-			
+
 			&:nth-of-type(odd) {
 				clear: left;
 			}
@@ -232,7 +233,7 @@ pre {
 	@media all and (min-width: $bp-large) {
 		> .gi {
 			width: 25%;
-			
+
 			&:nth-of-type(4n+1) {
 				clear: left;
 			}
@@ -252,7 +253,7 @@ pre {
 	@media all and (min-width: $bp-med) and (max-width: $bp-med-2) {
 		> .gi {
 			width: 50%;
-			
+
 			&:nth-of-type(odd) {
 				clear: left;
 			}
@@ -262,7 +263,7 @@ pre {
 	@media all and (min-width: $bp-med-2) and (max-width: $bp-large) {
 		> .gi {
 			width: 33.333333333%;
-			
+
 			&:nth-of-type(3n+1) {
 				clear: left;
 			}
@@ -272,7 +273,7 @@ pre {
 	@media all and (min-width: $bp-large) {
 		> .gi {
 			width: 25%;
-			
+
 			&:nth-of-type(4n+1) {
 				clear: left;
 			}
@@ -294,37 +295,36 @@ pre {
 	display: flex;
 	flex-direction: row;
 	position: relative;
-	padding: 1em; 
+	padding: 0.5em 1em;
 	background: $gray-dark;
 	z-index: 500;
-	
 
-
-
+	@media all and (min-width: 790px) {
+		padding: 0.5em $calc-width;
+	}
 }
 
 .logo-header {
 	position: relative;
-	margin: 0;
-	padding: 0 $calc-width;
+	margin: 0 0 0 1em;
 
-	
 	a {
 		display: block;
 		padding: 0.5em 0.5em 0.5em 2.7em;
 		color: $white;
 		position: relative;
+		border-radius: 10px;
+		transition: background 0.1s ease;
 
 		&:hover {
 			background: $gray;
-			border-radius: 10px;
+
 		}
 	}
 
 	.atom {
-		
 		position: absolute;
-		background: url(/assets/icon-atom-header.svg) no-repeat; 
+		background: url(/assets/icon-atom-header.svg) no-repeat;
 		top: 0;
 		left: 0;
 		background-size: 100% 100%;
@@ -332,11 +332,13 @@ pre {
 		height: 2.4em;
 	}
 
-
+	@media all and (min-width: 790px) {
+		margin: 0;
+	}
 }
 
 /*! responsive-nav.js 1.0.23 by @viljamis http://responsive-nav.com/ */
-.nav { 
+.nav {
 	margin-left: auto;
 	position: relative;
 
@@ -348,37 +350,37 @@ pre {
 	  width: 100%;
 	  display: inline-block;
 	  flex: 1;
-	  
+
 
 	  @media all and (min-width: 790px) {
 	  	width: auto;
 	  	margin-right: 0.5em;
 	  }
 	}
-	
+
 	.nav-link  {
 		display: block;
-		
+
 		@media all and (min-width: 790px) {
 			display: none;
 		}
-		
+
 	}
-	
+
 	.nav-list {
-		
+
 		display: none;
 		margin-right: 0;
 		padding: 0;
 		list-style: none;
-		z-index: 500; 
-	
+		z-index: 500;
+
 		@media all and (min-width: 790px) {
 			display: inline-block;
 		}
-		
+
 	}
-	
+
 	.active {
 		display: block;
 		position: absolute;
@@ -386,12 +388,12 @@ pre {
 		right: 0;
 		background: $gray-dark;
 		border-radius: 10px;
-		
+
 		@media all and (min-width: 790px) {
 			display: inline-block;
 			position: static;
 		}
-		
+
 	}
 
 	a {
@@ -401,7 +403,7 @@ pre {
  	 	font-weight: bold;
  	 	background: $gray-dark;
  	 	text-transform: lowercase;
- 	 	border-radius: 10px;
+ 	 	border-radius: $border-radius;
  	 	transition: background 0.1s ease;
 
  	 	&:hover, &:focus {
@@ -435,7 +437,7 @@ pre {
 }
 
 .nav-toggle {
-  margin-left: auto;	
+  margin-left: auto;
   color: $white;
   padding: 0.5em;
   float: right;
@@ -496,7 +498,7 @@ pre {
 			left: 0;
 			z-index: 1;
 		}
-	}	
+	}
 }
 
 .atom {
@@ -537,11 +539,11 @@ pre {
 	background: $gray-lighter;
 	padding: 1em 1em;
 	overflow: hidden;
-	
+
 	@media all and (min-width: 1080px) {
 		padding: 1em $calc-width;
 	}
-	
+
 }
 
 
@@ -549,7 +551,7 @@ pre {
 	padding: 1em 1em;
 	overflow: hidden;
 	clear: both;
-	
+
 	p {
 		margin: 0;
 	}
@@ -564,14 +566,14 @@ pre {
 		padding: 1em $calc-width;
 	}
 
-	
+
 }
 
 //Section Header
 .section-title {
 	clear: both;
 	font-size: 2em;
-	margin: 0 0 0.4em;	
+	margin: 0 0 0.4em;
 }
 
 //Section Icons for About Page
@@ -589,7 +591,7 @@ pre {
 	margin: 0 auto;
 }
 
-.section-text {	
+.section-text {
 
 	@media all and (min-width: $bp-large) {
   		-webkit-flex: 1;
@@ -621,31 +623,31 @@ pre {
 	ul {
 	  margin: 0 auto;
 	  padding: 0;
-	  
+
 	  display: flex;
 	  list-style: none;
 	  flex-wrap: wrap;
-	  z-index: 500; 
-		
+	  z-index: 500;
+
 		@media all and (min-width: 700px) {
 		flex: 1;
 		width: 750px;
 	    }
-	    
+
 	}
 
 	li {
 	  width: 100%;
 	  flex: 1 0 auto;
-	  
+
 		  @media all and (min-width: 300px) and (max-width: 760px) {
 			  width: 50%;
 		  }
-	
+
 		  @media all and (min-width: 760px) {
 		  	width: auto;
 		  }
-	  
+
 	  }
 
 	a {
@@ -662,24 +664,28 @@ pre {
  	 	&:hover, &:focus {
  	 		background: $gray !important;
  	 	}
- 	 	
+
 	}
 
 }
 
 .credits {
 	margin-bottom: 1em;
-	font-size: 85%;
+	font-size: 65%;
 	text-align: center;
 	padding: 0 0.8em;
 
 	p {
 		margin: 0;
-		color: $white;
+		color: $gray;
 	}
-	
+
 	a {
 		color: $gray;
+
+		&:hover, &:focus {
+			color: $white;
+		}
 	}
 }
 
@@ -723,15 +729,15 @@ pre {
 .content {
 	padding: 1em 1em;
 	counter-reset: big-nums;
-	
+
 	p {
 		counter-reset: big-nums;
 	}
-	
+
 	pre code {
 		padding: 0;
 	}
-	
+
 	ul {
 		margin: 1.5em 3em;
 		list-style: square;
@@ -739,7 +745,7 @@ pre {
 
 	ol {
 		margin: 1.5em 1em;
-		
+
 		li {
 			counter-increment: big-nums;
 			position: relative;
@@ -763,7 +769,7 @@ pre {
 	li {
 		margin-bottom: 0.5em;
 	}
-	
+
 	@media all and (min-width: 1080px) {
 		padding: 1em $calc-width;
 	}
@@ -772,17 +778,17 @@ pre {
 		flex: 1;
 		padding-right: 2em;
 	}
-	
+
 	.highlight {
 		margin: 1.5em 0;
 	}
-	
+
 }
 
 .sidebar {
 	padding: 2em 0;
 	margin-right: 1em;
-	
+
 	@media all and (max-width: $bp-large) {
 		border-top: 1px solid rgba(0,0,0,0.2);
 		margin-top: 2em;
@@ -794,9 +800,9 @@ pre {
 	}
 }
 
-.docs-nav {	
+.docs-nav {
 	margin-left: 2em;
-	
+
 	li {
 		margin-bottom: 0.5em;
 		line-height: 1.2;
@@ -805,8 +811,8 @@ pre {
 	ul {
 		margin-bottom: 1em;
 	}
-	
-	
+
+
 }
 
 .docs-nav-title {
@@ -841,14 +847,14 @@ pre {
 
 .docs-index {
 	padding: 1em 1em;
-		
+
 	.docs-nav-list {
-		font-size: 100%;	
+		font-size: 100%;
 	}
 	@media all and (min-width: 1080px) {
 	padding: 1em $calc-width;
 	}
-	
+
 }
 
 
@@ -862,7 +868,7 @@ pre {
 		display: block;
 		margin-bottom: 0.5em;
 	}
-	
+
 
 	@media all and (min-width: 40em) {
 		.btn {
@@ -878,6 +884,7 @@ pre {
 	padding: 1rem;
 	background: $gray-dark;
 	color: $white;
+	border-radius: $border-radius;
 
 	[class*="icon-"] {
 		display: inline-block;
@@ -946,7 +953,7 @@ pre {
 	&.small {
 		max-width: 25em;
 		margin: 0 auto;
-				 
+
 		img {
 			padding: 0 1em;
 		}
@@ -954,11 +961,11 @@ pre {
 
 	@media all and (min-width: 45em) {
 		li {
-			
+
 
 
 			&:after {
-				
+
 			}
 		}
 	}
@@ -1145,6 +1152,3 @@ pre {
 .icon-arrow-up-right:before {
 	content: "\e60f";
 }
-
-
-	
