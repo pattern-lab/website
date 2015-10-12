@@ -342,6 +342,15 @@ pre {
 .container {
 	margin: 0 auto;
 	position: relative;
+	overflow: hidden;
+
+	&:before {
+		@include skew(#000);
+		height: 20em;
+		bottom: -9em;
+		top: auto;
+		z-index: 5;
+	}
 
 	&:after {
 		@include skew2(#2b2b2b);
@@ -663,6 +672,7 @@ pre {
 	clear: both;
 	background: $gray-dark;
 	position: relative;
+	padding: 1em 0;
 
 	.atomic-design {
 		margin-bottom: 1em;
@@ -673,7 +683,7 @@ pre {
 	}
 
 	&:after {
-		@include skew2(#000);
+		@include skew2(#2b2b2b);
 	}
 }
 
