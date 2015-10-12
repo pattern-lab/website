@@ -10,18 +10,22 @@
 <body class="docs">
     {% include header.html %}
     <div class="banner">
-	    <h1>{{ page.heading }}</h1>
+        <div class="lc">
+	        <h1>{{ page.heading }}</h1>
+        </div>
     </div>
-    <div class="l-two-col">
-  		<div class="content">
-       {{content}}
-    	</div><!--end .content-->
+    <div class="guts">
+        <div class="lc">
+            <div class="l-two-col">
+          		<div class="content">
+               {{content}}
+            	</div><!--end .content-->
 
-      <div class="sidebar">
-        {% include docs-navigation-node.html %}
-      </div><!--end .sidebar-->
-    </div><!--end .l-two-col-->
+              <div class="sidebar">
+                {% include docs-navigation-node.html %}
+              </div><!--end .sidebar-->
+            </div><!--end .l-two-col-->
+        </div>
+    </div><!--end .guts-->
 
     {% include footer.html %}
-
-

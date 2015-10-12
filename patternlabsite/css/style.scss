@@ -27,6 +27,34 @@ $border-radius: 10px;
 
 $bend-height: 20px;
 
+@mixin skew($color) {
+	content: "";
+	display: block;
+	width: 45em;
+	height: 100%;
+	background: $color;
+	transform: skewY(20deg);
+	position: absolute;
+	bottom: 8.2em;
+	margin-left: -69em;
+	left: 50%;
+	z-index: 4;
+}
+
+@mixin skew2($color) {
+	content: "";
+	display: block;
+	width: 45em;
+	height: 100%;
+	background: $color;
+	transform: skewY(20deg);
+	position: absolute;
+	bottom: -8.22em;
+	right: 50%;
+	margin-right: -69em;
+	z-index: 4;
+}
+
 /************Reset**************/
 * {
 	-moz-box-sizing: border-box;
@@ -56,12 +84,14 @@ legend {
 /************End Reset**************/
 
 /************Global**************/
+
 body {
 	background: $white;
 	color: $gray-dark;
 	font: 120%/1.4 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 	padding: 0;
 	-webkit-text-size-adjust: 100%;
+	overflow-x: hidden;
 }
 a {
 	color: $gray;
@@ -165,6 +195,12 @@ pre {
 /************End Global**************/
 
 /************Layout**************/
+
+.lc {
+	max-width: 45em;
+	margin: 0 auto;
+}
+
 /* Grid 2up */
 
 .g {
@@ -294,6 +330,15 @@ pre {
 /************Structure**************/
 .container {
 	margin: 0 auto;
+	position: relative;
+
+	&:after {
+		@include skew2(#2b2b2b);
+		height: 20em;
+		bottom: auto;
+		top: -10.5em;
+		z-index: 5;
+	}
 }
 
 // Header
@@ -301,25 +346,24 @@ pre {
 	display: flex;
 	flex-direction: row;
 	position: relative;
-	padding: 0.5em 1em 0;
+	padding: 0.5em 1em 0.5em;
 	background: $gray-dark;
-	z-index: 500;
+	z-index: 2;
 
-	@media all and (min-width: 790px) {
-		padding: 0.5em $calc-width;
+	&-inner {
+		display: flex;
+	}
+
+	&:before {
+		@include skew(#000);
 	}
 
 	&:after {
-		content: "";
-		display: block;
-		background: $gray-dark;
-		height: $bend-height;
-		border-bottom-left-radius: 50%;
-		border-bottom-right-radius: 50%;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
+		@include skew2(#2b2b2b);
+	}
+
+	@media all and (min-width: 790px) {
+		padding: 0.5em $calc-width 0.5em;
 	}
 }
 
@@ -552,44 +596,37 @@ pre {
 	background: none;
 	padding: 0;
 	position: relative;
-
-	&:after {
-		content: "";
-		display: block;
-		background: $white;
-		height: $bend-height;
-		border-bottom-left-radius: 50%;
-		border-bottom-right-radius: 50%;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
-	}
 }
 
 .banner {
 	background: $gray-lighter;
 	padding: 2em 1em 1em;
 	position: relative;
-	margin-bottom: 1em;
+
+	&:before {
+		@include skew(#ccc);
+	}
 
 	&:after {
-		content: "";
-		display: block;
-		background: $gray-lighter;
-		height: $bend-height;
-		border-bottom-left-radius: 50%;
-		border-bottom-right-radius: 50%;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
+		@include skew2(#dadada);
+	}
+}
+
+.guts {
+	position: relative;
+	margin-bottom: -2.2em;
+	padding-bottom: 2.2em;
+	padding-top: 1em;
+
+	&:before {
+		@include skew(#f6f6f6);
+
 	}
 
-	@media all and (min-width: 1080px) {
-		padding: 2em $calc-width 0.4em;
-	}
+	&:after {
+		@include skew2(#f9f9f9);
 
+	}
 }
 
 
@@ -600,18 +637,6 @@ pre {
 	p {
 		margin: 0;
 	}
-
-	@media all and (min-width: $bp-large) {
-		&.section-short {
-			padding: 2em calc(50% - 24em);
-		}
-	}
-
-	@media all and (min-width: 1080px) {
-		padding: 1em $calc-width;
-	}
-
-
 }
 
 //Section Header
@@ -650,11 +675,19 @@ pre {
 /* Footer */
 .footer {
 	clear: both;
-	padding: 2em calc(50% - #{$calc-pad}) 1em;
 	background: $gray-dark;
+	position: relative;
 
 	.atomic-design {
 		margin-bottom: 1em;
+	}
+
+	&:before {
+		@include skew(#000);
+	}
+
+	&:after {
+		@include skew2(#000);
 	}
 }
 
@@ -667,7 +700,7 @@ pre {
 	  display: flex;
 	  list-style: none;
 	  flex-wrap: wrap;
-	  z-index: 500;
+	  z-index: 2;
 
 		@media all and (min-width: 700px) {
 		flex: 1;
@@ -811,9 +844,6 @@ pre {
 		margin-bottom: 0.5em;
 	}
 
-	@media all and (min-width: 1080px) {
-		padding: 1em $calc-width;
-	}
 	@media all and (min-width: $bp-large) {
 		-webkit-flex: 1;
 		flex: 1;
@@ -892,10 +922,6 @@ pre {
 	.docs-nav-list {
 		font-size: 100%;
 	}
-
-	@media all and (min-width: 1080px) {
-		padding: 1em $calc-width;
-	}
 }
 
 
@@ -925,7 +951,6 @@ pre {
 	padding: 1rem;
 	background: $gray-dark;
 	color: $white;
-	border-radius: $border-radius;
 
 	[class*="icon-"] {
 		display: inline-block;
