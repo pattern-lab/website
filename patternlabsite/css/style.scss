@@ -36,9 +36,14 @@ $bend-height: 20px;
 	transform: skewY(20deg);
 	position: absolute;
 	bottom: 8.2em;
-	margin-left: -69em;
-	left: 50%;
+	left: 1em;
+	margin-left: -45em;
 	z-index: 4;
+
+	@media all and (min-width: 64em) {
+		left: 50%;
+		margin-left: -69em;
+	}
 }
 
 @mixin skew2($color) {
@@ -50,9 +55,14 @@ $bend-height: 20px;
 	transform: skewY(20deg);
 	position: absolute;
 	bottom: -8.22em;
-	right: 50%;
-	margin-right: -69em;
+	right: 1em;
+	margin-right: -45em;
 	z-index: 4;
+
+	@media all and (min-width: 64em) {
+		right: 50%;
+		margin-right: -69em;
+	}
 }
 
 /************Reset**************/
@@ -197,8 +207,9 @@ pre {
 /************Layout**************/
 
 .lc {
-	max-width: 45em;
+	max-width: 47em;
 	margin: 0 auto;
+	padding: 0 1em;
 }
 
 /* Grid 2up */
@@ -346,12 +357,12 @@ pre {
 	display: flex;
 	flex-direction: row;
 	position: relative;
-	padding: 0.5em 1em 0.5em;
 	background: $gray-dark;
 	z-index: 2;
 
 	&-inner {
 		display: flex;
+		width: 100%;
 	}
 
 	&:before {
@@ -361,10 +372,6 @@ pre {
 	&:after {
 		@include skew2(#2b2b2b);
 	}
-
-	@media all and (min-width: 790px) {
-		padding: 0.5em $calc-width 0.5em;
-	}
 }
 
 .logo-header {
@@ -373,22 +380,20 @@ pre {
 
 	a {
 		display: block;
-		padding: 0.5em 0.5em 0.5em 2.7em;
+		padding: 1em 0.5em 1em 2.7em;
 		color: $white;
 		position: relative;
-		border-radius: 10px;
 		transition: background 0.1s ease;
 
 		&:hover {
 			background: $gray;
-
 		}
 	}
 
 	.atom {
 		position: absolute;
 		background: url(/assets/icon-atom-header.svg) no-repeat;
-		top: 0;
+		top: 0.5em;
 		left: 0;
 		background-size: 100% 100%;
 		width: 2.4em;
@@ -409,18 +414,6 @@ pre {
 		margin: 0;
 	}
 
-	li {
-	  width: 100%;
-	  display: inline-block;
-	  flex: 1;
-
-
-	  @media all and (min-width: 790px) {
-	  	width: auto;
-	  	margin-right: 0.5em;
-	  }
-	}
-
 	.nav-link  {
 		display: block;
 
@@ -431,7 +424,6 @@ pre {
 	}
 
 	.nav-list {
-
 		display: none;
 		margin-right: 0;
 		padding: 0;
@@ -439,7 +431,7 @@ pre {
 		z-index: 500;
 
 		@media all and (min-width: 790px) {
-			display: inline-block;
+			display: flex;
 		}
 
 	}
@@ -450,7 +442,6 @@ pre {
 		top: 100%;
 		right: 0;
 		background: $gray-dark;
-		border-radius: 10px;
 
 		@media all and (min-width: 790px) {
 			display: inline-block;
@@ -461,21 +452,16 @@ pre {
 
 	a {
 		display: block;
- 		padding: 0.5em 0.5em;
+ 		padding: 1em 0.5em;
  	 	color: $white;
  	 	font-weight: bold;
  	 	background: $gray-dark;
  	 	text-transform: lowercase;
- 	 	border-radius: $border-radius;
  	 	transition: background 0.1s ease;
 
  	 	&:hover, &:focus {
  	 		background: $gray !important;
  	 	}
-
- 	 	@media all and (min-width: 885px) {
-			padding: 0.5em 1em;
-		}
 	}
 
 	&.opened {
@@ -512,7 +498,6 @@ pre {
   &:hover, &:focus {
 	color: white;
   	background: $gray;
-  	border-radius: 10px;
   }
 }
 
@@ -631,7 +616,7 @@ pre {
 
 
 .section {
-	padding: 1em 1em;
+	padding: 1em 0;
 	clear: both;
 
 	p {
@@ -731,7 +716,6 @@ pre {
  	 	text-align: center;
  	 	text-transform: lowercase;
  	 	transition: background 0.1s ease;
- 	 	border-radius: 10px;
  	 	padding: 0.5em 0;
 
  	 	&:hover, &:focus {
