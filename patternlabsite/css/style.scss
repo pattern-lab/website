@@ -384,10 +384,49 @@ pre {
 		color: $white;
 		position: relative;
 		transition: background 0.1s ease;
+		
+		
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -11px;
+		    width: 24px;
+		    height: 100%;
+		    z-index: 99;
+		    background: $gray-dark;
+		    transform: skew(-20deg);
+		    transition: background 0.1s ease;
+			}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -12px;
+			display: block;
+		    width: 24px;
+		    height: 100%;
+		    z-index: 99;
+		    background: $gray-dark;
+		    transform: skew(-20deg);
+		    transition: background 0.1s ease;
+			}
 
 		&:hover {
 			background: $gray;
+			
+			&:before, &:after {
+	 	 		background: $gray;
+	 	 		z-index: 999;
+ 	 		}
 		}
+	}
+	
+	.logo-text {
+		position: relative;
+		z-index: 1000;
 	}
 
 	.atom {
@@ -398,6 +437,7 @@ pre {
 		background-size: 100% 100%;
 		width: 2.4em;
 		height: 2.4em;
+		z-index: 99999;
 	}
 
 	@media all and (min-width: 790px) {
@@ -452,25 +492,54 @@ pre {
 
 	a {
 		display: block;
- 		padding: 1em 0.5em;
+ 		padding: 1em 1em;
 		position: relative;
  	 	color: $white;
  	 	font-weight: bold;
  	 	background: $gray-dark;
  	 	text-transform: lowercase;
  	 	transition: background 0.1s ease;
+ 	 	
+ 	 	&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -11px;
+		    width: 24px;
+		    height: 100%;
+		    z-index: 99999;
+		    background: $gray-dark;
+		    transform: skew(-20deg);
+		    transition: background 0.1s ease;
+			}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -11px;
+			display: block;
+		    width: 24px;
+		    height: 100%;
+		    z-index: 99999;
+		    background: $gray-dark;
+		    transform: skew(-20deg);
+		    transition: background 0.1s ease;
+			}
 
  	 	&:hover, &:focus {
  	 		background: $gray !important;
+ 	 		
+ 	 		&:before, &:after {
+	 	 		background: $gray;
+	 	 		z-index: 999999;
+ 	 		}
  	 	}
 	}
 
 	&.opened {
 	  max-height: 9999px;
-	}
-
-	@media all and (min-width: $bp-header) {
-		overflow: hidden;
 	}
 }
 
@@ -951,7 +1020,6 @@ pre {
 			left: -10px;
 		    width: 20px;
 		    height: 100%;
-		    z-index: 99999;
 		    background: $gray-dark;
 		    transform: skew(-20deg);
 		    transition: background 0.1s ease;
@@ -965,7 +1033,6 @@ pre {
 			display: block;
 		    width: 20px;
 		    height: 100%;
-		    z-index: 99999;
 		    background: $gray-dark;
 		    transform: skew(-20deg);
 		    transition: background 0.1s ease;
