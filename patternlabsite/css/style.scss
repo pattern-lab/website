@@ -946,6 +946,7 @@ pre {
 	padding: 1rem;
 	background: $gray-dark;
 	color: $white;
+	transition: background 0.1s ease;
 
 	[class*="icon-"] {
 		display: inline-block;
@@ -963,6 +964,7 @@ pre {
 		    z-index: 99999;
 		    background: $gray-dark;
 		    transform: skew(-20deg);
+		    transition: background 0.1s ease;
 	}
 
 	&:after {
@@ -976,11 +978,20 @@ pre {
 		    z-index: 99999;
 		    background: $gray-dark;
 		    transform: skew(-20deg);
+		    transition: background 0.1s ease;
 	}
 
 	&:hover {
 		background: $gray;
 		color: $white;
+		
+		&:after {
+			background: $gray;
+		}
+		
+		&:before {
+			background: $gray;
+		}
 	}
 
 	@media all and (max-width: $bp-med) {
