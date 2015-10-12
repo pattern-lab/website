@@ -598,6 +598,10 @@ pre {
 	padding: 2em 1em;
 	position: relative;
 
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+
 	&:before {
 		@include skew(#ccc);
 	}
@@ -796,7 +800,6 @@ pre {
 }
 
 .content {
-	padding: 1em 1em;
 	counter-reset: big-nums;
 
 	p {
