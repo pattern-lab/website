@@ -353,11 +353,15 @@ pre {
 	}
 
 	&:after {
-		@include skew2(#2b2b2b);
+		@include skew2(none);
 		height: 20em;
 		bottom: auto;
 		top: -10.5em;
 		z-index: 5;
+		
+		@media all and (min-width: 64em) {
+			background: #2b2b2b;
+		}
 	}
 }
 
@@ -404,7 +408,6 @@ pre {
 		    width: 24px;
 		    height: 100%;
 		    z-index: 99;
-		    background: $gray-dark;
 		    transform: skew(-20deg);
 		    transition: background 0.1s ease;
 			}
@@ -466,7 +469,7 @@ pre {
 	.nav-link  {
 		display: block;
 
-		@media all and (min-width: 790px) {
+		@media all and (min-width: 833px) {
 			display: none;
 		}
 
@@ -479,7 +482,7 @@ pre {
 		list-style: none;
 		z-index: 500;
 
-		@media all and (min-width: 790px) {
+		@media all and (min-width: 833px) {
 			display: flex;
 		}
 
@@ -492,10 +495,40 @@ pre {
 		right: 0;
 		background: $gray-dark;
 
-		@media all and (min-width: 790px) {
-			display: inline-block;
+		@media all and (min-width: 833px) {
+			display: flex;
 			position: static;
 		}
+		
+		@media all and (max-width: 833px) {
+			background: none;
+			
+	 	 	li:nth-child(1) {
+		 	 	a {
+		 	 	left: -22px;
+		 	 	}
+	 	 	}
+	 	 	li:nth-child(2) {
+		 	 	a {
+		 	 	left: -46px;
+		 	 	}
+	 	 	}
+	 	 	li:nth-child(3) {
+		 	 	a {
+		 	 	left: -69px;
+		 	 	}
+	 	 	}
+	 	 	li:nth-child(4) {
+		 	 	a {
+		 	 	left: -92px;
+		 	 	}
+	 	 	}
+	 	 	li:nth-child(5) {
+		 	 	a {
+		 	 	left: -115px;
+		 	 	}
+	 	 	}
+ 	 	}
 
 	}
 
