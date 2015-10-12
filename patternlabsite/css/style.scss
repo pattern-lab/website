@@ -595,7 +595,7 @@ pre {
 
 .banner {
 	background: $gray-lighter;
-	padding: 2em 1em 1em;
+	padding: 2em 1em;
 	position: relative;
 
 	&:before {
@@ -912,7 +912,11 @@ pre {
 }
 
 .docs-index {
-	padding: 1em 1em;
+	margin: 0 -1em;
+
+	.docs-nav {
+		margin: 0;
+	}
 
 	.docs-nav-list {
 		font-size: 100%;
@@ -984,11 +988,11 @@ pre {
 	&:hover {
 		background: $gray;
 		color: $white;
-		
+
 		&:after {
 			background: $gray;
 		}
-		
+
 		&:before {
 			background: $gray;
 		}
