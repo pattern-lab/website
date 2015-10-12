@@ -811,17 +811,18 @@ pre {
 	  width: 100%;
 	  flex: 1 0 auto;
 
-		  @media all and (min-width: 300px) and (max-width: 760px) {
+		  @media all and (min-width: 300px) and (max-width: 833px) {
 			  width: 50%;
 		  }
 
-		  @media all and (min-width: 760px) {
+		  @media all and (min-width: 833px) {
 		  	width: auto;
 		  }
 
 	  }
 
 	a {
+		position: relative;
 		display: block;
  		font-weight: bold;
  	 	color: $white;
@@ -830,9 +831,40 @@ pre {
  	 	text-transform: lowercase;
  	 	transition: background 0.1s ease;
  	 	padding: 0.5em 0;
+ 	 	
+ 	 	&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -11px;
+		    width: 24px;
+		    height: 100%;
+		    z-index: 99999;
+		    transform: skew(-20deg);
+		    transition: background 0.1s ease;
+			}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -11px;
+			display: block;
+		    width: 24px;
+		    height: 100%;
+		    z-index: 99999;
+		    transform: skew(-20deg);
+		    transition: background 0.1s ease;
+			}
 
  	 	&:hover, &:focus {
  	 		background: $gray !important;
+ 	 		
+ 	 		&:before, &:after {
+	 	 		background: $gray;
+	 	 		z-index: 999999;
+ 	 		}
  	 	}
 
 	}
