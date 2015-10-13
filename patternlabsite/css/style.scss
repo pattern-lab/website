@@ -40,7 +40,7 @@ $bend-height: 20px;
 	margin-left: -45em;
 	z-index: 4;
 
-	@media all and (min-width: 64em) {
+	@media all and (min-width: 61em) {
 		left: 50%;
 		margin-left: -69em;
 	}
@@ -54,12 +54,12 @@ $bend-height: 20px;
 	background: $color;
 	transform: skewY(20deg);
 	position: absolute;
-	bottom: -8.22em;
+	bottom: -8.18em;
 	right: 1em;
 	margin-right: -45em;
 	z-index: 4;
 
-	@media all and (min-width: 64em) {
+	@media all and (min-width: 61em) {
 		right: 50%;
 		margin-right: -69em;
 	}
@@ -358,7 +358,7 @@ pre {
 		bottom: auto;
 		top: -10.5em;
 		z-index: 5;
-		
+
 		@media all and (min-width: 64em) {
 			background: #2b2b2b;
 		}
@@ -397,8 +397,8 @@ pre {
 		color: $white;
 		position: relative;
 		transition: background 0.1s ease;
-		
-		
+
+
 		&:before {
 			content: "";
 			display: block;
@@ -428,14 +428,14 @@ pre {
 
 		&:hover {
 			background: $gray;
-			
+
 			&:before, &:after {
 	 	 		background: $gray;
 	 	 		z-index: 999;
  	 		}
 		}
 	}
-	
+
 	.logo-text {
 		position: relative;
 		z-index: 1000;
@@ -499,10 +499,10 @@ pre {
 			display: flex;
 			position: static;
 		}
-		
+
 		@media all and (max-width: 833px) {
 			background: none;
-			
+
 	 	 	li:nth-child(1) {
 		 	 	a {
 		 	 	left: -22px;
@@ -541,7 +541,7 @@ pre {
  	 	background: $gray-dark;
  	 	text-transform: lowercase;
  	 	transition: background 0.1s ease;
- 	 	
+
  	 	&:before {
 			content: "";
 			display: block;
@@ -572,7 +572,7 @@ pre {
 
  	 	&:hover, &:focus {
  	 		background: $gray !important;
- 	 		
+
  	 		&:before, &:after {
 	 	 		background: $gray;
 	 	 		z-index: 999999;
