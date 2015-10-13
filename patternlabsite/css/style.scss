@@ -349,7 +349,7 @@ pre {
 		height: 20em;
 		bottom: -9em;
 		top: auto;
-		z-index: 5;
+		z-index:7;
 	}
 
 	&:after {
@@ -357,7 +357,7 @@ pre {
 		height: 20em;
 		bottom: auto;
 		top: -10.5em;
-		z-index: 5;
+		z-index: 7;
 		
 		@media all and (min-width: 64em) {
 			background: #2b2b2b;
@@ -371,7 +371,6 @@ pre {
 	flex-direction: row;
 	position: relative;
 	background: $gray-dark;
-	z-index: 2;
 
 	&-inner {
 		display: flex;
@@ -380,10 +379,12 @@ pre {
 
 	&:before {
 		@include skew(#000);
+		z-index: 8;
 	}
 
 	&:after {
 		@include skew2(#2b2b2b);
+		z-index: 8;
 	}
 }
 
@@ -702,10 +703,12 @@ pre {
 
 	&:before {
 		@include skew(#ccc);
+		z-index: 9;
 	}
 
 	&:after {
 		@include skew2(#dadada);
+		z-index: 9;
 	}
 }
 
@@ -717,11 +720,13 @@ pre {
 
 	&:before {
 		@include skew(#f6f6f6);
+		z-index: 7;
 
 	}
 
 	&:after {
 		@include skew2(#f9f9f9);
+		z-index: 7;
 
 	}
 }
@@ -767,6 +772,9 @@ pre {
 	}
 }
 
+.section-8 {
+	padding: 0;
+}
 
 
 /* Footer */
@@ -782,10 +790,12 @@ pre {
 
 	&:before {
 		@include skew(#000);
+		z-index: 7;
 	}
 
 	&:after {
 		@include skew2(#2b2b2b);
+		z-index: 7;
 	}
 }
 
@@ -1239,20 +1249,61 @@ pre {
 }
 
 /* Credit Section */
+
+.credit {
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	
+	@media all and (min-width: 595px) {
+		width: 100%;
+		display: flex;
+		margin: 0;
+	}
+}
+
 .credit-block {
 	position: relative;
+	padding: 0;
 
 	img {
 		display: block;
-		width: 100%;
+		width: auto;
 		position: relative;
 		z-index: 0;
-		border: 0.5em solid rgba(0,0,0,0.1);
+		
+		@media all and (min-width: 595px) {
+			-webkit-clip-path: polygon(35% 0%, 100% 0%, 65% 100%, 0% 100%);
+			clip-path: polygon(35% 0%, 100% 0%, 65% 100%, 0% 100%);
+		}
 	}
+	
+	&:hover{
+		
+		.credit-info {
+			transform:skew(0);
+		}
+		
+		.credit-author {
+		transform: skew(0);
+		}
+		
+	}
+}
 
-	@media all and (min-width: 40em) {
-		float: left;
-		width: 33.33333333%;
+.credit-block-dave {
+	margin: 0;
+	
+	@media all and (min-width: 595px) {
+		margin: 0 -4.5em;	
+	}
+	
+	@media all and (min-width: 620px) {
+		margin: 0 -5em;
+	}
+	
+	@media all and (min-width: 715px) {
+		margin: 0 -6.7em;
 	}
 }
 
@@ -1261,12 +1312,12 @@ pre {
 	top: 50%;
 	left: 50%;
 	z-index: 1;
-	width: 10em;
-	height: 10em;
-	border-radius: 5em;
-	margin: -5em 0 0 -5em;
-	padding-top: 3.5em;
+	width: 8em;
+	height: 8em;
+	margin: -4em 0 0 -4em;
+	padding-top: 2.5em;
 	background: rgba(0,0,0,0.5);
+	transform: skew(-20deg);
 
 	a {
 		display: block;
@@ -1278,6 +1329,54 @@ pre {
 			color: $gray-light;
 		}
 	}
+
+		
+	.credit-author {
+		transform: skew(20deg);
+	}
+	
+}
+
+.credit-heading {
+	padding: 0.5em 0;
+	position: relative;
+	background: $gray-dark;
+	color: white;
+
+	&-inner {
+		display: flex;
+		width: 100%;
+	}
+
+	&:before {
+		@include skew(#000);
+		z-index: 8;
+	}
+
+	&:after {
+		@include skew2(#2b2b2b);
+		z-index: 8;
+	}
+}
+
+.first-author {
+	
+	img {
+		@media all and (min-width: 600px) {
+			clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 0% 100%);
+			-webkit-clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 0% 100%);
+		}
+	}
+}
+
+.last-author {
+	
+	img {
+		@media all and (min-width: 600px) {
+			clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
+			-webkit-clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
+		}
+	}	
 }
 
 /* Documentation Home */
