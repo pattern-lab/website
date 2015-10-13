@@ -790,7 +790,17 @@ pre {
 }
 
 .footer-nav {
-	margin-bottom: 1em;
+	
+	margin: 0 2em 1em 2em;
+	
+	@media all and (min-width: 620px) {
+	margin: 0 6em 1em 6em;
+	}
+	
+	@media all and (min-width: 833px) {
+		margin: 0 2em 1em 2em;
+	}
+	
 	ul {
 	  margin: 0 auto;
 	  padding: 0;
@@ -802,7 +812,6 @@ pre {
 
 		@media all and (min-width: 700px) {
 		flex: 1;
-		width: 750px;
 	    }
 
 	}
@@ -811,7 +820,7 @@ pre {
 	  width: 100%;
 	  flex: 1 0 auto;
 
-		  @media all and (min-width: 300px) and (max-width: 833px) {
+		  @media all and (min-width: 470px) and (max-width: 833px) {
 			  width: 50%;
 		  }
 
