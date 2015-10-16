@@ -14,6 +14,16 @@
 	        <h1>{{ page.heading }}</h1>
         </div>
     </div>
+    <div class="language-toggle">
+        <div class="lc">
+	        <ul class="tabs">
+		        {% for item in page.languages %}
+		        <li class="tab"><a class="language-btn"
+	href="#{{ item.language }}">{{ item.language }}</a></li>
+			    {% endfor %}
+		    </ul>
+        </div>
+    </div>
     <div class="guts">
         <div class="lc">
             <div class="l-two-col">
