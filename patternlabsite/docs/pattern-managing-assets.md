@@ -8,7 +8,11 @@ languages:
 ---
 
 <!--- start php -->
-<h2 id="php">php</h2>
+
+<div class="tab-panel" id="php">
+<h2 class="language-title">php</h2>
+
+{% capture m %}
 
 Assets for patterns, including JavaScript, CSS, and images, should be stored in the `source/` directory. The PHP version of Pattern Lab will move these assets to the `public/` directory for you when you generate your site or when you watch the `source/` directory for changes. You can name and nest your assets however you like. The structure will be maintained when they're moved to the `public/` directory.
 
@@ -40,10 +44,19 @@ To ignore more directories just edit the `id` variable in `config/config.ini`. F
 
 Static assets like Javascript and CSS **are not** added automagically to your patterns. You need to add them manually to the [shared pattern header and footer](/docs/pattern-header-footer.html).
 
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
 <!--- end php -->
 
 <!--- start node -->
-<h2 id="node">node</h2>
+
+<div class="tab-panel" id="node">
+<h2 class="language-title">node</h2>
+
+{% capture m %}
 
 Assets for patterns, including JavaScript, CSS, and images, should be stored in the `source/` directory. The Node version of Pattern Lab will move these assets to the `public/` directory for you when you generate your site or when you watch the `source/` directory for changes. You can name and nest your assets however you like. Pattern Lab Node ships with a `Gruntfile.js` task, `copy,` that can copy your assets for you. It looks like this:
 
@@ -92,5 +105,10 @@ Assets for patterns, including JavaScript, CSS, and images, should be stored in 
     }
 
 This structure is meant to be extended to suit your purposes. Change targets, move files, or ignore certain filetypes altogether. **Note**: If you make changes to `Gruntfile.js`, such as to copy a new directory, and have [auto re-generation and browser reload enabled](/docs/node/advanced-auto-reloading-the-browser.html), you will need to stop and start your grunt tasks to pick up the changes.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
 
 <!--- end node -->

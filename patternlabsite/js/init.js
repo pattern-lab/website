@@ -18,6 +18,8 @@ for (i=0; i<languageBtn.length; ++i){
 
 var languageBtn = $('.tab');
 $('.tab:nth-of-type(1)').addClass('active');
+$('#node').css('display', 'none');
+	$('#php').css('display', 'block');
 languageBtn.on('click', function(e){ 
 	e.preventDefault();
 	languageBtn.removeClass('active');

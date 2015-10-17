@@ -8,7 +8,11 @@ languages:
 ---
 
 <!--- start php -->
-<h2 id="php">php</h2>
+
+<div class="tab-panel" id="php">
+<h2 class="language-title">php</h2>
+
+{% capture m %}
 
 **Note:** *The _meta patterns were introduced in v0.7.0 of the PHP version of Pattern Lab.*
 
@@ -29,10 +33,19 @@ These files are added to every rendered pattern, "view all" page and style guide
 
 Pattern Lab will stop working if you do.
 
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
 <!--- end php -->
 
 <!--- start node -->
-<h2 id="node">node</h2>
+
+<div class="tab-panel" id="node">
+<h2 class="language-title">node</h2>
+
+{% capture m %}
 
 To add your own assets like JavaScripts and CSS to your patterns' header and footer you can modify two files:
 
@@ -43,6 +56,11 @@ These files are added to every rendered pattern, "view all" page and style guide
 
 **Disclaimer**
 Be careful.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
 
 <!--- end node -->
 

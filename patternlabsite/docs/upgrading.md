@@ -8,7 +8,10 @@ languages:
 ---
 
 <!--- start php -->
-<h2 id="php">php</h2>
+<div class="tab-panel" id="php">
+<h2 class="language-title">php</h2>
+
+{% capture m %}
 
 To upgrade the PHP version of Pattern Lab do the following:
 
@@ -43,12 +46,21 @@ If you want to you can clean-up some of the directories that are left-over after
 * `scripts/`
 * `source/_patternlab-files/`
 
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
 <!--- end php -->
 
 
 
 <!--- start node -->
-<h2 id="node">node</h2>
+
+<div class="tab-panel" id="node">
+<h2 class="language-title">node</h2>
+
+{% capture m %}
 
 To upgrade the Node version of Pattern Lab do the following:
 
@@ -67,5 +79,10 @@ If you encounter trouble - make sure your npm devDependencies are up to date. As
   * Overwrite `source/_patternlab-files/pattern-header-footer/footer.html`
   * Overwrite `source/_patternlab-files/styleguide.mustache`
   * Overwrite `source/_patternlab-files/viewall.mustache`
+  
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
   
   <!--- end node -->

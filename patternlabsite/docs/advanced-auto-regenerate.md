@@ -8,7 +8,11 @@ languages:
 ---
 
 <!--- start php -->
-<h2 id="php">php</h2>
+
+<div class="tab-panel" id="php">
+<h2 class="language-title">php</h2>
+
+{% capture m %}
 
 The PHP version of Pattern Lab has the ability to watch for changes to patterns and select files. When these files change, it will automatically rebuild the entire Pattern Lab website. You simply make your changes, save the file, and the PHP version of Pattern Lab will take care of the rest.
 
@@ -52,11 +56,21 @@ By default, the PHP version of Pattern Lab monitors the following files:
 
 Instructions on how to ignore assets in other directories or with other file extensions can be found in "[Managing Assets for a Pattern](/docs/pattern-managing-assets.html)".
 
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
 <!--- end php -->
 
 
 <!--- start node -->
-<h2 id="node">node</h2>
+
+<div class="tab-panel" id="node">
+<h2 class="language-title">node</h2>
+
+{% capture m %}
+
 
 Pattern Lab ships with three grunt tasks that effectively watch the source code and reload the live site whenever changes are detected. The configuration is all set up for you already in the `Gruntfile.js`.
 
@@ -100,6 +114,11 @@ Second, the `connect` task:
     }
 
 This establishes connection to the pattern lab site on port:9001 and lauches your default browser. From here, any changes to the files marked above will be reflected on your site. Coupled with query string arguments, this is quite useful.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
 
 <!--- end node -->
 

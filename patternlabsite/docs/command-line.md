@@ -3,12 +3,16 @@ layout: docs
 title: Using The Command Line Options | Pattern Lab
 heading: Using The Command Line Options
 languages:
-- php
-- node
+- language: php
+- language: node
 ---
 
 <!--- start php -->
-<h2 id="php"><h2 id="node">node</h2></h2>
+
+<div class="tab-panel" id="php">
+<h2 class="language-title">php</h2>
+
+{% capture m %}
 
 If you're using Mac OS X all of the options for using the PHP version of Pattern Lab are available under the `core/scripts/` directory. Simply double-click on the appropriate `.command` file and the service should run. 
 
@@ -80,11 +84,20 @@ The version command prints out the current version of Pattern Lab.
     php core/pageFollowServer.php
       Starts the WebSocket-based server to monitor for and notify browsers of changes to navigation. Browser
       windows should update to match the browser window that changed.
+      
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>      
 
 <!--- end php -->
 
 <!--- start node -->
-<h2 id="node">node</h2>
+
+<div class="tab-panel" id="node">
+<h2 class="language-title">node</h2>
+
+{% capture m %}
 
 The following are grunt task arguments you may execute:
 
@@ -101,5 +114,10 @@ Retrieve the version of patternlab-node you have installed
 Get more information about patternlab-node, pattern lab in general, and where to report issues.
 
 These are best suited to encorporate into your `Gruntfile.js` as you see shipped with Pattern Lab Node.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
 
 <!--- end node -->

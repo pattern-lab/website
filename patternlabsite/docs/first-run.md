@@ -8,7 +8,11 @@ languages:
 ---
 
 <!--- start php -->
-<h2 id="php">php</h2>
+
+<div class="tab-panel" id="php">
+<h2 class="language-title">php</h2>
+
+{% capture m %}
 
 By default, a number of important pages, including the main page, **aren't** built when you first download the PHP version of Pattern Lab. Before you visit your install of Pattern Lab you'll need to make sure all of the necessary pages have been built. 
 
@@ -25,10 +29,19 @@ For Linux and Windows users, you can also generate the Pattern Lab website from 
 
 The site should now be generated and available for browsing.
 
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
 <!--- end php -->
 
 <!--- start node -->
-<h2 id="node">node</h2>
+
+<div class="tab-panel" id="node">
+<h2 class="language-title">node</h2>
+
+{% capture m %}
 
 By default, a number of important pages, including the main page, **aren't** built when you first download the Node version of Pattern Lab. Before you visit your install of Pattern Lab you'll need to make sure all of the necessary pages have been built. 
 
@@ -42,5 +55,10 @@ To generate the Pattern Lab website do the following:
 The site should now be generated in the 'public/' directory and available for browsing.
 
 Running `grunt serve` will compile the patternlab front end and host it on [http://localhost:9001](http://localhost:9001) by default. Page will reload on any saved source code change.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
 
 <!--- end node -->
