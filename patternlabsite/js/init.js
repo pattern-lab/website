@@ -28,4 +28,12 @@ languageBtn.on('click', function(e){
 	console.log(thisHref);
 	tabContent.removeClass('tab-active');
 	$(thisHref).addClass('tab-active');
+	var thisHrefSub = $(this).attr('href').substring(1);
+	addHash(thisHrefSub);
 });
+
+function addHash(id) {
+	var changeSource = $('.language-btn.active').attr('src');
+	$(this).attr("src", changeSource);
+	history.pushState(null, null, '#' + id);
+}
