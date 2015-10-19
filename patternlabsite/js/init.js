@@ -16,27 +16,16 @@ for (i=0; i<languageBtn.length; ++i){
 } */
 
 
-var languageBtn = $('.tab');
-$('.tab:nth-of-type(1)').addClass('active');
-$('#node').css('display', 'none');
-	$('#php').css('display', 'block');
+var languageBtn = $('.tab a');
+var tabContent = $('.tab-panel');
+$('.tab:nth-of-type(1) a').addClass('active');
+$('#php').addClass('tab-active');
 languageBtn.on('click', function(e){ 
 	e.preventDefault();
 	languageBtn.removeClass('active');
 	$(this).addClass('active');
-	var thisHref = $('.tab.active .language-btn').attr('href');
+	var thisHref = $(this).attr('href');
 	console.log(thisHref);
-	if (thisHref === '#php') {	
-	$('#node').css('display', 'none');
-	$('#php').css('display', 'block');
-	}
-	else if (thisHref === '#node') {
-		$('#php').css('display', 'none');
-		$('#node').css('display', 'block')
-	}
-	
+	tabContent.removeClass('tab-active');
+	$(thisHref).addClass('tab-active');
 });
-
-
-//$('.php-block').css('background', 'red');
-//$('.node-block').css('background', 'blue');
