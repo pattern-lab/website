@@ -1415,8 +1415,7 @@ pre {
 		position: relative;
 		display: block;
 		color: white;
-		padding: 0 1em;
-		font: 120%/1.4 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+		padding: 1em 1em;
 		font-weight: bold;
 		
 		&:before {
@@ -1424,8 +1423,8 @@ pre {
 			display: block;
 			position: absolute;
 			top: 0;
-			left: -10px;
-		    width: 20px;
+			left: -13px;
+			width: 25px;
 		    height: 100%;
 		    background: $gray-dark;
 		    transform: skew(-20deg);
@@ -1436,9 +1435,9 @@ pre {
 			content: "";
 			position: absolute;
 			top: 0;
-			right: -10px;
+			right: -13px;
 			display: block;
-		    width: 20px;
+		    width: 25px;
 		    height: 100%;
 		    background: $gray-dark;
 		    transform: skew(-20deg);
@@ -1446,19 +1445,19 @@ pre {
 		}
 		
 		&.active {
-			background: $gray-light;
+			background: $gray-lighter;
 			position: relative;
-			color: black;
+			color: $black;
 			
 			&:before {
 				content: "";
 				display: block;
 				position: absolute;
 				top: 0;
-				left: -9px;
-			    width: 20px;
+				left: -13px;
+			    width: 25px;
 			    height: 100%;
-			    background: $gray-light;
+			    background: $gray-lighter;
 			    transform: skew(-20deg);
 			    z-index: 8;
 			}
@@ -1467,20 +1466,23 @@ pre {
 				content: "";
 				position: absolute;
 				top: 0;
-				right: -9px;
+				right: -13px;
 				display: block;
-			    width: 20px;
+			    width: 25px;
 			    height: 100%;
-			    background: $gray-light;
+			    background: $gray-lighter;
 			    transform: skew(-20deg);
 			    z-index: 8;
+			}
+			
+			&:hover {
+				color: $white;
 			}		
 		}
 		
 		&:hover {
 			background: $gray;
 			transition: background 0.1s ease;
-			color: black;
 			
 			&:before {
 			    background: $gray;
