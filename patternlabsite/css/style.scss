@@ -1390,72 +1390,28 @@ pre {
 	color: white;
 	width: 100%;
 	
-	.active {
-		background: $gray-light;
-		position: relative;
-		
-		.language-btn {
-		color: black;
-		
-			&:before {
-				content: "";
-				display: block;
-				position: absolute;
-				top: 0;
-				left: -9px;
-			    width: 20px;
-			    height: 100%;
-			    background: $gray-light;
-			    transform: skew(-20deg);
-			    z-index: 8;
-			}
-			
-			&:after {
-				content: "";
-				position: absolute;
-				top: 0;
-				right: -9px;
-				display: block;
-			    width: 20px;
-			    height: 100%;
-			    background: $gray-light;
-			    transform: skew(-20deg);
-			    z-index: 8;
-			}
-		
-		}
-		
+	&-inner {
+	display: flex;
+	width: 100%;
 	}
-	
-	.tab {
-		display: inline-block;
-		margin: 0 0.5em;
-		
-		&:hover {
-			background: $gray;
-			transition: background 0.1s ease;
-			
-			.language-btn {
-			color: black;
-			
-				&:before {
-				    background: $gray;
-				    z-index: 10;
-				    transition: background 0.1s ease;
-				}
-		
-				&:after {
-				    background: $gray;
-				    z-index: 10;
-				    transition: background 0.1s ease;
 
-				}
-			}
-		
-		}
+	&:before {
+		@include skew(#000);
+		z-index: 8;
 	}
+
+	&:after {
+		@include skew2(#2b2b2b);
+		z-index: 8;
+	}
+}
+
 	
-	.language-btn {
+.tab {
+	display: inline-block;
+	margin: 0 0.5em;
+	
+	a {
 		position: relative;
 		display: block;
 		color: white;
@@ -1488,24 +1444,69 @@ pre {
 		    transform: skew(-20deg);
 			z-index: 7
 		}
-	}
+		
+		&.active {
+			background: $gray-light;
+			position: relative;
+			color: black;
+			
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				left: -9px;
+			    width: 20px;
+			    height: 100%;
+			    background: $gray-light;
+			    transform: skew(-20deg);
+			    z-index: 8;
+			}
+			
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: -9px;
+				display: block;
+			    width: 20px;
+			    height: 100%;
+			    background: $gray-light;
+			    transform: skew(-20deg);
+			    z-index: 8;
+			}		
+		}
+		
+		&:hover {
+			background: $gray;
+			transition: background 0.1s ease;
+			color: black;
+			
+			&:before {
+			    background: $gray;
+			    z-index: 10;
+			    transition: background 0.1s ease;
+			}
 	
-	&-inner {
-		display: flex;
-		width: 100%;
-	}
-
-	&:before {
-		@include skew(#000);
-		z-index: 8;
-	}
-
-	&:after {
-		@include skew2(#2b2b2b);
-		z-index: 8;
-	}
-	
+			&:after {
+			    background: $gray;
+			    z-index: 10;
+			    transition: background 0.1s ease;
+			}
+		}
+	}	
 }
+	
+.tab-panel {
+	display: none;
+}
+
+.tab-active {
+	display: block;
+}
+
+	
+
 
 /* Documentation Home */
 .docs-index {
