@@ -464,6 +464,7 @@ pre {
 		@media all and (min-width: 833px) {
 			display: flex;
 		}
+		
 
 	}
 
@@ -565,15 +566,7 @@ pre {
 }
 
 .js .nav {
-  clip: rect(0 0 0 0);
-  max-height: 0;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  display: block;
-  overflow: hidden;
-  zoom: 1;
-  clear: both;
+  position: relative;
 }
 
 .nav-toggle {
@@ -599,8 +592,7 @@ pre {
 
 @media screen and (min-width: 790px) {
   .js .nav {
-    position: relative;
-    clear: none;
+    position: relative;;
     overflow: visible;
   }
   .js .nav.closed {
