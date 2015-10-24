@@ -448,7 +448,7 @@ pre {
 	.nav-link  {
 		display: block;
 
-		@media all and (min-width: 833px) {
+		@media all and (min-width: 760px) {
 			display: none;
 		}
 
@@ -461,7 +461,7 @@ pre {
 		list-style: none;
 		z-index: 500;
 
-		@media all and (min-width: 833px) {
+		@media all and (min-width: 760px) {
 			display: flex;
 		}
 		
@@ -475,12 +475,12 @@ pre {
 		right: 0;
 		background: $gray-dark;
 
-		@media all and (min-width: 833px) {
+		@media all and (min-width: 760px) {
 			display: flex;
 			position: static;
 		}
 
-		@media all and (max-width: 833px) {
+		@media all and (max-width: 760px) {
 			background: none;
 
 	 	 	li:nth-child(1) {
@@ -810,7 +810,7 @@ pre {
 	margin: 0 6em 1em 6em;
 	}
 	
-	@media all and (min-width: 833px) {
+	@media all and (min-width: 760px) {
 		margin: 0 2em 1em 2em;
 	}
 	
@@ -833,11 +833,11 @@ pre {
 	  width: 100%;
 	  flex: 1 0 auto;
 
-		  @media all and (min-width: 470px) and (max-width: 833px) {
+		  @media all and (min-width: 470px) and (max-width: 760px) {
 			  width: 50%;
 		  }
 
-		  @media all and (min-width: 833px) {
+		  @media all and (min-width: 760px) {
 		  	width: auto;
 		  }
 
