@@ -1509,6 +1509,10 @@ pre {
 	display: flex;
 	width: 100%;
 	}
+	
+	.lc {
+		overflow: hidden;
+	}
 
 	&:before {
 		@include skew(#000);
