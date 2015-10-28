@@ -343,6 +343,10 @@ pre {
 	}
 }
 
+.js .container {
+	overflow: hidden;
+}
+
 // Header
 .header {
 	display: flex;
@@ -894,7 +898,7 @@ pre {
 }
 
 .credits {
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 	font-size: 65%;
 	text-align: center;
 	padding: 0 0.8em;
@@ -1166,29 +1170,63 @@ pre {
 		-webkit-column-count: 1;
 		-moz-column-count: 1;
 		column-count: 1;
+		margin: 1em -0.8em;
 	
 		a {
 			padding: 0.25em 1em;
+			
+			&:before {
+			    content: "";
+			    display: block;
+			    position: absolute;
+			    top: 0;
+			    left: -13px;
+			    width: 24px;
+			    height: 100%;
+			    z-index: 99999;
+			    transform: skew(-20deg);
+			    transition: background 0.1s ease;
+			    }
+			    
+			    &:after {
+			    content: "";
+			    display: block;
+			    position: absolute;
+			    top: 0;
+			    right: -13px;
+			    width: 24px;
+			    height: 100%;
+			    z-index: 99999;
+			    transform: skew(-20deg);
+			    transition: background 0.1s ease;
+			    }
 		}
 	
-		@media all and (min-width: 400px) {
+		@media all and (min-width: 505px) {
 			-webkit-column-count: 2;
 			-moz-column-count: 2;
 			column-count: 2;
 
 		}
 		
-		@media all and (min-width: 600px) {
+		@media all and (min-width: 700px) {
 			-webkit-column-count: 3;
 			-moz-column-count: 3;
 			column-count: 3;
-;
+			  -webkit-column-gap: 1px;
+			  -moz-column-gap: 1px;
+			  column-gap: 1px;
+		}
+		
+		@media all and (min-width: 935px) {
+			margin: 1em -1.8em;
 		}
 		
 		li {
 		-webkit-column-break-inside: avoid;
 	    page-break-inside: avoid; 
 	    break-inside: avoid-column;
+	    margin: 0 1em;
 			
 		}
 	}
@@ -1276,75 +1314,12 @@ pre {
 
 //Atomic Design Flow
 .atomic-design {
-	margin: 2em 0 1em;
-	padding: 1em 0;
-
-	li {
-		position: relative;
-		float: left;
-		width: 20%;
-		text-align: center;
-
-		&:after {
-			content: "";
-			position: absolute;
-			top: 35%;
-			left: 100%;
-			display: block;
-			width: 0;
-			height: 0;
-			margin-left: -4px;
-			pointer-events: none;
-			border-top: 8px solid transparent;
-			border-bottom: 8px solid transparent;
-			border-left: 10px solid $gray;
-
-		}
-
-		&:last-child:after {
-			display: none;
-		}
-
-		&.inactive {
-			opacity: 0.3;
-		}
-	}
+	display: block;
+	max-width: 20em;
+	margin: 0 auto;
 
 	img {
-		display: block;
-		margin: 0 auto;
-		padding: 0 0.5em;
-
-		@media all and (min-width: 45em) {
-			padding: 0 2em;
-		}
-	}
-
-	&.small {
-		max-width: 25em;
-		margin: 0 auto;
-		overflow: hidden;
-
-		img {
-			padding: 0 1em;
-		}
-	}
-
-	@media all and (min-width: 45em) {
-		li {
-
-
-
-			&:after {
-
-			}
-		}
-	}
-
-	@media all and (max-width: 45em) {
-		h4 {
-			display: none;
-		}
+		padding: 0 1em;
 	}
 }
 
