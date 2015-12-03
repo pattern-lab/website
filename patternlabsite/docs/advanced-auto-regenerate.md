@@ -71,49 +71,78 @@ Instructions on how to ignore assets in other directories or with other file ext
 
 {% capture m %}
 
+The Node version of Pattern Lab has the ability to watch for changes to patterns and select files. When these files change, it will automatically rebuild the entire Pattern Lab website. You simply make your changes, save the file, and the Node version of Pattern Lab will take care of the rest.
 
-Pattern Lab ships with three grunt tasks that effectively watch the source code and reload the live site whenever changes are detected. The configuration is all set up for you already in the `Gruntfile.js`.
+## How to Start the Watch and Self-Host the Frontend
 
-First, the `watch` task, with the livereload option:
+By default, running `grunt serve` or `gulp serve` will compile the Pattern Lab frontend and host it on <a href="http://localhost:3000">http://localhost:3000</a> via the excellent [BrowserSync](http://www.browsersync.io/docs/) library. This is the recommended way to launch Pattern Lab Node versus using the filesystem.
 
-    watch: {
-      // scss: { //scss can be watched if you like
-      //  options: {
-      //    livereload: true
-      //  },
-      //  files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
-      //  tasks: ['default']
-      // },
-      all: {
-        options: {
-          livereload: true
-        },
-        files: [
-        'source/_patterns/**/*.mustache',
-        'source/_patterns/**/*.json',
-        'source/_data/*.json'
-        ],
-        tasks: ['default']
-      }
-    }
+BrowserSync is a tool with a lot of depth, but Pattern Lab Node ships with the following task configurations inside the [Gruntfile](https://github.com/pattern-lab/patternlab-node/blob/master/Gruntfile.js):
 
-The ** pattern matches any subdiretory under _patterns. The * is a file wildcard. It says to run the `['default']` task when a file change is detected. Not also the example for scss files.
-
-Second, the `connect` task: 
-
-    connect: {
-      app:{
-        options: {
-          port: 9001,
-          base: './public',
-          hostname: 'localhost',
-          open: true,
-          livereload: 35729
+```
+browserSync: {
+  dev: {
+    options: {
+      server:  './public',
+      watchTask: true,
+      plugins: [
+        {
+          module: 'bs-html-injector',
+          options: {
+            files: './public/index.html'
+          }
         }
-      }
+      ]
     }
+  }
+},
+bsReload: {
+  css: './public/**/*.css'
+}
+```
 
-This establishes connection to the pattern lab site on port:9001 and lauches your default browser. From here, any changes to the files marked above will be reflected on your site. Coupled with query string arguments, this is quite useful.
+The watch configuration also tells Pattern Lab Node what files to reload when changes are made. Here's the excerpt from the [Gruntfile](https://github.com/pattern-lab/patternlab-node/blob/master/Gruntfile.js) again:
+
+```
+watch: {
+  all: {
+    files: [
+      'source/css/**/*.css',
+      'public/styleguide/css/*.css',
+      'source/_patterns/**/*.mustache',
+      'source/_patterns/**/*.json',
+      'source/_data/*.json'
+    ],
+    tasks: ['default']
+  },
+  patterns: {
+    files: [
+      'source/_patterns/**/*.mustache',
+      'source/_patterns/**/*.json',
+      'source/_data/*.json'
+    ],
+    tasks: ['default']
+  }
+},
+```
+
+You'll notice that if you have this open across different browsers, we do our best to keep the frontend in sync, but there is a known issue with synced navigation using the main menu. BrowserSync also hosts an administration interface that sits alongside the Pattern Lab frontend and by default can be found at [http://localhost:3001](http://localhost:3001).
+
+## How to Stop the Watch
+
+To stop watching files on Mac OS X and Windows you can press`CTRL+C` in the command line window where the process is running.
+
+## The Default Files That Are Watched
+
+By default, the Node version of Pattern Lab monitors the following files:
+
+* all of the pattern templates under `source/_patterns/`
+* all of the JSON files under `source/_patterns/`
+* all of the JSON files under `source/_data/`
+* all of the CSS files under `source/css/`
+* all of the CSS files under `public/styleguide/css/`
+
+You may also uncomment the scss statements throughout the Gruntfile or Gulpfile to utilize the shipped CSS preprocessor configuration should you desire.
 
 {% endcapture %}
 {{ m | markdownify }}
@@ -121,4 +150,3 @@ This establishes connection to the pattern lab site on port:9001 and lauches you
 </div>
 
 <!--- end node -->
-
