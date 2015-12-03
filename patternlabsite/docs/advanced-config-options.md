@@ -1,6 +1,7 @@
 ---
 layout: docs
-title: Editing the config.ini Options | Pattern Lab
+title: Editing the configuration Options | Pattern Lab
+heading: Editing the Configuration Options
 languages:
 - language: php
 - language: node
