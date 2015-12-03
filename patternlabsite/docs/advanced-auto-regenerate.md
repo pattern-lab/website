@@ -48,11 +48,11 @@ To stop watching files on Mac OS X you can press`CTRL+C` in the Terminal window 
 By default, the PHP version of Pattern Lab monitors the following files:
 
 * all of the patterns under `source/_patterns`
-* all of the JSON files under `source/_data/` 
+* all of the JSON files under `source/_data/`
 * any directory in `source/` without an `_` (underscore) or that doesn't match a directory name found in the `id` variable in `config/config.ini`
 * any file in `source/` with a file extension that doesn't match one found in the `ie` variable in `config/config.ini`
 
-## Ignoring Other Directories & File Extensions 
+## Ignoring Other Directories & File Extensions
 
 Instructions on how to ignore assets in other directories or with other file extensions can be found in "[Managing Assets for a Pattern](/docs/pattern-managing-assets.html)".
 
@@ -73,9 +73,9 @@ Instructions on how to ignore assets in other directories or with other file ext
 
 The Node version of Pattern Lab has the ability to watch for changes to patterns and select files. When these files change, it will automatically rebuild the entire Pattern Lab website. You simply make your changes, save the file, and the Node version of Pattern Lab will take care of the rest.
 
-## How to Start the Watch and Self-Host the Frontend
+## How to Start the Watch and Self-Host the Pattern Lab Website
 
-By default, running `grunt serve` or `gulp serve` will compile the Pattern Lab frontend and host it on <a href="http://localhost:3000">http://localhost:3000</a> via the excellent [BrowserSync](http://www.browsersync.io/docs/) library. This is the recommended way to launch Pattern Lab Node versus using the filesystem.
+By default, running `grunt serve` or `gulp serve` will compile the Pattern Lab website and host it on <a href="http://localhost:3000">http://localhost:3000</a> via the excellent [BrowserSync](http://www.browsersync.io/docs/) library. This is the recommended way to launch Pattern Lab Node versus using the filesystem.
 
 BrowserSync is a tool with a lot of depth, but Pattern Lab Node ships with the following task configurations inside the [Gruntfile](https://github.com/pattern-lab/patternlab-node/blob/master/Gruntfile.js):
 
@@ -126,7 +126,7 @@ watch: {
 },
 ```
 
-You'll notice that if you have this open across different browsers, we do our best to keep the frontend in sync, but there is a known issue with synced navigation using the main menu. BrowserSync also hosts an administration interface that sits alongside the Pattern Lab frontend and by default can be found at [http://localhost:3001](http://localhost:3001).
+You'll notice that if you have this open across different browsers, we do our best to keep the website in sync, but there is a known issue with synced navigation using the main menu. BrowserSync also hosts an administration interface that sits alongside the Pattern Lab website and by default can be found at [http://localhost:3001](http://localhost:3001).
 
 ## How to Stop the Watch
 
