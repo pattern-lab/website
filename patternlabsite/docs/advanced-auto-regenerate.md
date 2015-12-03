@@ -75,32 +75,6 @@ The Node version of Pattern Lab has the ability to watch for changes to patterns
 
 ## How to Start the Watch and Self-Host the Pattern Lab Website
 
-By default, running `grunt serve` or `gulp serve` will compile the Pattern Lab website and host it on <a href="http://localhost:3000">http://localhost:3000</a> via the excellent [BrowserSync](http://www.browsersync.io/docs/) library. This is the recommended way to launch Pattern Lab Node versus using the filesystem.
-
-BrowserSync is a tool with a lot of depth, but Pattern Lab Node ships with the following task configurations inside the [Gruntfile](https://github.com/pattern-lab/patternlab-node/blob/master/Gruntfile.js):
-
-```
-browserSync: {
-  dev: {
-    options: {
-      server:  './public',
-      watchTask: true,
-      plugins: [
-        {
-          module: 'bs-html-injector',
-          options: {
-            files: './public/index.html'
-          }
-        }
-      ]
-    }
-  }
-},
-bsReload: {
-  css: './public/**/*.css'
-}
-```
-
 The watch configuration also tells Pattern Lab Node what files to reload when changes are made. Here's the excerpt from the [Gruntfile](https://github.com/pattern-lab/patternlab-node/blob/master/Gruntfile.js) again:
 
 ```
@@ -125,8 +99,31 @@ watch: {
   }
 },
 ```
+By default, running `grunt serve` or `gulp serve` will compile the Pattern Lab website and open it at [http://localhost:3000](http://localhost:3000) on your default browser via the excellent [BrowserSync](http://www.browsersync.io/docs/) library. This is the recommended way to launch Pattern Lab Node versus using the filesystem.
 
-You'll notice that if you have this open across different browsers, we do our best to keep the website in sync, but there is a known issue with synced navigation using the main menu. BrowserSync also hosts an administration interface that sits alongside the Pattern Lab website and by default can be found at [http://localhost:3001](http://localhost:3001).
+BrowserSync is a tool with a lot of depth, but Pattern Lab Node ships with the following task configurations inside the [Gruntfile](https://github.com/pattern-lab/patternlab-node/blob/master/Gruntfile.js):
+
+```
+browserSync: {
+  dev: {
+    options: {
+      server:  './public',
+      watchTask: true,
+      plugins: [
+        {
+          module: 'bs-html-injector',
+          options: {
+            files: './public/index.html'
+          }
+        }
+      ]
+    }
+  }
+},
+bsReload: {
+  css: './public/**/*.css'
+}
+```
 
 ## How to Stop the Watch
 

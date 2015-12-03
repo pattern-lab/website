@@ -2,10 +2,20 @@
 layout: docs
 title: Auto Reloading the Browser Window When Changes Are Made | Pattern Lab
 heading: Auto Reloading the Browser Window When Changes Are Made
+languages:
+- language: php
+- language: node
 ---
 
+<!--- start php -->
 
-Rather than manually refreshing your browser when your patterns or CSS change you can have the PHP version of Pattern Lab auto-reload your browser window for you. 
+<div class="tab-panel" id="php">
+<h2 class="language-title">php</h2>
+
+{% capture m %}
+
+
+Rather than manually refreshing your browser when your patterns or CSS change you can have the PHP version of Pattern Lab auto-reload your browser window for you.
 
 ## How to Start the Auto-Reload Server
 
@@ -38,3 +48,33 @@ For Linux and Windows users you can also start the service from the command line
 ## How to Stop the Service
 
 To stop the service on Mac OS X you can press `CTRL+C` in the Terminal window where the process is running. If you've used the method above to start the watch and the auto-reload server they  will both shut down when using `CTRL+C`.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
+<!--- end php -->
+
+
+<!--- start node -->
+
+<div class="tab-panel" id="node">
+<h2 class="language-title">node</h2>
+
+{% capture m %}
+
+Rather than manually refreshing your browser when your patterns or CSS change, the Node version of Pattern Lab auto-reloads your browser window for you using [BrowserSync](http://www.browsersync.io/).
+
+Auto-reloading is a behavior that is done in concert with file watching. You can read more about how these two features work together [here](/docs/advanced-auto-regenerate.html).
+
+## How to Start and Connect to Pattern Lab with BrowserSync
+
+Running 'grunt serve' or 'gulp serve' from the command line of your working directory will start up Pattern Lab Node with BrowserSync and launch [http://localhost:3000](http://localhost:3000) in your default browser.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
+<!--- end node -->
