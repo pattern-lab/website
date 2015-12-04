@@ -16,7 +16,7 @@ In this case the key is `src` and the value is `../../images/fpo-avatar.png`. Le
 
     <img src="{% raw %}{{ src }}{% endraw %}" alt="Avatar">
 
-The Mustache variable is `{% raw %}{{ src }}{% endraw %}`. Note that `src` matches the name of the key in our JSON example. When the PHP version of Pattern Lab compiles this template the end result will be:
+The Mustache variable is `{% raw %}{{ src }}{% endraw %}`. Note that `src` matches the name of the key in our JSON example. When Pattern Lab compiles this template the end result will be:
 
     <img src="../../images/fpo-avatar.png" alt="Avatar">
 
