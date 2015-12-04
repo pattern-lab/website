@@ -31,9 +31,11 @@ The shorthand syntax also allows for fuzzy matching on pattern names. This means
 
 **Important:** If you include `16x9` in another pattern the PHP version of Pattern Lab may find that first depending on how your patterns are organized.
 
+**Important:** The Node version of Pattern Lab [does not support](https://github.com/pattern-lab/patternlab-node/issues/202) fuzzy pattern inclusion at this time.
+
 ## The Default Mustache Partials Syntax
 
-The PHP version of Pattern Lab also supports the default Mustache partials syntax if you need more specificity when adding partials to your templates. The syntax is simply the path to the partial minus the `.mustache` extension. For example, let's say we wanted to include the following pattern in a molecule:
+The PHP and Node versions of Pattern Lab also support the default Mustache partials syntax if you need more specificity when adding partials to your templates. The syntax is simply the path to the partial minus the `.mustache` extension. For example, let's say we wanted to include the following pattern in a molecule:
 
     00-atoms/03-images/02-landscape-16x9.mustache
 
