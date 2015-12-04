@@ -99,21 +99,31 @@ The version command prints out the current version of Pattern Lab.
 
 {% capture m %}
 
-The following are grunt task arguments you may execute:
+The Pattern Lab Node command line interface utilizes grunt or gulp tasks as the primary entry point to perform functions across all platforms. Two JavaScript files, `builer/patternlab_grunt.js` and `builer/patternlab_gulp.js` wrap and expose functions from the vanilla  `builder/patternlab.js` engine.
 
-`patternlab`
-With no arguments, patternlab runs the full builder, compiling patterns, and constructing the front-end site.
+In the following commands, the `grunt|gulp` pairing signifies that both task systems share the same subsequent command.   
 
-`patternlab:only_patterns`
-Compile the patterns only, outputting to `./public/patterns`
+## Generation Commands
 
-`patternlab:v`
-Retrieve the version of patternlab-node you have installed
+`grunt|gulp patternlab`
 
-`patternlab:help`
-Get more information about patternlab-node, pattern lab in general, and where to report issues.
+With no arguments, `patternlab `runs the full Pattern Lab Node builder once, removes old content from `public/`, compiles patterns, and moves content from `source/` to `public/`.
 
-These are best suited to encorporate into your `Gruntfile.js` as you see shipped with Pattern Lab Node.
+`grunt|gulp patternlab:only_patterns`
+
+Compile the patterns only, outputting to `public/patterns/`. This omits the entire subset of logic that generates the Pattern Lab website.
+
+These are best suited to incorporate into your `Gruntfile.js` or `Gulpfile.s` as you see shipped with Pattern Lab Node.
+
+## Utility Commands
+
+`grunt|gulp patternlab:v`
+
+Retrieve the version of patternlab-node you have installed.
+
+`grunt|gulp patternlab:help`
+
+Get more information about patternlab-node, Pattern Lab in general, and where to report issues.
 
 {% endcapture %}
 {{ m | markdownify }}
