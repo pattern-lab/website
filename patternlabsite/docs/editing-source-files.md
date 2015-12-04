@@ -2,43 +2,8 @@
 layout: docs
 title: Editing Pattern Lab Source Files | Pattern Lab
 heading: Editing Pattern Lab Source Files
-languages:
-- language: php
-- language: node
 ---
 
-<!--- start php -->
+Because the PHP and Node versions of Pattern Lab are static site generators you <u>**should not edit the files in the `public/` directory**</u>. Instead, you should edit the files under the `source/` directory. In addition to editing patterns under the `source/` directory you'll want to [edit your JavaScript, CSS, and images](/docs/pattern-managing-assets.html) as well. Each time your site is generated your files will be automatically moved to the `public/` directory and the patterns will be automatically compiled.
 
-<div class="tab-panel" id="php">
-<h2 class="language-title">php</h2>
-
-{% capture m %}
-
-Because the PHP version of Pattern Lab is a static site generator you <u>**should not edit the files in the `public/` directory**</u>. Instead, you should edit the files under the `source/` directory. In addition to editing patterns under the `source/` directory you'll want to [edit your JavaScript, CSS, and images](/docs/pattern-managing-assets.html) as well. Each time your site is generated your files will be automatically moved to the `public/` directory and the patterns will be automatically compiled.
-
-Generating the Pattern Lab website after each change can be cumbersome. The PHP version of Pattern Lab comes with the ability to [watch files in the `source/` directory for changes and re-generate the site automatically](/docs/advanced-auto-regenerate.html). The Pattern Lab website can also be [automatically reloaded](/docs/advanced-reload-browser.html).
-
-{% endcapture %}
-{{ m | markdownify }}
-
-</div>
-
-<!--- end php -->
-
-<!--- start node -->
-
-<div class="tab-panel" id="node">
-<h2 class="language-title">node</h2>
-
-{% capture m %}
-
-Because the Node version of Pattern Lab is a static site generator you <u>**should not edit the files in the `public/` directory**</u>. Instead, you should edit the files under the `source/` directory. In addition to editing patterns under the `source/` directory you'll want to [edit your JavaScript, CSS, and images](/docs/node/pattern-managing-assets.html) as well. Each time your site is generated your files will be automatically moved to the `public/` directory and the patterns will be automatically compiled.
-
-Generating the Pattern Lab website after each change can be cumbersome. The Node version of Pattern Lab comes with the ability to [watch files in the `source/` directory for changes, re-generate the site automatically, and reload the browser](/docs/node/advanced-auto-reloading-the-browser.html).
-
-{% endcapture %}
-{{ m | markdownify }}
-
-</div>
-
-<!--- end node -->
+Generating the Pattern Lab website after each change can be cumbersome. The PHP and Node versions of Pattern Lab come with the ability to [watch files in the `source/` directory for changes and re-generate the site automatically](/docs/advanced-auto-regenerate.html). The Pattern Lab website can also be [automatically reloaded](/docs/advanced-reload-browser.html).
