@@ -4,7 +4,7 @@ title: Adding New Patterns | Pattern Lab
 heading: Adding New Patterns
 ---
 
-Adding new patterns to the PHP version of Pattern Lab is simply a matter of adding Mustache templates in the appropriate pattern type and pattern sub-type directories under `source/_patterns`. For example, let's add a new pattern under the pattern type "molecules" and the pattern sub-type "blocks". The `source/_patterns/01-molecules/02-blocks/` directory looks like:
+Adding new patterns to the PHP and Node versions of Pattern Lab is simply a matter of adding Mustache templates in the appropriate pattern type and pattern sub-type directories under `source/_patterns`. For example, let's add a new pattern under the pattern type "molecules" and the pattern sub-type "blocks". The `source/_patterns/01-molecules/02-blocks/` directory looks like:
 
     00-media-block.mustache
     01-headline-byline.mustache
