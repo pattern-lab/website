@@ -59,7 +59,7 @@ The Node version of Pattern Lab's Page Follow feature gives developers the abili
 
 ## How to Start and Connect to Pattern Lab with BrowserSync
 
-Running 'grunt serve' or 'gulp serve' from the command line of your working directory will start up Pattern Lab Node with BrowserSync. By default, BrowserSync will output four URLs of note:
+Running `grunt serve` or `gulp serve` from the command line of your working directory will start up Pattern Lab Node with BrowserSync. By default, BrowserSync will output four URLs of note:
 
 1. Local: [http://localhost:3000](http://localhost:3000)
 2. External: http://your.ip.address:3000

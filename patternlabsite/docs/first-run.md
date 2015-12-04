@@ -14,7 +14,7 @@ languages:
 
 {% capture m %}
 
-By default, a number of important pages, including the main page, **aren't** built when you first download the PHP version of Pattern Lab. Before you visit your install of Pattern Lab you'll need to make sure all of the necessary pages have been built. 
+By default, a number of important pages, including the main page, **aren't** built when you first download the PHP version of Pattern Lab. Before you visit your install of Pattern Lab you'll need to make sure all of the necessary pages have been built.
 
 ## How to Generate the Pattern Lab Website
 
@@ -43,18 +43,18 @@ The site should now be generated and available for browsing.
 
 {% capture m %}
 
-By default, a number of important pages, including the main page, **aren't** built when you first download the Node version of Pattern Lab. Before you visit your install of Pattern Lab you'll need to make sure all of the necessary pages have been built. 
+By default, a number of important pages, including the main page, **aren't** built when you first download the Node version of Pattern Lab. Before you visit your install of Pattern Lab you'll need to make sure all of the necessary pages have been built.
 
 ## How to Generate the Pattern Lab Node Website
 
 To generate the Pattern Lab website do the following:
 
 1. Navigate to your installation directory from the command line.
-2. Run 'grunt'
+2. If you are using grunt, type `grunt patternlab`. If you are using gulp, type `gulp patternlab`
 
 The site should now be generated in the 'public/' directory and available for browsing.
 
-Running `grunt serve` will compile the patternlab front end and host it on [http://localhost:9001](http://localhost:9001) by default. Page will reload on any saved source code change.
+Additionally, you can [self-host the Pattern Lab website](/docs/advanced-page-follow.html#node) and sync it with multiple browsers or devices.
 
 {% endcapture %}
 {{ m | markdownify }}
