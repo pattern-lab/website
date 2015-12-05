@@ -71,7 +71,7 @@ To upgrade the Node version of Pattern Lab do the following:
 
 If you encounter trouble - make sure your npm devDependencies are up to date. Assuming you have the latest `package.json` file, you can delete the contents of `./node_modules` and run `npm cache clear` before running `npm install` to pull down everything anew.
 
-###### Addendum:
+## Addenda
 
 Some releases require a little extra file rearranging or reconfiguration. Please check the [addenda](https://github.com/pattern-lab/patternlab-node/wiki/Upgrading) on the wiki for more info.
 
