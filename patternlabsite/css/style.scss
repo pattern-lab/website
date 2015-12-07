@@ -957,6 +957,11 @@ pre {
 
 .content {
 	counter-reset: big-nums;
+	max-width: 44em;
+	
+	@media all and (min-width: $bp-large) {
+		max-width: 31em;
+	}
 
 	p {
 		counter-reset: big-nums;
@@ -1010,15 +1015,9 @@ pre {
 
 }
 
-.sidebar {
-	padding: 1em 0;
-	
+ .sidebar {
+	padding: 1em 0;	
 
-	@media all and (max-width: $bp-large) {
-		border-top: 1px solid rgba(0,0,0,0.2);
-		margin-top: 2em;
-		padding-top: 2em;
-	}
 	@media all and (min-width: $bp-large) {
 		width: 14em;
 		border-left: 1px solid rgba(0,0,0,0.2);
@@ -1026,14 +1025,28 @@ pre {
 }
 
 .docs-nav {
-	margin-left: 1em;
-
-	li {
-		line-height: 1.2;
+	margin-left: 0;
+	
+	@media all and (min-width: $bp-large) {
+		margin-left: 1em;
 	}
 
-	ul {
+	ul:not(.docs-nav-list) {
 		margin-bottom: 1em;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		
+		@media all and (min-width: 576px) {
+			flex-direction: row;
+		}
+
+	}
+	
+	li {
+		line-height: 1.2;
+		flex: 1 0 auto;
+		max-width: 14em;
 	}
 }
 
