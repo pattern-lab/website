@@ -96,7 +96,7 @@ legend {
 /************Global**************/
 
 body {
-	background: $white;
+	background: #f9f9f9;
 	color: $gray-dark;
 	font: 120%/1.4 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 	padding: 0;
@@ -207,9 +207,13 @@ pre {
 /************Layout**************/
 
 .lc {
-	max-width: 47em;
+	max-width: 48em;
 	margin: 0 auto;
 	padding: 0 1.5em;
+}
+
+.inner-lc {
+	background: $white;
 }
 
 /* Grid 2up */
@@ -328,6 +332,7 @@ pre {
 		bottom: -9em;
 		top: auto;
 		z-index:7;
+		display: none;
 	}
 
 	&:after {
@@ -343,9 +348,10 @@ pre {
 	}
 }
 
-.js .container {
+/*.js .container {
 	overflow: hidden;
-}
+} */
+
 
 // Header
 .header {
@@ -724,18 +730,19 @@ pre {
 	padding-left: 1em;
 	padding-right: 1em;
 	
-
 	&:before {
 		@include skew(#f6f6f6);
 		z-index: 7;
 
 	}
+	
+	/*
 
 	&:after {
 		@include skew2(#f9f9f9);
 		z-index: 7;
 
-	}
+	} */
 }
 
 
@@ -796,13 +803,55 @@ pre {
 	}
 
 	&:before {
-		@include skew(#000);
-		z-index: 7;
+		content: "";
+	    display: block;
+	    width: 738px;
+	    height: 746px;
+	    background: url(/assets/footer-before.svg) no-repeat;
+	    background-position: top right;
+	    position: absolute;
+	    top: -306px;
+	    left: 0;
+	    margin-left: -37.4em;
+	    z-index: 7;
+	    
+	    @media all and (min-width: 470px) {
+		    height: 657px;
+
+	    }
+	    
+	    @media all and (min-width: 565px) {
+		    height: 641px;
+	    }
+	    
+	    @media all and (min-width: 760px) {
+		    height: 550px;  
+	    }
+	    
+	    @media all and (min-width: 958px) {
+			left: 50%;
+			margin-left: -62.4em;
+		}
+		
 	}
 
 	&:after {
-		@include skew2(#2b2b2b);
+		content: "";
+		display: block;
+		width: 738px;
+		height: 246px;
+		background: url(/assets/footer-after.svg) no-repeat;
+		background-position: bottom left;
+		position: absolute;
+		bottom: 0px;
+		right: 0;
+		margin-right: -37.4em;
 		z-index: 7;
+		
+		@media all and (min-width: 958px) {
+			right: 50%;
+			margin-right: -62.4em;
+		}
 	}
 }
 
