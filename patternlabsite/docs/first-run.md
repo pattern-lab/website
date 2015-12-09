@@ -25,7 +25,9 @@ To generate the Pattern Lab website do the following:
 
 For Linux and Windows users, you can also generate the Pattern Lab website from the command line. To do so open a command prompt and navigate to the root of the patternlab-php directory. Type:
 
-    php core/builder.php -g
+```
+php core/builder.php -g
+```
 
 The site should now be generated and available for browsing.
 

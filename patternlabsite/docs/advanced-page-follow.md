@@ -26,7 +26,9 @@ To start the service on Mac OS X you can do the following:
 
 For Linux and Windows users you can also start the service from the command line. To do so open your command prompt and navigate to the root of the patternlab-php directory. Type:
 
-    php core/pageFollowServer.php
+```
+php core/pageFollowServer.php
+```
 
 Your browser should now be listening for Page Follow events and the Pattern Lab toolbar should note that "Page Follow" is now "On." Any other browser that visits the Pattern Lab site should now be redirected to the last visited pattern. When one browser views another pattern they should all be updated.
 

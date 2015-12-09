@@ -25,7 +25,9 @@ To start the watch service on Mac OS X you can do the following:
 
 For Linux and Windows users you can start the watch from the command line. To do so open your command prompt and navigate to the root of the `patternlab-php` directory. Type:
 
-    php core/builder.php -w
+```
+php core/builder.php -w
+```
 
 ## How to Start the Watch & Auto-Reload Server at the Same Time
 
@@ -37,7 +39,9 @@ Rather than manually refreshing your browser when your patterns or CSS change yo
 
 For Linux and Windows users you can start the watch from the command line. To do so open your command prompt and navigate to the root of the `patternlab-php` directory. Type:
 
-    php core/builder.php -wr
+```
+php core/builder.php -wr
+```
 
 ## How to Stop the Watch
 

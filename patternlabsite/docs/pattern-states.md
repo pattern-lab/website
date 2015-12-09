@@ -33,11 +33,15 @@ Any pattern that includes a pattern partial that has a lower pattern state will 
 
 Giving patterns a state is simply a matter of modifying the file name. If we wanted to give our `molecules-media-block` pattern a state of `inprogress` we'd change the file name from:
 
-    source/_patterns/01-molecules/02-blocks/00-media-block.mustache
+```
+source/_patterns/01-molecules/02-blocks/00-media-block.mustache
+```
 
 to:
 
-    source/_patterns/01-molecules/02-blocks/00-media-block@inprogress.mustache
+```
+source/_patterns/01-molecules/02-blocks/00-media-block@inprogress.mustache
+```
 
 ## Adding Customized States
 
@@ -45,9 +49,11 @@ The three default states included with the PHP version of Pattern Lab might not 
 
 You can use the following as your CSS template for new pattern states:
 
-    .newpatternstate:before {
-        color: #B10DC9 !important;
-    }
+```css
+.newpatternstate:before {
+    color: #B10DC9 !important;
+}
+```
 
 Then add `@newpatternstate` to your patterns to have the new look show up. If you want to add it to the cascade of the default patterns you can modify your `config.ini`. Simply add your new pattern state to the `patternStates` list.
 
@@ -93,9 +99,11 @@ The three default states included with the Node version of Pattern Lab might not
 
 You can use the following as your CSS template for new pattern states:
 
-    .newpatternstate:before {
-        color: #B10DC9 !important;
-    }
+```css
+.newpatternstate:before {
+    color: #B10DC9 !important;
+}
+```
 
 {% endcapture %}
 {{ m | markdownify }}

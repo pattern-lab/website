@@ -27,7 +27,9 @@ To start the service on Mac OS X you can do the following:
 
 For Linux and Windows users you can also start the service from the command line. To do so open your command prompt and navigate to the root of the patternlab-php directory. Type:
 
-    php core/autoReloadServer.php
+```
+php core/autoReloadServer.php
+```
 
 Your browser should now be listening for auto-reload events and the Pattern Lab website toolbar should note that "Auto-Reload" is now "On." For this feature to work you **must** have the PHP version of Pattern Lab watching for changes. [Learn how to set this up](/docs/advanced-auto-regenerate.html).
 
@@ -43,7 +45,9 @@ To start the watch and auto-reload services together on Mac OS X you can do the 
 
 For Linux and Windows users you can also start the service from the command line. To do so open your command prompt and navigate to the root of the `patternlab-php` directory. Type:
 
-    php core/builder.php -wr
+```
+php core/builder.php -wr
+```
 
 ## How to Stop the Service
 

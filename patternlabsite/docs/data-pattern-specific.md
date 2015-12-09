@@ -10,23 +10,29 @@ Setting up data variables and values for your atoms, molecules, and organisms us
 
 In order to tell the PHP and Node versions of Pattern Lab to use a pattern-specific JSON file to override the default variables just give the JSON file the same name as the pattern and put it in the same directory as the pattern. For example, if you wanted to provide pattern-specific data for the `article` pattern under the pattern type `pages` your `pages` directory would look like this:
 
-    pages/article.mustache
-    pages/article.json
+```
+pages/article.mustache
+pages/article.json
+```
 
 ## Overriding the Default Variables
 
 Overriding the default variables using the pattern-specific data is a just a matter of giving the variables you want to override the same names and structure in your pattern-specific data as they appear in the central data file. For example, the 4x3 landscape image source may look like this in `data.json`:
 
-    "landscape-4x3": {
-        "src": "../../images/fpo-landscape-4x3.jpg",
-        "alt": "Landscape 4x3 Image"
-    }
+```
+"landscape-4x3": {
+    "src": "../../images/fpo-landscape-4x3.jpg",
+    "alt": "Landscape 4x3 Image"
+}
+```
 
 In our pattern-specific data file, `article.json`, we'd simply copy that structure and provide our own information:
 
-    "landscape-4x3": {
-        "src": "../../images/a-team-hero.jpg"
-    }
+```
+"landscape-4x3": {
+    "src": "../../images/a-team-hero.jpg"
+}
+```
 
 Now the article pattern will display an image of the A-Team when using `{% raw %}{{ landscape-4x3.src }}{% endraw %}`. All other patterns using `{% raw %}{{ landscape-4x3.src }}{% endraw %}` will display the default 4x3 image. Also, note that we **didn't** override the `landscape-4x3.alt` attribute. If we were to use that attribute in our pattern the default value, "Landscape 4x3 Image", would be displayed. 
 
