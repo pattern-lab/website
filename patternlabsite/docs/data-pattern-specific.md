@@ -19,7 +19,7 @@ pages/article.json
 
 Overriding the default variables using the pattern-specific data is a just a matter of giving the variables you want to override the same names and structure in your pattern-specific data as they appear in the central data file. For example, the 4x3 landscape image source may look like this in `data.json`:
 
-```
+```javascript
 "landscape-4x3": {
     "src": "../../images/fpo-landscape-4x3.jpg",
     "alt": "Landscape 4x3 Image"
@@ -28,7 +28,7 @@ Overriding the default variables using the pattern-specific data is a just a mat
 
 In our pattern-specific data file, `article.json`, we'd simply copy that structure and provide our own information:
 
-```
+```javascript
 "landscape-4x3": {
     "src": "../../images/a-team-hero.jpg"
 }

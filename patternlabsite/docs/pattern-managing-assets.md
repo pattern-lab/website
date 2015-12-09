@@ -64,7 +64,7 @@ Static assets like Javascript and CSS **are not** added automagically to your pa
 
 Assets for patterns, including JavaScript, CSS, and images, should be stored in the `source/` directory. The Node version of Pattern Lab will move these assets to the `public/` directory for you when you generate your site or when you watch the `source/` directory for changes. You can name and nest your assets however you like. Pattern Lab Node ships with copy tasks in the `Gruntfile.js` or `Gulpfile.js` that copy your assets for you. Here's an example of the from the `Gruntfile`:
 
-```
+```javascript
 copy: {
   main: {
     files: [

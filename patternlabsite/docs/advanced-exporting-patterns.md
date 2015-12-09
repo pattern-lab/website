@@ -8,7 +8,7 @@ While the Pattern Lab website is great for design, iteration, alignment, and dis
 
 In Pattern Lab Node, `config.json` has two properties that work together to export completed patterns for use elsewhere. To export, provide an array of pattern-keys and an output directory. Pattern Lab Node doesn't ship with any pattern export keys, but the default directory is `'pattern_exports/'` created inside the install directory. Here is an example with three keys set.
 
-```
+```javascript
 "patternExportKeys": ["molecules-primary-nav", "organisms-header", "organisms-footer"],
 "patternExportDirectory": "./pattern_exports/"
 ```

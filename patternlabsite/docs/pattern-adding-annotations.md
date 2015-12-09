@@ -11,7 +11,7 @@ Annotations provide an easy way to add notes to elements within a pattern and th
 
 To explain how annotations are structured here is the annotation that's added to the logo:
 
-```
+```javascript
 {
 	"el": ".logo",
  	"title" : "Logo",

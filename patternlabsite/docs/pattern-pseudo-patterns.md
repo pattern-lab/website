@@ -55,7 +55,7 @@ We want to show both the regular and emergency states of the homepage but we don
 
 In our pseudo-pattern, `00-homepage~emergency.json`, we add our `emergency` attribute:
 
-```
+```javascript
 {
     "emergency": true
 }

@@ -57,7 +57,7 @@ tools-docs
 
 When sharing Pattern Lab with a client it may be beneficial to turn-off certain elements in the default navigation. To turn-off navigation elements, alter the flags inside the `ishControlsVisible` object within `config.json` and then re-generate the site. The following keys are supported and will hide their respective elements:
 
-```
+```javascript
 "ishControlsVisible": {
    "s": true,
    "m": true,

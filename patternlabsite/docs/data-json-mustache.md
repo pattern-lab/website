@@ -10,7 +10,7 @@ The best reference for this topic is the [Mustache documentation](http://mustach
 
 At its core JSON is a simple key-value store. This means that any piece of data in JSON has a key and a value. The key is the name of an attribute and the value is what should be shown when that attribute is referenced. Here's a simple example:
 
-```
+```javascript
 "src": "../../images/fpo-avatar.png"
 ```
 
@@ -32,7 +32,7 @@ Note that `{% raw %}{{ src }}{% endraw %}` was replaced by the value for `src` f
 
 We may want our JSON file to be a little more organized and our Mustache variable names to be a little more descriptive. For example, maybe we have multiple image sizes that we want to provide image sources for. We might organize our JSON key-values this way:
 
-```
+```javascript
 "square": {
     "src": "../../images/fpo-square.png",
     "alt": "Square"
@@ -61,7 +61,7 @@ This nesting makes it easier to read how the attributes are organized in our pat
 
 You may want to include HTML in your variables. By default, Mustache will convert HTML mark-up to their HTML entity equivalents. For example, our JSON may look like:
 
-```
+```javascript
 "lyrics": "Just <em>good ol' boys</em>, wouldn't change if they could, <strong>fightin'</strong> the system like a true modern day Robin Hood."
 ```
 

@@ -87,7 +87,7 @@ The Node version of Pattern Lab comes with the following default pattern states:
 
 In the Node version of Pattern Lab, pattern states are managed centrally from inside `config.json`. Adding the [pattern-type]-[pattern-name] name as the key, followed by the class name will apply the pattern state:
 
-```
+```javascript
 "patternStates": {
   "homepage-emergency" : "inprogress"
 },
