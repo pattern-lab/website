@@ -13,7 +13,7 @@ Setting up Grunt to work with the PHP version of Pattern Lab should be straightf
 2. Type `npm install --save-dev grunt-shell` to install [grunt-shell](https://github.com/sindresorhus/grunt-shell)
 3. Add the following to your `grunt.initConfig`. The `-p` flag ensures that Pattern Lab only generates patterns.
 
-```
+```javascript
 shell: {
   patternlab: {
     command: "php core/builder.php -gp"
@@ -26,7 +26,7 @@ shell: {
 
 You should also be using `grunt-contrib-watch` to monitor changes to Pattern Lab's patterns and data. The Pattern Lab section for your `watch` might look like:
 
-```
+```javascript
 html: {
   files: ['source/_patterns/**/*.mustache', 'source/_patterns/**/*.json', 'source/_data/*.json'],
   tasks: ['shell:patternlab'],
