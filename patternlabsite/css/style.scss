@@ -839,16 +839,29 @@ pre {
 		content: "";
 		display: block;
 		width: 738px;
-		height: 246px;
+		height: 721px;
 		background: url(/assets/footer-after.svg) no-repeat;
-		background-position: bottom left;
+		background-position: top left;
 		position: absolute;
-		bottom: 0px;
+		top: -280px;
 		right: 0;
 		margin-right: -37.4em;
 		z-index: 7;
 		
-		@media all and (min-width: 958px) {
+		@media all and (min-width: 470px) {
+			height: 631px;
+
+	    }
+	    
+	    @media all and (min-width: 565px) {
+		    height: 615px;
+	    }
+	    
+	    @media all and (min-width: 760px) {
+		    height: 525px;  
+	    }
+	    
+	    @media all and (min-width: 958px) {
 			right: 50%;
 			margin-right: -62.4em;
 		}
