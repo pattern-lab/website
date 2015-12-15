@@ -118,6 +118,11 @@ img, object, video {
 	height: auto;
 	border: 0;
 }
+
+video {
+	width: 100%;
+}
+
 a img {
 	border: 0;
 	outline: 0;
@@ -236,16 +241,10 @@ pre {
 //Goes from one column to 2x2
 .g-2up {
 	@media all and (min-width: $bp-med) {
+		display: flex;
+
 		> .gi {
 			width: 50%;
-
-			&:nth-of-type(odd) {
-				padding-right: 0.5em;
-			}
-
-			&:nth-of-type(even) {
-				padding-left: 0.5em;
-			}
 		}
 	}
 }
@@ -341,7 +340,7 @@ pre {
 		bottom: auto;
 		top: -10.5em;
 		z-index: 7;
-		
+
 		@media all and (min-width: 64em) {
 			background: #2b2b2b;
 		}
@@ -474,7 +473,7 @@ pre {
 		@media all and (min-width: 760px) {
 			display: flex;
 		}
-		
+
 
 	}
 
@@ -680,7 +679,7 @@ pre {
 	background: $gray-lighter;
 	padding: 1em 1em;
 	position: relative;
-	
+
 	h2 {
 		margin: 0;
 	}
@@ -702,11 +701,8 @@ pre {
 
 .banner-dark {
 	background: $gray-dark;
-	
-	.language-btn {
-		color: $white;
-	}
-	
+	color: $white;
+
 	&:before {
 		@include skew(#000);
 		z-index: 8;
@@ -716,7 +712,7 @@ pre {
 		@include skew2(#2b2b2b);
 		z-index: 8;
 	}
-	
+
 }
 
 .banner-feature {
@@ -729,13 +725,13 @@ pre {
 	padding-bottom: 2.2em;
 	padding-left: 1em;
 	padding-right: 1em;
-	
+
 	&:before {
 		@include skew(#f6f6f6);
 		z-index: 7;
 
 	}
-	
+
 	/*
 
 	&:after {
@@ -814,25 +810,25 @@ pre {
 	    left: 0;
 	    margin-left: -37.4em;
 	    z-index: 7;
-	    
+
 	    @media all and (min-width: 470px) {
 		    height: 657px;
 
 	    }
-	    
+
 	    @media all and (min-width: 565px) {
 		    height: 641px;
 	    }
-	    
+
 	    @media all and (min-width: 760px) {
-		    height: 550px;  
+		    height: 550px;
 	    }
-	    
+
 	    @media all and (min-width: 958px) {
 			left: 50%;
 			margin-left: -62.4em;
 		}
-		
+
 	}
 
 	&:after {
@@ -847,20 +843,20 @@ pre {
 		right: 0;
 		margin-right: -37.4em;
 		z-index: 7;
-		
+
 		@media all and (min-width: 470px) {
 			height: 631px;
 
 	    }
-	    
+
 	    @media all and (min-width: 565px) {
 		    height: 615px;
 	    }
-	    
+
 	    @media all and (min-width: 760px) {
-		    height: 525px;  
+		    height: 525px;
 	    }
-	    
+
 	    @media all and (min-width: 958px) {
 			right: 50%;
 			margin-right: -62.4em;
@@ -869,17 +865,17 @@ pre {
 }
 
 .footer-nav {
-	
+
 	margin: 0 2em 1em 2em;
-	
+
 	@media all and (min-width: 620px) {
 	margin: 0 6em 1em 6em;
 	}
-	
+
 	@media all and (min-width: 760px) {
 		margin: 0 2em 1em 2em;
 	}
-	
+
 	ul {
 	  margin: 0 auto;
 	  padding: 0;
@@ -919,7 +915,7 @@ pre {
  	 	text-transform: lowercase;
  	 	transition: background 0.1s ease;
  	 	padding: 0.5em 0;
- 	 	
+
  	 	&:before {
 			content: "";
 			display: block;
@@ -948,7 +944,7 @@ pre {
 
  	 	&:hover, &:focus {
  	 		background: $gray !important;
- 	 		
+
  	 		&:before, &:after {
 	 	 		background: $gray;
 	 	 		z-index: 999999;
@@ -1020,7 +1016,7 @@ pre {
 .content {
 	counter-reset: big-nums;
 	max-width: 44em;
-	
+
 	@media all and (min-width: $bp-large) {
 		max-width: 31em;
 	}
@@ -1078,7 +1074,7 @@ pre {
 }
 
  .sidebar {
-	padding: 1em 0;	
+	padding: 1em 0;
 
 	@media all and (min-width: $bp-large) {
 		width: 14em;
@@ -1088,7 +1084,7 @@ pre {
 
 .docs-nav {
 	margin-left: 0;
-	
+
 	@media all and (min-width: $bp-large) {
 		margin-left: 1em;
 	}
@@ -1098,13 +1094,13 @@ pre {
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: column;
-		
+
 		@media all and (min-width: 576px) {
 			flex-direction: row;
 		}
 
 	}
-	
+
 	li {
 		line-height: 1.2;
 		flex: 1 0 auto;
@@ -1123,13 +1119,13 @@ pre {
 .docs-nav-list {
 	font-size: 80%;
 	margin: 1em 0;
-	
+
 	a {
 		display: block;
 		padding: 0.25em 1em;;
 		position: relative;
-		transition: background 0.1s ease;	
-		
+		transition: background 0.1s ease;
+
 		&:before {
 			content: "";
 			display: block;
@@ -1142,7 +1138,7 @@ pre {
 		    transform: skew(-20deg);
 		    transition: background 0.1s ease;
 		}
-	
+
 		&:after {
 			content: "";
 			display: block;
@@ -1155,34 +1151,34 @@ pre {
 		    transform: skew(-20deg);
 		    transition: background 0.1s ease;
 		}
-			
-			
+
+
 		&:hover {
 			background: $gray-lighter;
 			transition: background 0.1s ease;
-			
+
 			a {
 				color: $black;
 			}
-			
+
 			&:before {
 				background: $gray-lighter;
 			}
-			
+
 			&:after {
 				background: $gray-lighter;
 			}
 		}
-	}	
+	}
 
 	.selected {
 		position: relative;
 		background: $gray;
 		transition: background 0.1s ease;
-		
+
 		a {
 			color: $white;
-		
+
 			&:before {
 				content: "";
 				display: block;
@@ -1196,7 +1192,7 @@ pre {
 			    transform: skew(-20deg);
 			    transition: background 0.1s ease;
 			}
-		
+
 			&:after {
 				content: "";
 				display: block;
@@ -1210,15 +1206,15 @@ pre {
 			    transform: skew(-20deg);
 			    transition: background 0.1s ease;
 			}
-			
+
 			&:hover {
 				background: $gray;
 				color: $black;
-				
+
 				&:before {
 					background: $gray;
 				}
-				
+
 				&:after {
 					background: $gray;
 				}
@@ -1240,16 +1236,16 @@ pre {
 }
 
 .docs-section {
-	
+
 	.docs-nav-list {
 		-webkit-column-count: 1;
 		-moz-column-count: 1;
 		column-count: 1;
 		margin: 1em -0.8em;
-	
+
 		a {
 			padding: 0.25em 1em;
-			
+
 			&:before {
 			    content: "";
 			    display: block;
@@ -1262,7 +1258,7 @@ pre {
 			    transform: skew(-20deg);
 			    transition: background 0.1s ease;
 			    }
-			    
+
 			    &:after {
 			    content: "";
 			    display: block;
@@ -1276,14 +1272,14 @@ pre {
 			    transition: background 0.1s ease;
 			    }
 		}
-	
+
 		@media all and (min-width: 505px) {
 			-webkit-column-count: 2;
 			-moz-column-count: 2;
 			column-count: 2;
 
 		}
-		
+
 		@media all and (min-width: 700px) {
 			-webkit-column-count: 3;
 			-moz-column-count: 3;
@@ -1292,17 +1288,17 @@ pre {
 			  -moz-column-gap: 1px;
 			  column-gap: 1px;
 		}
-		
+
 		@media all and (min-width: 935px) {
 			margin: 1em -1.8em;
 		}
-		
+
 		li {
 		-webkit-column-break-inside: avoid;
-	    page-break-inside: avoid; 
+	    page-break-inside: avoid;
 	    break-inside: avoid-column;
 	    margin: 0 1em;
-			
+
 		}
 	}
 }
@@ -1416,137 +1412,20 @@ pre {
 	}
 }
 
-/* Credit Section */
-
-.credit {
-	display: block;
-	width: 50%;
-	margin: 0 auto;
-	
-	@media all and (min-width: 595px) {
-		width: 100%;
-		display: flex;
-		margin: 0;
-	}
-}
-
+// Credit Section
 .credit-block {
-	position: relative;
-	padding: 0;
-
 	img {
-		display: block;
-		width: auto;
-		position: relative;
-		z-index: 0;
-		
-		@media all and (min-width: 595px) {
-			-webkit-clip-path: polygon(35% 0%, 100% 0%, 65% 100%, 0% 100%);
-			clip-path: polygon(35% 0%, 100% 0%, 65% 100%, 0% 100%);
-		}
+		width: 180px;
+		height: 180px;
+		-webkit-clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
+		clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
 	}
-	
-	&:hover{
-		
-		.credit-info {
-			transform:skew(0);
-		}
-		
-		.credit-author {
-		transform: skew(0);
-		}
-		
-	}
-}
-
-.credit-block-dave {
-	margin: 0;
-	
-	@media all and (min-width: 595px) {
-		margin: 0 -4.5em;	
-	}
-	
-	@media all and (min-width: 620px) {
-		margin: 0 -5em;
-	}
-	
-	@media all and (min-width: 715px) {
-		margin: 0 -6.7em;
-	}
-}
-
-.credit-info {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 1;
-	width: 8em;
-	height: 8em;
-	margin: -4em 0 0 -4em;
-	padding-top: 2.5em;
-	background: rgba(0,0,0,0.5);
-	transform: skew(-20deg);
-	
 
 	a {
 		display: block;
-		color: $white;
-		text-transform: lowercase;
-		text-align: center;
-
-		&:hover, &:focus {
-			color: $gray-light;
-		}
-	}
-
-		
-	.credit-author {
-		transform: skew(20deg);
-	}
-	
-}
-
-.credit-heading {
-	padding: 0.5em 0;
-	position: relative;
-	background: $gray-dark;
-	color: white;
-
-	&-inner {
-		display: flex;
-		width: 100%;
-	}
-
-	&:before {
-		@include skew(#000);
-		z-index: 8;
-	}
-
-	&:after {
-		@include skew2(#2b2b2b);
-		z-index: 8;
 	}
 }
 
-.first-author {
-	
-	img {
-		@media all and (min-width: 600px) {
-			clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 0% 100%);
-			-webkit-clip-path: polygon(0% 0%, 100% 0%, 65% 100%, 0% 100%);
-		}
-	}
-}
-
-.last-author {
-	
-	img {
-		@media all and (min-width: 600px) {
-			clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
-			-webkit-clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
-		}
-	}	
-}
 
 .language-toggle {
 	padding: 0;
@@ -1554,12 +1433,12 @@ pre {
 	background: $gray-dark;
 	color: white;
 	width: 100%;
-	
+
 	&-inner {
-	display: flex;
-	width: 100%;
+		display: flex;
+		width: 100%;
 	}
-	
+
 	.lc {
 		overflow: hidden;
 	}
@@ -1575,18 +1454,18 @@ pre {
 	}
 }
 
-	
+
 .tab {
 	display: inline-block;
 	margin: 0 0.5em;
-	
+
 	a {
 		position: relative;
 		display: block;
 		color: white;
 		padding: 1em 1em;
 		font-weight: bold;
-		
+
 		&:before {
 			content: "";
 			display: block;
@@ -1599,7 +1478,7 @@ pre {
 		    transform: skew(-20deg);
 		    z-index: 7;
 		}
-		
+
 		&:after {
 			content: "";
 			position: absolute;
@@ -1612,12 +1491,12 @@ pre {
 		    transform: skew(-20deg);
 			z-index: 7
 		}
-		
+
 		&.active {
 			background: $gray-lighter;
 			position: relative;
 			color: $black;
-			
+
 			&:before {
 				content: "";
 				display: block;
@@ -1630,7 +1509,7 @@ pre {
 			    transform: skew(-20deg);
 			    z-index: 8;
 			}
-			
+
 			&:after {
 				content: "";
 				position: absolute;
@@ -1643,35 +1522,35 @@ pre {
 			    transform: skew(-20deg);
 			    z-index: 8;
 			}
-			
+
 			&:hover {
 				color: $white;
-			}		
+			}
 		}
-		
+
 		&:hover {
 			background: $gray;
 			transition: background 0.1s ease;
-			
+
 			&:before {
 			    background: $gray;
 			    z-index: 10;
 			    transition: background 0.1s ease;
 			}
-	
+
 			&:after {
 			    background: $gray;
 			    z-index: 10;
 			    transition: background 0.1s ease;
 			}
 		}
-	}	
+	}
 }
 
 .js .content {
 	margin-top: 1.4em;
 }
-	
+
 .js .tab-panel {
 	display: none;
 }
@@ -1684,7 +1563,7 @@ pre {
 	display: none;
 }
 
-	
+
 
 
 /* Documentation Home */
@@ -1697,7 +1576,7 @@ pre {
 	.docs-nav-section {
 		@extend .gi;
 	}
-	
+
 	//hide the key on the node partial when on the index, as it's mentioned earlier, but needed on the individual pages
 	&.node .sub-only {
 		display: none;
