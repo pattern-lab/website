@@ -37,9 +37,7 @@ The shorthand syntax also allows for fuzzy matching on pattern names. This means
 {% raw %}{{> atoms-16x9 }}{% endraw %}
 ```
 
-**Important:** If you include `16x9` in another pattern the PHP version of Pattern Lab may find that first depending on how your patterns are organized.
-
-**Important:** The Node version of Pattern Lab [does not support](https://github.com/pattern-lab/patternlab-node/issues/202) fuzzy pattern inclusion at this time.
+**Important:** If you include `16x9` in another pattern the PHP and Node versions of Pattern Lab may find that first depending on how your patterns are organized.
 
 ## The Default Mustache Partials Syntax
 
