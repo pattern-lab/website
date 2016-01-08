@@ -826,7 +826,7 @@ pre {
 		content: "";
 	    display: block;
 	    width: 738px;
-	    height: 724px;
+	    height: 713px;
 	    background: url(/assets/footer-before.svg) no-repeat;
 	    background-position: top right;
 	    position: absolute;
@@ -836,12 +836,12 @@ pre {
 	    z-index: 7;
 
 	    @media all and (min-width: 470px) {
-		    height: 635px;
+		    height: 625px;
 
 	    }
 
 	    @media all and (min-width: 565px) {
-		    height: 634px;
+		    height: 626px;
 	    }
 
 	    @media all and (min-width: 760px) {
@@ -859,26 +859,26 @@ pre {
 		content: "";
 		display: block;
 		width: 738px;
-		height: 698px;
+		height: 405px;
 		background: url(/assets/footer-after.svg) no-repeat;
 		background-position: top left;
 		position: absolute;
-		top: -280px;
+		top: 0;
 		right: 0;
 		margin-right: -37.4em;
 		z-index: 7;
 
 		@media all and (min-width: 470px) {
-			height: 609px;
+			height: 319px;
 
 	    }
 
 	    @media all and (min-width: 565px) {
-		    height: 608px;
+		    height: 319px;
 	    }
 
 	    @media all and (min-width: 760px) {
-		    height: 509px;
+		    height: 229px;
 	    }
 
 	    @media all and (min-width: 958px) {
