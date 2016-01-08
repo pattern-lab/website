@@ -267,7 +267,7 @@ pre {
 .g-4up {
 	display: flex;
 	flex-wrap: wrap;
-	
+
 	@media all and (min-width: $bp-med) {
 		> .gi {
 			width: 75%;
@@ -736,7 +736,7 @@ pre {
 		z-index: 7;
 
 	}
-	
+
 	&:after {
 	    content: "";
 	    display: block;
@@ -765,53 +765,17 @@ pre {
 	} */
 }
 
-
+//Section
 .section {
-	padding: 1em 0;
-	clear: both;
 
-	p {
-		margin: 0;
+	&-body {
+		@extend .lc;
+		padding: 1.5em;
 	}
 }
 
-//Section Header
-.section-title {
-	clear: both;
-	font-size: 2em;
-	margin: 0 0 0.4em;
-}
 
-//Section Icons for About Page
-.section-wrap {
-	@media all and (min-width: $bp-large) {
-		display: -webkit-flex;
-  		display: flex;
-  		align-content: flex-start;
-	}
-}
-
-.section-icon {
-	width: 16em;
-	display: block;
-	margin: 0 auto;
-}
-
-.section-text {
-
-	@media all and (min-width: $bp-large) {
-  		-webkit-flex: 1;
-  		flex: 1;
-  		padding-left: 2em;
-	}
-}
-
-.section-8 {
-	padding: 0;
-}
-
-
-/* Footer */
+// Footer
 .footer {
 	clear: both;
 	background: $gray-dark;
@@ -1016,7 +980,6 @@ pre {
 	font-size: 1.5rem;
 	line-height: 1.3;
 	max-width: 25em;
-	margin: 0;
 }
 
 .list {
@@ -1439,7 +1402,7 @@ pre {
 // Credit Section
 .credit-block {
 	display: inline-block;
-	
+
 	img {
 		width: 180px;
 		height: 180px;
@@ -1450,7 +1413,7 @@ pre {
 	a {
 		display: block;
 	}
-	
+
 	.credit-info {
 		text-align: center;
 	}
