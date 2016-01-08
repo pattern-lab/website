@@ -37,7 +37,7 @@ $bend-height: 20px;
 	position: absolute;
 	bottom: 8.2em;
 	left: 1em;
-	margin-left: -45em;
+	margin-left: -46em;
 	z-index: 4;
 
 	@media all and (min-width: 61em) {
@@ -56,7 +56,7 @@ $bend-height: 20px;
 	position: absolute;
 	bottom: -8.18em;
 	right: 1em;
-	margin-right: -45em;
+	margin-right: -46em;
 	z-index: 4;
 
 	@media all and (min-width: 61em) {
@@ -251,7 +251,10 @@ pre {
 
 //Goes from one column to 3x3
 .g-3up {
+	display: flex;
+	flex-wrap: wrap;
 	overflow: hidden;
+
 
 	@media all and (min-width: $bp-med) {
 		> .gi {
@@ -264,7 +267,7 @@ pre {
 .g-4up {
 	display: flex;
 	flex-wrap: wrap;
-
+	
 	@media all and (min-width: $bp-med) {
 		> .gi {
 			width: 75%;
@@ -690,11 +693,13 @@ pre {
 
 	&:before {
 		@include skew(#ccc);
+		left: 2em;
 		z-index: 9;
 	}
 
 	&:after {
 		@include skew2(#dadada);
+		right: 2em;
 		z-index: 9;
 	}
 }
@@ -705,12 +710,12 @@ pre {
 
 	&:before {
 		@include skew(#000);
-		z-index: 8;
+		z-index: 9;
 	}
 
 	&:after {
 		@include skew2(#2b2b2b);
-		z-index: 8;
+		z-index: 9;
 	}
 
 }
@@ -730,6 +735,25 @@ pre {
 		@include skew(#f6f6f6);
 		z-index: 7;
 
+	}
+	
+	&:after {
+	    content: "";
+	    display: block;
+	    width: 5000px;
+	    height: 100%;
+	    background: url(/assets/guts-after.svg) no-repeat;
+	    background-position: top left;
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    margin-right: -258.4em;
+	    z-index: 7;
+
+	    @media all and (min-width: 958px) {
+		    right: 50%;
+			margin-right: -283.4em;
+		}
 	}
 
 	/*
@@ -802,7 +826,7 @@ pre {
 		content: "";
 	    display: block;
 	    width: 738px;
-	    height: 746px;
+	    height: 724px;
 	    background: url(/assets/footer-before.svg) no-repeat;
 	    background-position: top right;
 	    position: absolute;
@@ -812,16 +836,16 @@ pre {
 	    z-index: 7;
 
 	    @media all and (min-width: 470px) {
-		    height: 657px;
+		    height: 635px;
 
 	    }
 
 	    @media all and (min-width: 565px) {
-		    height: 641px;
+		    height: 634px;
 	    }
 
 	    @media all and (min-width: 760px) {
-		    height: 550px;
+		    height: 535px;
 	    }
 
 	    @media all and (min-width: 958px) {
@@ -835,7 +859,7 @@ pre {
 		content: "";
 		display: block;
 		width: 738px;
-		height: 721px;
+		height: 698px;
 		background: url(/assets/footer-after.svg) no-repeat;
 		background-position: top left;
 		position: absolute;
@@ -845,16 +869,16 @@ pre {
 		z-index: 7;
 
 		@media all and (min-width: 470px) {
-			height: 631px;
+			height: 609px;
 
 	    }
 
 	    @media all and (min-width: 565px) {
-		    height: 615px;
+		    height: 608px;
 	    }
 
 	    @media all and (min-width: 760px) {
-		    height: 525px;
+		    height: 509px;
 	    }
 
 	    @media all and (min-width: 958px) {
@@ -1414,6 +1438,8 @@ pre {
 
 // Credit Section
 .credit-block {
+	display: inline-block;
+	
 	img {
 		width: 180px;
 		height: 180px;
@@ -1423,6 +1449,10 @@ pre {
 
 	a {
 		display: block;
+	}
+	
+	.credit-info {
+		text-align: center;
 	}
 }
 
