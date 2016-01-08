@@ -1401,13 +1401,24 @@ pre {
 
 // Credit Section
 .credit-block {
-	display: inline-block;
+	display: flex;
+	flex-wrap: wrap;
+	background: $gray-light;
+	transform: skew(-8deg);
+	margin: 0.5em 0;
+	justify-content: center;
+	align-items: center;
+	
+	.credit-image {
+		margin-bottom: -0.3em;
+		transform: skew(8deg);
 
-	img {
-		width: 180px;
-		height: 180px;
-		-webkit-clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
-		clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
+		img {
+			width: 180px;
+			height: 180px;
+			-webkit-clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
+			clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);;
+		}
 	}
 
 	a {
@@ -1416,6 +1427,12 @@ pre {
 
 	.credit-info {
 		text-align: center;
+		width: 50%;
+		
+		a {
+			color: $gray-dark;
+			transform: skew( 8deg);
+		}
 	}
 }
 
