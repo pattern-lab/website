@@ -375,6 +375,7 @@ pre {
 	&:after {
 		@include skew2(#2b2b2b);
 		z-index: 8;
+		margin-right: -45em;
 	}
 }
 
@@ -1211,7 +1212,7 @@ pre {
 }
 
 .docs-index {
-	margin: 0 -1em;
+	margin: 0;
 
 	.docs-nav {
 		margin: 0;
@@ -1408,6 +1409,8 @@ pre {
 	margin: 0.5em 0;
 	justify-content: center;
 	align-items: center;
+	-webkit-clip-path: polygon(7% 0, 100% 0%, 100% 100%, 7% 100%);
+	clip-path: polygon(7% 0, 100% 0%, 100% 100%, 7% 100%);
 	
 	.credit-image {
 		margin-bottom: -0.3em;
@@ -1433,6 +1436,11 @@ pre {
 			color: $gray-dark;
 			transform: skew( 8deg);
 		}
+	}
+	
+	@media all and (min-width: 630px) and (max-width: 846px) {
+		-webkit-clip-path: polygon(7% 0, 93% 0%, 93% 100%, 7% 100%);
+		clip-path: polygon(7% 0, 93% 0%, 93% 100%, 7% 100%);
 	}
 }
 
