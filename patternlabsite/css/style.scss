@@ -1295,7 +1295,7 @@ pre {
 /************Buttons**************/
 .btn-group {
 	text-align: center;
-	margin: 1em 0;
+	margin: 1em 1em;
 
 	.btn {
 		display: block;
@@ -1305,7 +1305,7 @@ pre {
 	@media all and (min-width: 40em) {
 		.btn {
 			display: inline-block;
-			margin: 0 0.75em;
+			margin: .3em 0.75em;
 		}
 	}
 }
