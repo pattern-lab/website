@@ -772,6 +772,18 @@ pre {
 	&-body {
 		@extend .lc;
 		padding: 1.5em;
+		
+		&-centered {
+			display: flex;
+			margin: 0 auto;
+			flex-direction: column;
+			text-align: center;
+			
+			.intro {
+				margin: 0 auto;
+				padding: 1em 0;
+			}
+		}
 	}
 }
 
