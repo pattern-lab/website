@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Pattern Lab | Build Atomic Design Systems</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="home">
+    <div class="container">
+	<header class="header" role="banner">
+	
+	  <h4 class="logo-header"><a href="/"><span class="atom"></span> Pattern Lab</a></h4>
+
+	  <nav class="nav" role="navigation">
+	    <ul>
+	      <li><a href="/docs/index.html">Documentation</a></li>
+	      <li><a href="/about.html">About</a></li>
+	      <li><a href="/resources.html">Resources</a></li>
+	      <li><a href="http://demo.patternlab.io" target="_blank">Demo</a></li>
+	      <li><a href="https://github.com/pattern-lab/patternlab-php" rel="external" target="blank">On Github</a></li>
+	    </ul>
+	  </nav>
+
+	</header><!--end header-->
+	<div class="main" role="main">
+
+      <section class="section section-1">
+        <div class="logo-container">
+          <h1 class="logo"><span class="atom"></span> Pattern Lab</h1>
+          <p class="tagline">Create <a href="/about.html" rel="external">atomic design</a>  systems</p>
+        </div><!--end logo-container-->
+
+        <ol class="atomic-design">
+          <li>
+            <a href="about.html#atoms">
+              <img src="assets/icon-atom.svg" alt="Atom" />
+              <h4 class="atomic-label">Atoms</h4>
+            </a>
+          </li>
+          <li>
+            <a href="about.html#molecules">
+              <img src="assets/icon-molecule.svg" alt="Molecule" />
+              <h4 class="atomic-label">Molecules</h4>
+            </a>
+          </li>
+          <li>
+            <a href="about.html#organisms">
+              <img src="assets/icon-organism.svg" alt="Organism" />
+              <h4 class="atomic-label">Organisms</h4>
+            </a>
+          </li>
+          <li>
+            <a href="about.html#templates">
+              <img src="assets/icon-template.svg" alt="Template" />
+              <h4 class="atomic-label">Templates</h4>
+            </a>
+          </li>
+          <li>
+            <a href="about.html#pages">
+              <img src="assets/icon-page.svg" alt="Page" />
+              <h4 class="atomic-label">Pages</h4>
+            </a>
+          </li>
+        </ol> 
+
+        <div class="btn-group">
+          <a href="https://github.com/pattern-lab/patternlab-php/archive/master.zip" class="btn"><span class="icon-download"></span>Download</a>
+          <a href="https://github.com/pattern-lab/patternlab-php" class="btn"><span class="icon-github"></span>View on Github</a>
+          <a href="http://demo.patternlab.io" class="btn"><span class="icon-arrow-up-right" target="_blank"></span>View Demo</a>
+        </div>
+      </section>
+        
+
+      <section class="section  section-2" id="what">
+
+
+        <h2 class="section-title">What It Is</h2>
+        <p class="intro">Pattern Lab is a collection of tools to help you create atomic design systems.</p>
+        <ul class="g g-4up">
+          <li class="gi">
+            <h3>Static site generator</h3> 
+            <p>At its core, Pattern Lab is a custom static site generator that constructs an interface by stitching atoms, molecules, and organisms together to form templates and pages.</p>
+          </li>
+          <li class="gi">
+            <h3>component library</h3>
+            <p>Pattern Lab serves as your project's pattern library and frontend style guide, but you're simultaneously able to see components abstractly and in context.</p>
+          </li>
+          <li class="gi">
+            <h3>Pattern starter kit</h3>
+             <p>Pattern Lab provides a whole slew of patterns just to get you started. <em>Don't use them all.</em> You should use Pattern Lab to create your own atoms, molecules, organisms, templates, and pages. </p>
+          </li>
+          <li class="gi">
+            <h3>Viewport Resizer</h3>
+            <p>It's our job to make sure our designs look and function beautifully across a whole slew of Web-enabled devices. Pattern Lab provides a robust viewport resizing tool to help you create great designs across all screens.</p>
+          </li>
+          <li class="gi">
+            <h3>Annotation Tool</h3>
+            <p>Pattern Lab provides a way to annotate your interface to better communicate design and development decisions to clients and team members.</p>
+          </li>
+          <li class="gi">
+            <h3>Auto Refresh Tool</h3>
+            <p>Pattern Lab can reload your browser automatically whenever you save changes to patterns, images, CSS or anything in your project. Make a change and see the results instantly.</p>
+          </li>
+          <li class="gi">
+            <h3>Page Follow Tool</h3>
+            <p>Testing across multiple browsers and devices is tedious. Page Follow streamlines the development process by syncing navigation from one browser with any other browser connected to the same Pattern Lab site. </p>
+          </li>
+
+        </ul>
+      </section>
+
+      <section class="section section-3" id="what-isnt">
+        <h2 class="section-title">What It Ain't</h2>
+        <p class="intro">Pattern Lab doesn't give you all the answers.</p>
+
+        <ul class="g g-3up">
+          <li class="gi">
+            <h3>A UI framework</h3>
+            <p>Pattern Lab isn't <a href="http://getbootstrap.com/">Bootstrap</a>. It's not <a href="http://foundation.zurb.com/">Foundation</a>. It's not flat. It's not skeuomorphic. We've got nothing against UI frameworks, but that's not what Pattern Lab does. How it looks and how it's coded is entirely up to you.</p>
+           </li>
+          <li class="gi">
+            <h3>Language-dependent</h3>
+            <p>Like Sass? Great! Go nuts. Use Less instead? That's cool too. Don't like preprocessors? Totally fine. Gotta have jQuery, or wouldn't touch it with a 10 foot pole? Pattern Lab lets you write HTML, CSS and JavaScript however you want. Write code as awesome or as crappy as you like.</p>
+           </li>
+          <li class="gi">
+            <h3>Incredibly Rigid</h3>
+            <p>Pattern Lab is designed to be flexible with regards to naming and structure. There's really no One Right Way to do this, and we think that's just fine. Name things as you please, and we'll leave the hair-splitting out of things.</p>
+           </li>
+        </ul>
+      </section>
+
+      <section class="section section-4" id="why">
+        <h2 class="section-title">Why</h2>
+        <p class="intro">Build systems, not pages.</p>
+        <div class="g g-3up">
+          <div class="gi">
+            <h3>The need for modularity</h3>
+            <p>Component-driven design has been around for a long while now, but it's become imperative to think now that the Web landscape is so much more complex. It's essential to consider how every thing you include in an interface looks and functions across a whole slew of browsers, devices, and environments.</p>
+          </div>
+          <div class="gi">
+            <h3>A better workflow</h3>
+            <p><a href="http://24ways.org/2011/front-end-style-guides/" rel="external">Anna Debenham explains</a> how pattern libraries create a shared vocabulary between disciplines, make testing easier,  and builds a canonical reference to keep coming back to.</p>
+          </div>
+          <div class="gi">
+            <h3>Tiny Bootstraps, for Every Client</h3>
+            <p>In this responsive age, our <a href="http://daverupert.com/2013/04/responsive-deliverables/" rel="external">responsive deliverables</a> need to be more than an ad hoc collection of pages. Give clients a custom design system with which they can modify, extend, and grow with into the future.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-5" id="how">
+        <h2 class="section-title">How</h2>
+        <p class="intro"><a href="/docs/index.html">View Pattern Lab's documentation.</a></p>
+        <ul class="g g-4up">
+          <li class="gi">
+            <a href="/docs/requirements.html" class="block-link">
+            <h3>Getting started</h3>
+            <p>Get up and running with Pattern Lab and see how things are organized.</p>
+            </a>
+           </li>
+          <li class="gi">
+            <a href="/docs/pattern-organization.html" class="block-link">
+            <h3>Working with Patterns</h3>
+            <p>Learn how to create and include atoms, molecules, organisms, templates, and pages.</p>
+            </a>
+           </li>
+          <li class="gi">
+            <a href="/docs/data-json-mustache.html" class="block-link">
+            <h3>Working with Data</h3>
+            <p>Learn how to replace default placeholder content with real representative content and data.</p>
+            </a>
+           </li>
+           <li class="gi">
+            <a href="/docs/advanced-auto-regenerate.html" class="block-link">
+            <h3>Advanced Features</h3>
+            <p>Learn how to set up page follow and auto-refresh to streamline your workflow.</p>
+            </a>
+           </li>
+        </ul>
+      </section>
+
+      <section class="section section-6" id="who">
+      <h2 class="section-title">Who</h2>
+        <p class="intro">Pattern Lab serves as a hub for your web project.</p>
+        <ul class="g g-4up">
+          <li class="gi">
+            <h3>Information Designers</h3>
+            <p>Pattern Lab helps integrate modular thinking into the design process right out of the gate, and helps demonstrate responsive patterns to create.</p>
+          </li>
+          <li class="gi">
+            <h3>Visual Designers</h3>
+            <p>Visual designers can use Pattern Lab as a way to see how each module works in a responsive environment and also to keep track of all the design's raw materials.</p>
+          </li>
+          <li class="gi">
+            <h3>Developers</h3>
+            <p>Pattern Lab provides developers with an efficient system for quickly developing prototypes and production-ready front-end code.</p>
+          </li>
+          <li class="gi">
+            <h3>Clients and managers</h3>
+            <p>Everyone, not just designers and developers, needs to understand the benefits of crafting a design system. Clients and managers can view the project in the browser, as a review, and as a reference.</p>
+          </li>
+        </ul>
+      </section>
+
+      
+
+      <section class="section section-7" id="where">
+        <h2 class="section-title">Where</h2>
+        <div class="g g-2up">
+          <div class="gi">
+            <h3>One URL to Rule Them All</h3>
+            <p>Pattern Lab should live in an environment accessible via a URL where everyone involved with your project can view the design system. Pattern Lab can serve as a hub for your project, so make sure it's accessible.</p>
+          </div>
+          <div class="gi">
+            <h3>Share Your Results</h3>
+            <p>Optionally (and ideally) your Pattern Lab can be published publicly like other style guides created by <a href="http://www.starbucks.com/static/reference/styleguide/">Starbucks</a>, <a href="http://www.bbc.co.uk/gel/mobile/device-considerations/philosophy">The BBC</a>, and <a href="http://pasteup.guim.co.uk/index.html">The Guardian</a>. This project wouldn't exist if these organizations didn't share their knowledge and approach. Help makes things better by sharing your Pattern Lab.</p>
+          </div>
+        </div>
+         
+      </section>
+
+      <section class="section section-8" id="created-by">
+        <h2 class="section-title">Created By</h2>
+        <ul class="g g-3up credit">
+          <li class="gi credit-block">
+            <img src="assets/img_brad.jpg" alt="Brad Frost" />
+            <div class="credit-info">
+              <a href="http://bradfrostweb.com" rel="external">Brad Frost</a>
+              <a href="http://twitter.com/brad_frost" rel="external">@brad_frost</a>
+            </div>
+          </li>
+          <li class="gi credit-block">
+            <img src="assets/img_dave.jpg" alt="Dave Olsen" />
+            <div class="credit-info">
+              <a href="http://dmolsen.com/" rel="external">Dave Olsen</a>
+              <a href="http://twitter.com/dmolsen" rel="external">@dmolsen</a>
+            </div>
+          </li>
+          <li class="gi credit-block">
+            <img src="assets/img_octocat.jpg" alt="Github Octocat" />
+            <div class="credit-info">
+              <a href="https://github.com/pattern-lab/" rel="external">You</a>
+              <a href="https://github.com/pattern-lab/" rel="external">Contribute on Github</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+<div id="home">
+  <ul class="posts">
+    
+  </ul>
+</div>
+
+      </div><!--end .main-->
+  <footer class="footer" role="contentinfo">
+	<ol class="atomic-design small">
+          <li>
+            <a href="about.html">
+              <img src="/assets/icon-atom.svg" alt="Atom" />
+            </a>
+          </li>
+          <li>
+            <a href="about.html">
+              <img src="/assets/icon-molecule.svg" alt="Molecule" />
+            </a>
+          </li>
+          <li>
+            <a href="about.html">
+              <img src="/assets/icon-organism.svg" alt="Organism" />
+            </a>
+          </li>
+          <li>
+            <a href="about.html">
+              <img src="/assets/icon-template.svg" alt="Template" />
+            </a>
+          </li>
+          <li>
+            <a href="about.html">
+              <img src="/assets/icon-page.svg" alt="Page" />
+            </a>
+          </li>
+        </ol> 
+
+	<nav class="footer-nav" role="navigation">
+	    <ul>
+	      <li><a href="/">Home</a></li>
+	      <li><a href="/docs/index.html">Documentation</a></li>
+	      <li><a href="/about.html">About</a></li>
+	      <li><a href="/resources.html">Resources</a></li>
+	      <li class="right"><a href="http://demo.patternlab.io" target="_blank">Demo</a></li>
+	      <li class="right"><a href="https://github.com/pattern-lab/patternlab-php" rel="external" target="blank">On Github</a></li>
+	    </ul>
+	  </nav>
+	
+	<div class="credits">
+		<p>Created by <a href="http://bradfrost.com">Brad Frost</a> (<a href="https://twitter.com/brad_frost" rel="external">@brad_frost</a>), <a href="http://dmolsen.com" rel="external">Dave Olsen</a> (<a href="https://twitter.com/dmolsen" rel="external">@dmolsen</a>), and the <a href="https://github.com/pattern-lab">Web community</a>. </p>
+		<p>Pattern Lab is free, open source, and waiting for you to get your hands on it.</p>
+	</div>
+  </footer><!--end footer-->
+</div><!--end container-->
+<script type="text/javascript" src="../js/responsive-nav.min.js"></script>
+<script type="text/javascript" src="../js/init.js"></script>
+<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-44021730-1', 'patternlab.io');
+	  ga('send', 'pageview');
+
+	</script>
+	
+	<script type="text/javascript">
+	  var _gauges = _gauges || [];
+	  (function() {
+	    var t   = document.createElement('script');
+	    t.type  = 'text/javascript';
+	    t.async = true;
+	    t.id    = 'gauges-tracker';
+	    t.setAttribute('data-site-id', '52334fc0108d7b6480000040');
+	    t.src = '//secure.gaug.es/track.js';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(t, s);
+	  })();
+	</script>
+</body>
+</html>
+
+

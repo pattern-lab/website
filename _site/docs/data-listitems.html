@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Creating Lists with Pattern Lab's Default `listItems` Variable | Pattern Lab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="docs">
+    <div class="container">
+	<header class="header" role="banner">
+	
+	  <h4 class="logo-header"><a href="/"><span class="atom"></span> Pattern Lab</a></h4>
+
+	  <nav class="nav" role="navigation">
+	    <ul>
+	      <li><a href="/docs/index.html">Documentation</a></li>
+	      <li><a href="/about.html">About</a></li>
+	      <li><a href="/resources.html">Resources</a></li>
+	      <li><a href="http://demo.patternlab.io" target="_blank">Demo</a></li>
+	      <li><a href="https://github.com/pattern-lab/patternlab-php" rel="external" target="blank">On Github</a></li>
+	    </ul>
+	  </nav>
+
+	</header><!--end header-->
+	<div class="main" role="main">
+    <div class="l-two-col">
+  		<div class="content">
+       <h1>Creating Lists with Pattern Lab&#39;s Default <code>listItems</code> Variable</h1>
+
+<p>Many more complicated patterns may include lists of objects. For example, comments or headlines. The PHP version of Pattern Lab comes with a simple way to fill out these lists with dynamic data so that you can quickly stub them out. The list data can be found in <code>source/_data/listitems.json</code> and is accessed in Mustache with the <code>listItems</code> key. Lists are randomized each time the Pattern Lab website is generated. </p>
+
+<h2>Using listItems Attributes to Create a Simple List</h2>
+
+<p>Let&#39;s look at a simple example of iterating over a list. In your template you might have:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;ul&gt;
+{{# listItems.four }}
+    &lt;li&gt; {{ title }} &lt;/li&gt;
+{{/ listItems.four }}
+&lt;/ul&gt;
+</code></pre></div>
+<p>Let&#39;s break this down before showing the results. The <code>#</code> denotes that Mustache needs to loop over the given key that contains multiple values, in this case <code>listItems.four</code>, and write-out the corresponding value <code>{{ title }}</code>. A full list of attributes can be found below. The <code>/</code> denotes the end of the block that&#39;s being rendered. The PHP version of Pattern Lab supports the keys <code>one</code> through <code>twelve</code>. If you need more than twelve items for a given list you&#39;ll need to add your own data. <strong>Important</strong>: the keys <code>one</code> through <code>twelve</code> are Pattern Lab-specific and not a general feature of Mustache.</p>
+
+<p>The above would compile to:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;ul&gt;
+    &lt;li&gt; Rebel Mission to Ord Mantell&lt;/li&gt;
+    &lt;li&gt; Help, help, I&#39;m being repressed!&lt;/li&gt;
+    &lt;li&gt; Bacon ipsum dolor sit amet turducken strip steak beef ribs shank&lt;/li&gt;
+    &lt;li&gt; Nullizzle shizznit velizzle, hizzle, suscipit own yo&#39;, gravida vizzle, arcu.&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre></div>
+<p>If you wanted six items in your list you&#39;d write:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;ul&gt;
+{{# listItems.six }}
+    &lt;li&gt; {{ title }} &lt;/li&gt;
+{{/ listItems.six }}
+&lt;/ul&gt;
+</code></pre></div>
+<h2>Combining listItems with Partials</h2>
+
+<p>Let&#39;s look at how we might build a comment thread using <code>listItems</code> and partials. First we&#39;ll start with an organism called <code>comment-thread</code> that looks like:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;section class=&quot;comments section&quot;&gt;
+    &lt;div class=&quot;comments-container&quot; id=&quot;comments-container&quot;&gt;
+        &lt;h2 class=&quot;section-title&quot;&gt;Comment List&lt;/h2&gt;
+        &lt;div class=&quot;comment-list&quot;&gt;
+            {{# listItems.five }}
+                {{&gt; molecules-single-comment }} 
+            {{/ listItems.five }}
+        &lt;/div&gt;
+    &lt;/div&gt; 
+&lt;/section&gt;
+</code></pre></div>
+<p>This organism is including the <code>single-comment</code> molecule ( <code>{{&gt; molecules-single-comment}}</code> ) <em>within</em> our block where we&#39;re iterating over five items from the <code>listItems</code> variable ( <code>{{# listItems.five }}</code> ). What this is doing is rendering the <code>single-comment</code> molecule five times with different data each time. Our <code>single-comment</code> molecule might look like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class=&quot;comment-container&quot;&gt;
+    &lt;div class=&quot;comment-meta&quot;&gt;
+        {{&gt; atoms-avatar }}
+        &lt;h4 class=&quot;comment-name&quot;&gt;&lt;a href=&quot;{{ url }}&quot;&gt;{{ name.first }} {{ name.last }}&lt;/a&gt;&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;comment-text&quot;&gt;
+        &lt;p&gt;{{ description }} &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>Note how the Mustache variable names match up to the attributes available in our <code>listItems</code> variable. Again, each time the <code>single-comment</code> pattern is rendered those variables will have different data. Using a partial allows us to DRY up our code. We can even nest partials within partials as shown by <code>{{&gt; atoms-avatar }}</code> in our example.</p>
+
+<p><strong>Important</strong>: You don&#39;t have to use the default <code>listItems</code> variable to take advantage of this feature. You can also use this method with pattern-specific data files or the default <code>data.json</code> file.</p>
+
+<h2>Overriding the Defaults with Pattern-specific listItems</h2>
+
+<p>In much the <a href="/docs/data-pattern-specific.html">same way that one can override values</a> in <code>_data.json</code> with pattern-specific data you can also override <code>_listitems.json</code>. The same principles apply but it&#39;s a slightly different naming convention. For example, if you wanted to provide pattern-specific <code>listItem</code> data for the <code>article</code> pattern under the pattern type <code>pages</code> your <code>pages</code> directory would look like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">pages/article.mustache
+pages/article.listitems.json
+</code></pre></div>
+<p>Otherwise <a href="/docs/data-pattern-specific.html">the same rules for overriding defaults</a> for <code>_data.json</code> apply to <code>_listitems.json</code>.</p>
+
+<h2>The listItems Attributes</h2>
+
+<p>The list text attributes were built using several lorem ipsum generators. The image attributes utilize <a href="http://placeimg.com">placeimg.com</a>. The names were generated with <a href="http://www.behindthename.com/">Behind the Name</a>. The available attributes are:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">title
+description
+url
+headline.short         (~37 characters long)
+headline.medium        (~72 characters long)
+excerpt.short          (~150 characters long)
+excerpt.medium         (~233 characters long)
+excerpt.long           (~450 characters long)
+img.avatar.src
+img.avatar.alt
+img.square.src
+img.square.alt
+img.rectangle.src      (4x3 aspect ratio)
+img.rectangle.alt
+img.landscape-4x3.src
+img.landscape-4x3.src
+img.landscape-16x9.src
+img.landscape-16x9.alt
+name.first             (e.g. Junius)
+name.firsti            (e.g. J)
+name.middle            (e.g. Marius)
+name.middlei           (e.g. M)
+name.last              (e.g. Koolen)
+name.lasti             (e.g. K)
+year.long              (e.g. 2013)
+year.short             (e.g. 13)
+month.long             (e.g. January)
+month.short            (e.g. Jan)
+month.digit            (e.g. 01)
+dayofweek.long         (e.g. Monday)
+dayofweek.short        (e.g. Mon)
+day.long               (e.g. 05)
+day.short              (e.g. 5)
+day.ordinal            (e.g. th)
+hour.long              (e.g. 11)
+hour.short             (e.g. 11)
+hour.military          (e.g. 23)
+hour.ampm              (e.g. pm)
+minute.long            (e.g. 09)
+minute.short           (e.g. 9)
+seconds                (e.g. 52)
+</code></pre></div>
+<p>The aspect ratio for <code>img.rectangle</code> is 4x3. Hopefully this gives pattern developers an easy way to build out dynamic lists for testing.</p>
+
+    	</div><!--end .content-->
+
+      <div class="sidebar">
+        <nav class="docs-nav">
+	<ul>
+		<li class="docs-nav-section">
+			<h4 class="docs-nav-title">Getting Started</h4>
+			<ul class="docs-nav-list">
+				<li><a href="/docs/requirements.html">Requirements</a></li>
+				<li><a href="/docs/installation.html">Installing</a></li>
+				<li><a href="/docs/upgrading.html">Upgrading</a></li>
+				<li><a href="/docs/first-run.html">Generating for the first time</a></li>
+				<li><a href="/docs/editing-source-files.html">Editing source files</a></li>
+				<li><a href="/docs/command-line.html">Using the command line options</a></li>
+				<li><a href="/docs/command-prompt-windows.html">Command prompt on Windows</a></li>
+			</ul>
+		</li>
+		<li class="docs-nav-section">
+			<h4 class="docs-nav-title">Working with Patterns</h4>
+			<ul class="docs-nav-list">
+				<li><a href="/docs/pattern-organization.html">How patterns are organized</a></li>
+				<li><a href="/docs/pattern-add-new.html">Adding new patterns</a></li>
+				<li><a href="/docs/pattern-reorganizing.html">Reorganizing patterns</a></li>
+				<li><a href="/docs/pattern-including.html">Including patterns in one another</a></li>
+				<li><a href="/docs/pattern-managing-assets.html">Managing assets for a pattern</a></li>
+				<li><a href="/docs/pattern-header-footer.html">Modifying the pattern header &amp; footer</a></li>
+				<li><a href="/docs/pattern-pseudo-patterns.html">Using pseudo-patterns</a></li>
+				<li><a href="/docs/pattern-parameters.html">Using pattern parameters</a></li>
+				<li><a href="/docs/pattern-states.html">Using pattern states</a></li>
+				<li><a href="/docs/pattern-stylemodifier.html">Using styleModifiers</a></li>
+				<li><a href="/docs/pattern-hiding.html">"Hiding" patterns in the navigation</a></li>
+				<li><a href="/docs/pattern-adding-annotations.html">Adding annotations</a></li>
+				<li><a href="/docs/pattern-mobile-view.html">Viewing patterns on a mobile device</a></li>
+			</ul>
+		</li>
+		<li class="docs-nav-section">
+			<h4 class="docs-nav-title">Working with Data</h4>
+			<ul class="docs-nav-list">
+				<li><a href="/docs/data-json-mustache.html">Intro to JSON &amp; Mustache</a></li>
+				<li><a href="/docs/data-pattern-specific.html">Pattern-specific data</a></li>
+				<li><a href="/docs/data-link-variable.html">link variable</a></li>
+				<li class="selected"><a href="/docs/data-listitems.html">listItems variable</a></li>
+			</ul>
+		</li>
+		<li class="docs-nav-section">
+			<h4 class="docs-nav-title">Advanced Features</h4>
+			<ul class="docs-nav-list">
+				<li><a href="/docs/advanced-auto-regenerate.html">Watching for changes</a></li>
+				<li><a href="/docs/advanced-reload-browser.html">Page auto-reload</a></li>
+				<li><a href="/docs/advanced-page-follow.html">Page follow</a></li>
+				<li><a href="/docs/advanced-keyboard-shortcuts.html">Keyboard shortcuts</a></li>
+				<li><a href="/docs/pattern-linking.html">Special query string variables</a></li>
+				<li><a href="/docs/advanced-clean-public.html">Stopping public/ from being cleaned</a></li>
+				<li><a href="/docs/advanced-generating-css.html">Generating CSS</a></li>
+				<li><a href="/docs/advanced-pattern-lab-nav.html">Modifying the Pattern Lab nav</a></li>
+				<li><a href="/docs/advanced-config-options.html">Editing the config.ini options</a></li>
+				<li><a href="/docs/advanced-integration-with-compass.html">Integration with Compass</a></li>
+				<li><a href="/docs/advanced-integration-with-grunt.html">Integration with Grunt</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+      </div><!--end .sidebar-->
+    </div><!--end .l-two-col-->
+
+      </div><!--end .main-->
+  <footer class="footer" role="contentinfo">
+	<ol class="atomic-design small">
+          <li>
+            <a href="/about.html#atoms">
+              <img src="/assets/icon-atom.svg" alt="Atom" />
+            </a>
+          </li>
+          <li>
+            <a href="/about.html#molecules">
+              <img src="/assets/icon-molecule.svg" alt="Molecule" />
+            </a>
+          </li>
+          <li>
+            <a href="/about.html#organisms">
+              <img src="/assets/icon-organism.svg" alt="Organism" />
+            </a>
+          </li>
+          <li>
+            <a href="/about.html#templates">
+              <img src="/assets/icon-template.svg" alt="Template" />
+            </a>
+          </li>
+          <li>
+            <a href="/about.html#pages">
+              <img src="/assets/icon-page.svg" alt="Page" />
+            </a>
+          </li>
+        </ol>
+
+	<nav class="footer-nav" role="navigation">
+	    <ul>
+	      <li><a href="/">Home</a></li>
+	      <li><a href="/docs/index.html">Documentation</a></li>
+	      <li><a href="/about.html">About</a></li>
+	      <li><a href="/resources.html">Resources</a></li>
+	      <li class="right"><a href="http://demo.patternlab.io">Demo</a></li>
+	      <li class="right"><a href="https://github.com/pattern-lab/patternlab-php" rel="external" target="blank">On Github</a></li>
+	    </ul>
+	  </nav>
+
+	<div class="credits">
+		<p>Created by <a href="http://bradfrostweb.com">Brad Frost</a> (<a href="https://twitter.com/brad_frost" rel="external">@brad_frost</a>), <a href="http://dmolsen.com" rel="external">Dave Olsen</a> (<a href="https://twitter.com/dmolsen" rel="external">@dmolsen</a>), and the <a href="https://github.com/pattern-lab/patternlab-php">Web community</a>. </p>
+		<p>Pattern Lab will always be free and open source.</p>
+	</div>
+  </footer><!--end footer-->
+</div><!--end container-->
+<script type="text/javascript" src="../js/responsive-nav.min.js"></script>
+<script type="text/javascript" src="../js/init.js"></script>
+<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-44021730-1', 'patternlab.io');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<script type="text/javascript">
+	  var _gauges = _gauges || [];
+	  (function() {
+	    var t   = document.createElement('script');
+	    t.type  = 'text/javascript';
+	    t.async = true;
+	    t.id    = 'gauges-tracker';
+	    t.setAttribute('data-site-id', '52334fc0108d7b6480000040');
+	    t.src = '//secure.gaug.es/track.js';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(t, s);
+	  })();
+	</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Pattern Lab's Special Query String Variables | Pattern Lab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="docs">
+    <div class="container">
+	<header class="header" role="banner">
+	
+	  <h4 class="logo-header"><a href="/"><span class="atom"></span> Pattern Lab</a></h4>
+
+	  <nav class="nav" role="navigation">
+	    <ul>
+	      <li><a href="/docs/index.html">Documentation</a></li>
+	      <li><a href="/about.html">About</a></li>
+	      <li><a href="/resources.html">Resources</a></li>
+	      <li><a href="http://demo.patternlab.io" target="_blank">Demo</a></li>
+	      <li><a href="https://github.com/pattern-lab/patternlab-php" rel="external" target="blank">On Github</a></li>
+	    </ul>
+	  </nav>
+
+	</header><!--end header-->
+	<div class="main" role="main">
+    <div class="l-two-col">
+  		<div class="content">
+       <h1>Pattern Lab&#39;s Special Query String Variables</h1>
+
+<p>Pattern Lab comes with support for a number of special query string variables to help you share patterns with clients. These query string variables include ways to link to patterns, set the Pattern Lab viewport to a specific width, open various views as well as start Hay and disco modes on page load. There are lots of options:</p>
+
+<ul>
+<li><a href="#link-pattern">Linking to Specific Patterns</a></li>
+<li><a href="#default-width">Setting the Default Width for the Viewport</a></li>
+<li><a href="#annotations-view">Opening Annotations View on Page Load</a></li>
+<li><a href="#code-view">Opening Code View on Page Load</a></li>
+<li><a href="#hay-mode">Starting Hay Mode on Page Load</a></li>
+<li><a href="#disco-mode">Starting Disco Mode on Page Load</a></li>
+</ul>
+
+<h2><span id="link-pattern"></span>Linking to Specific Patterns</h2>
+
+<p>You can link directly to any pattern listed on the Pattern Lab website. This might be useful when asking clients for feedback on a particular template or page pattern. If you want to <a href="/docs/data-link-variable.html">link from one pattern to another use the <code>link</code> variable</a>.</p>
+
+<h3>Copy &amp; Paste</h3>
+
+<p>The simplest method is to copy the address found in the address bar.</p>
+
+<h3>Manually Creating the Link</h3>
+
+<p>It&#39;s also very easy to create a link manually. Simply append <code>?p=pattern-name</code> to the end of the address for your Pattern Lab website. For example, if we wanted to link to the <code>templates-article</code> pattern we&#39;d add the following to the address for our Pattern Lab website:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">?p=templates-article
+</code></pre></div>
+<p>The direct link feature supports the <a href="/docs/pattern-including.html">shorthand partials syntax</a> found in the PHP version of Pattern Lab. Just provide part of a pattern name and Pattern Lab will attempt to resolve it. </p>
+
+<h2><span id="default-width"></span>Setting the Default Width for the Viewport</h2>
+
+<p>You can load a specific viewport size by using the <code>w</code> query string variable.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://patternlab.localhost/?w=320   (sets the viewport to 320px)
+http://patternlab.localhost/?w=400px (sets the viewport to 400px)
+http://patternlab.localhost/?w=40em  (sets the viewport to 40em or 640px)
+</code></pre></div>
+<p>And it works with the <code>p</code> query string variable so you can also do:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://patternlab.localhost/?p=atoms-landscape-4x3&amp;w=400px
+</code></pre></div>
+<h2><span id="annotations-view"></span>Opening Annotations View on Page Load</h2>
+
+<p>When sending a particular pattern to a client for review you may not want to include directions for how to open annotations. You can force the annotations view to open on page load by using the <code>view</code> query string variables with the values <code>annotations</code> or <code>a</code>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://patternlab.localhost/?p=templates-homepage&amp;view=annotations
+http://patternlab.localhost/?p=templates-homepage&amp;view=a
+</code></pre></div>
+<p>You can also force the annotations panel to scroll to a particular item by including the query string variable <code>number</code>. To scroll to the fifth element in the list of annotations you&#39;d do the following:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://patternlab.localhost/?p=templates-homepage&amp;view=annotations&amp;number=5
+</code></pre></div>
+<h2><span id="code-view"></span>Opening Code View on Page Load</h2>
+
+<p>When sending a particular pattern to a client for review you may not want to include directions for how to open the code view. You can force the code view to open on page load by using the <code>view</code> query string variables with the values <code>code</code> or <code>c</code>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://patternlab.localhost/?p=templates-homepage&amp;view=code
+http://patternlab.localhost/?p=templates-homepage&amp;view=c
+</code></pre></div>
+<p>You can also force the HTML tab mark-up to be highlighted for copying by including the query string variable <code>copy</code>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://patternlab.localhost/?p=templates-homepage&amp;view=code&amp;copy=true
+</code></pre></div>
+<h2><span id="hay-mode"></span>Starting Hay Mode on Page Load</h2>
+
+<p>You can start Hay mode automatically when the page is loaded by using the <code>h</code> or <code>hay</code> query string variables.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://patternlab.localhost/?h=true
+http://patternlab.localhost/?hay=true
+</code></pre></div>
+<p>And it works with the <code>p</code> query string variable so you can also do:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://patternlab.localhost/?p=atoms-landscape-4x3&amp;h=true
+</code></pre></div>
+<h2><span id="disco-mode"></span>Starting Disco Mode on Page Load</h2>
+
+<p>You can start disco mode automatically when the page is loaded by using the <code>d</code> or <code>disco</code> query string variables.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://patternlab.localhost/?d=true
+http://patternlab.localhost/?disco=true
+</code></pre></div>
+<p>And it works with the <code>p</code> query string variable so you can also do:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://patternlab.localhost/?p=atoms-landscape-4x3&amp;d=true
+</code></pre></div>
+    	</div><!--end .content-->
+
+      <div class="sidebar">
+        <nav class="docs-nav">
+	<ul>
+		<li class="docs-nav-section">
+			<h4 class="docs-nav-title">Getting Started</h4>
+			<ul class="docs-nav-list">
+				<li><a href="/docs/requirements.html">Requirements</a></li>
+				<li><a href="/docs/installation.html">Installing</a></li>
+				<li><a href="/docs/upgrading.html">Upgrading</a></li>
+				<li><a href="/docs/first-run.html">Generating for the first time</a></li>
+				<li><a href="/docs/editing-source-files.html">Editing source files</a></li>
+				<li><a href="/docs/command-line.html">Using the command line options</a></li>
+				<li><a href="/docs/command-prompt-windows.html">Command prompt on Windows</a></li>
+			</ul>
+		</li>
+		<li class="docs-nav-section">
+			<h4 class="docs-nav-title">Working with Patterns</h4>
+			<ul class="docs-nav-list">
+				<li><a href="/docs/pattern-organization.html">How patterns are organized</a></li>
+				<li><a href="/docs/pattern-add-new.html">Adding new patterns</a></li>
+				<li><a href="/docs/pattern-reorganizing.html">Reorganizing patterns</a></li>
+				<li><a href="/docs/pattern-including.html">Including patterns in one another</a></li>
+				<li><a href="/docs/pattern-managing-assets.html">Managing assets for a pattern</a></li>
+				<li><a href="/docs/pattern-header-footer.html">Modifying the pattern header &amp; footer</a></li>
+				<li><a href="/docs/pattern-pseudo-patterns.html">Using pseudo-patterns</a></li>
+				<li><a href="/docs/pattern-parameters.html">Using pattern parameters</a></li>
+				<li><a href="/docs/pattern-states.html">Using pattern states</a></li>
+				<li><a href="/docs/pattern-stylemodifier.html">Using styleModifiers</a></li>
+				<li><a href="/docs/pattern-hiding.html">"Hiding" patterns in the navigation</a></li>
+				<li><a href="/docs/pattern-adding-annotations.html">Adding annotations</a></li>
+				<li><a href="/docs/pattern-mobile-view.html">Viewing patterns on a mobile device</a></li>
+			</ul>
+		</li>
+		<li class="docs-nav-section">
+			<h4 class="docs-nav-title">Working with Data</h4>
+			<ul class="docs-nav-list">
+				<li><a href="/docs/data-json-mustache.html">Intro to JSON &amp; Mustache</a></li>
+				<li><a href="/docs/data-pattern-specific.html">Pattern-specific data</a></li>
+				<li><a href="/docs/data-link-variable.html">link variable</a></li>
+				<li><a href="/docs/data-listitems.html">listItems variable</a></li>
+			</ul>
+		</li>
+		<li class="docs-nav-section">
+			<h4 class="docs-nav-title">Advanced Features</h4>
+			<ul class="docs-nav-list">
+				<li><a href="/docs/advanced-auto-regenerate.html">Watching for changes</a></li>
+				<li><a href="/docs/advanced-reload-browser.html">Page auto-reload</a></li>
+				<li><a href="/docs/advanced-page-follow.html">Page follow</a></li>
+				<li><a href="/docs/advanced-keyboard-shortcuts.html">Keyboard shortcuts</a></li>
+				<li class="selected"><a href="/docs/pattern-linking.html">Special query string variables</a></li>
+				<li><a href="/docs/advanced-clean-public.html">Stopping public/ from being cleaned</a></li>
+				<li><a href="/docs/advanced-generating-css.html">Generating CSS</a></li>
+				<li><a href="/docs/advanced-pattern-lab-nav.html">Modifying the Pattern Lab nav</a></li>
+				<li><a href="/docs/advanced-config-options.html">Editing the config.ini options</a></li>
+				<li><a href="/docs/advanced-integration-with-compass.html">Integration with Compass</a></li>
+				<li><a href="/docs/advanced-integration-with-grunt.html">Integration with Grunt</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+      </div><!--end .sidebar-->
+    </div><!--end .l-two-col-->
+
+      </div><!--end .main-->
+  <footer class="footer" role="contentinfo">
+	<ol class="atomic-design small">
+          <li>
+            <a href="/about.html#atoms">
+              <img src="/assets/icon-atom.svg" alt="Atom" />
+            </a>
+          </li>
+          <li>
+            <a href="/about.html#molecules">
+              <img src="/assets/icon-molecule.svg" alt="Molecule" />
+            </a>
+          </li>
+          <li>
+            <a href="/about.html#organisms">
+              <img src="/assets/icon-organism.svg" alt="Organism" />
+            </a>
+          </li>
+          <li>
+            <a href="/about.html#templates">
+              <img src="/assets/icon-template.svg" alt="Template" />
+            </a>
+          </li>
+          <li>
+            <a href="/about.html#pages">
+              <img src="/assets/icon-page.svg" alt="Page" />
+            </a>
+          </li>
+        </ol>
+
+	<nav class="footer-nav" role="navigation">
+	    <ul>
+	      <li><a href="/">Home</a></li>
+	      <li><a href="/docs/index.html">Documentation</a></li>
+	      <li><a href="/about.html">About</a></li>
+	      <li><a href="/resources.html">Resources</a></li>
+	      <li class="right"><a href="http://demo.patternlab.io">Demo</a></li>
+	      <li class="right"><a href="https://github.com/pattern-lab/patternlab-php" rel="external" target="blank">On Github</a></li>
+	    </ul>
+	  </nav>
+
+	<div class="credits">
+		<p>Created by <a href="http://bradfrostweb.com">Brad Frost</a> (<a href="https://twitter.com/brad_frost" rel="external">@brad_frost</a>), <a href="http://dmolsen.com" rel="external">Dave Olsen</a> (<a href="https://twitter.com/dmolsen" rel="external">@dmolsen</a>), and the <a href="https://github.com/pattern-lab/patternlab-php">Web community</a>. </p>
+		<p>Pattern Lab will always be free and open source.</p>
+	</div>
+  </footer><!--end footer-->
+</div><!--end container-->
+<script type="text/javascript" src="../js/responsive-nav.min.js"></script>
+<script type="text/javascript" src="../js/init.js"></script>
+<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-44021730-1', 'patternlab.io');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<script type="text/javascript">
+	  var _gauges = _gauges || [];
+	  (function() {
+	    var t   = document.createElement('script');
+	    t.type  = 'text/javascript';
+	    t.async = true;
+	    t.id    = 'gauges-tracker';
+	    t.setAttribute('data-site-id', '52334fc0108d7b6480000040');
+	    t.src = '//secure.gaug.es/track.js';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(t, s);
+	  })();
+	</script>
+</body>
+</html>
+
+
+
