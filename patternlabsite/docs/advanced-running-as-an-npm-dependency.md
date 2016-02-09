@@ -4,6 +4,8 @@ title: Running as an npm Dependency | Pattern Lab
 heading: Running as an npm Dependency
 ---
 
+**Note:** Following functionality was added in the [v1.1.0 Release](https://github.com/pattern-lab/patternlab-node/releases/tag/v1.1.0) of Pattern Lab Node)
+
 Often, Pattern Lab is used in conjunction with other design and development tools to [create modular, pattern-driven designs](http://atomicdesign.bradfrost.com/chapter-4/). To these ends, Pattern Lab Node is configurable as an [npm](https://www.npmjs.com/) dependency to be more reliably incorporated into team workflows.
 
 **Note** The following steps describe in general how a user could integrate Pattern Lab Node as an npm dependency to a parent system which houses the source and generated patterns. The steps are generalized and cannot possibly cover every consumption scenario. Incorporating Pattern Lab Node as a dependency into a larger parent system will likely invalidate a lot of the following documentation, because you will already have similar or competing tasks for copying file, hosting files, etc, and will not be able to use the shipped Grunt/Gulpfile. If this is the case, use their contents to guide what files need to move where. Support for this configuration is still young, and is still being actively worked on. Expect a few bumps in the road and feel free to report any issues you have along with a thorough writeup.
