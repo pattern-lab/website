@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Modifying the Pattern Header & Footer | Pattern Lab
-heading: Modifying the Pattern Header & Footer 
+heading: Modifying the Pattern Header & Footer
 languages:
 - language: php
 - language: node
@@ -14,7 +14,7 @@ languages:
 
 {% capture m %}
 
-**Note:** *The _meta patterns were introduced in v0.7.0 of the PHP version of Pattern Lab.*
+**Note:** *The _meta patterns were introduced in v0.7.0 of the PHP and v1.2.0 of the Node version of Pattern Lab.*
 
 
 To add your own assets like JavaScript and CSS to your patterns' header and footer you need to modify two files:
@@ -63,4 +63,3 @@ Be careful.
 </div>
 
 <!--- end node -->
-
