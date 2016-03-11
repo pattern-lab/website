@@ -327,27 +327,6 @@ pre {
 .container {
 	margin: 0 auto;
 	position: relative;
-
-	&:before {
-		@include skew(#000);
-		height: 20em;
-		bottom: -9em;
-		top: auto;
-		z-index:7;
-		display: none;
-	}
-
-	&:after {
-		@include skew2(none);
-		height: 20em;
-		bottom: auto;
-		top: -10.5em;
-		z-index: 7;
-
-		@media all and (min-width: 64em) {
-			background: #2b2b2b;
-		}
-	}
 }
 
 /*.js .container {
@@ -366,17 +345,6 @@ pre {
 		display: flex;
 		width: 100%;
 	}
-
-	&:before {
-		@include skew(#000);
-		z-index: 8;
-	}
-
-	&:after {
-		@include skew2(#2b2b2b);
-		z-index: 8;
-		margin-right: -45em;
-	}
 }
 
 .logo-header {
@@ -390,41 +358,8 @@ pre {
 		position: relative;
 		transition: background 0.1s ease;
 
-
-		&:before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: -11px;
-		    width: 24px;
-		    height: 100%;
-		    z-index: 99;
-		    transform: skew(-20deg);
-		    transition: background 0.1s ease;
-			}
-
-		&:after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: -12px;
-			display: block;
-		    width: 24px;
-		    height: 100%;
-		    z-index: 99;
-		    background: $gray-dark;
-		    transform: skew(-20deg);
-		    transition: background 0.1s ease;
-			}
-
 		&:hover {
 			background: $gray;
-
-			&:before, &:after {
-	 	 		background: $gray;
-	 	 		z-index: 999;
- 	 		}
 		}
 	}
 
@@ -535,41 +470,8 @@ pre {
  	 	text-transform: lowercase;
  	 	transition: background 0.1s ease;
 
- 	 	&:before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: -11px;
-		    width: 24px;
-		    height: 100%;
-		    z-index: 99999;
-		    background: $gray-dark;
-		    transform: skew(-20deg);
-		    transition: background 0.1s ease;
-			}
-
-		&:after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: -11px;
-			display: block;
-		    width: 24px;
-		    height: 100%;
-		    z-index: 99999;
-		    background: $gray-dark;
-		    transform: skew(-20deg);
-		    transition: background 0.1s ease;
-			}
-
  	 	&:hover, &:focus {
  	 		background: $gray !important;
-
- 	 		&:before, &:after {
-	 	 		background: $gray;
-	 	 		z-index: 999999;
- 	 		}
  	 	}
 	}
 
@@ -692,32 +594,11 @@ pre {
 		margin-bottom: 0;
 	}
 
-	&:before {
-		@include skew(#ccc);
-		left: 2em;
-		z-index: 9;
-	}
-
-	&:after {
-		@include skew2(#dadada);
-		right: 2em;
-		z-index: 9;
-	}
 }
 
 .banner-dark {
 	background: $gray-dark;
 	color: $white;
-
-	&:before {
-		@include skew(#000);
-		z-index: 9;
-	}
-
-	&:after {
-		@include skew2(#2b2b2b);
-		z-index: 9;
-	}
 
 }
 
@@ -732,38 +613,6 @@ pre {
 	padding-left: 1em;
 	padding-right: 1em;
 
-	&:before {
-		@include skew(#f6f6f6);
-		z-index: 7;
-
-	}
-
-	&:after {
-	    content: "";
-	    display: block;
-	    width: 5000px;
-	    height: 100%;
-	    background: url(/assets/guts-after.svg) no-repeat;
-	    background-position: top left;
-	    position: absolute;
-	    top: 0;
-	    right: 0;
-	    margin-right: -258.4em;
-	    z-index: 7;
-
-	    @media all and (min-width: 958px) {
-		    right: 50%;
-			margin-right: -283.4em;
-		}
-	}
-
-	/*
-
-	&:after {
-		@include skew2(#f9f9f9);
-		z-index: 7;
-
-	} */
 }
 
 //Section
@@ -797,71 +646,6 @@ pre {
 
 	.atomic-design {
 		margin-bottom: 1em;
-	}
-
-	&:before {
-		content: "";
-	    display: block;
-	    width: 738px;
-	    height: 713px;
-	    background: url(/assets/footer-before.svg) no-repeat;
-	    background-position: top right;
-	    position: absolute;
-	    top: -306px;
-	    left: 0;
-	    margin-left: -37.4em;
-	    z-index: 7;
-
-	    @media all and (min-width: 470px) {
-		    height: 625px;
-
-	    }
-
-	    @media all and (min-width: 565px) {
-		    height: 626px;
-	    }
-
-	    @media all and (min-width: 760px) {
-		    height: 535px;
-	    }
-
-	    @media all and (min-width: 958px) {
-			left: 50%;
-			margin-left: -62.4em;
-		}
-
-	}
-
-	&:after {
-		content: "";
-		display: block;
-		width: 738px;
-		height: 405px;
-		background: url(/assets/footer-after.svg) no-repeat;
-		background-position: top left;
-		position: absolute;
-		top: 0;
-		right: 0;
-		margin-right: -37.4em;
-		z-index: 7;
-
-		@media all and (min-width: 470px) {
-			height: 319px;
-
-	    }
-
-	    @media all and (min-width: 565px) {
-		    height: 319px;
-	    }
-
-	    @media all and (min-width: 760px) {
-		    height: 229px;
-	    }
-
-	    @media all and (min-width: 958px) {
-			right: 50%;
-			margin-right: -62.4em;
-		}
 	}
 }
 
@@ -917,41 +701,9 @@ pre {
  	 	transition: background 0.1s ease;
  	 	padding: 0.5em 0;
 
- 	 	&:before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: -11px;
-		    width: 24px;
-		    height: 100%;
-		    z-index: 99999;
-		    transform: skew(-20deg);
-		    transition: background 0.1s ease;
-			}
-
-		&:after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: -11px;
-			display: block;
-		    width: 24px;
-		    height: 100%;
-		    z-index: 99999;
-		    transform: skew(-20deg);
-		    transition: background 0.1s ease;
-			}
-
  	 	&:hover, &:focus {
  	 		background: $gray !important;
-
- 	 		&:before, &:after {
-	 	 		background: $gray;
-	 	 		z-index: 999999;
- 	 		}
- 	 	}
-
+		}
 	}
 
 }
@@ -1336,43 +1088,9 @@ pre {
 		margin-right: 0.2em;
 	}
 
-	&:before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: -10px;
-		    width: 20px;
-		    height: 100%;
-		    background: $gray-dark;
-		    transform: skew(-20deg);
-		    transition: background 0.1s ease;
-	}
-
-	&:after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: -10px;
-			display: block;
-		    width: 20px;
-		    height: 100%;
-		    background: $gray-dark;
-		    transform: skew(-20deg);
-		    transition: background 0.1s ease;
-	}
-
 	&:hover {
 		background: $gray;
 		color: $white;
-
-		&:after {
-			background: $gray;
-		}
-
-		&:before {
-			background: $gray;
-		}
 	}
 
 	@media all and (max-width: $bp-med) {
@@ -1416,22 +1134,16 @@ pre {
 	display: flex;
 	flex-wrap: wrap;
 	background: $gray-light;
-	transform: skew(-8deg);
 	margin: 0.5em 0;
 	justify-content: center;
 	align-items: center;
-	-webkit-clip-path: polygon(7% 0, 100% 0%, 100% 100%, 7% 100%);
-	clip-path: polygon(7% 0, 100% 0%, 100% 100%, 7% 100%);
 	
 	.credit-image {
 		margin-bottom: -0.3em;
-		transform: skew(8deg);
 
 		img {
 			width: 180px;
 			height: 180px;
-			-webkit-clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
-			clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);;
 		}
 	}
 
@@ -1445,13 +1157,8 @@ pre {
 		
 		a {
 			color: $gray-dark;
-			transform: skew( 8deg);
+
 		}
-	}
-	
-	@media all and (min-width: 630px) and (max-width: 846px) {
-		-webkit-clip-path: polygon(7% 0, 93% 0%, 93% 100%, 7% 100%);
-		clip-path: polygon(7% 0, 93% 0%, 93% 100%, 7% 100%);
 	}
 }
 
