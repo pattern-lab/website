@@ -10,7 +10,7 @@ The requirements for the PHP version of Pattern Lab vary depending on what featu
 
 It's expected that you'll use the PHP version of Pattern Lab locally on your computer to develop your atoms, molecules, organisms, templates and pages. To use the basic features of Pattern Lab, you must have **PHP 5.3+** installed. If you're using Mac OS X you shouldn't have to install anything and Pattern Lab should work "out of the box." If you're on Windows you can [download PHP from PHP.net](http://windows.php.net/download/#php-5.5).
 
-You should _not_ need to set-up Apache or another web server to use Pattern Lab unless you want to use the [Page Follow feature](http://pattern-lab.info/docs/advanced-page-follow.html) for multi-device testing.
+You should _not_ need to set-up Apache or another web server to use Pattern Lab unless you want to use the [Page Follow feature](http://patternlab.io/docs/advanced-page-follow.html) for multi-device testing.
 
 <small>**Note:** While the site will work in Safari 6+ the back button is broken in the "Apache-less" version of Pattern Lab.</small>
 
