@@ -27,8 +27,8 @@ legend {
 /************End Reset**************/
 /************Global**************/
 body {
-  background: #f9f9f9;
-  color: #222;
+  background: #d7f1f8;
+  color: #05151e;
   font: 120%/1.4 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   padding: 0;
   -webkit-text-size-adjust: 100%;
@@ -37,9 +37,11 @@ body {
 a {
   color: #808080;
   text-decoration: none; }
-
-a:hover, a:focus {
-  color: #222; }
+  a img {
+    border: 0;
+    outline: 0; }
+  a:hover, a:focus {
+    color: #05151e; }
 
 p {
   margin: 0 0 1em; }
@@ -50,28 +52,22 @@ img, object, video {
   border: 0; }
 
 video {
-  width: 100%; }
-
-a img {
-  border: 0;
-  outline: 0; }
+  width: 100%;
+  margin-bottom: 1.5em; }
 
 h1 {
   font-size: 2.3em;
   line-height: 1;
   letter-spacing: -0.02em;
-  margin: 0 0 0.2em;
-  text-transform: lowercase; }
+  margin: 0 0 0.2em; }
   @media all and (min-width: 34em) {
     h1 {
       font-size: 2.5em; } }
 
 h2 {
-  text-transform: lowercase;
   line-height: 1.1;
   font-size: 1.5em;
-  margin: 1.2em 0 0.6em 0;
-  text-align: left; }
+  margin: 1.2em 0 0.6em 0; }
   @media all and (min-width: 34em) {
     h2 {
       font-size: 2em; } }
@@ -79,16 +75,14 @@ h2 {
 h3 {
   font-size: 1.3em;
   line-height: 1.1;
-  margin: 0 0 0.2em;
-  text-transform: lowercase; }
+  margin: 0 0 0.2em; }
 
 h4 {
   font-size: 1em;
-  text-transform: lowercase;
   margin: 0.5em 0; }
 
 h2 a, h3 a {
-  color: #222; }
+  color: #05151e; }
   h2 a:hover, h3 a:hover {
     color: #808080; }
 
@@ -118,7 +112,7 @@ code {
   padding: 0.3em; }
 
 pre {
-  background: #222;
+  background: #05151e;
   color: #fff;
   padding: 1rem;
   white-space: pre;
@@ -126,14 +120,6 @@ pre {
 
 /************End Global**************/
 /************Layout**************/
-.lc, .section-body {
-  max-width: 48em;
-  margin: 0 auto;
-  padding: 0 1.5em; }
-
-.inner-lc {
-  background: #fff; }
-
 /* Grid 2up */
 .g {
   text-align: left;
@@ -156,7 +142,10 @@ pre {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden; }
-  @media all and (min-width: 34em) {
+  @media all and (min-width: 30em) {
+    .g-3up > .gi, .docs-index .g-3up > .docs-nav-section {
+      width: 50%; } }
+  @media all and (min-width: 45em) {
     .g-3up > .gi, .docs-index .g-3up > .docs-nav-section {
       width: 33.333333%; } }
 
@@ -196,6 +185,20 @@ pre {
 .container {
   margin: 0 auto;
   position: relative; }
+  .container:before {
+    height: 20em;
+    bottom: -9em;
+    top: auto;
+    z-index: 7;
+    display: none; }
+  .container:after {
+    height: 20em;
+    bottom: auto;
+    top: -10.5em;
+    z-index: 7; }
+    @media all and (min-width: 64em) {
+      .container:after {
+        background: #2b2b2b; } }
 
 /*.js .container {
 	overflow: hidden;
@@ -204,37 +207,10 @@ pre {
   display: flex;
   flex-direction: row;
   position: relative;
-  background: #222; }
+  background: #05151e; }
   .header-inner {
     display: flex;
     width: 100%; }
-
-.logo-header {
-  position: relative;
-  margin: 0; }
-  .logo-header a {
-    display: block;
-    padding: 1em 0.5em 1em 2.7em;
-    color: #fff;
-    position: relative;
-    transition: background 0.1s ease; }
-    .logo-header a:hover {
-      background: #808080; }
-  .logo-header .logo-text {
-    position: relative;
-    z-index: 1000; }
-  .logo-header .atom {
-    position: absolute;
-    background: url(/assets/icon-atom-header.svg) no-repeat;
-    top: 0.5em;
-    left: 0;
-    background-size: 100% 100%;
-    width: 2.4em;
-    height: 2.4em;
-    z-index: 99999; }
-  @media all and (min-width: 790px) {
-    .logo-header {
-      margin: 0; } }
 
 /*! responsive-nav.js 1.0.23 by @viljamis http://responsive-nav.com/ */
 .nav {
@@ -261,7 +237,7 @@ pre {
     position: absolute;
     top: 100%;
     right: 0;
-    background: #222; }
+    background: #05151e; }
     @media all and (min-width: 760px) {
       .nav .active {
         display: flex;
@@ -279,17 +255,6 @@ pre {
           left: -92px; }
         .nav .active li:nth-child(5) a {
           left: -115px; } }
-  .nav a {
-    display: block;
-    padding: 1em 1em;
-    position: relative;
-    color: #fff;
-    font-weight: bold;
-    background: #222;
-    text-transform: lowercase;
-    transition: background 0.1s ease; }
-    .nav a:hover, .nav a:focus {
-      background: #808080 !important; }
   .nav.opened {
     max-height: 9999px; }
 
@@ -376,20 +341,63 @@ pre {
   position: relative; }
 
 .banner {
-  background: #e5e5e5;
-  padding: 1em 1em;
-  position: relative; }
-  .banner h2 {
-    margin: 0; }
-  .banner p:last-of-type {
-    margin-bottom: 0; }
+  background: #05151e;
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .banner__title {
+    font-size: 4rem;
+    margin: 0;
+    color: #b5e4f1; }
 
-.banner-dark {
-  background: #222;
-  color: #fff; }
-
-.banner-feature {
-  padding: 2em 1em; }
+.banner--feature {
+  flex-direction: column;
+  height: auto; }
+  .banner--feature .banner__title {
+    padding: 4rem 1rem;
+    flex: 1;
+    display: flex;
+    align-items: center; }
+  .banner--feature .btn-group {
+    width: 100%; }
+    .banner--feature .btn-group .btn {
+      display: block;
+      margin: 0; }
+    .banner--feature .btn-group .btn:nth-of-type(1) {
+      background: #be0000; }
+      .banner--feature .btn-group .btn:nth-of-type(1):hover, .banner--feature .btn-group .btn:nth-of-type(1):focus {
+        background: #9c0000; }
+    .banner--feature .btn-group .btn:nth-of-type(2) {
+      background: #d9750f; }
+      .banner--feature .btn-group .btn:nth-of-type(2):hover, .banner--feature .btn-group .btn:nth-of-type(2):focus {
+        background: #b85d00; }
+    .banner--feature .btn-group .btn:nth-of-type(3) {
+      background: #dfd204; }
+      .banner--feature .btn-group .btn:nth-of-type(3):hover, .banner--feature .btn-group .btn:nth-of-type(3):focus {
+        background: #beb301; }
+    @media all and (min-width: 34em) {
+      .banner--feature .btn-group {
+        display: flex;
+        width: 100%; }
+        .banner--feature .btn-group .btn {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center; } }
+    @media all and (min-width: 60em) {
+      .banner--feature .btn-group {
+        flex-direction: column;
+        height: 100%;
+        width: 20em; } }
+  @media all and (min-width: 36em) {
+    .banner--feature {
+      height: 80vh; } }
+  @media all and (min-width: 60em) {
+    .banner--feature {
+      flex-direction: row; } }
 
 .guts {
   position: relative;
@@ -398,20 +406,35 @@ pre {
   padding-left: 1em;
   padding-right: 1em; }
 
-.section-body {
-  padding: 1.5em; }
-  .section-body-centered {
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    text-align: center; }
-    .section-body-centered .intro {
+.hero {
+  padding: 3em 1em 2em; }
+
+.hero-title {
+  text-align: center;
+  max-width: 45rem;
+  margin: 0 auto; }
+
+.section {
+  border-bottom: 20px solid #05151e;
+  padding: 2em 0;
+  margin-bottom: 2em; }
+  .section__title {
+    font-size: 3rem;
+    margin: 0; }
+  .section__body {
+    padding: 0.5em 0 1.5em; }
+    .section__body-centered {
+      display: flex;
       margin: 0 auto;
-      padding: 1em 0; }
+      flex-direction: column;
+      text-align: center; }
+      .section__body-centered .intro {
+        margin: 0 auto;
+        padding: 1em 0; }
 
 .footer {
   clear: both;
-  background: #222;
+  background: #05151e;
   position: relative;
   padding: 1em 0; }
   .footer .atomic-design {
@@ -449,32 +472,16 @@ pre {
     display: block;
     font-weight: bold;
     color: #fff;
-    background: #222;
+    background: #05151e;
     text-align: center;
-    text-transform: lowercase;
     transition: background 0.1s ease;
     padding: 0.5em 0; }
-    .footer-nav a:hover, .footer-nav a:focus {
-      background: #808080 !important; }
-
-.credits {
-  margin-bottom: 2em;
-  font-size: 65%;
-  text-align: center;
-  padding: 0 0.8em; }
-  .credits p {
-    margin: 0;
-    color: #808080; }
-  .credits a {
-    color: #808080; }
-    .credits a:hover, .credits a:focus {
-      color: #fff; }
 
 /************End Structure**************/
 /************Text**************/
 .block-link {
   display: block;
-  color: #222; }
+  color: #05151e; }
   .block-link:hover, .block-link:focus {
     background: rgba(0, 0, 0, 0.05); }
 
@@ -562,7 +569,7 @@ pre {
 .docs-nav-title {
   display: block;
   font-weight: bold;
-  color: #222;
+  color: #05151e;
   margin-bottom: 0.4em;
   padding: 0 0.5em; }
 
@@ -574,37 +581,6 @@ pre {
     padding: 0.25em 1em;
     position: relative;
     transition: background 0.1s ease; }
-    .docs-nav-list a:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: -10px;
-      width: 18px;
-      height: 100%;
-      z-index: 99999;
-      transform: skew(-20deg);
-      transition: background 0.1s ease; }
-    .docs-nav-list a:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: -10px;
-      width: 18px;
-      height: 100%;
-      z-index: 99999;
-      transform: skew(-20deg);
-      transition: background 0.1s ease; }
-    .docs-nav-list a:hover {
-      background: #e5e5e5;
-      transition: background 0.1s ease; }
-      .docs-nav-list a:hover a {
-        color: #000; }
-      .docs-nav-list a:hover:before {
-        background: #e5e5e5; }
-      .docs-nav-list a:hover:after {
-        background: #e5e5e5; }
   .docs-nav-list .selected {
     position: relative;
     background: #808080;
@@ -657,28 +633,6 @@ pre {
   margin: 1em -0.8em; }
   .docs-section .docs-nav-list a {
     padding: 0.25em 1em; }
-    .docs-section .docs-nav-list a:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: -13px;
-      width: 24px;
-      height: 100%;
-      z-index: 99999;
-      transform: skew(-20deg);
-      transition: background 0.1s ease; }
-    .docs-section .docs-nav-list a:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: -13px;
-      width: 24px;
-      height: 100%;
-      z-index: 99999;
-      transform: skew(-20deg);
-      transition: background 0.1s ease; }
   @media all and (min-width: 505px) {
     .docs-section .docs-nav-list {
       -webkit-column-count: 2;
@@ -701,36 +655,16 @@ pre {
     break-inside: avoid-column;
     margin: 0 1em; }
 
-/************Buttons**************/
-.btn-group {
-  text-align: center;
-  margin: 1em 1em; }
-  .btn-group .btn {
-    display: block;
-    margin-bottom: 0.5em; }
-  @media all and (min-width: 36em) {
-    .btn-group .btn {
-      display: inline-block;
-      margin: .3em 0.75em; } }
-
 .btn {
   position: relative;
-  text-transform: lowercase;
   font-weight: bold;
-  padding: 1rem;
-  background: #222;
+  font-size: 2rem;
+  padding: 2rem;
+  background: #05151e;
   color: #fff;
-  transition: background 0.1s ease; }
-  .btn [class*="icon-"] {
-    display: inline-block;
-    margin-right: 0.2em; }
-  .btn:hover {
-    background: #808080;
-    color: #fff; }
-  @media all and (max-width: 34em) {
-    .btn {
-      display: block;
-      margin-bottom: 0.25em; } }
+  transition: all 0.1s ease; }
+  .btn:hover, .btn:focus {
+    background: orange; }
 
 /************End Buttons**************/
 .atomic-design {
@@ -740,82 +674,15 @@ pre {
   .atomic-design img {
     padding: 0 1em; }
 
-.section-icon {
-  display: block;
-  margin-bottom: 1em; }
-  .section-icon .atom {
-    float: left;
-    margin: 0 2em 0 0; }
-  .section-icon h3 {
-    margin-top: 0; }
-  .section-icon p {
-    padding-left: 7em; }
-
-.credit-block {
-  display: flex;
-  flex-wrap: wrap;
-  background: #ddd;
-  margin: 0.5em 0;
-  justify-content: center;
-  align-items: center; }
-  .credit-block .credit-image {
-    margin-bottom: -0.3em; }
-    .credit-block .credit-image img {
-      width: 180px;
-      height: 180px; }
-  .credit-block a {
-    display: block; }
-  .credit-block .credit-info {
-    text-align: center;
-    width: 50%; }
-    .credit-block .credit-info a {
-      color: #222; }
-
 .language-toggle {
   padding: 0;
   position: relative;
-  background: #222;
+  background: #05151e;
   color: white;
   width: 100%; }
   .language-toggle-inner {
     display: flex;
     width: 100%; }
-  .language-toggle .lc, .language-toggle .section-body {
-    overflow: hidden; }
-  .language-toggle:before {
-    content: "";
-    display: block;
-    width: 45em;
-    height: 100%;
-    background: #000;
-    transform: skewY(20deg);
-    position: absolute;
-    bottom: 8.2em;
-    left: 1em;
-    margin-left: -46em;
-    z-index: 4;
-    z-index: 8; }
-    @media all and (min-width: 61em) {
-      .language-toggle:before {
-        left: 50%;
-        margin-left: -69em; } }
-  .language-toggle:after {
-    content: "";
-    display: block;
-    width: 45em;
-    height: 100%;
-    background: #2b2b2b;
-    transform: skewY(20deg);
-    position: absolute;
-    bottom: -8.18em;
-    right: 1em;
-    margin-right: -46em;
-    z-index: 4;
-    z-index: 8; }
-    @media all and (min-width: 61em) {
-      .language-toggle:after {
-        right: 50%;
-        margin-right: -69em; } }
 
 .tab {
   display: inline-block;
@@ -834,7 +701,7 @@ pre {
       left: -13px;
       width: 25px;
       height: 100%;
-      background: #222;
+      background: #05151e;
       transform: skew(-20deg);
       z-index: 7; }
     .tab a:after {
@@ -845,7 +712,7 @@ pre {
       display: block;
       width: 25px;
       height: 100%;
-      background: #222;
+      background: #05151e;
       transform: skew(-20deg);
       z-index: 7; }
     .tab a.active {
@@ -925,69 +792,3 @@ pre {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
-/************Icon Fonts**************/
-@font-face {
-  font-family: 'icons';
-  src: url("../assets/fonts/icons.eot");
-  src: url("../assets/fonts/icons.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/icons.ttf") format("truetype"), url("../assets/fonts/icons.woff") format("woff"), url("../assets/fonts/icons.svg#icons") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-[class*="icon-"] {
-  font-family: 'icons';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.icon-instagram:before {
-  content: "\e600"; }
-
-.icon-facebook:before {
-  content: "\e601"; }
-
-.icon-arrow-down:before {
-  content: "\e602"; }
-
-.icon-menu:before {
-  content: "\e603"; }
-
-.icon-download:before {
-  content: "\e604"; }
-
-.icon-close:before {
-  content: "\e605"; }
-
-.icon-checkmark:before {
-  content: "\e606"; }
-
-.icon-github:before {
-  content: "\e607"; }
-
-.icon-star:before {
-  content: "\e608"; }
-
-.icon-list:before {
-  content: "\e609"; }
-
-.icon-numbered-list:before {
-  content: "\e60a"; }
-
-.icon-search:before {
-  content: "\e60b"; }
-
-.icon-github2:before {
-  content: "\e60c"; }
-
-.icon-github3:before {
-  content: "\e60d"; }
-
-.icon-twitter:before {
-  content: "\e60e"; }
-
-.icon-arrow-up-right:before {
-  content: "\e60f"; }

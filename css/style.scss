@@ -2,10 +2,11 @@
 # This is the Front Matter block for Jekyll to properly read this file
 ---
 
+//Colors
 $gray-lighter: #e5e5e5;
 $gray-light : #ddd;
 $gray : #808080;
-$gray-dark: #222;
+$gray-dark: #05151e;
 $gray-dark-2: #444;
 $black: #000;
 $white : #fff;
@@ -16,6 +17,7 @@ $calc-width : calc(50% - 22.5em);
 
 $calc-pad : 35em;
 
+//Breakpoints
 $bp-med : 34em;
 $bp-med-2 : 46em;
 $bp-large : 60em;
@@ -26,44 +28,6 @@ $border : 0.1rem;
 $border-radius: 10px;
 
 $bend-height: 20px;
-
-@mixin skew($color) {
-	content: "";
-	display: block;
-	width: 45em;
-	height: 100%;
-	background: $color;
-	transform: skewY(20deg);
-	position: absolute;
-	bottom: 8.2em;
-	left: 1em;
-	margin-left: -46em;
-	z-index: 4;
-
-	@media all and (min-width: 61em) {
-		left: 50%;
-		margin-left: -69em;
-	}
-}
-
-@mixin skew2($color) {
-	content: "";
-	display: block;
-	width: 45em;
-	height: 100%;
-	background: $color;
-	transform: skewY(20deg);
-	position: absolute;
-	bottom: -8.18em;
-	right: 1em;
-	margin-right: -46em;
-	z-index: 4;
-
-	@media all and (min-width: 61em) {
-		right: 50%;
-		margin-right: -69em;
-	}
-}
 
 /************Reset**************/
 * {
@@ -96,23 +60,32 @@ legend {
 /************Global**************/
 
 body {
-	background: #f9f9f9;
+	background: #d7f1f8;
 	color: $gray-dark;
 	font: 120%/1.4 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 	padding: 0;
 	-webkit-text-size-adjust: 100%;
 	overflow-x: hidden;
 }
+
 a {
 	color: $gray;
 	text-decoration: none;
+
+    img {
+    	border: 0;
+    	outline: 0;
+    }
+
+    &:hover, &:focus {
+        color: $gray-dark;
+    }
 }
-a:hover, a:focus {
-	color: $gray-dark;
-}
+
 p {
 	margin: 0 0 1em;
 }
+
 img, object, video {
 	max-width: 100%;
 	height: auto;
@@ -121,43 +94,38 @@ img, object, video {
 
 video {
 	width: 100%;
+    margin-bottom: 1.5em;
 }
 
-a img {
-	border: 0;
-	outline: 0;
-}
 h1 {
 	font-size: 2.3em;
 	line-height: 1;
 	letter-spacing: -0.02em;
 	margin: 0 0 0.2em;
-	text-transform: lowercase;
 
 	@media all and (min-width: $bp-med) {
 		font-size: 2.5em;
 	}
 }
+
 h2 {
-	text-transform: lowercase;
 	line-height: 1.1;
 	font-size: 1.5em;
 	margin: 1.2em 0 0.6em 0;
-	text-align: left;
 
 	@media all and (min-width: $bp-med) {
 		font-size: 2em;
 	}
 }
+
 h3 {
 	font-size: 1.3em;
 	line-height: 1.1;
 	margin: 0 0 0.2em;
-	text-transform: lowercase;
 }
+
 h4 {
 	font-size: 1em;
-	text-transform: lowercase;
 	margin: 0.5em 0;
 }
 
@@ -188,9 +156,11 @@ input[type=search] {
 	-webkit-appearance: none;
 	border-radius: 0;
 }
+
 ::-webkit-input-placeholder {
 	color: #808080;
 }
+
 :-moz-placeholder {
     color: #808080;
 }
@@ -211,18 +181,7 @@ pre {
 
 /************Layout**************/
 
-.lc {
-	max-width: 48em;
-	margin: 0 auto;
-	padding: 0 1.5em;
-}
-
-.inner-lc {
-	background: $white;
-}
-
 /* Grid 2up */
-
 .g {
 	text-align: left;
 	clear: both;
@@ -255,8 +214,13 @@ pre {
 	flex-wrap: wrap;
 	overflow: hidden;
 
+    @media all and (min-width: 30em) {
+		> .gi {
+			width: 50%;
+		}
+	}
 
-	@media all and (min-width: $bp-med) {
+	@media all and (min-width: 45em) {
 		> .gi {
 			width: 33.333333%;
 		}
@@ -327,6 +291,25 @@ pre {
 .container {
 	margin: 0 auto;
 	position: relative;
+
+	&:before {
+		height: 20em;
+		bottom: -9em;
+		top: auto;
+		z-index:7;
+		display: none;
+	}
+
+	&:after {
+		height: 20em;
+		bottom: auto;
+		top: -10.5em;
+		z-index: 7;
+
+		@media all and (min-width: 64em) {
+			background: #2b2b2b;
+		}
+	}
 }
 
 /*.js .container {
@@ -344,43 +327,6 @@ pre {
 	&-inner {
 		display: flex;
 		width: 100%;
-	}
-}
-
-.logo-header {
-	position: relative;
-	margin: 0;
-
-	a {
-		display: block;
-		padding: 1em 0.5em 1em 2.7em;
-		color: $white;
-		position: relative;
-		transition: background 0.1s ease;
-
-		&:hover {
-			background: $gray;
-		}
-	}
-
-	.logo-text {
-		position: relative;
-		z-index: 1000;
-	}
-
-	.atom {
-		position: absolute;
-		background: url(/assets/icon-atom-header.svg) no-repeat;
-		top: 0.5em;
-		left: 0;
-		background-size: 100% 100%;
-		width: 2.4em;
-		height: 2.4em;
-		z-index: 99999;
-	}
-
-	@media all and (min-width: 790px) {
-		margin: 0;
 	}
 }
 
@@ -458,21 +404,6 @@ pre {
 	 	 	}
  	 	}
 
-	}
-
-	a {
-		display: block;
- 		padding: 1em 1em;
-		position: relative;
- 	 	color: $white;
- 	 	font-weight: bold;
- 	 	background: $gray-dark;
- 	 	text-transform: lowercase;
- 	 	transition: background 0.1s ease;
-
- 	 	&:hover, &:focus {
- 	 		background: $gray !important;
- 	 	}
 	}
 
 	&.opened {
@@ -581,29 +512,92 @@ pre {
 	position: relative;
 }
 
+//Banner
 .banner {
-	background: $gray-lighter;
-	padding: 1em 1em;
-	position: relative;
-
-	h2 {
-		margin: 0;
-	}
-
-	p:last-of-type {
-		margin-bottom: 0;
-	}
-
-}
-
-.banner-dark {
 	background: $gray-dark;
-	color: $white;
+	position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+	&__title {
+        font-size: 4rem;
+        margin: 0;
+        color: #b5e4f1;
+    }
 }
 
-.banner-feature {
-	padding: 2em 1em;
+.banner--feature {
+    flex-direction: column;
+    height: auto;
+
+    .banner__title {
+        padding: 4rem 1rem;
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-group {
+        width: 100%;
+
+        .btn {
+            display: block;
+            margin: 0;
+        }
+
+        .btn:nth-of-type(1) {
+            background: #be0000;
+
+            &:hover, &:focus {
+                background: #9c0000;
+            }
+        }
+
+        .btn:nth-of-type(2) {
+            background: #d9750f;
+
+            &:hover, &:focus {
+                background: #b85d00;
+            }
+        }
+
+        .btn:nth-of-type(3) {
+            background: #dfd204;
+
+            &:hover, &:focus {
+                background: #beb301;
+            }
+        }
+
+        @media all and (min-width: 34em) {
+            display: flex;
+            width: 100%;
+
+            .btn {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        @media all and (min-width: 60em) {
+            flex-direction: column;
+            height: 100%;
+            width: 20em;
+        }
+    }
+
+    @media all and (min-width: 36em) {
+        height: 80vh;
+    }
+
+    @media all and (min-width: 60em) {
+        flex-direction: row;
+    }
 }
 
 .guts {
@@ -612,22 +606,39 @@ pre {
 	padding-bottom: 2.2em;
 	padding-left: 1em;
 	padding-right: 1em;
+}
 
+//Hero
+.hero {
+	padding: 3em 1em 2em;
+}
+
+.hero-title {
+	text-align: center;
+	max-width: 45rem;
+	margin: 0 auto;
 }
 
 //Section
 .section {
+    border-bottom: 20px solid $gray-dark;
+    padding: 2em 0;
+    margin-bottom: 2em;
 
-	&-body {
-		@extend .lc;
-		padding: 1.5em;
-		
+    &__title {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+	&__body {
+		padding: 0.5em 0 1.5em;
+
 		&-centered {
 			display: flex;
 			margin: 0 auto;
 			flex-direction: column;
 			text-align: center;
-			
+
 			.intro {
 				margin: 0 auto;
 				padding: 1em 0;
@@ -697,35 +708,11 @@ pre {
  	 	color: $white;
  	 	background: $gray-dark;
  	 	text-align: center;
- 	 	text-transform: lowercase;
  	 	transition: background 0.1s ease;
  	 	padding: 0.5em 0;
 
- 	 	&:hover, &:focus {
- 	 		background: $gray !important;
-		}
 	}
 
-}
-
-.credits {
-	margin-bottom: 2em;
-	font-size: 65%;
-	text-align: center;
-	padding: 0 0.8em;
-
-	p {
-		margin: 0;
-		color: $gray;
-	}
-
-	a {
-		color: $gray;
-
-		&:hover, &:focus {
-			color: $white;
-		}
-	}
 }
 
 /************End Structure**************/
@@ -877,50 +864,6 @@ pre {
 		padding: 0.25em 1em;;
 		position: relative;
 		transition: background 0.1s ease;
-
-		&:before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: -10px;
-		    width: 18px;
-		    height: 100%;
-		    z-index: 99999;
-		    transform: skew(-20deg);
-		    transition: background 0.1s ease;
-		}
-
-		&:after {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			right: -10px;
-		    width: 18px;
-		    height: 100%;
-		    z-index: 99999;
-		    transform: skew(-20deg);
-		    transition: background 0.1s ease;
-		}
-
-
-		&:hover {
-			background: $gray-lighter;
-			transition: background 0.1s ease;
-
-			a {
-				color: $black;
-			}
-
-			&:before {
-				background: $gray-lighter;
-			}
-
-			&:after {
-				background: $gray-lighter;
-			}
-		}
 	}
 
 	.selected {
@@ -997,32 +940,6 @@ pre {
 
 		a {
 			padding: 0.25em 1em;
-
-			&:before {
-			    content: "";
-			    display: block;
-			    position: absolute;
-			    top: 0;
-			    left: -13px;
-			    width: 24px;
-			    height: 100%;
-			    z-index: 99999;
-			    transform: skew(-20deg);
-			    transition: background 0.1s ease;
-			    }
-
-			    &:after {
-			    content: "";
-			    display: block;
-			    position: absolute;
-			    top: 0;
-			    right: -13px;
-			    width: 24px;
-			    height: 100%;
-			    z-index: 99999;
-			    transform: skew(-20deg);
-			    transition: background 0.1s ease;
-			    }
 		}
 
 		@media all and (min-width: 505px) {
@@ -1056,47 +973,19 @@ pre {
 }
 
 
-/************Buttons**************/
-.btn-group {
-	text-align: center;
-	margin: 1em 1em;
-
-	.btn {
-		display: block;
-		margin-bottom: 0.5em;
-	}
-
-	@media all and (min-width: 36em) {
-		.btn {
-			display: inline-block;
-			margin: .3em 0.75em;
-		}
-	}
-}
-
+//Button
 .btn {
 	position: relative;
-	text-transform: lowercase;
 	font-weight: bold;
-	padding: 1rem;
+    font-size: 2rem;
+	padding: 2rem;
 	background: $gray-dark;
 	color: $white;
-	transition: background 0.1s ease;
+	transition: all 0.1s ease;
 
-	[class*="icon-"] {
-		display: inline-block;
-		margin-right: 0.2em;
-	}
-
-	&:hover {
-		background: $gray;
-		color: $white;
-	}
-
-	@media all and (max-width: $bp-med) {
-		display: block;
-		margin-bottom: 0.25em;
-	}
+    &:hover, &:focus {
+        background: orange;
+    }
 }
 /************End Buttons**************/
 
@@ -1111,58 +1000,6 @@ pre {
 	}
 }
 
-.section-icon {
-	display: block;
-	margin-bottom: 1em;
-
-	.atom {
-		float: left;
-		margin: 0 2em 0 0;
-	}
-
-	h3 {
-		margin-top: 0;
-	}
-
-	p {
-		padding-left: 7em;
-	}
-}
-
-// Credit Section
-.credit-block {
-	display: flex;
-	flex-wrap: wrap;
-	background: $gray-light;
-	margin: 0.5em 0;
-	justify-content: center;
-	align-items: center;
-	
-	.credit-image {
-		margin-bottom: -0.3em;
-
-		img {
-			width: 180px;
-			height: 180px;
-		}
-	}
-
-	a {
-		display: block;
-	}
-
-	.credit-info {
-		text-align: center;
-		width: 50%;
-		
-		a {
-			color: $gray-dark;
-
-		}
-	}
-}
-
-
 .language-toggle {
 	padding: 0;
 	position: relative;
@@ -1173,20 +1010,6 @@ pre {
 	&-inner {
 		display: flex;
 		width: 100%;
-	}
-
-	.lc {
-		overflow: hidden;
-	}
-
-	&:before {
-		@include skew(#000);
-		z-index: 8;
-	}
-
-	&:after {
-		@include skew2(#2b2b2b);
-		z-index: 8;
 	}
 }
 
@@ -1337,80 +1160,4 @@ pre {
 @keyframes rotation {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
-}
-
-
-/************Icon Fonts**************/
-@font-face {
-	font-family: 'icons';
-	src:url('../assets/fonts/icons.eot');
-	src:url('../assets/fonts/icons.eot?#iefix') format('embedded-opentype'),
-		url('../assets/fonts/icons.ttf') format('truetype'),
-		url('../assets/fonts/icons.woff') format('woff'),
-		url('../assets/fonts/icons.svg#icons') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-[class*="icon-"] {
-	font-family: 'icons';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.icon-instagram:before {
-	content: "\e600";
-}
-.icon-facebook:before {
-	content: "\e601";
-}
-.icon-arrow-down:before {
-	content: "\e602";
-}
-.icon-menu:before {
-	content: "\e603";
-}
-.icon-download:before {
-	content: "\e604";
-}
-.icon-close:before {
-	content: "\e605";
-}
-.icon-checkmark:before {
-	content: "\e606";
-}
-.icon-github:before {
-	content: "\e607";
-}
-.icon-star:before {
-	content: "\e608";
-}
-.icon-list:before {
-	content: "\e609";
-}
-.icon-numbered-list:before {
-	content: "\e60a";
-}
-.icon-search:before {
-	content: "\e60b";
-}
-.icon-github2:before {
-	content: "\e60c";
-}
-.icon-github3:before {
-	content: "\e60d";
-}
-.icon-twitter:before {
-	content: "\e60e";
-}
-.icon-arrow-up-right:before {
-	content: "\e60f";
 }

@@ -8,29 +8,10 @@
 </head>
 
 <body class="home">
-    <div class="container">
-	<header class="header" role="banner">
-		<div class="header-inner lc">
-			  <h4 class="logo-header"><a href="/"><span class="atom"></span><span class="logo-text"> Pattern Lab</span></a></h4>
-			  <nav class="nav" role="navigation">
-				<a class="nav-link" href="#nav-list">Menu</a>
-			    <ul class="nav-list" id="nav-list">
-			      <li><a href="/docs/index.html">Documentation</a></li>
-			      <li><a href="http://styleguides.io/" rel="external" target="_blank">Resources</a></li>
-			      <li><a href="http://demo.patternlab.io" target="_blank">Demo</a></li>
-			      <li><a href="https://github.com/pattern-lab/patternlab-php" rel="external" target="blank">On Github</a></li>
-			    </ul>
-			  </nav>
-		  </div><!--end header-inner-->
-	</header><!--end header-->
-	<div class="main" role="main">
+    
 
-
-      <section class="banner banner-feature">
-    <div class="lc">
-        <div class="logo-container">
-          <h1>Create atomic design systems with Pattern Lab</h1>
-        </div><!--end logo-container-->
+      <section class="banner banner--feature">
+        <h1 class="banner__title">Create atomic design systems with Pattern Lab.</h1>
 
         <div class="btn-group">
           <a href="https://github.com/pattern-lab/patternlab-php/archive/master.zip" class="btn"><span class="icon-download"></span>Download</a>
@@ -42,85 +23,72 @@
 
 <div class="guts">
     <section class="section" id="about">
-        <div class= "section-header banner banner-dark">
-            <div class="lc">
-            	<h2>What is Pattern Lab</h2>
-            </div>
-    	</div>
+        <h2 class= "section__title">What is Pattern Lab?</h2>
 
-    	<div class="section-body">
-            <p class="intro">Pattern Lab</p>
+    	<div class="section__body">
+            <p class="intro">Pattern Lab helps your team build thoughtful, pattern-driven user interfaces using <a href="http://atomicdesign.bradfrost.com" rel="external">atomic design</a> principles.</p>
+
             <video autoplay loop>
                <source src="assets/atomic-design.mp4" />
             </video>
-    	</div>
-    </section><!--end .section-->
-    <section class="section" id="features">
-        <div class= "section-header banner banner-dark">
-        	<div class="lc">
-            	<h2>Features</h2>
-            </div>
-    	</div>
-    	<div class="section-body">
-            <p class="intro">At its core, Pattern Lab is a tool that helps create frontend UI patterns and work with dynamic content.</p>
+
+            <p class="intro">At its core, Pattern Lab is a static site generator (powered by either <a href="">PHP</a> or <a href="">Node</a>) that stitches together UI components. But there's a whole lot more to it than that!
+
             <ul class="g g-3up">
                 <li class="gi">
-                    <h3>Nested Includes</h3>
-                    <p>Russian nesting dolls</p>
+                    <h3>Nested Patterns</h3>
+                    <p>Pattern Lab lets you include UI patterns inside each other like Russian nesting dolls. Make a change to a pattern, and see those changes reflected anywhere the pattern is included!</p>
                 </li>
                 <li class="gi">
-                    <h3>Dynamic data</h3>
-                    <p>Pattern Lab helps you dynamically swap in content</p>
+                    <h3>Design With Dynamic Data</h3>
+                    <p>Unlike static design tools, Pattern Lab lets you easily swap in different representative content into your components to ensure they can handle the dynamic nature of your content.</p>
                 </li>
                 <li class="gi">
-                    <h3>Pattern documentation</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                </li>
-                <li class="gi">                <h3>Viewport resizer tool</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    <h3>Pattern Documentation</h3>
+                    <p>Define and describe your UI patterns so your entire team can start speaking the same language to collaborate more effectively.</p>
                 </li>
                 <li class="gi">
-                    <h3>Annotations</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    <h3>Viewport Resizer Tools</h3>
+                    <p>Pattern Lab has device-agnostic viewport resizing tools to ensure your design system is fully responsive and embraces the intrinsic fluidity of the web.</p>
                 </li>
                 <li class="gi">
-                    <h3>Language agnostic</h3>
-                    <p>flexible, use whatever tools you want</p>
+                    <h3>Annotations &amp; Pattern Lineage</h3>
+                    <p>Quickly see which patterns make up any given component as well as where each component is employed. Additionally, Pattern Lab's annotations feature let you annotate your living, breathing UIs rather than having to create gigantic static PDFs.</p>
+                </li>
+                <li class="gi">
+                    <h3>Language &amp; Workflow Agnostic</h3>
+                    <p>Pattern Lab is language agnostic and doesn't impose any tools or libraries on you, which means you can choose the tech that's right for your project. Like Sass? Cool, go for it! Don't need it? That's fine too! </p>
     			</li>
                 <li class="gi">
-                    <h3>Pattern starter kits</h3>
-                    <p>Available Bootstrap, Foundation, Material Design</p>
+                    <h3>Pattern Starter Kits</h3>
+                    <p>Spin up a new Pattern Lab with popular UI frameworks like Bootstrap, Foundation, and Material Design. Or of course start from scratch and build your own custom design system.</p>
+                </li>
+                <li class="gi">
+                    <h3>Versatile</h3>
+                    <p>Pattern Lab can be used for simple rapid prototyping or for developing production-level frontend code. Some teams have even modified it to power their live sites!</p>
                 </li>
                 <li class="gi">
                     <h3>Extensible</h3>
-                    <p>Choose your own templating engine, or build a plugin to cater Pattern Lab to your specific needs.</p>
+                    <p>Choose your own templating engine to better match your production environment. Also you can or build a plugin to extend Pattern Lab's capabilities even further.</p>
                 </li>
-            </ul>
-    	</div>
+            </ul><!--end .g-3up-->
+        </div><!--end .section__body-->
     </section><!--end .section-->
-    <section class="section" id="documentation">
-        <div class= "section-header banner banner-dark">
-        	<div class="lc">
-            	<h2>How</h2>
-            </div>
-    	</div>
-    	<div class="section-body section-body-centered">
-            <p class="intro">Learn how to download pattern lab and get started</p>
-			<div class="btn-group">
-	            <a href="/docs/index.html" class="btn">View Pattern Lab's documentation.</a>
-			</div>
-            <ul class="g g-4up">
 
-            </ul>
+    <section class="section" id="documentation">
+        <h2 class="section__title">How It Works</h2>
+    	<div class="section__body">
+            <p class="intro">Learn how to get Pattern Lab up and running, how to use patterns, work with dynamic data, and use all Pattern Lab's features.</p>
+			<div class="btn-group">
+	            <a href="/docs/index.html" class="btn">View Pattern Lab's Documentation</a>
+			</div>
     	</div>
     </section><!--end .section-->
+
     <section class="section" id="credits">
-        <div class="section-header banner banner-dark">
-            <div class="lc">
-                <h2>Created By</h2>
-    	    </div>
-        </div>
-        <div class="section-body">
+        <h2 class="section__title">Created By</h2>
+        <div class="section__body">
+            <p class="intro">Pattern Lab is an open-source project and has grown into a . contributors
             <div class="g g-2up">
                 <div class="gi">
                     <h3>Pattern Lab PHP is created by</h3>
@@ -136,7 +104,7 @@
                     </div><!--end credit-block-->
 					<h3>With help from</h3>
                     <div class="credit-block">
-                    	<div class="credit-image">	
+                    	<div class="credit-image">
                         	<img src="assets/img_brad.jpg" alt="Brad Frost" />
                     	</div>
                         <div class="credit-info">
@@ -225,6 +193,4 @@
 	</script>
 </body>
 </html>
-
-
 
