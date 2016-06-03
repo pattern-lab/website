@@ -94,7 +94,7 @@ The list text attributes were built using several lorem ipsum generators. The im
     img.rectangle.src      (4x3 aspect ratio)
     img.rectangle.alt
     img.landscape-4x3.src
-    img.landscape-4x3.src
+    img.landscape-4x3.alt
     img.landscape-16x9.src
     img.landscape-16x9.alt
     name.first             (e.g. Junius)
