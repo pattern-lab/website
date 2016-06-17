@@ -28,36 +28,31 @@
 
 <main role="main">
 
-    <div class="banner">
-        <div class="lc">
-	        <h1>Editing the Configuration Options</h1>
-        </div>
-    </div>
+    <section class="banner">
+	    <h1 class="banner__title">Editing the Configuration Options</h1>
+    </section>
     <div class="language-toggle">
-        <div class="lc">
-	        <ul class="tabs">
-		        
-		        <li class="tab"><a class="language-btn"
-	href="#php">php</a></li>
-			    
-		        <li class="tab"><a class="language-btn"
-	href="#node">node</a></li>
-			    
-		    </ul>
-        </div>
+        <ul class="tabs">
+	        
+	        <li class="tabs__item"><a class="tabs__link"
+href="#php">php</a></li>
+		    
+	        <li class="tabs__item"><a class="tabs__link"
+href="#node">node</a></li>
+		    
+	    </ul>
     </div>
     <div class="guts">
-        <div class="lc inner-lc">
-            <div class="l-two-col">
-          		<div class="content">
-               <!--- start php -->
+        <div class="l-two-col">
+	  		<div class="content">
+	  			<!--- start php -->
 
 <div class="tab-panel" id="php">
 <h2 class="language-title">php</h2>
 
 
 <p>Pattern Lab comes with a simple configuration file that allows you to modify certain aspects of the system. The following example configuration is from <code>v0.7.9</code> of Pattern Lab.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">/*
+<div class="highlight"><pre><code class="language-text" data-lang="text">/*
  * Configuration Options for Pattern Lab
  * If config.ini doesn&#39;t exist Pattern Lab will try to create a new version
  */
@@ -100,7 +95,7 @@ styleGuideExcludes = &quot;&quot;
 
 // should the cache buster be on, set to false to set the cacheBuster value to 0
 cacheBusterOn = &quot;true&quot;
-</code></pre></figure>
+</code></pre></div>
 
 </div>
 
@@ -113,7 +108,7 @@ cacheBusterOn = &quot;true&quot;
 
 
 <p>Pattern Lab Node comes with a simple configuration file (<code>config.json</code>) that allows you to modify certain aspects of the system. The following example configuration is from <a href="https://github.com/pattern-lab/patternlab-node/releases/tag/v0.15.1">v0.15.1</a> of Pattern Lab Node.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">{
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
     &quot;patterns&quot; : {
         &quot;source&quot; : &quot;./source/_patterns/&quot;,
         &quot;public&quot; : &quot;./public/patterns/&quot;
@@ -151,16 +146,16 @@ cacheBusterOn = &quot;true&quot;
   &quot;patternExportDirectory&quot;: &quot;./pattern_exports/&quot;,
   &quot;baseurl&quot; : &quot;&quot;
 }
-</code></pre></figure>
+</code></pre></div>
 
 </div>
 
 <!--- end node -->
 
-            	</div><!--end .content-->
-
-              <div class="sidebar">
-                <nav class="docs-nav">
+	    	</div><!--end .content-->
+	
+			<div class="sidebar">
+				<nav class="docs-nav">
 	<ul>
 		<li class="docs-nav-section">
 			<h4 class="docs-nav-title">Getting Started</h4>
@@ -225,9 +220,8 @@ cacheBusterOn = &quot;true&quot;
 		</li>
 	</ul>
 </nav>
-              </div><!--end .sidebar-->
-            </div><!--end .l-two-col-->
-        </div><!--end .lc-->
+			</div><!--end .sidebar-->
+        </div><!--end .l-two-col-->
     </div><!--end .guts-->
 
     </main><!--end .main-->

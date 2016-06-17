@@ -28,34 +28,29 @@
 
 <main role="main">
 
-    <div class="banner">
-        <div class="lc">
-	        <h1>Hiding Patterns in the Navigation</h1>
-        </div>
-    </div>
+    <section class="banner">
+	    <h1 class="banner__title">Hiding Patterns in the Navigation</h1>
+    </section>
     <div class="language-toggle">
-        <div class="lc">
-	        <ul class="tabs">
-		        
-		    </ul>
-        </div>
+        <ul class="tabs">
+	        
+	    </ul>
     </div>
     <div class="guts">
-        <div class="lc inner-lc">
-            <div class="l-two-col">
-          		<div class="content">
-               <p>There may come a time when you want to remove a pattern from Pattern Lab&#39;s drop-down navigation and style guide but still keep it in your patterns directory for later use. You can &quot;comment out&quot; a pattern by adding an <code>_</code> (underscore) to the beginning of the pattern name. For example, we may have a Google Map-based pattern that we don&#39;t need for a particular project. The path might look like:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">molecules/media/map.mustache
-</code></pre></figure>
+        <div class="l-two-col">
+	  		<div class="content">
+	  			<p>There may come a time when you want to remove a pattern from Pattern Lab&#39;s drop-down navigation and style guide but still keep it in your patterns directory for later use. You can &quot;comment out&quot; a pattern by adding an <code>_</code> (underscore) to the beginning of the pattern name. For example, we may have a Google Map-based pattern that we don&#39;t need for a particular project. The path might look like:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">molecules/media/map.mustache
+</code></pre></div>
 <p>To &quot;hide&quot; the pattern we add the underscore:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">molecules/media/_map.mustache
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">molecules/media/_map.mustache
+</code></pre></div>
 <p>Once the site has been re-generated the map pattern will no longer show up in the drop-down navigation, the media pattern sub-type &quot;view all&quot; page, nor the style guide.</p>
 
-            	</div><!--end .content-->
-
-              <div class="sidebar">
-                <nav class="docs-nav">
+	    	</div><!--end .content-->
+	
+			<div class="sidebar">
+				<nav class="docs-nav">
 	<ul>
 		<li class="docs-nav-section">
 			<h4 class="docs-nav-title">Getting Started</h4>
@@ -120,9 +115,8 @@
 		</li>
 	</ul>
 </nav>
-              </div><!--end .sidebar-->
-            </div><!--end .l-two-col-->
-        </div><!--end .lc-->
+			</div><!--end .sidebar-->
+        </div><!--end .l-two-col-->
     </div><!--end .guts-->
 
     </main><!--end .main-->

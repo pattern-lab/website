@@ -28,23 +28,18 @@
 
 <main role="main">
 
-    <div class="banner">
-        <div class="lc">
-	        <h1>Integration with Grunt</h1>
-        </div>
-    </div>
+    <section class="banner">
+	    <h1 class="banner__title">Integration with Grunt</h1>
+    </section>
     <div class="language-toggle">
-        <div class="lc">
-	        <ul class="tabs">
-		        
-		    </ul>
-        </div>
+        <ul class="tabs">
+	        
+	    </ul>
     </div>
     <div class="guts">
-        <div class="lc inner-lc">
-            <div class="l-two-col">
-          		<div class="content">
-               <p><strong>Note:</strong> <em>These directions may be incomplete. They also require <strong>v0.7.9</strong> of the PHP version of Pattern Lab.</em></p>
+        <div class="l-two-col">
+	  		<div class="content">
+	  			<p><strong>Note:</strong> <em>These directions may be incomplete. They also require <strong>v0.7.9</strong> of the PHP version of Pattern Lab.</em></p>
 
 <p>Setting up Grunt to work with the PHP version of Pattern Lab should be straightforward. To do so please do the following:</p>
 
@@ -53,32 +48,32 @@
 <li>Type <code>npm install --save-dev grunt-shell</code> to install <a href="https://github.com/sindresorhus/grunt-shell">grunt-shell</a></li>
 <li>Add the following to your <code>grunt.initConfig</code>. The <code>-p</code> flag ensures that Pattern Lab only generates patterns.</li>
 </ol>
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">shell: {
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">shell: {
   patternlab: {
     command: &quot;php core/builder.php -gp&quot;
   }
 }
-</code></pre></figure>
+</code></pre></div>
 <ol>
 <li>Add <code>grunt.loadNpmTasks(&#39;grunt-shell&#39;);</code> to your list of plugins.</li>
 <li>Add <code>&#39;shell:patternlab&#39;</code> to your list of tasks in <code>grunt.registerTask</code>.</li>
 </ol>
 
 <p>You should also be using <code>grunt-contrib-watch</code> to monitor changes to Pattern Lab&#39;s patterns and data. The Pattern Lab section for your <code>watch</code> might look like:</p>
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">html: {
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">html: {
   files: [&#39;source/_patterns/**/*.mustache&#39;, &#39;source/_patterns/**/*.json&#39;, &#39;source/_data/*.json&#39;],
   tasks: [&#39;shell:patternlab&#39;],
   options: {
     spawn: false
   }
 }
-</code></pre></figure>
+</code></pre></div>
 <p>You might be able to use <code>livereload</code> as well but that hasn&#39;t been tested by us yet.</p>
 
-            	</div><!--end .content-->
-
-              <div class="sidebar">
-                <nav class="docs-nav">
+	    	</div><!--end .content-->
+	
+			<div class="sidebar">
+				<nav class="docs-nav">
 	<ul>
 		<li class="docs-nav-section">
 			<h4 class="docs-nav-title">Getting Started</h4>
@@ -143,9 +138,8 @@
 		</li>
 	</ul>
 </nav>
-              </div><!--end .sidebar-->
-            </div><!--end .l-two-col-->
-        </div><!--end .lc-->
+			</div><!--end .sidebar-->
+        </div><!--end .l-two-col-->
     </div><!--end .guts-->
 
     </main><!--end .main-->

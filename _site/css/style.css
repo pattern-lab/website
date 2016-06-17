@@ -484,6 +484,15 @@ main {
   background: #222;
   color: #ddd; }
 
+.section-edition--dark {
+  background: #bfbfbf; }
+
+/*------------------------------------*\
+    #GUTS
+\*------------------------------------*/
+.guts {
+  background: #fff; }
+
 /*------------------------------------*\
     #BLOCKHEAD
 \*------------------------------------*/
@@ -622,10 +631,7 @@ main {
 
 .content {
   counter-reset: big-nums;
-  max-width: 44em; }
-  @media all and (min-width: 60em) {
-    .content {
-      max-width: 31em; } }
+  padding: 1rem 2rem 1rem 1rem; }
   .content p {
     counter-reset: big-nums; }
   .content pre code {
@@ -654,24 +660,22 @@ main {
   @media all and (min-width: 60em) {
     .content {
       -webkit-flex: 1;
-      flex: 1;
-      padding-right: 2em; } }
+      flex: 1; } }
   .content .highlight {
     margin: 1.5em 0; }
 
-.sidebar {
-  padding: 1em 0; }
-  @media all and (min-width: 60em) {
-    .sidebar {
-      width: 14em;
-      border-left: 1px solid rgba(0, 0, 0, 0.2); } }
+.js .content {
+  padding: 2.4rem 2rem 1rem 1rem; }
+
+@media all and (min-width: 60em) {
+  .sidebar {
+    border-left: 1px solid rgba(0, 0, 0, 0.2); } }
 
 .docs-nav-title {
   display: block;
   font-weight: bold;
   color: #222;
-  margin-bottom: 0.4em;
-  padding: 0 0.5em; }
+  margin-bottom: 0.4em; }
 
 .docs-nav-list {
   font-size: 80%;
@@ -718,6 +722,17 @@ main {
         .docs-nav-list .selected a:hover:after {
           background: #808080; }
 
+.docs-nav-section {
+  padding: 1rem 1rem 1rem 2rem;
+  background: #f1f1f1; }
+  .docs-nav-section:nth-child(2) {
+    background: url(../assets/organisms-scales.png); }
+  .docs-nav-section:nth-child(3) {
+    background: #e5e5e5; }
+
+.js .docs-nav-section:first-child {
+  padding: 1.8rem 1rem 1rem 2rem; }
+
 /* Button */
 .btn {
   position: relative;
@@ -754,84 +769,29 @@ main {
     display: flex;
     width: 100%; }
 
-.tab {
-  display: inline-block;
-  margin: 0 0.5em; }
-  .tab a {
-    position: relative;
-    display: block;
-    color: white;
-    padding: 1em 1em;
-    font-weight: bold; }
-    .tab a:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: -13px;
-      width: 25px;
-      height: 100%;
-      background: #222;
-      transform: skew(-20deg);
-      z-index: 7; }
-    .tab a:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: -13px;
-      display: block;
-      width: 25px;
-      height: 100%;
-      background: #222;
-      transform: skew(-20deg);
-      z-index: 7; }
-    .tab a.active {
-      background: #e5e5e5;
-      position: relative;
-      color: #000; }
-      .tab a.active:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: -13px;
-        width: 25px;
-        height: 100%;
-        background: #e5e5e5;
-        transform: skew(-20deg);
-        z-index: 8; }
-      .tab a.active:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: -13px;
-        display: block;
-        width: 25px;
-        height: 100%;
-        background: #e5e5e5;
-        transform: skew(-20deg);
-        z-index: 8; }
-      .tab a.active:hover {
-        color: #fff; }
-    .tab a:hover {
-      background: #808080;
-      transition: background 0.2s ease; }
-      .tab a:hover:before {
-        background: #808080;
-        z-index: 10;
-        transition: background 0.2s ease; }
-      .tab a:hover:after {
-        background: #808080;
-        z-index: 10;
-        transition: background 0.2s ease; }
+.tabs {
+  display: flex; }
 
-.js .content {
-  margin-top: 1.4em; }
+.tabs__link {
+  position: relative;
+  display: block;
+  color: white;
+  padding: 1em 3em;
+  font-weight: bold; }
+  .tabs__link--is-active {
+    background: #fff;
+    position: relative;
+    color: #000; }
+    .tabs__link--is-active:hover {
+      color: #fff; }
+  .tabs__link:hover {
+    background: #a6a6a6;
+    transition: background 0.2s ease; }
 
 .js .tab-panel {
   display: none; }
 
-.js .tab-active {
+.js .tabs__item--is-active {
   display: block; }
 
 .js .language-title {

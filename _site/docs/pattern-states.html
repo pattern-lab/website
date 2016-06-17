@@ -28,29 +28,24 @@
 
 <main role="main">
 
-    <div class="banner">
-        <div class="lc">
-	        <h1>Using Pattern States</h1>
-        </div>
-    </div>
+    <section class="banner">
+	    <h1 class="banner__title">Using Pattern States</h1>
+    </section>
     <div class="language-toggle">
-        <div class="lc">
-	        <ul class="tabs">
-		        
-		        <li class="tab"><a class="language-btn"
-	href="#php">php</a></li>
-			    
-		        <li class="tab"><a class="language-btn"
-	href="#node">node</a></li>
-			    
-		    </ul>
-        </div>
+        <ul class="tabs">
+	        
+	        <li class="tabs__item"><a class="tabs__link"
+href="#php">php</a></li>
+		    
+	        <li class="tabs__item"><a class="tabs__link"
+href="#node">node</a></li>
+		    
+	    </ul>
     </div>
     <div class="guts">
-        <div class="lc inner-lc">
-            <div class="l-two-col">
-          		<div class="content">
-               <!--- start php -->
+        <div class="l-two-col">
+	  		<div class="content">
+	  			<!--- start php -->
 
 <div class="tab-panel" id="php">
 <h2 class="language-title">php</h2>
@@ -75,20 +70,20 @@
 <h2>Giving Patterns a State</h2>
 
 <p>Giving patterns a state is simply a matter of modifying the file name. If we wanted to give our <code>molecules-media-block</code> pattern a state of <code>inprogress</code> we&#39;d change the file name from:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">source/_patterns/01-molecules/02-blocks/00-media-block.mustache
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">source/_patterns/01-molecules/02-blocks/00-media-block.mustache
+</code></pre></div>
 <p>to:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">source/_patterns/01-molecules/02-blocks/00-media-block@inprogress.mustache
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">source/_patterns/01-molecules/02-blocks/00-media-block@inprogress.mustache
+</code></pre></div>
 <h2>Adding Customized States</h2>
 
 <p>The three default states included with the PHP version of Pattern Lab might not be enough for everyone. To add customized states you should modify your own CSS files. <strong>DO NOT</strong> modify <code>states.css</code> in <code>public/styleguide/css/</code>. This is because <code>states.css</code> will be overwritten in future upgrades.</p>
 
 <p>You can use the following as your CSS template for new pattern states:</p>
-<figure class="highlight"><pre><code class="language-css" data-lang="css">.newpatternstate:before {
+<div class="highlight"><pre><code class="language-css" data-lang="css">.newpatternstate:before {
     color: #B10DC9 !important;
 }
-</code></pre></figure>
+</code></pre></div>
 <p>Then add <code>@newpatternstate</code> to your patterns to have the new look show up. If you want to add it to the cascade of the default patterns you can modify your <code>config.ini</code>. Simply add your new pattern state to the <code>patternStates</code> list.</p>
 
 
@@ -119,28 +114,28 @@
 <h2>Giving Patterns a State</h2>
 
 <p>In the Node version of Pattern Lab, pattern states are managed centrally from inside <code>config.json</code>. Adding the [pattern-type]-[pattern-name] name as the key, followed by the class name will apply the pattern state:</p>
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">&quot;patternStates&quot;: {
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">&quot;patternStates&quot;: {
   &quot;homepage-emergency&quot; : &quot;inprogress&quot;
 },
-</code></pre></figure>
+</code></pre></div>
 <h2>Adding Customized States</h2>
 
 <p>The three default states included with the Node version of Pattern Lab might not be enough for everyone. To add customized states you should modify your own CSS files. <strong>DO NOT</strong> modify pattern states in <code>public/styleguide/css/styleguide.css</code>. You cannot be assured these files won&#39;t be overwritten.</p>
 
 <p>You can use the following as your CSS template for new pattern states:</p>
-<figure class="highlight"><pre><code class="language-css" data-lang="css">.newpatternstate:before {
+<div class="highlight"><pre><code class="language-css" data-lang="css">.newpatternstate:before {
     color: #B10DC9 !important;
 }
-</code></pre></figure>
+</code></pre></div>
 
 </div>
 
 <!--- end node -->
 
-            	</div><!--end .content-->
-
-              <div class="sidebar">
-                <nav class="docs-nav">
+	    	</div><!--end .content-->
+	
+			<div class="sidebar">
+				<nav class="docs-nav">
 	<ul>
 		<li class="docs-nav-section">
 			<h4 class="docs-nav-title">Getting Started</h4>
@@ -205,9 +200,8 @@
 		</li>
 	</ul>
 </nav>
-              </div><!--end .sidebar-->
-            </div><!--end .l-two-col-->
-        </div><!--end .lc-->
+			</div><!--end .sidebar-->
+        </div><!--end .l-two-col-->
     </div><!--end .guts-->
 
     </main><!--end .main-->

@@ -28,29 +28,24 @@
 
 <main role="main">
 
-    <div class="banner">
-        <div class="lc">
-	        <h1>Using The Command Line Options</h1>
-        </div>
-    </div>
+    <section class="banner">
+	    <h1 class="banner__title">Using The Command Line Options</h1>
+    </section>
     <div class="language-toggle">
-        <div class="lc">
-	        <ul class="tabs">
-		        
-		        <li class="tab"><a class="language-btn"
-	href="#php">php</a></li>
-			    
-		        <li class="tab"><a class="language-btn"
-	href="#node">node</a></li>
-			    
-		    </ul>
-        </div>
+        <ul class="tabs">
+	        
+	        <li class="tabs__item"><a class="tabs__link"
+href="#php">php</a></li>
+		    
+	        <li class="tabs__item"><a class="tabs__link"
+href="#node">node</a></li>
+		    
+	    </ul>
     </div>
     <div class="guts">
-        <div class="lc inner-lc">
-            <div class="l-two-col">
-          		<div class="content">
-               <!--- start php -->
+        <div class="l-two-col">
+	  		<div class="content">
+	  			<!--- start php -->
 
 <div class="tab-panel" id="php">
 <h2 class="language-title">php</h2>
@@ -63,7 +58,7 @@
 <h2>The Generate Command and Options</h2>
 
 <p>The generate command generates an entire site a single time. By default it removes old content in <code>public/</code>, compiles the patterns and moves content from <code>source/</code> into <code>public/</code>. Options can be mixed and matched.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">Usage:
+<div class="highlight"><pre><code class="language-text" data-lang="text">Usage:
   php core/builder.php --generate|-g [--patternsonly|-p] [--nocache|-n] [--enablecss|-c] 
 
 Available options:
@@ -84,11 +79,11 @@ Samples:
  To run and generate the CSS for each pattern:
    php core/builder.php --generate --enablecss
    php core/builder.php -g -c
-</code></pre></figure>
+</code></pre></div>
 <h2>The Watch Command and Options</h2>
 
 <p>The watch command builds Pattern Lab, watches for changes in <code>source/</code> and regenerates Pattern Lab when there are any. Options can be mixed and matched.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">Usage:
+<div class="highlight"><pre><code class="language-text" data-lang="text">Usage:
   php core/builder.php --watch|-w [--patternsonly|-p] [--autoreload|-r] 
 
 Available options:
@@ -104,22 +99,22 @@ Samples:
  To turn on auto-reload:
    php core/builder.php --watch --autoreload
    php core/builder.php -w -r
-</code></pre></figure>
+</code></pre></div>
 <h2>The Version Command</h2>
 
 <p>The version command prints out the current version of Pattern Lab.</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">Usage:
+<div class="highlight"><pre><code class="language-text" data-lang="text">Usage:
   php core/builder.php --version|-v
-</code></pre></figure>
+</code></pre></div>
 <h2>Starting the Auto-Reload and Page Follow Services</h2>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">php core/autoReloadServer.php
+<div class="highlight"><pre><code class="language-text" data-lang="text">php core/autoReloadServer.php
   Starts the WebSocket-based server to monitor for and notify browsers of changes to content. Browser
   windows will re-load.
 
 php core/pageFollowServer.php
   Starts the WebSocket-based server to monitor for and notify browsers of changes to navigation. Browser
   windows should update to match the browser window that changed.
-</code></pre></figure>
+</code></pre></div>
 
 </div>      
 
@@ -162,10 +157,10 @@ php core/pageFollowServer.php
 
 <!--- end node -->
 
-            	</div><!--end .content-->
-
-              <div class="sidebar">
-                <nav class="docs-nav">
+	    	</div><!--end .content-->
+	
+			<div class="sidebar">
+				<nav class="docs-nav">
 	<ul>
 		<li class="docs-nav-section">
 			<h4 class="docs-nav-title">Getting Started</h4>
@@ -230,9 +225,8 @@ php core/pageFollowServer.php
 		</li>
 	</ul>
 </nav>
-              </div><!--end .sidebar-->
-            </div><!--end .l-two-col-->
-        </div><!--end .lc-->
+			</div><!--end .sidebar-->
+        </div><!--end .l-two-col-->
     </div><!--end .guts-->
 
     </main><!--end .main-->

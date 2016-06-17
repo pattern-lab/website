@@ -44,7 +44,7 @@ $color-gray-20: #ccc;
 $color-gray-25: #bfbfbf;
 $color-gray-30: #b3b3b3;
 $color-gray-35: #a6a6a6;
-$color-gray-50 : #808080;
+$color-gray-50: #808080;
 $color-gray-75: #444;
 $color-gray-87: #222;
 
@@ -723,6 +723,20 @@ main {
 }
 
 
+.section-edition {
+	&--dark {
+		background: $color-gray-25;	}
+}
+
+
+/*------------------------------------*\
+    #GUTS
+\*------------------------------------*/
+.guts {
+	background: $color-white;
+}
+
+
 
 
 
@@ -912,11 +926,7 @@ main {
 
 .content {
 	counter-reset: big-nums;
-	max-width: 44em;
-
-	@media all and (min-width: $bp-large) {
-		max-width: 31em;
-	}
+	padding: 1rem 2rem 1rem 1rem;
 
 	p {
 		counter-reset: big-nums;
@@ -961,7 +971,6 @@ main {
 	@media all and (min-width: $bp-large) {
 		-webkit-flex: 1;
 		flex: 1;
-		padding-right: 2em;
 	}
 
 	.highlight {
@@ -970,11 +979,12 @@ main {
 
 }
 
- .sidebar {
-	padding: 1em 0;
+.js .content {
+	padding: 2.4rem 2rem 1rem 1rem; 
+}
 
+ .sidebar {
 	@media all and (min-width: $bp-large) {
-		width: 14em;
 		border-left: 1px solid rgba(0,0,0,0.2);
 	}
 }
@@ -986,7 +996,6 @@ main {
 	font-weight: bold;
 	color: $color-gray-87;
 	margin-bottom: 0.4em;
-	padding: 0 0.5em;
 }
 
 .docs-nav-list {
@@ -1051,6 +1060,25 @@ main {
 	}
 }
 
+.docs-nav-section {
+	padding: 1rem 1rem 1rem 2rem;
+	background: $color-gray-05;
+	
+	&:nth-child(2) {
+		background: url(../assets/organisms-scales.png);
+	}
+	
+	&:nth-child(3) {
+		background: $color-gray-10;
+	}
+}
+
+.js .docs-nav-section {
+	&:first-child {
+		padding: 1.8rem 1rem 1rem 2rem;
+	}
+}
+
 /* Button */
 .btn {
 	position: relative;
@@ -1100,109 +1128,42 @@ main {
 	}
 }
 
-
-.tab {
-	display: inline-block;
-	margin: 0 0.5em;
-
-	a {
-		position: relative;
-		display: block;
-		color: white;
-		padding: 1em 1em;
-		font-weight: bold;
-
-		&:before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: -13px;
-			width: 25px;
-		    height: 100%;
-		    background: $color-gray-87;
-		    transform: skew(-20deg);
-		    z-index: 7;
-		}
-
-		&:after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: -13px;
-			display: block;
-		    width: 25px;
-		    height: 100%;
-		    background: $color-gray-87;
-		    transform: skew(-20deg);
-			z-index: 7
-		}
-
-		&.active {
-			background: $color-gray-10;
-			position: relative;
-			color: $color-black;
-
-			&:before {
-				content: "";
-				display: block;
-				position: absolute;
-				top: 0;
-				left: -13px;
-			    width: 25px;
-			    height: 100%;
-			    background: $color-gray-10;
-			    transform: skew(-20deg);
-			    z-index: 8;
-			}
-
-			&:after {
-				content: "";
-				position: absolute;
-				top: 0;
-				right: -13px;
-				display: block;
-			    width: 25px;
-			    height: 100%;
-			    background: $color-gray-10;
-			    transform: skew(-20deg);
-			    z-index: 8;
-			}
-
-			&:hover {
-				color: $color-white;
-			}
-		}
-
-		&:hover {
-			background: $color-gray-50;
-			transition: background $anim-speed-quick ease;
-
-			&:before {
-			    background: $color-gray-50;
-			    z-index: 10;
-			    transition: background $anim-speed-quick ease;
-			}
-
-			&:after {
-			    background: $color-gray-50;
-			    z-index: 10;
-			    transition: background $anim-speed-quick ease;
-			}
-		}
-	}
+.tabs {
+	display: flex;
 }
 
-.js .content {
-	margin-top: 1.4em;
+.tabs__link {
+	position: relative;
+	display: block;
+	color: white;
+	padding: 1em 3em;
+	font-weight: bold;
+	
+	&--is-active {
+		background: $color-white;
+		position: relative;
+		color: $color-black;
+		
+		&:hover {
+			color: $color-white;
+		}
+	}
+	
+	&:hover {
+		background: $color-gray-35;
+		transition: background $anim-speed-quick ease;
+	}
 }
 
 .js .tab-panel {
 	display: none;
 }
 
-.js .tab-active {
-	display: block;
+.js .tabs__item {
+
+	&--is-active {
+		display: block;
+	}
 }
 
 .js .language-title {

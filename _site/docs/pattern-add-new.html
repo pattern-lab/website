@@ -28,39 +28,34 @@
 
 <main role="main">
 
-    <div class="banner">
-        <div class="lc">
-	        <h1>Adding New Patterns</h1>
-        </div>
-    </div>
+    <section class="banner">
+	    <h1 class="banner__title">Adding New Patterns</h1>
+    </section>
     <div class="language-toggle">
-        <div class="lc">
-	        <ul class="tabs">
-		        
-		    </ul>
-        </div>
+        <ul class="tabs">
+	        
+	    </ul>
     </div>
     <div class="guts">
-        <div class="lc inner-lc">
-            <div class="l-two-col">
-          		<div class="content">
-               <p>Adding new patterns to the PHP and Node versions of Pattern Lab is simply a matter of adding Mustache templates in the appropriate pattern type and pattern sub-type directories under <code>source/_patterns</code>. For example, let&#39;s add a new pattern under the pattern type &quot;molecules&quot; and the pattern sub-type &quot;blocks&quot;. The <code>source/_patterns/01-molecules/02-blocks/</code> directory looks like:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">00-media-block.mustache
+        <div class="l-two-col">
+	  		<div class="content">
+	  			<p>Adding new patterns to the PHP and Node versions of Pattern Lab is simply a matter of adding Mustache templates in the appropriate pattern type and pattern sub-type directories under <code>source/_patterns</code>. For example, let&#39;s add a new pattern under the pattern type &quot;molecules&quot; and the pattern sub-type &quot;blocks&quot;. The <code>source/_patterns/01-molecules/02-blocks/</code> directory looks like:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">00-media-block.mustache
 01-headline-byline.mustache
 02-block-hero.mustache
-</code></pre></figure>
+</code></pre></div>
 <p>If we want to add a new pattern we simply tack it onto the end:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">00-media-block.mustache
+<div class="highlight"><pre><code class="language-text" data-lang="text">00-media-block.mustache
 01-headline-byline.mustache
 02-block-hero.mustache
 03-new-pattern.mustache
-</code></pre></figure>
+</code></pre></div>
 <p>The numbering controls where the pattern will show up in the navigation so if you need it to show up higher in the navigation <a href="/docs/pattern-reorganizing.html">you can reorganize it</a>.</p>
 
-            	</div><!--end .content-->
-
-              <div class="sidebar">
-                <nav class="docs-nav">
+	    	</div><!--end .content-->
+	
+			<div class="sidebar">
+				<nav class="docs-nav">
 	<ul>
 		<li class="docs-nav-section">
 			<h4 class="docs-nav-title">Getting Started</h4>
@@ -125,9 +120,8 @@
 		</li>
 	</ul>
 </nav>
-              </div><!--end .sidebar-->
-            </div><!--end .l-two-col-->
-        </div><!--end .lc-->
+			</div><!--end .sidebar-->
+        </div><!--end .l-two-col-->
     </div><!--end .guts-->
 
     </main><!--end .main-->

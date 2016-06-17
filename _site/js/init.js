@@ -1,6 +1,6 @@
 $('body').addClass('js');
 
-var languageBtn = $('.tab a');
+var languageBtn = $('.tabs__link ');
 var tabContent = $('.tab-panel');
 languageBtn.on('click', function(e){ 
 	e.preventDefault();
@@ -11,16 +11,16 @@ languageBtn.on('click', function(e){
 });
 
 function addHash(id) {
-	var changeSource = $('.language-btn.active').attr('src');
+	var changeSource = $('.tabs__link--is-active').attr('src');
 	$(this).attr("src", changeSource);
 	history.pushState(null, null, '#' + id);
 }
 
 function openTab (target) {
-	languageBtn.removeClass('active');
-	$('.tab a[href="' + target +'"]').addClass('active');
-	tabContent.removeClass('tab-active');
-	$(target).addClass('tab-active');
+	languageBtn.removeClass('tabs__link--is-active');
+	$('.tabs__link[href="' + target +'"]').addClass('tabs__link--is-active');
+	tabContent.removeClass('tabs__item--is-active');
+	$(target).addClass('tabs__item--is-active');
 	console.log(target);
 	
 }
@@ -32,6 +32,6 @@ if(window.location.hash) {
 	}, 1);
 }
 else {
-	$('.tab:nth-of-type(1) a').addClass('active');
-	$('#php').addClass('tab-active');
+	$('.tabs__item:nth-of-type(1) .tabs__link').addClass('tabs__link--is-active');
+	$('#php').addClass('tabs__item--is-active');
 }

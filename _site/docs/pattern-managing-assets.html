@@ -28,29 +28,24 @@
 
 <main role="main">
 
-    <div class="banner">
-        <div class="lc">
-	        <h1>Managing Pattern Assets</h1>
-        </div>
-    </div>
+    <section class="banner">
+	    <h1 class="banner__title">Managing Pattern Assets</h1>
+    </section>
     <div class="language-toggle">
-        <div class="lc">
-	        <ul class="tabs">
-		        
-		        <li class="tab"><a class="language-btn"
-	href="#php">php</a></li>
-			    
-		        <li class="tab"><a class="language-btn"
-	href="#node">node</a></li>
-			    
-		    </ul>
-        </div>
+        <ul class="tabs">
+	        
+	        <li class="tabs__item"><a class="tabs__link"
+href="#php">php</a></li>
+		    
+	        <li class="tabs__item"><a class="tabs__link"
+href="#node">node</a></li>
+		    
+	    </ul>
     </div>
     <div class="guts">
-        <div class="lc inner-lc">
-            <div class="l-two-col">
-          		<div class="content">
-               <!--- start php -->
+        <div class="l-two-col">
+	  		<div class="content">
+	  			<!--- start php -->
 
 <div class="tab-panel" id="php">
 <h2 class="language-title">php</h2>
@@ -69,8 +64,8 @@
 </ul>
 
 <p>To ignore more file extensions just edit the <code>ie</code> variable in <code>config/config.ini</code>. For example, to ignore <code>.png</code> files your <code>ie</code> variable would look like:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">ie = &quot;scss,DS_Store,less,png&quot;
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ie = &quot;scss,DS_Store,less,png&quot;
+</code></pre></div>
 <h2>Ignoring All Assets in a Directory</h2>
 
 <p>By default, the PHP version of Pattern Lab will ignore assets in directories with the following name:</p>
@@ -80,8 +75,8 @@
 </ul>
 
 <p>To ignore more directories just edit the <code>id</code> variable in <code>config/config.ini</code>. For example, to ignore directories named <code>test/</code> your <code>id</code> variable would look like:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">id = &quot;scss,test&quot;
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">id = &quot;scss,test&quot;
+</code></pre></div>
 <p><strong>Important:</strong> The PHP version of Pattern Lab will only ignore exact matches of ignored directories. For example, if you had a directory named <code>cool_scss</code> it, and the assets underneath it, <em>would</em> be moved to <code>public/</code> even though <code>scss</code> was in the name of the directory.</p>
 
 <h2>Adding Assets to the Pattern Header &amp; Footer</h2>
@@ -100,7 +95,7 @@
 
 
 <p>Assets for patterns, including JavaScript, CSS, and images, should be stored in the <code>source/</code> directory. The Node version of Pattern Lab will move these assets to the <code>public/</code> directory for you when you generate your site or when you watch the <code>source/</code> directory for changes. You can name and nest your assets however you like. Pattern Lab Node ships with copy tasks in the <code>Gruntfile.js</code> or <code>Gulpfile.js</code> that copy your assets for you. Here&#39;s an example of the from the <code>Gruntfile</code>:</p>
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">copy: {
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">copy: {
   main: {
     files: [
     { expand: true, cwd: &#39;./source/js/&#39;, src: &#39;*&#39;, dest: &#39;./public/js/&#39;},
@@ -117,7 +112,7 @@
     ]
   }
 },
-</code></pre></figure>
+</code></pre></div>
 <p>This structure is meant to be extended to suit your purposes. Change targets, move files, or ignore certain filetypes altogether. <strong>Note</strong>: If you make changes to <code>Gruntfile.js</code> or <code>Gulpfile.js</code>, such as to copy a new directory, and have <a href="/docs/node/advanced-auto-reloading-the-browser.html">auto re-generation and browser reload enabled</a>, you will need to stop and start your tasks to pick up the changes.</p>
 
 
@@ -125,10 +120,10 @@
 
 <!--- end node -->
 
-            	</div><!--end .content-->
-
-              <div class="sidebar">
-                <nav class="docs-nav">
+	    	</div><!--end .content-->
+	
+			<div class="sidebar">
+				<nav class="docs-nav">
 	<ul>
 		<li class="docs-nav-section">
 			<h4 class="docs-nav-title">Getting Started</h4>
@@ -193,9 +188,8 @@
 		</li>
 	</ul>
 </nav>
-              </div><!--end .sidebar-->
-            </div><!--end .l-two-col-->
-        </div><!--end .lc-->
+			</div><!--end .sidebar-->
+        </div><!--end .l-two-col-->
     </div><!--end .guts-->
 
     </main><!--end .main-->

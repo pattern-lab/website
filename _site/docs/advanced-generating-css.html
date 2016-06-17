@@ -28,23 +28,18 @@
 
 <main role="main">
 
-    <div class="banner">
-        <div class="lc">
-	        <h1>Generating CSS</h1>
-        </div>
-    </div>
+    <section class="banner">
+	    <h1 class="banner__title">Generating CSS</h1>
+    </section>
     <div class="language-toggle">
-        <div class="lc">
-	        <ul class="tabs">
-		        
-		    </ul>
-        </div>
+        <ul class="tabs">
+	        
+	    </ul>
     </div>
     <div class="guts">
-        <div class="lc inner-lc">
-            <div class="l-two-col">
-          		<div class="content">
-               <p><strong>Note:</strong> <em>The <a href="https://github.com/dmolsen/css-rule-saver">CSS Rule Saver</a> library and CSS generation feature was added in v0.6.0 of the PHP version of Pattern Lab.</em></p>
+        <div class="l-two-col">
+	  		<div class="content">
+	  			<p><strong>Note:</strong> <em>The <a href="https://github.com/dmolsen/css-rule-saver">CSS Rule Saver</a> library and CSS generation feature was added in v0.6.0 of the PHP version of Pattern Lab.</em></p>
 
 <p>When using this feature, Pattern Lab can display only those CSS rules that affect a given pattern on the pattern detail view. This might be useful if you have a large Sass-generated CSS file or framework but only need a sub-set of styles that may affect a small piece of mark-up or pattern.</p>
 
@@ -59,16 +54,16 @@
 </ol>
 
 <p>For Linux and Windows users you can also start the service from the command line. To do so open your command prompt and navigate to the root of the patternlab-php directory. Type:</p>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">php core/builder.php -gc
-</code></pre></figure>
+<div class="highlight"><pre><code class="language-text" data-lang="text">php core/builder.php -gc
+</code></pre></div>
 <h2>Important Note About Performance</h2>
 
 <p>It may take several seconds for the PHP version of Pattern Lab to generate a site when it&#39;s also calculating the CSS rules. Be patient.</p>
 
-            	</div><!--end .content-->
-
-              <div class="sidebar">
-                <nav class="docs-nav">
+	    	</div><!--end .content-->
+	
+			<div class="sidebar">
+				<nav class="docs-nav">
 	<ul>
 		<li class="docs-nav-section">
 			<h4 class="docs-nav-title">Getting Started</h4>
@@ -133,9 +128,8 @@
 		</li>
 	</ul>
 </nav>
-              </div><!--end .sidebar-->
-            </div><!--end .l-two-col-->
-        </div><!--end .lc-->
+			</div><!--end .sidebar-->
+        </div><!--end .l-two-col-->
     </div><!--end .guts-->
 
     </main><!--end .main-->

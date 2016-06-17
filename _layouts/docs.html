@@ -10,33 +10,27 @@
 
 <body class="docs">
     {% include header.html %}
-    <div class="banner">
-        <div class="lc">
-	        <h1>{{ page.heading }}</h1>
-        </div>
-    </div>
+    <section class="banner">
+	    <h1 class="banner__title">{{ page.heading }}</h1>
+    </section>
     <div class="language-toggle">
-        <div class="lc">
-	        <ul class="tabs">
-		        {% for item in page.languages %}
-		        <li class="tab"><a class="language-btn"
-	href="#{{ item.language }}">{{ item.language }}</a></li>
-			    {% endfor %}
-		    </ul>
-        </div>
+        <ul class="tabs">
+	        {% for item in page.languages %}
+	        <li class="tabs__item"><a class="tabs__link"
+href="#{{ item.language }}">{{ item.language }}</a></li>
+		    {% endfor %}
+	    </ul>
     </div>
     <div class="guts">
-        <div class="lc inner-lc">
-            <div class="l-two-col">
-          		<div class="content">
-               {{content}}
-            	</div><!--end .content-->
-
-              <div class="sidebar">
-                {% include docs-navigation.html %}
-              </div><!--end .sidebar-->
-            </div><!--end .l-two-col-->
-        </div><!--end .lc-->
+        <div class="l-two-col">
+	  		<div class="content">
+	  			{{content}}
+	    	</div><!--end .content-->
+	
+			<div class="sidebar">
+				{% include docs-navigation.html %}
+			</div><!--end .sidebar-->
+        </div><!--end .l-two-col-->
     </div><!--end .guts-->
 
     {% include footer.html %}
