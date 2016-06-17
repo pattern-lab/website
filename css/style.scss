@@ -54,19 +54,20 @@ $color-white: #fff;
 $color-cream: #ffeec4;
 $color-orange: #f99813;
 
-$max-width : 37em;
-$calc-width : calc(50% - 22.5em);
+$max-width: 37em;
+$calc-width: calc(50% - 22.5em);
 
-$calc-pad : 35em;
+$calc-pad: 35em;
 
 //Breakpoints
-$bp-med : 34em;
-$bp-med-2 : 46em;
-$bp-large : 60em;
-$bp-header : 57em;
-$bp-xl : 85em;
+$bp-small: 26em;
+$bp-med: 34em;
+$bp-med-2: 46em;
+$bp-large: 60em;
+$bp-header: 57em;
+$bp-xl: 85em;
 
-$border : 0.1rem;
+$border: 0.1rem;
 $border-radius: 10px;
 
 $anim-speed-quick: 0.2s;
@@ -295,14 +296,14 @@ pre {
 	display: flex;
 	flex-wrap: wrap;
 
-	@media all and (min-width: $bp-med) {
+	@media all and (min-width: $bp-small) {
 		> .gi {
-			width: 75%;
+			width: 50%;
 			flex: 1 0 auto;
 		}
 	}
 
-	@media all and (min-width: $bp-large) {
+	@media all and (min-width: $bp-med-2) {
 		> .gi {
 			width: 25%;
 			flex: 1 0 auto;
@@ -331,6 +332,11 @@ pre {
 
     .g-split__secondary {
         display: flex;
+        flex-direction: column;
+        
+        @media all and (min-width: $bp-med) {
+	        flex-direction: row;
+        }
 
         @media all and (min-width: 40em) {
             width: 50%;
@@ -528,15 +534,24 @@ main {
 .banner {
 	background: $color-gray-87;
 	position: relative;
-    height: 40vh;
+    height: 30vh;
     display: flex;
     align-items: center;
 
 	&__title {
-        font-size: 4rem;
+        font-size: 2.5rem;
         margin: 0;
-        padding: 4rem 1rem;
+        padding: 2rem 1rem;
         color: $color-gray-05;
+        
+        @media all and (min-width: $bp-med) {
+	        font-size: 4rem;
+	        padding: 2rem;
+        }
+    }
+    
+    @media all and (min-width: $bp-med) {
+	    height: 40vh;
     }
 }
 
@@ -551,6 +566,11 @@ main {
         flex: 1;
         display: flex;
         align-items: center;
+        font-size: 3rem;
+        
+        @media all and (min-width: 34em) {
+	        font-size: 4rem;
+        }
     }
 
     .btn-group {
@@ -724,11 +744,22 @@ main {
 
 
 .section-edition {
-	
 	padding: 1em;
+	
 	&--dark {
 		background: $color-gray-25;	}
 }
+
+.section-edition__title {
+	margin-top: 1em;
+}
+
+.section-edition__intro {
+	font-size: 1.5rem;
+}
+
+
+
 
 
 /*------------------------------------*\
@@ -840,7 +871,7 @@ main {
 .downloads__list {
 	display: flex;
 	align-items: center;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 }
 
 .downloads__item {

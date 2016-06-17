@@ -196,11 +196,11 @@ pre {
 .g--4up {
   display: flex;
   flex-wrap: wrap; }
-  @media all and (min-width: 34em) {
+  @media all and (min-width: 26em) {
     .g--4up > .gi {
-      width: 75%;
+      width: 50%;
       flex: 1 0 auto; } }
-  @media all and (min-width: 60em) {
+  @media all and (min-width: 46em) {
     .g--4up > .gi {
       width: 25%;
       flex: 1 0 auto; } }
@@ -219,7 +219,11 @@ pre {
     .g-split .g-split__feature {
       width: 50%; } }
 .g-split .g-split__secondary {
-  display: flex; }
+  display: flex;
+  flex-direction: column; }
+  @media all and (min-width: 34em) {
+    .g-split .g-split__secondary {
+      flex-direction: row; } }
   @media all and (min-width: 40em) {
     .g-split .g-split__secondary {
       width: 50%;
@@ -361,14 +365,21 @@ main {
 .banner {
   background: #222;
   position: relative;
-  height: 40vh;
+  height: 30vh;
   display: flex;
   align-items: center; }
   .banner__title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin: 0;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
     color: #f1f1f1; }
+    @media all and (min-width: 34em) {
+      .banner__title {
+        font-size: 4rem;
+        padding: 2rem; } }
+  @media all and (min-width: 34em) {
+    .banner {
+      height: 40vh; } }
 
 /**
  * Banner Feature
@@ -379,7 +390,11 @@ main {
   .banner--feature .banner__title {
     flex: 1;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    font-size: 3rem; }
+    @media all and (min-width: 34em) {
+      .banner--feature .banner__title {
+        font-size: 4rem; } }
   .banner--feature .btn-group {
     width: 100%; }
     .banner--feature .btn-group .btn {
@@ -489,6 +504,12 @@ main {
   .section-edition--dark {
     background: #bfbfbf; }
 
+.section-edition__title {
+  margin-top: 1em; }
+
+.section-edition__intro {
+  font-size: 1.5rem; }
+
 /*------------------------------------*\
     #GUTS
 \*------------------------------------*/
@@ -569,7 +590,7 @@ main {
 .downloads__list {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem; }
+  margin-bottom: 2rem; }
 
 .downloads__item {
   width: 50%; }
