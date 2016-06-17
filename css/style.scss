@@ -2,15 +2,57 @@
 # This is the Front Matter block for Jekyll to properly read this file
 ---
 
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ * Buttons..............Button elements.
+ *
+ * TRUMPS
+ * Text.................Text helpers.
+ */
+
+ /*------------------------------------*\
+     #VARIABLES
+ \*------------------------------------*/
+
 //Colors
-$gray-lighter: #e5e5e5;
-$gray-light : #ddd;
-$gray : #808080;
-$gray-dark: #05151e;
-$gray-dark-2: #444;
-$black: #000;
-$white : #fff;
-$dim : rgba(0,0,0,0.5);
+$color-gray-05: #f1f1f1;
+$color-gray-08: #ebebeb;
+$color-gray-10: #e5e5e5;
+$color-gray-13: #ddd;
+$color-gray-15: #d9d9d9;
+$color-gray-20: #ccc;
+$color-gray-25: #bfbfbf;
+$color-gray-30: #b3b3b3;
+$color-gray-35: #a6a6a6;
+$color-gray-50 : #808080;
+$color-gray-75: #444;
+$color-gray-87: #222;
+
+$color-black: #000;
+$color-white: #fff;
+
+$color-cream: #ffeec4;
+$color-orange: #f99813;
 
 $max-width : 37em;
 $calc-width : calc(50% - 22.5em);
@@ -27,41 +69,55 @@ $bp-xl : 85em;
 $border : 0.1rem;
 $border-radius: 10px;
 
-$bend-height: 20px;
+$anim-speed-quick: 0.2s;
 
-/************Reset**************/
+
+
+/*------------------------------------*\
+    #RESET
+\*------------------------------------*/
 * {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 html, body, div, object, iframe, fieldset {
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
+
 ol, ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 header, footer, nav, section, article, hgroup, figure {
 	display: block;
 }
+
 legend {
 	display: none;
 }
-/************End Reset**************/
 
-/************Global**************/
+
+
+
+
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
 
 body {
-	background: #d7f1f8;
-	color: $gray-dark;
+	background: $color-gray-05;
+	color: $color-gray-87;
 	font: 120%/1.4 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 	padding: 0;
 	-webkit-text-size-adjust: 100%;
@@ -69,8 +125,9 @@ body {
 }
 
 a {
-	color: $gray;
+	color: $color-gray-50;
 	text-decoration: none;
+    transition: all $anim-speed-quick ease;
 
     img {
     	border: 0;
@@ -78,7 +135,7 @@ a {
     }
 
     &:hover, &:focus {
-        color: $gray-dark;
+        color: $color-gray-87;
     }
 }
 
@@ -93,8 +150,8 @@ img, object, video {
 }
 
 video {
+    display: block;
 	width: 100%;
-    margin-bottom: 1.5em;
 }
 
 h1 {
@@ -130,13 +187,16 @@ h4 {
 }
 
 h2 a, h3 a {
-	color: $gray-dark;
+	color: $color-gray-87;
 
 	&:hover {
-		color: $gray;
+		color: $color-gray-50;
 	}
 }
 
+/**
+ * Blockquote
+ */
 blockquote {
 	font-size: 1.3rem;
 	font-style: italic;
@@ -147,11 +207,17 @@ blockquote {
 	}
 }
 
+/**
+ * Small Text
+ */
 small {
 	font-style: italic;
 	color: rgba(0,0,0,0.8);
 }
 
+/**
+ * Blockquote
+ */
 input[type=search] {
 	-webkit-appearance: none;
 	border-radius: 0;
@@ -171,45 +237,40 @@ code {
 }
 
 pre {
-	background: $gray-dark;
-	color: $white;
+	background: $color-gray-87;
+	color: $color-white;
 	padding: 1rem;
 	white-space: pre;
 	overflow: auto;
 }
-/************End Global**************/
 
-/************Layout**************/
 
-/* Grid 2up */
-.g {
-	text-align: left;
-	clear: both;
-	margin: 0 -0.8em;
-	overflow: hidden;
-}
 
-.gi {
-	padding: 0.8em;
 
-	p {
-		font-size: 85%;
-	}
-}
 
-//Goes from one column to 2x2
-.g-2up {
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+/**
+ * 2-up Grid
+ */
+.g--2up {
 	@media all and (min-width: $bp-med) {
 		display: flex;
+        flex-wrap: wrap;
 
 		> .gi {
 			width: 50%;
+            display: flex;
 		}
 	}
 }
 
-//Goes from one column to 3x3
-.g-3up {
+/**
+ * 3-up Grid
+ */
+.g--3up {
 	display: flex;
 	flex-wrap: wrap;
 	overflow: hidden;
@@ -220,15 +281,17 @@ pre {
 		}
 	}
 
-	@media all and (min-width: 45em) {
+	@media all and (min-width: 50em) {
 		> .gi {
 			width: 33.333333%;
 		}
 	}
 }
 
-//Goes from one column to 2x2 to 4x4
-.g-4up {
+/**
+ * 4-up Grid
+ */
+.g--4up {
 	display: flex;
 	flex-wrap: wrap;
 
@@ -239,13 +302,6 @@ pre {
 		}
 	}
 
-	@media all and (min-width: $bp-med) and (max-width: $bp-large) {
-		> .gi {
-			width: 33%;
-			flex: 1 0 auto;
-		}
-	}
-
 	@media all and (min-width: $bp-large) {
 		> .gi {
 			width: 25%;
@@ -254,156 +310,77 @@ pre {
 	}
 }
 
+/**
+ * Split Grid
+ */
+.g-split {
 
-//Goes from one column to 2x2 to 3x3 to 4x4
-.g-4up-alt {
-	display: flex;
-	@media all and (min-width: $bp-med) {
-		> .gi {
-			width: 75%;
-		}
-	}
+    .g-split__feature {
 
-	@media all and (min-width: $bp-med) and (max-width: $bp-med-2) {
-		> .gi {
-			width: 50%;
-		}
-	}
+        background: $color-gray-87;
+        color: $color-gray-13;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
 
-	@media all and (min-width: $bp-med-2) and (max-width: $bp-large) {
-		> .gi {
-			width: 33.333333333%;
-		}
-	}
+        @media all and (min-width: 40em) {
+            width: 50%;
+        }
+    }
 
-	@media all and (min-width: $bp-large) {
-		> .gi {
-			width: 25%;
+    .g-split__secondary {
+        display: flex;
 
-		}
-	}
+        @media all and (min-width: 40em) {
+            width: 50%;
+
+            flex-direction: column;
+        }
+    }
+
+    @media all and (min-width: 40em) {
+        display: flex;
+    }
 }
 
 
-/************End Layout**************/
-
-/************Structure**************/
-.container {
-	margin: 0 auto;
-	position: relative;
-
-	&:before {
-		height: 20em;
-		bottom: -9em;
-		top: auto;
-		z-index:7;
-		display: none;
-	}
-
-	&:after {
-		height: 20em;
-		bottom: auto;
-		top: -10.5em;
-		z-index: 7;
-
-		@media all and (min-width: 64em) {
-			background: #2b2b2b;
-		}
-	}
-}
-
-/*.js .container {
-	overflow: hidden;
-} */
 
 
-// Header
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+
 .header {
 	display: flex;
 	flex-direction: row;
+    padding: 1rem;
+    align-items: center;
 	position: relative;
-	background: $gray-dark;
-
-	&-inner {
-		display: flex;
-		width: 100%;
-	}
+	background: $color-gray-87;
 }
 
-/*! responsive-nav.js 1.0.23 by @viljamis http://responsive-nav.com/ */
+
+
+
+/*------------------------------------*\
+    #NAVIGATION
+\*------------------------------------*/
+
 .nav {
 	margin-left: auto;
 	position: relative;
 
-	h4 {
-		margin: 0;
-	}
-
-	.nav-link  {
-		display: block;
-
-		@media all and (min-width: 760px) {
-			display: none;
-		}
-
-	}
-
-	.nav-list {
-		display: none;
-		margin-right: 0;
-		padding: 0;
-		list-style: none;
-		z-index: 500;
-
-		@media all and (min-width: 760px) {
-			display: flex;
-		}
-
-
-	}
+    a {
+        font-weight: bold;
+    }
 
 	.active {
 		display: block;
 		position: absolute;
 		top: 100%;
 		right: 0;
-		background: $gray-dark;
-
-		@media all and (min-width: 760px) {
-			display: flex;
-			position: static;
-		}
-
-		@media all and (max-width: 760px) {
-			background: none;
-
-	 	 	li:nth-child(1) {
-		 	 	a {
-		 	 	left: -22px;
-		 	 	}
-	 	 	}
-	 	 	li:nth-child(2) {
-		 	 	a {
-		 	 	left: -46px;
-		 	 	}
-	 	 	}
-	 	 	li:nth-child(3) {
-		 	 	a {
-		 	 	left: -69px;
-		 	 	}
-	 	 	}
-	 	 	li:nth-child(4) {
-		 	 	a {
-		 	 	left: -92px;
-		 	 	}
-	 	 	}
-	 	 	li:nth-child(5) {
-		 	 	a {
-		 	 	left: -115px;
-		 	 	}
-	 	 	}
- 	 	}
-
+		background: $color-gray-87;
 	}
 
 	&.opened {
@@ -411,129 +388,166 @@ pre {
 	}
 }
 
+/**
+ * Nav Button
+ */
+.nav__btn {
+    display: block;
+    font-size: 1.2rem;
+    border: 0;
+    color: $color-gray-50;
+    font-weight: bold;
+    text-transform: lowercase;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+
+    @media all and (min-width: $bp-med-2) {
+        display: none;
+    }
+}
+
+/**
+ * Nav List
+ */
+.nav__list {
+    display: none;
+    margin-right: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 500;
+
+    @media all and (min-width: $bp-med-2) {
+        display: flex;
+    }
+}
+
+/**
+ * Nav List Items
+ */
+.nav__item {
+    text-transform: lowercase;
+
+    a {
+        transition: color $anim-speed-quick ease;
+
+        &:hover, &:focus {
+            color: $color-white;
+        }
+    }
+
+    @media all and (min-width: $bp-med-2) {
+        margin-left: 1.5rem;
+    }
+}
+
+/**
+ * Nav Links
+ */
+.nav__link {
+    display: block;
+    padding: 0.5rem;
+}
+
 .js .nav {
   position: relative;
 }
 
-.nav-toggle {
-  margin-left: auto;
-  color: $white;
-  padding: 0.5em;
-  float: right;
-  display: block;
-  text-transform: lowercase;
-  text-align: center;
-  font-weight: bold;
-
-  &:hover, &:focus {
-	color: white;
-  	background: $gray;
-  }
-}
-
 .closed .nav-toggle {
-	color: $white;
+	color: $color-white;
 	background: rgba(0,0,0,0.05);
 }
 
-@media screen and (min-width: 790px) {
-  .js .nav {
-    position: relative;;
-    overflow: visible;
-  }
-  .js .nav.closed {
-    max-height: none;
-  }
-  .nav-toggle {
-    display: none;
-  }
+@media screen and (min-width: $bp-med-2) {
+
+    .js .nav {
+        position: relative;;
+        overflow: visible;
+    }
+
+    .js .nav.closed {
+        max-height: none;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
 }
 
 
-.logo-container {
-	max-width: 34rem;
-	text-align: center;
-	margin: 0 auto;
-}
+
+
+/*------------------------------------*\
+    #LOGO
+\*------------------------------------*/
 
 .logo {
 	text-transform: lowercase;
-	margin: 0 auto;
-	font-size: 3rem;
+	font-size: 1.4rem;
+    font-weight: bold;
 	position: relative;
 	line-height: 1;
 	margin: 0;
+    display: flex;
+    align-items: center;
+    transition: color $anim-speed-quick ease;
 
-	@media all and (min-width: $bp-med) {
-		font-size: 5rem;
-		display: inline-block;
-		padding-left: 6rem;
-
-		.atom {
-			position: absolute;
-			top: 0.5rem;
-			left: 0;
-			z-index: 1;
-		}
-	}
+    &:hover, &:focus {
+        color: $color-white;
+    }
 }
 
 .atom {
 	display: block;
-	width: 5rem;
-	height: 5rem;
-	margin: 0 auto;
+	width: 2rem;
+	height: 2rem;
+    margin-right: 0.5rem;
 	background: url(/assets/icon-atom.svg) no-repeat;
 	background-size: 100% 100%;
-	-webkit-animation: rotation 10s linear infinite;
-	-moz-animation: rotation 10s linear infinite;
-	-o-animation: rotation 10s linear infinite;
 	animation: rotation 10s linear infinite;
 }
 
-.tagline {
-	text-transform: lowercase;
-	font-size: 0.8em;
-	position: relative;
-	z-index: 1;
 
-	@media all and (min-width: $bp-med) {
-		text-align: right;
-		padding-right: 0.8rem;
-		margin-top: -0.7em;
-	}
-}
 
-// Main Content
-.main {
+
+
+/*------------------------------------*\
+    #MAIN
+\*------------------------------------*/
+main {
 	margin: 0 auto;
-	background: none;
-	padding: 0;
 	position: relative;
 }
 
-//Banner
+
+
+
+/*------------------------------------*\
+    #BANNER
+\*------------------------------------*/
 .banner {
-	background: $gray-dark;
+	background: $color-gray-87;
 	position: relative;
-    height: 70vh;
+    height: 40vh;
     display: flex;
     align-items: center;
-    justify-content: center;
 
 	&__title {
         font-size: 4rem;
         margin: 0;
-        color: #b5e4f1;
+        padding: 4rem 1rem;
+        color: $color-gray-05;
     }
 }
 
+/**
+ * Banner Feature
+ */
 .banner--feature {
     flex-direction: column;
     height: auto;
 
     .banner__title {
-        padding: 4rem 1rem;
         flex: 1;
         display: flex;
         align-items: center;
@@ -548,26 +562,29 @@ pre {
         }
 
         .btn:nth-of-type(1) {
-            background: #be0000;
+            background: $color-gray-10;
+            color: $color-gray-87;
 
             &:hover, &:focus {
-                background: #9c0000;
+                background: $color-gray-50;
             }
         }
 
         .btn:nth-of-type(2) {
-            background: #d9750f;
+            background: url(../assets/atoms-scales.png);
+            color: $color-gray-10;
 
             &:hover, &:focus {
-                background: #b85d00;
+                background-position: 0 3%;
             }
         }
 
         .btn:nth-of-type(3) {
-            background: #dfd204;
+            background: $color-gray-50;
 
             &:hover, &:focus {
-                background: #beb301;
+                color: $color-gray-05;
+                background: $color-gray-75;
             }
         }
 
@@ -592,7 +609,7 @@ pre {
     }
 
     @media all and (min-width: 36em) {
-        height: 80vh;
+        height: 70vh;
     }
 
     @media all and (min-width: 60em) {
@@ -600,15 +617,56 @@ pre {
     }
 }
 
-.guts {
-	position: relative;
-	margin-bottom: -2.2em;
-	padding-bottom: 2.2em;
-	padding-left: 1em;
-	padding-right: 1em;
+
+
+
+
+/*------------------------------------*\
+    #TILE
+\*------------------------------------*/
+.tile {
+    background: $color-gray-05;
+    padding: 2rem;
+
+    &--alt {
+        background: $color-gray-10;
+    }
+
+    &--alt2 {
+        background: $color-white;
+    }
+
+    &--fancy {
+        background: url(../assets/organisms-scales.png);
+    }
+
+    &--flex {
+        flex: 1;
+    }
 }
 
-//Hero
+
+
+
+
+/*------------------------------------*\
+    #TILE LIST
+\*------------------------------------*/
+.tile-list {
+    background: $color-gray-13;
+
+    &--fancy {
+        background: url(../assets/organisms-scales.png);
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #HERO
+\*------------------------------------*/
 .hero {
 	padding: 3em 1em 2em;
 }
@@ -619,39 +677,152 @@ pre {
 	margin: 0 auto;
 }
 
-//Section
-.section {
-    border-bottom: 20px solid $gray-dark;
-    padding: 2em 0;
-    margin-bottom: 2em;
 
+
+
+
+/*------------------------------------*\
+    #SECTION
+\*------------------------------------*/
+.section {
     &__title {
-        font-size: 3rem;
-        margin: 0;
+        font-size: 2.2rem;
+        margin: 0 0 0.3rem;
     }
 
 	&__body {
 		padding: 0.5em 0 1.5em;
-
-		&-centered {
-			display: flex;
-			margin: 0 auto;
-			flex-direction: column;
-			text-align: center;
-
-			.intro {
-				margin: 0 auto;
-				padding: 1em 0;
-			}
-		}
 	}
 }
 
+/**
+ * Center-aligned section
+ */
+.section--center {
+    .section__header {
+        background: $color-gray-13;
+    }
 
-// Footer
+        .section__inner {
+            max-width: 60rem;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+    .section__body {
+        padding: 0;
+    }
+}
+
+/**
+ * Reversed Section
+ */
+.section--reversed {
+    background: $color-gray-87;
+    color: $color-gray-13;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #BLOCKHEAD
+\*------------------------------------*/
+/**
+ * 1) The credit headshot blocks.
+ */
+.blockhead {
+    position: relative;
+}
+
+/**
+ * Blockhead Image
+ * 1) Sits behind the blockhead info
+ */
+.blockhead__img {
+    display: block;
+    position: relative;
+    z-index: 0;
+}
+
+/**
+ * Blockhead Info
+ * 1) Sits on top of the image
+ */
+.blockhead__info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        color: $color-gray-05;
+
+        &:hover, &:focus {
+            color: $color-gray-20;
+        }
+    }
+}
+
+/**
+ * Blockhead Title
+ * 1) Primary link
+ */
+.blockhead__title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/**
+ * Blockhead Subtitle
+ * 1) Secondary link
+ */
+.blockhead__subtitle {
+    font-size: 0.9rem;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #LINK LIST
+\*------------------------------------*/
+
+.link-list {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid $color-gray-13;
+
+    > li {
+        border-bottom: 1px solid $color-gray-13;
+    }
+
+    a {
+        display: block;
+        padding: 0.4rem 0;
+        font-weight: bold;
+    }
+}
+
+
+
+
+/*------------------------------------*\
+    #FOOTER
+\*------------------------------------*/
+
 .footer {
 	clear: both;
-	background: $gray-dark;
+	background: $color-gray-87;
 	position: relative;
 	padding: 1em 0;
 
@@ -661,16 +832,7 @@ pre {
 }
 
 .footer-nav {
-
 	margin: 0 2em 1em 2em;
-
-	@media all and (min-width: 620px) {
-	margin: 0 6em 1em 6em;
-	}
-
-	@media all and (min-width: 760px) {
-		margin: 0 2em 1em 2em;
-	}
 
 	ul {
 	  margin: 0 auto;
@@ -705,44 +867,40 @@ pre {
 		position: relative;
 		display: block;
  		font-weight: bold;
- 	 	color: $white;
- 	 	background: $gray-dark;
+ 	 	color: $color-white;
+ 	 	background: $color-gray-87;
  	 	text-align: center;
- 	 	transition: background 0.1s ease;
  	 	padding: 0.5em 0;
-
 	}
 
-}
+    @media all and (min-width: 620px) {
+	    margin: 0 6em 1em 6em;
+	}
 
-/************End Structure**************/
-
-/************Text**************/
-//Block Links
-.block-link {
-	display: block;
-	color: $gray-dark;
-
-	&:hover, &:focus {
-		background: rgba(0,0,0,0.05);
+	@media all and (min-width: 760px) {
+		margin: 0 2em 1em 2em;
 	}
 }
 
+.footer__note {
+    font-size: 80%;
+    margin-bottom: 2rem;
+    color: $color-gray-50;
+    text-align: center;
+
+    a {
+        color: $color-gray-25;
+        text-decoration: underline;
+    }
+}
+
+//Intro text
 .intro {
 	font-size: 1.5rem;
 	line-height: 1.3;
-	max-width: 25em;
+    font-weight: bold;
+    margin: 0;
 }
-
-.list {
-	margin-bottom: 1em;
-
-	li {
-		margin-bottom: 0.5em;
-	}
-}
-
-/************End Text**************/
 
 .l-two-col {
 	@media all and (min-width: $bp-large) {
@@ -821,36 +979,12 @@ pre {
 	}
 }
 
-.docs-nav {
-	margin-left: 0;
 
-	@media all and (min-width: $bp-large) {
-		margin-left: 1em;
-	}
-
-	ul:not(.docs-nav-list) {
-		margin-bottom: 1em;
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: column;
-
-		@media all and (min-width: 576px) {
-			flex-direction: row;
-		}
-
-	}
-
-	li {
-		line-height: 1.2;
-		flex: 1 0 auto;
-		max-width: 14em;
-	}
-}
 
 .docs-nav-title {
 	display: block;
 	font-weight: bold;
-	color: $gray-dark;
+	color: $color-gray-87;
 	margin-bottom: 0.4em;
 	padding: 0 0.5em;
 }
@@ -863,16 +997,15 @@ pre {
 		display: block;
 		padding: 0.25em 1em;;
 		position: relative;
-		transition: background 0.1s ease;
+		transition: background $anim-speed-quick ease;
 	}
 
 	.selected {
 		position: relative;
-		background: $gray;
-		transition: background 0.1s ease;
+		background: $color-gray-50;
 
 		a {
-			color: $white;
+			color: $color-white;
 
 			&:before {
 				content: "";
@@ -883,9 +1016,9 @@ pre {
 			    width: 18px;
 			    height: 100%;
 			    z-index: 99999;
-			    background: $gray;
+			    background: $color-gray-50;
 			    transform: skew(-20deg);
-			    transition: background 0.1s ease;
+			    transition: background $anim-speed-quick ease;
 			}
 
 			&:after {
@@ -897,97 +1030,51 @@ pre {
 			    width: 18px;
 			    height: 100%;
 			    z-index: 99999;
-			    background: $gray;
+			    background: $color-gray-50;
 			    transform: skew(-20deg);
-			    transition: background 0.1s ease;
+			    transition: background $anim-speed-quick ease;
 			}
 
 			&:hover {
-				background: $gray;
-				color: $black;
+				background: $color-gray-50;
+				color: $color-black;
 
 				&:before {
-					background: $gray;
+					background: $color-gray-50;
 				}
 
 				&:after {
-					background: $gray;
+					background: $color-gray-50;
 				}
 			}
 		}
 	}
 }
 
-.docs-index {
-	margin: 0;
-
-	.docs-nav {
-		margin: 0;
-	}
-
-	.docs-nav-list {
-		font-size: 100%;
-	}
-}
-
-.docs-section {
-
-	.docs-nav-list {
-		-webkit-column-count: 1;
-		-moz-column-count: 1;
-		column-count: 1;
-		margin: 1em -0.8em;
-
-		a {
-			padding: 0.25em 1em;
-		}
-
-		@media all and (min-width: 505px) {
-			-webkit-column-count: 2;
-			-moz-column-count: 2;
-			column-count: 2;
-
-		}
-
-		@media all and (min-width: 700px) {
-			-webkit-column-count: 3;
-			-moz-column-count: 3;
-			column-count: 3;
-			  -webkit-column-gap: 1px;
-			  -moz-column-gap: 1px;
-			  column-gap: 1px;
-		}
-
-		@media all and (min-width: 935px) {
-			margin: 1em -1.8em;
-		}
-
-		li {
-		-webkit-column-break-inside: avoid;
-	    page-break-inside: avoid;
-	    break-inside: avoid-column;
-	    margin: 0 1em;
-
-		}
-	}
-}
-
-
-//Button
+/* Button */
 .btn {
 	position: relative;
 	font-weight: bold;
     font-size: 2rem;
 	padding: 2rem;
-	background: $gray-dark;
-	color: $white;
-	transition: all 0.1s ease;
+	background: $color-gray-75;
+	color: $color-white;
+	transition: all $anim-speed-quick ease;
 
     &:hover, &:focus {
-        background: orange;
+        color: $color-white;
+        background: $color-gray-50;
     }
 }
-/************End Buttons**************/
+
+.btn--flex {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 //Atomic Design Flow
 .atomic-design {
@@ -1003,7 +1090,7 @@ pre {
 .language-toggle {
 	padding: 0;
 	position: relative;
-	background: $gray-dark;
+	background: $color-gray-87;
 	color: white;
 	width: 100%;
 
@@ -1033,7 +1120,7 @@ pre {
 			left: -13px;
 			width: 25px;
 		    height: 100%;
-		    background: $gray-dark;
+		    background: $color-gray-87;
 		    transform: skew(-20deg);
 		    z-index: 7;
 		}
@@ -1046,15 +1133,15 @@ pre {
 			display: block;
 		    width: 25px;
 		    height: 100%;
-		    background: $gray-dark;
+		    background: $color-gray-87;
 		    transform: skew(-20deg);
 			z-index: 7
 		}
 
 		&.active {
-			background: $gray-lighter;
+			background: $color-gray-10;
 			position: relative;
-			color: $black;
+			color: $color-black;
 
 			&:before {
 				content: "";
@@ -1064,7 +1151,7 @@ pre {
 				left: -13px;
 			    width: 25px;
 			    height: 100%;
-			    background: $gray-lighter;
+			    background: $color-gray-10;
 			    transform: skew(-20deg);
 			    z-index: 8;
 			}
@@ -1077,30 +1164,30 @@ pre {
 				display: block;
 			    width: 25px;
 			    height: 100%;
-			    background: $gray-lighter;
+			    background: $color-gray-10;
 			    transform: skew(-20deg);
 			    z-index: 8;
 			}
 
 			&:hover {
-				color: $white;
+				color: $color-white;
 			}
 		}
 
 		&:hover {
-			background: $gray;
-			transition: background 0.1s ease;
+			background: $color-gray-50;
+			transition: background $anim-speed-quick ease;
 
 			&:before {
-			    background: $gray;
+			    background: $color-gray-50;
 			    z-index: 10;
-			    transition: background 0.1s ease;
+			    transition: background $anim-speed-quick ease;
 			}
 
 			&:after {
-			    background: $gray;
+			    background: $color-gray-50;
 			    z-index: 10;
-			    transition: background 0.1s ease;
+			    transition: background $anim-speed-quick ease;
 			}
 		}
 	}
@@ -1127,14 +1214,6 @@ pre {
 
 /* Documentation Home */
 .docs-index {
-
-	.docs-nav > ul {
-		@extend .g-4up;
-	}
-
-	.docs-nav-section {
-		@extend .gi;
-	}
 
 	//hide the key on the node partial when on the index, as it's mentioned earlier, but needed on the individual pages
 	&.node .sub-only {

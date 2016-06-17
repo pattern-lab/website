@@ -3,53 +3,46 @@ layout: default
 title: Pattern Lab Documentation
 ---
 
-<section class="banner banner-feature">
-    <div class="lc">
-        <h1>Pattern Lab Documentation</h1>
-        <p>Get up and running with Pattern Lab.</p>
-    </div>
-</section>
-<div class="guts">
-        <section class="docs-index">
-	        <div class="banner banner-dark">
-		    	<div class="lc">
-			        <h2 class="language-btn">Getting Started</h2>
-	        	</div>
-	        </div>
-	        <section class ="docs-section">
-	          <div class="lc">
-        	    {% include docs-nav-start.html %}
-	          </div>
-	        </section>
-	        <div class="banner banner-dark">
-		    	<div class="lc">
-					<h2 class="language-btn">Working with Patterns</h2>
-		    	</div>
-	        </div>
-	        <section class ="docs-section">
-	          <div class="lc">
-			    {% include docs-nav-patterns.html %}
-	          </div>
-	        </section>
-	        <div class="banner banner-dark">
-		      <div class="lc">
-				<h2 class="language-btn">Working with Data</h2>
-		      </div>
-	        </div>
-	        <section class ="docs-section">
-			  <div class="lc">
-			    {% include docs-nav-data.html %}
-			  </div>
-	        </section>
-			  <div class="banner banner-dark">
-			    <div class="lc">
-				 	<h2 class="language-btn">Advanced Features</h2>
-			    </div>
-			  </div>
-			<section class ="docs-section">
-			  <div class="lc">
-			    {% include docs-nav-advanced.html %}
-			  </div>
-			</section>
-        </section>
-</div><!--end .guts-->
+
+<section class="banner">
+    <h1 class="banner__title">Pattern Lab Documentation</h1>
+</section><!--end .banner-->
+
+<div class="g g--2up">
+    <div class="gi">
+
+        <div class="tile tile--flex">
+    	    <h2 class="language-btn">Getting Started</h2>
+            {% include docs-nav-start.html %}
+        </div>
+
+    </div><!--end .gi-->
+
+    <div class="gi">
+
+        <div class="tile tile--flex tile--fancy">
+		    <h2 class="language-btn">Working with Patterns</h2>
+            {% include docs-nav-patterns.html %}
+        </div>
+
+    </div><!--end .gi-->
+
+    <div class="gi">
+
+        <div class="tile tile--flex tile--alt">
+    	    <h2 class="language-btn">Working with Data</h2>
+            {% include docs-nav-data.html %}
+        </div>
+
+    </div><!--end .gi-->
+
+	<div class="gi">
+
+	    <div class="tile tile--flex tile--alt2">
+		 	<h2 class="language-btn">Advanced Features</h2>
+
+            {% include docs-nav-advanced.html %}
+	    </div>
+
+	</div><!--end .gi-->
+</div><!--end .g--2up-->
