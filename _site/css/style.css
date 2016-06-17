@@ -484,8 +484,10 @@ main {
   background: #222;
   color: #ddd; }
 
-.section-edition--dark {
-  background: #bfbfbf; }
+.section-edition {
+  padding: 1em; }
+  .section-edition--dark {
+    background: #bfbfbf; }
 
 /*------------------------------------*\
     #GUTS
@@ -560,6 +562,34 @@ main {
     display: block;
     padding: 0.4rem 0;
     font-weight: bold; }
+
+/*------------------------------------*\
+    #DOWNLOADS LIST
+\*------------------------------------*/
+.downloads__list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; }
+
+.downloads__item {
+  width: 50%; }
+
+.downloads__link {
+  display: block;
+  padding: 2rem;
+  color: #fff;
+  background: #808080;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center; }
+  .downloads__item:nth-child(2) .downloads__link {
+    background: url(../assets/atoms-scales.png);
+    color: #fff; }
+    .downloads__item:nth-child(2) .downloads__link:hover, .downloads__item:nth-child(2) .downloads__link:focus {
+      background-position: 0 3%; }
+  .downloads__link:hover, .downloads__link:focus {
+    background: #444;
+    color: #fff; }
 
 /*------------------------------------*\
     #FOOTER
