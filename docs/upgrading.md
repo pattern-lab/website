@@ -8,7 +8,7 @@ languages:
 ---
 
 <!--- start php -->
-<div class="tab-panel" id="php">
+<div class="tabs__panel" id="php">
 <h2 class="language-title">php</h2>
 
 {% capture m %}
@@ -57,7 +57,7 @@ If you want to you can clean-up some of the directories that are left-over after
 
 <!--- start node -->
 
-<div class="tab-panel" id="node">
+<div class="tabs__panel" id="node">
 <h2 class="language-title">node</h2>
 
 {% capture m %}

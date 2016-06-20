@@ -1,7 +1,7 @@
 $('body').addClass('js');
 
 var languageBtn = $('.tabs__link ');
-var tabContent = $('.tab-panel');
+var tabContent = $('.tabs__panel');
 languageBtn.on('click', function(e){ 
 	e.preventDefault();
 	var thisHref = $(this).attr('href');

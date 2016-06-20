@@ -812,7 +812,7 @@ main {
     background: #a6a6a6;
     transition: background 0.2s ease; }
 
-.js .tab-panel {
+.js .tabs__panel {
   display: none; }
 
 .js .tabs__item--is-active {

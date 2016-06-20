@@ -9,7 +9,7 @@ languages:
 
 <!--- start php -->
 
-<div class="tab-panel" id="php">
+<div class="tabs__panel" id="php">
 <h2 class="language-title">php</h2>
 
 {% capture m %}
@@ -57,7 +57,7 @@ Static assets like Javascript and CSS **are not** added automagically to your pa
 
 <!--- start node -->
 
-<div class="tab-panel" id="node">
+<div class="tabs__panel" id="node">
 <h2 class="language-title">node</h2>
 
 {% capture m %}

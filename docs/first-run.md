@@ -9,7 +9,7 @@ languages:
 
 <!--- start php -->
 
-<div class="tab-panel" id="php">
+<div class="tabs__panel" id="php">
 <h2 class="language-title">php</h2>
 
 {% capture m %}
@@ -40,7 +40,7 @@ The site should now be generated and available for browsing.
 
 <!--- start node -->
 
-<div class="tab-panel" id="node">
+<div class="tabs__panel" id="node">
 <h2 class="language-title">node</h2>
 
 {% capture m %}

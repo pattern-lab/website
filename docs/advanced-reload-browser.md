@@ -9,7 +9,7 @@ languages:
 
 <!--- start php -->
 
-<div class="tab-panel" id="php">
+<div class="tabs__panel" id="php">
 <h2 class="language-title">php</h2>
 
 {% capture m %}
@@ -63,7 +63,7 @@ To stop the service on Mac OS X you can press `CTRL+C` in the Terminal window wh
 
 <!--- start node -->
 
-<div class="tab-panel" id="node">
+<div class="tabs__panel" id="node">
 <h2 class="language-title">node</h2>
 
 {% capture m %}
