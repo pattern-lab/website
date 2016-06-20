@@ -377,6 +377,9 @@ pre {
 /*------------------------------------*\
     #MAIN
 \*------------------------------------*/
+/**
+ * Main Content Section (Except for Homepage)
+ */
 main {
   margin: 0 auto;
   position: relative; }
@@ -384,31 +387,29 @@ main {
 /*------------------------------------*\
     #BANNER
 \*------------------------------------*/
+/**
+ * Banner
+ * 1) Wrapper containing the main heading of the page 
+ */
 .banner {
   background: #222;
   position: relative;
   height: 30vh;
   display: flex;
   align-items: center; }
-  .banner__title {
-    font-size: 2.5rem;
-    margin: 0;
-    padding: 2rem 1rem;
-    color: #f1f1f1; }
-    @media all and (min-width: 34em) {
-      .banner__title {
-        font-size: 4rem;
-        padding: 2rem; } }
   @media all and (min-width: 34em) {
     .banner {
       height: 40vh; } }
 
 /**
- * Banner Feature
+ * Banner Title 
+ * 1) Heading within the banner
  */
-.banner--feature {
-  flex-direction: column;
-  height: auto; }
+.banner__title {
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 2rem 1rem;
+  color: #f1f1f1; }
   .banner--feature .banner__title {
     flex: 1;
     display: flex;
@@ -417,41 +418,17 @@ main {
     @media all and (min-width: 34em) {
       .banner--feature .banner__title {
         font-size: 4rem; } }
-  .banner--feature .btn-group {
-    width: 100%; }
-    .banner--feature .btn-group .btn {
-      display: block;
-      margin: 0; }
-    .banner--feature .btn-group .btn:nth-of-type(1) {
-      background: #e5e5e5;
-      color: #222; }
-      .banner--feature .btn-group .btn:nth-of-type(1):hover, .banner--feature .btn-group .btn:nth-of-type(1):focus {
-        background: #808080; }
-    .banner--feature .btn-group .btn:nth-of-type(2) {
-      background: url(../assets/atoms-scales.png);
-      color: #e5e5e5; }
-      .banner--feature .btn-group .btn:nth-of-type(2):hover, .banner--feature .btn-group .btn:nth-of-type(2):focus {
-        background-position: 0 3%; }
-    .banner--feature .btn-group .btn:nth-of-type(3) {
-      background: #808080; }
-      .banner--feature .btn-group .btn:nth-of-type(3):hover, .banner--feature .btn-group .btn:nth-of-type(3):focus {
-        color: #f1f1f1;
-        background: #444; }
-    @media all and (min-width: 34em) {
-      .banner--feature .btn-group {
-        display: flex;
-        width: 100%; }
-        .banner--feature .btn-group .btn {
-          flex: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center; } }
-    @media all and (min-width: 60em) {
-      .banner--feature .btn-group {
-        flex-direction: column;
-        height: 100%;
-        width: 20em; } }
+  @media all and (min-width: 34em) {
+    .banner__title {
+      font-size: 4rem;
+      padding: 2rem; } }
+
+/**
+ * Banner Feature
+ */
+.banner--feature {
+  flex-direction: column;
+  height: auto; }
   @media all and (min-width: 36em) {
     .banner--feature {
       height: 70vh; } }
@@ -460,11 +437,101 @@ main {
       flex-direction: row; } }
 
 /*------------------------------------*\
+	#BUTTONS
+\*------------------------------------*/
+/**
+ * Button
+ */
+.btn {
+  position: relative;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 2rem;
+  background: #444;
+  color: #fff;
+  transition: all 0.2s ease;
+  /**
+   * Button With Display Flex Property
+   */
+  /**
+   * Button Within Button Group
+   */ }
+  .btn--flex {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .btn-group .btn {
+    display: block;
+    margin: 0;
+        /**
+		 * First Button Within Button Group
+		 */
+    /**
+	 * Second Button Within Button Group
+	 */
+    /**
+     * Third Button Within Button Group
+     */ }
+    .btn-group .btn:nth-of-type(1) {
+      background: #e5e5e5;
+      color: #222; }
+      .btn-group .btn:nth-of-type(1):hover, .btn-group .btn:nth-of-type(1):focus {
+        background: #808080; }
+    .btn-group .btn:nth-of-type(2) {
+      background: url(../assets/atoms-scales.png);
+      color: #e5e5e5; }
+      .btn-group .btn:nth-of-type(2):hover, .btn-group .btn:nth-of-type(2):focus {
+        background-position: 0 3%; }
+    .btn-group .btn:nth-of-type(3) {
+      background: #808080; }
+      .btn-group .btn:nth-of-type(3):hover, .btn-group .btn:nth-of-type(3):focus {
+        color: #f1f1f1;
+        background: #444; }
+    @media all and (min-width: 34em) {
+      .btn-group .btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center; } }
+  .btn:hover, .btn:focus {
+    color: #fff;
+    background: #808080; }
+
+/**
+ * Button Group
+ */
+.btn-group {
+  width: 100%; }
+  @media all and (min-width: 34em) {
+    .btn-group {
+      display: flex;
+      width: 100%; } }
+  @media all and (min-width: 60em) {
+    .btn-group {
+      flex-direction: column;
+      height: 100%;
+      width: 20em; } }
+
+/*------------------------------------*\
     #TILE
 \*------------------------------------*/
 .tile {
   background: #f1f1f1;
-  padding: 2rem; }
+  padding: 2rem;
+  /**
+   * Alternative Tile Style 1
+   */
+  /**
+   * Alternative Tile Style 2
+   */
+  /**
+   * Alternative Tile Style Fancy
+   */
+  /**
+   * Alternative Tile Style Flexible (Fill Up Remaining Space)
+   */ }
   .tile--alt {
     background: #e5e5e5; }
   .tile--alt2 {
@@ -477,42 +544,54 @@ main {
 /*------------------------------------*\
     #TILE LIST
 \*------------------------------------*/
+/**
+ * List of Tiles
+ */
 .tile-list {
   background: #ddd; }
-  .tile-list--fancy {
-    background: url(../assets/organisms-scales.png); }
-
-/*------------------------------------*\
-    #HERO
-\*------------------------------------*/
-.hero {
-  padding: 3em 1em 2em; }
-
-.hero-title {
-  text-align: center;
-  max-width: 45rem;
-  margin: 0 auto; }
 
 /*------------------------------------*\
     #SECTION
 \*------------------------------------*/
+/**
+ * Section Title
+ */
 .section__title {
   font-size: 2.2rem;
   margin: 0 0 0.3rem; }
-.section__body {
-  padding: 0.5em 0 1.5em; }
 
 /**
- * Center-aligned section
+ * Section Body
  */
-.section--center .section__header {
-  background: #ddd; }
-.section--center .section__inner {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 3rem 2rem; }
-.section--center .section__body {
-  padding: 0; }
+.section__body {
+  padding: 0.5em 0 1.5em;
+  /**
+   * Section Body Within Center Aligned Section
+   */ }
+  .section--center .section__body {
+    padding: 0; }
+
+/**
+ * Section Header
+ */
+.section__header {
+  /**
+   * Section Header Within Center Aligned Section
+   */ }
+  .section--center .section__header {
+    background: #ddd; }
+
+/**
+ * Inner Div of a Section
+ */
+.section__inner {
+  /**
+   * Inner Div Within The Section Header
+   */ }
+  .section__header .section__inner {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 3rem 2rem; }
 
 /**
  * Reversed Section
@@ -521,14 +600,26 @@ main {
   background: #222;
   color: #ddd; }
 
+/**
+ * Section For Edition of Downloads
+ */
 .section-edition {
-  padding: 1em; }
+  padding: 1em;
+  /**
+   * Section With Dark Background For Edition of Downloads
+   */ }
   .section-edition--dark {
     background: #bfbfbf; }
 
+/**
+ * Section Edition Title
+ */
 .section-edition__title {
   margin-top: 1em; }
 
+/**
+ * Section Edition Introduction Text
+ */
 .section-edition__intro {
   font-size: 1.5rem; }
 
@@ -778,25 +869,6 @@ main {
 
 .js .docs-nav-section:first-child {
   padding: 1.8rem 1rem 1rem 2rem; }
-
-/* Button */
-.btn {
-  position: relative;
-  font-weight: bold;
-  font-size: 2rem;
-  padding: 2rem;
-  background: #444;
-  color: #fff;
-  transition: all 0.2s ease; }
-  .btn:hover, .btn:focus {
-    color: #fff;
-    background: #808080; }
-
-.btn--flex {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
 
 .atomic-design {
   display: block;
