@@ -116,6 +116,9 @@ h4 {
   font-size: 1em;
   margin: 0.5em 0; }
 
+/**
+ * Links within Heading 2 and Heading 3
+ */
 h2 a, h3 a {
   color: #222; }
   h2 a:hover, h3 a:hover {
@@ -151,10 +154,16 @@ input[type=search] {
 :-moz-placeholder {
   color: #808080; }
 
+/**
+ * Code Block
+ */
 code {
   background: rgba(0, 0, 0, 0.05);
   padding: 0.3em; }
 
+/**
+ * Preformatted Text
+ */
 pre {
   background: #222;
   color: #fff;
@@ -208,7 +217,14 @@ pre {
 /**
  * Split Grid
  */
-.g-split .g-split__feature {
+@media all and (min-width: 40em) {
+  .g-split {
+    display: flex; } }
+
+/**
+ * Featured Grid Item of the Split Grid
+ */
+.g-split__feature {
   background: #222;
   color: #ddd;
   display: flex;
@@ -216,21 +232,22 @@ pre {
   justify-content: center;
   padding: 2rem; }
   @media all and (min-width: 40em) {
-    .g-split .g-split__feature {
+    .g-split__feature {
       width: 50%; } }
-.g-split .g-split__secondary {
+
+/**
+ * Secondary Grid Item of the Split Grid
+ */
+.g-split__secondary {
   display: flex;
   flex-direction: column; }
   @media all and (min-width: 34em) {
-    .g-split .g-split__secondary {
+    .g-split__secondary {
       flex-direction: row; } }
   @media all and (min-width: 40em) {
-    .g-split .g-split__secondary {
+    .g-split__secondary {
       width: 50%;
       flex-direction: column; } }
-@media all and (min-width: 40em) {
-  .g-split {
-    display: flex; } }
 
 /*------------------------------------*\
     #HEADER
@@ -251,12 +268,6 @@ pre {
   position: relative; }
   .nav a {
     font-weight: bold; }
-  .nav .active {
-    display: block;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: #222; }
   .nav.opened {
     max-height: 9999px; }
 
@@ -285,7 +296,16 @@ pre {
   margin-right: 0;
   padding: 0;
   list-style: none;
-  z-index: 500; }
+  z-index: 500;
+    /**
+	 * Nav List Is Active (Triggered by Nav Button Click)
+	 */ }
+  .nav__list--is-active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #222; }
   @media all and (min-width: 46em) {
     .nav__list {
       display: flex; } }
@@ -295,10 +315,6 @@ pre {
  */
 .nav__item {
   text-transform: lowercase; }
-  .nav__item a {
-    transition: color 0.2s ease; }
-    .nav__item a:hover, .nav__item a:focus {
-      color: #fff; }
   @media all and (min-width: 46em) {
     .nav__item {
       margin-left: 1.5rem; } }
@@ -308,25 +324,28 @@ pre {
  */
 .nav__link {
   display: block;
-  padding: 0.5rem; }
-
-.js .nav {
-  position: relative; }
+  padding: 0.5rem;
+  transition: color 0.2s ease; }
+  .nav__link:hover, .nav__link:focus {
+    color: #fff; }
 
 .closed .nav-toggle {
   color: #fff;
   background: rgba(0, 0, 0, 0.05); }
 
-@media screen and (min-width: 46em) {
-  .js .nav {
-    position: relative;
-    overflow: visible; }
+/*------------------------------------*\
+    #JAVASCRIPT ACTIVATED STYLES
+\*------------------------------------*/
+/**
+ * Nav Only When JS is Working
+ */
+.js .nav {
+  position: relative; }
+  @media all and (min-width: 46em) {
+    .js .nav {
+      position: relative;
+      overflow: visible; } }
 
-  .js .nav.closed {
-    max-height: none; }
-
-  .nav-toggle {
-    display: none; } }
 /*------------------------------------*\
     #LOGO
 \*------------------------------------*/
@@ -343,6 +362,9 @@ pre {
   .logo:hover, .logo:focus {
     color: #fff; }
 
+/**
+ * Atom Logo Span
+ */
 .atom {
   display: block;
   width: 2rem;

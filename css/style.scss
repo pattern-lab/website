@@ -74,9 +74,12 @@ $anim-speed-quick: 0.2s;
 
 
 
+
+
 /*------------------------------------*\
     #RESET
 \*------------------------------------*/
+
 * {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -187,6 +190,9 @@ h4 {
 	margin: 0.5em 0;
 }
 
+/**
+ * Links within Heading 2 and Heading 3
+ */
 h2 a, h3 a {
 	color: $color-gray-87;
 
@@ -232,11 +238,17 @@ input[type=search] {
     color: #808080;
 }
 
+/**
+ * Code Block
+ */
 code {
 	background: rgba(0,0,0,0.05);
 	padding: 0.3em;
 }
 
+/**
+ * Preformatted Text
+ */
 pre {
 	background: $color-gray-87;
 	color: $color-white;
@@ -315,40 +327,45 @@ pre {
  * Split Grid
  */
 .g-split {
-
-    .g-split__feature {
-
-        background: $color-gray-87;
-        color: $color-gray-13;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-
-        @media all and (min-width: 40em) {
-            width: 50%;
-        }
-    }
-
-    .g-split__secondary {
-        display: flex;
-        flex-direction: column;
-        
-        @media all and (min-width: $bp-med) {
-	        flex-direction: row;
-        }
-
-        @media all and (min-width: 40em) {
-            width: 50%;
-
-            flex-direction: column;
-        }
-    }
-
     @media all and (min-width: 40em) {
         display: flex;
     }
 }
+
+/**
+ * Featured Grid Item of the Split Grid
+ */
+.g-split__feature {
+
+    background: $color-gray-87;
+    color: $color-gray-13;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+    @media all and (min-width: 40em) {
+        width: 50%;
+    }
+}
+
+/**
+ * Secondary Grid Item of the Split Grid
+ */
+.g-split__secondary {
+    display: flex;
+    flex-direction: column;
+    
+    @media all and (min-width: $bp-med) {
+        flex-direction: row;
+    }
+
+    @media all and (min-width: 40em) {
+        width: 50%;
+        flex-direction: column;
+    }
+}
+
 
 
 
@@ -380,14 +397,6 @@ pre {
     a {
         font-weight: bold;
     }
-
-	.active {
-		display: block;
-		position: absolute;
-		top: 100%;
-		right: 0;
-		background: $color-gray-87;
-	}
 
 	&.opened {
 	  max-height: 9999px;
@@ -422,6 +431,17 @@ pre {
     padding: 0;
     list-style: none;
     z-index: 500;
+    
+    /**
+	 * Nav List Is Active (Triggered by Nav Button Click)
+	 */
+	&--is-active {
+		display: block;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		background: $color-gray-87;
+	}
 
     @media all and (min-width: $bp-med-2) {
         display: flex;
@@ -434,14 +454,6 @@ pre {
 .nav__item {
     text-transform: lowercase;
 
-    a {
-        transition: color $anim-speed-quick ease;
-
-        &:hover, &:focus {
-            color: $color-white;
-        }
-    }
-
     @media all and (min-width: $bp-med-2) {
         margin-left: 1.5rem;
     }
@@ -453,32 +465,38 @@ pre {
 .nav__link {
     display: block;
     padding: 0.5rem;
+    transition: color $anim-speed-quick ease;
+
+    &:hover, &:focus {
+        color: $color-white;
+    }
 }
 
-.js .nav {
-  position: relative;
-}
+
 
 .closed .nav-toggle {
 	color: $color-white;
 	background: rgba(0,0,0,0.05);
 }
 
-@media screen and (min-width: $bp-med-2) {
 
-    .js .nav {
-        position: relative;;
-        overflow: visible;
-    }
 
-    .js .nav.closed {
-        max-height: none;
-    }
+/*------------------------------------*\
+    #JAVASCRIPT ACTIVATED STYLES
+\*------------------------------------*/
 
-    .nav-toggle {
-        display: none;
-    }
+/**
+ * Nav Only When JS is Working
+ */
+.js .nav {
+	position: relative;
+  
+	@media all and (min-width: $bp-med-2) {
+		position: relative;;
+		overflow: visible;
+  	}
 }
+
 
 
 
@@ -503,6 +521,9 @@ pre {
     }
 }
 
+/**
+ * Atom Logo Span
+ */
 .atom {
 	display: block;
 	width: 2rem;

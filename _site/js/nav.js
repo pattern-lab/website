@@ -7,9 +7,9 @@ navOpen.addEventListener("click", function(event){
 
     if (navActive === false) {
 	    navActive = true;
-	    navListOpen.classList.add("active");
+	    navListOpen.classList.add("nav__list--is-active");
 	} else {
 		 navActive = false;
-		 navListOpen.classList.remove("active");
+		 navListOpen.classList.remove("nav__list--is-active");
 	}
 });
