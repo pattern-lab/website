@@ -681,6 +681,7 @@ main {
     flex-direction: row; } }
 
 .content {
+  width: 100%;
   counter-reset: big-nums;
   padding: 1rem 2rem 1rem 1rem; }
   .content p {
@@ -710,6 +711,7 @@ main {
     margin-bottom: 0.5em; }
   @media all and (min-width: 60em) {
     .content {
+      width: 65%;
       -webkit-flex: 1;
       flex: 1; } }
   .content .highlight {

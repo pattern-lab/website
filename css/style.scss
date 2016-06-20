@@ -1000,6 +1000,7 @@ main {
 }
 
 .content {
+	width: 100%;
 	counter-reset: big-nums;
 	padding: 1rem 2rem 1rem 1rem;
 
@@ -1044,6 +1045,7 @@ main {
 	}
 
 	@media all and (min-width: $bp-large) {
+		width: 65%;
 		-webkit-flex: 1;
 		flex: 1;
 	}
