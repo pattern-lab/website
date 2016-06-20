@@ -26,7 +26,55 @@
  * Page-foot............The main page footer.
  * Buttons..............Button elements.
  *
- * TRUMPS
+ * VARIABLES
+ * Text.................Text helpers.
+ * RESET
+ * Text.................Text helpers.
+ * BASE
+ * Text.................Text helpers.
+ * LAYOUT
+ * Text.................Text helpers.
+ * CONTENT
+ * Text.................Text helpers.
+ * HEADER
+ * Text.................Text helpers.
+ * LOGO
+ * Text.................Text helpers.
+ * NAVIGATION
+ * Text.................Text helpers.
+ * MAIN
+ * Text.................Text helpers.
+ * BANNER
+ * Text.................Text helpers.
+ * DOCUMENTATION NAVIGATION
+ * Text.................Text helpers.
+ * BUTTONS
+ * Text.................Text helpers.
+ * TABS
+ * Text.................Text helpers.
+ * TILE
+ * Text.................Text helpers.
+ * TILE LIST
+ * Text.................Text helpers.
+ * SECTION
+ * Text.................Text helpers.
+ * INTRO
+ * Text.................Text helpers.
+ * GUTS
+ * Text.................Text helpers.
+ * BLOCKHEAD
+ * Text.................Text helpers.
+ * LINK LIST
+ * Text.................Text helpers.
+ * DOWNLOADS LIST
+ * Text.................Text helpers.
+ * FOOTER
+ * Text.................Text helpers.
+ * JAVASCRIPT ACTIVATED STYLES
+ * Text.................Text helpers.
+ * DOCUMENTATION HOME
+ * Text.................Text helpers.
+ * ANIMATIONS
  * Text.................Text helpers.
  */
 
@@ -366,6 +414,110 @@ pre {
     }
 }
 
+/**
+ * 2 Column Grid Layout on Larger Screens
+ */
+.l-two-col {
+	@media all and (min-width: $bp-large) {
+		display: -webkit-flex;
+  		display: flex;
+  		flex-direction: row;
+	}
+}
+
+/**
+ * Block of Content Becomes Sidebar on Larger Screens
+ */
+ .sidebar {
+	@media all and (min-width: $bp-large) {
+		border-left: 1px solid rgba(0,0,0,0.2);
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #CONTENT
+\*------------------------------------*/
+
+/**
+ * Content of the 2 Column Grid Layout
+ */
+.content {
+	width: 100%;
+	counter-reset: big-nums;
+	padding: 1rem 2rem 1rem 1rem;
+	
+	/**
+	 * Paragraph Within Content
+	 */
+	p {
+		counter-reset: big-nums;
+	}
+	
+	/**
+	 * Code Within Pre Within Content
+	 */
+	pre code {
+		padding: 0;
+	}
+	
+	/**
+	 * Unordered List Within Content
+	 */
+	ul {
+		margin: 1.5em 3em;
+		list-style: square;
+	}
+	
+	/**
+	 * Ordered List Within Content
+	 */
+	ol {
+		margin: 1.5em 1em;
+		
+		/**
+		 * Ordered List Item Within Content
+		 */
+		li {
+			counter-increment: big-nums;
+			position: relative;
+			padding-left: 2em;
+		}
+		
+		/**
+		 * Paragraph Within Content
+		 */
+		li:before {
+			content: counter(big-nums);
+			display: block;
+			background: rgba(0,0,0,0.5);
+			color: #fff;
+			padding: 0 0.5em;
+			border-radius: 1em;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+		}
+	}
+	
+	/**
+	 * List Item Within Content
+	 */
+	li {
+		margin-bottom: 0.5em;
+	}
+
+	@media all and (min-width: $bp-large) {
+		width: 65%;
+		-webkit-flex: 1;
+		flex: 1;
+	}
+}
+
 
 
 
@@ -382,6 +534,60 @@ pre {
 	position: relative;
 	background: $color-gray-87;
 }
+
+
+
+
+
+/*------------------------------------*\
+    #LOGO
+\*------------------------------------*/
+
+.logo {
+	text-transform: lowercase;
+	font-size: 1.4rem;
+    font-weight: bold;
+	position: relative;
+	line-height: 1;
+	margin: 0;
+    display: flex;
+    align-items: center;
+    transition: color $anim-speed-quick ease;
+
+    &:hover, &:focus {
+        color: $color-white;
+    }
+}
+
+/**
+ * Atom Logo Span
+ */
+.atom {
+	display: block;
+	width: 2rem;
+	height: 2rem;
+    margin-right: 0.5rem;
+	background: url(/assets/icon-atom.svg) no-repeat;
+	background-size: 100% 100%;
+	animation: rotation 10s linear infinite;
+}
+
+/**
+ * Atomic Design Footer Logo Div
+ */
+.atomic-design {
+	display: block;
+	max-width: 20em;
+	margin: 0 auto;
+	
+	/**
+	 * Atomic Design Logo Image In Footer
+	 */
+	img {
+		padding: 0 1em;
+	}
+}
+
 
 
 
@@ -474,68 +680,6 @@ pre {
 
 
 
-.closed .nav-toggle {
-	color: $color-white;
-	background: rgba(0,0,0,0.05);
-}
-
-
-
-/*------------------------------------*\
-    #JAVASCRIPT ACTIVATED STYLES
-\*------------------------------------*/
-
-/**
- * Nav Only When JS is Working
- */
-.js .nav {
-	position: relative;
-  
-	@media all and (min-width: $bp-med-2) {
-		position: relative;;
-		overflow: visible;
-  	}
-}
-
-
-
-
-
-/*------------------------------------*\
-    #LOGO
-\*------------------------------------*/
-
-.logo {
-	text-transform: lowercase;
-	font-size: 1.4rem;
-    font-weight: bold;
-	position: relative;
-	line-height: 1;
-	margin: 0;
-    display: flex;
-    align-items: center;
-    transition: color $anim-speed-quick ease;
-
-    &:hover, &:focus {
-        color: $color-white;
-    }
-}
-
-/**
- * Atom Logo Span
- */
-.atom {
-	display: block;
-	width: 2rem;
-	height: 2rem;
-    margin-right: 0.5rem;
-	background: url(/assets/icon-atom.svg) no-repeat;
-	background-size: 100% 100%;
-	animation: rotation 10s linear infinite;
-}
-
-
-
 
 
 /*------------------------------------*\
@@ -549,6 +693,7 @@ main {
 	margin: 0 auto;
 	position: relative;
 }
+
 
 
 
@@ -614,6 +759,40 @@ main {
     @media all and (min-width: 60em) {
         flex-direction: row;
     }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #DOCUMENTATION NAVIGATION
+\*------------------------------------*/
+
+/**
+ * Documentation Navigation Section
+ */
+.docs-nav__section {
+	padding: 1rem 1rem 1rem 2rem;
+	background: $color-gray-05;
+	
+	&:nth-child(2) {
+		background: url(../assets/organisms-scales.png);
+	}
+	
+	&:nth-child(3) {
+		background: $color-gray-10;
+	}
+}
+
+/**
+ * Title of the Documentation Navigation Section
+ */
+.docs-nav__title {
+	display: block;
+	font-weight: bold;
+	color: $color-gray-87;
+	margin-bottom: 0.4em;
 }
 
 
@@ -720,6 +899,58 @@ main {
         height: 100%;
         width: 20em;
     }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #TABS
+\*------------------------------------*/
+
+/**
+ * Tabs Wrapper
+ */
+.tabs-wrapper {
+	padding: 0;
+	position: relative;
+	background: $color-gray-87;
+	color: white;
+	width: 100%;
+}
+
+/**
+ * Tabs List
+ */
+.tabs {
+	display: flex;
+}
+
+/**
+ * Tabs Link
+ */
+.tabs__link {
+	position: relative;
+	display: block;
+	color: white;
+	padding: 1em 3em;
+	font-weight: bold;
+	
+	&--is-active {
+		background: $color-white;
+		position: relative;
+		color: $color-black;
+		
+		&:hover {
+			color: $color-white;
+		}
+	}
+	
+	&:hover {
+		background: $color-gray-35;
+		transition: background $anim-speed-quick ease;
+	}
 }
 
 
@@ -876,8 +1107,30 @@ main {
 
 
 /*------------------------------------*\
+    #INTRO
+\*------------------------------------*/
+
+/**
+ * Intro Text
+ * 1) Description of the section
+ */
+.intro {
+	font-size: 1.5rem;
+	line-height: 1.3;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+
+
+
+/*------------------------------------*\
     #GUTS
 \*------------------------------------*/
+/**
+ * Content of the Documentation Pages Including .content and .sidebar
+ */
 .guts {
 	background: $color-white;
 }
@@ -889,6 +1142,7 @@ main {
 /*------------------------------------*\
     #BLOCKHEAD
 \*------------------------------------*/
+
 /**
  * 1) The credit headshot blocks.
  */
@@ -957,19 +1211,62 @@ main {
     #LINK LIST
 \*------------------------------------*/
 
+/**
+ * List of Links
+ * 1) Used for the documentation page index currently
+ */
 .link-list {
     margin: 0;
     padding: 0;
     border-top: 1px solid $color-gray-13;
+}
 
-    > li {
-        border-bottom: 1px solid $color-gray-13;
-    }
+/**
+ * List Item Within Link List
+ */
+.link-list__item {
+	border-bottom: 1px solid $color-gray-13;
+	
+	/**
+	 * Link List Item When Item Is Selected/Current Page
+	 */
+	&--is-selected {
+		position: relative;
+		
+		/**
+		* Image Before The Selected Link List Item
+		*/
+		&:before {
+			content:"";
+			display: block;
+			background: url(../assets/icon-atom.svg) no-repeat;
+			background-size: 100%;
+			height: 18px;
+			width: 18px;
+			left: -24px;
+			top: 11px;
+			position: absolute;
+		}
+	}
+}
 
-    a {
-        display: block;
-        padding: 0.4rem 0;
-        font-weight: bold;
+/**
+ * Link Within the Link List Item
+ */
+.link-list__link {
+	display: block;
+    padding: 0.4rem 0;
+    font-weight: bold;
+    
+    /**
+	 * Link Within the Selected List Item
+	 */
+    .link-list__item--is-selected & {
+		color: $color-gray-87;
+
+		&:hover {
+			color: $color-black;
+		}    
     }
 }
 
@@ -981,16 +1278,25 @@ main {
     #DOWNLOADS LIST
 \*------------------------------------*/
 
+/**
+ * List of the PL Downloads
+ */
 .downloads__list {
 	display: flex;
 	align-items: center;
 	margin-bottom: 2rem;
 }
 
+/**
+ * PL Downloads List Item
+ */
 .downloads__item {
 	width: 50%;
 }
 
+/**
+ * PL Downloads Link
+ */
 .downloads__link {
 	display: block;
 	padding: 2rem;
@@ -1000,6 +1306,9 @@ main {
 	font-size: 2rem;
 	text-align: center;
 	
+	/**
+	 * Second Downloads List Item Styling
+	 */
 	.downloads__item:nth-child(2) & {
 		background: url(../assets/atoms-scales.png);
 		color: $color-white;
@@ -1014,6 +1323,7 @@ main {
 		color: $color-white;
 	}
 }
+
 
 
 
@@ -1033,47 +1343,11 @@ main {
 	}
 }
 
+/**
+ * Navigation Within the Footer
+ */
 .footer-nav {
 	margin: 0 2em 1em 2em;
-
-	ul {
-	  margin: 0 auto;
-	  padding: 0;
-
-	  display: flex;
-	  list-style: none;
-	  flex-wrap: wrap;
-	  z-index: 2;
-
-		@media all and (min-width: 700px) {
-		flex: 1;
-	    }
-
-	}
-
-	li {
-	  width: 100%;
-	  flex: 1 0 auto;
-
-		  @media all and (min-width: 470px) and (max-width: 760px) {
-			  width: 50%;
-		  }
-
-		  @media all and (min-width: 760px) {
-		  	width: auto;
-		  }
-
-	  }
-
-	a {
-		position: relative;
-		display: block;
- 		font-weight: bold;
- 	 	color: $color-white;
- 	 	background: $color-gray-87;
- 	 	text-align: center;
- 	 	padding: 0.5em 0;
-	}
 
     @media all and (min-width: 620px) {
 	    margin: 0 6em 1em 6em;
@@ -1084,147 +1358,126 @@ main {
 	}
 }
 
+/**
+ * Footer Navigation List
+ */
+.footer-nav__list {
+	margin: 0 auto;
+	padding: 0;	
+	display: flex;
+	list-style: none;
+	flex-wrap: wrap;
+	z-index: 2;
+
+	@media all and (min-width: 700px) {
+		flex: 1;
+    }
+}
+
+/**
+ * Footer Navigation List Item
+ */
+.footer-nav__item {
+	width: 100%;
+	flex: 1 0 auto;
+	
+	@media all and (min-width: 470px) and (max-width: 760px) {
+		width: 50%;
+	}
+	
+	@media all and (min-width: 760px) {
+		width: auto;
+	}
+}
+
+/**
+ * Link Within Footer Navigation List Item
+ */
+.footer-nav__link {
+	position: relative;
+	display: block;
+	font-weight: bold;
+	color: $color-white;
+	background: $color-gray-87;
+	text-align: center;
+	padding: 0.5em 0;	
+}
+
+/**
+ * Text Note Within Footer
+ */
 .footer__note {
     font-size: 80%;
     margin-bottom: 2rem;
     color: $color-gray-50;
     text-align: center;
-
+	
+	/**
+	 * Link within the Footer Note
+	 */
     a {
         color: $color-gray-25;
         text-decoration: underline;
     }
 }
 
-//Intro text
-.intro {
-	font-size: 1.5rem;
-	line-height: 1.3;
-    font-weight: bold;
-    margin: 0;
+
+
+
+
+/*------------------------------------*\
+    #JAVASCRIPT ACTIVATED STYLES
+\*------------------------------------*/
+
+/**
+ * Nav Only When JS is Working
+ */
+.js .nav {
+	position: relative;
+  
+	@media all and (min-width: $bp-med-2) {
+		position: relative;;
+		overflow: visible;
+  	}
 }
 
-.l-two-col {
-	@media all and (min-width: $bp-large) {
-		display: -webkit-flex;
-  		display: flex;
-  		flex-direction: row;
-	}
-}
-
-.content {
-	width: 100%;
-	counter-reset: big-nums;
-	padding: 1rem 2rem 1rem 1rem;
-
-	p {
-		counter-reset: big-nums;
-	}
-
-	pre code {
-		padding: 0;
-	}
-
-	ul {
-		margin: 1.5em 3em;
-		list-style: square;
-	}
-
-	ol {
-		margin: 1.5em 1em;
-
-		li {
-			counter-increment: big-nums;
-			position: relative;
-			padding-left: 2em;
-		}
-
-		li:before {
-			content: counter(big-nums);
-			display: block;
-			background: rgba(0,0,0,0.5);
-			color: #fff;
-			padding: 0 0.5em;
-			border-radius: 1em;
-			position: absolute;
-			top: 0;
-			left: 0;
-
-		}
-	}
-
-	li {
-		margin-bottom: 0.5em;
-	}
-
-	@media all and (min-width: $bp-large) {
-		width: 65%;
-		-webkit-flex: 1;
-		flex: 1;
-	}
-
-	.highlight {
-		margin: 1.5em 0;
-	}
-
-}
-
+/**
+ * Content in Documentation Pages Only When JS is Working
+ */
 .js .content {
 	padding: 2.4rem 2rem 1rem 1rem; 
 }
 
- .sidebar {
-	@media all and (min-width: $bp-large) {
-		border-left: 1px solid rgba(0,0,0,0.2);
+/**
+ * Panel That Tabs Open/Close Only When JS is Working
+ */
+.js .tabs__panel {
+	display: none;
+}
+
+/**
+ * Tabs List Item Only When JS is Working
+ */
+.js .tabs__item {
+
+	/**
+	 * Tabs List Item Only When JS is Working and Item is Active
+	 */
+	&--is-active {
+		display: block;
 	}
 }
 
-
-
-.docs-nav-title {
-	display: block;
-	font-weight: bold;
-	color: $color-gray-87;
-	margin-bottom: 0.4em;
+/**
+ * Language Title Within Tabs__Panel Only When JS is Working
+ */
+.js .language-title {
+	display: none;
 }
 
-.docs-nav-section {
-	padding: 1rem 1rem 1rem 2rem;
-	background: $color-gray-05;
-	
-	.selected {
-		position: relative;
-		
-		&:before {
-			content:"";
-			display: block;
-			background: url(../assets/icon-atom.svg) no-repeat;
-			background-size: 100%;
-			height: 18px;
-			width: 18px;
-			left: -24px;
-			top: 11px;
-			position: absolute;
-		}
-	
-		a {
-			color: $color-gray-87;
-	
-			&:hover {
-				color: $color-black;
-			}
-		}
-	}
-	
-	&:nth-child(2) {
-		background: url(../assets/organisms-scales.png);
-	}
-	
-	&:nth-child(3) {
-		background: $color-gray-10;
-	}
-}
-
+/**
+ * Docs Nav Section Only When JS is Working
+ */
 .js .docs-nav-section {
 	&:first-child {
 		padding: 1.8rem 1rem 1rem 2rem;
@@ -1232,86 +1485,29 @@ main {
 }
 
 
-//Atomic Design Flow
-.atomic-design {
-	display: block;
-	max-width: 20em;
-	margin: 0 auto;
-
-	img {
-		padding: 0 1em;
-	}
-}
-
-.language-toggle {
-	padding: 0;
-	position: relative;
-	background: $color-gray-87;
-	color: white;
-	width: 100%;
-
-	&-inner {
-		display: flex;
-		width: 100%;
-	}
-}
-
-.tabs {
-	display: flex;
-}
-
-.tabs__link {
-	position: relative;
-	display: block;
-	color: white;
-	padding: 1em 3em;
-	font-weight: bold;
-	
-	&--is-active {
-		background: $color-white;
-		position: relative;
-		color: $color-black;
-		
-		&:hover {
-			color: $color-white;
-		}
-	}
-	
-	&:hover {
-		background: $color-gray-35;
-		transition: background $anim-speed-quick ease;
-	}
-}
-
-.js .tabs__panel {
-	display: none;
-}
-
-.js .tabs__item {
-
-	&--is-active {
-		display: block;
-	}
-}
-
-.js .language-title {
-	display: none;
-}
 
 
 
+/*------------------------------------*\
+    #DOCUMENTATION HOME
+\*------------------------------------*/
 
-/* Documentation Home */
 .docs-index {
 
-	//hide the key on the node partial when on the index, as it's mentioned earlier, but needed on the individual pages
+	/**
+	 * 1) Hide the key on the node partial when on the index, as it's mentioned earlier, but needed on the individual pages
+	 */
 	&.node .sub-only {
 		display: none;
 	}
 }
 
-/************Animations**************/
-//Rotation Animation
+/*------------------------------------*\
+    #ANIMATIONS
+\*------------------------------------*/
+/**
+ * Rotation Animation of Atom Logo
+ */
 @-webkit-keyframes rotation {
 	0% { -webkit-transform: rotate(0deg); }
 	100% { -webkit-transform: rotate(360deg); }
