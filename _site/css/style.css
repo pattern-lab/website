@@ -1,113 +1,207 @@
-@charset "UTF-8";
 /**
  * CONTENTS
  *
- * SETTINGS
- * Global...............Globally-available variables and config.
- *
- * TOOLS
- * Mixins...............Useful mixins.
- *
- * GENERIC
- * Normalize.css........A level playing field.
- * Box-sizing...........Better default `box-sizing`.
- *
- * BASE
- * Headings.............H1–H6 styles.
- *
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
- *
- * COMPONENTS
- * Page-head............The main page header.
- * Page-foot............The main page footer.
- * Buttons..............Button elements.
- *
  * VARIABLES
- * Text.................Text helpers.
+ * Colors................Color variables.
+ * Widths and Padding....Width and padding variables.
+ * Breakpoints...........Breakpoint variables.
+ * Border................Border variables.
+ * Animation.............Animation variables.
+ *
  * RESET
- * Text.................Text helpers.
+ * Border Box............Add border box to all elements.
+ * Margin/Padding/Border.Zero out margin/padding/border on certain elements
+ * List Styles...........No list styles. Zero out margin/padding.
+ * Table.................Initial Table Styles.
+ * Display Block.........Initialize header, footer, nav, section, article, hgroup, figure as display: block.
+ * Legend................Initialize legend as display: none.
+ *
  * BASE
- * Text.................Text helpers.
+ * Body..................Body base styles.
+ * Links.................Links base styles. Includes styles for image within links.
+ * Paragraph.............Paragraph base styles.
+ * Responsive Media......Set height: auto and width: 100% for images, objects, and video responsiveness.
+ * Video.................Video base styles.
+ * Heading 1.............Heading 1 base styles.
+ * Heading 2.............Heading 2 base styles.
+ * Heading 3.............Heading 3 base styles.
+ * Heading 4.............Heading 4 base styles.
+ * Links within h2/h3....Link styles within heading 2 and heading 3.
+ * Blockquote............Blockquote base styles.
+ * Small Text............Small text base styles.
+ * Input.................Input base styles.
+ * Input Placeholder.....Input placeholder text base styles.
+ * Code Block............Code block base styles.
+ * Preformatted Text.....Preformatted text base styles.
+ *
  * LAYOUT
- * Text.................Text helpers.
+ * 2-up Grid.............Grid layout 1up on small screens to 2 up on larger screens.
+ * 3-up Grid.............Grid layout 1 up, to 2 up, to 3 up.
+ * 4-up Grid.............Grid layout 1 up, to 2up, to 4 up.
+ * Split Grid............Grid split 50/50 layout.
+ * Featured Grid Item....Featured split grid item.
+ * Secondary Grid Item...Secondary split grid item.
+ * 2 Column Grid Layout..2 Column Grid Layout on larger screens
+ * Sidebar...............Block of content becomes sidebar on larger screens
+ *
  * CONTENT
- * Text.................Text helpers.
+ * Content...............Content of the 2 column grid layout. Includes elements within .content.
+ *
  * HEADER
- * Text.................Text helpers.
+ * Header................Header styles.
+ *
  * LOGO
- * Text.................Text helpers.
+ * Logo..................Logo styles.
+ * Atom Logo Span........The span wrapper of the atom logo
+ * Atom Logo Footer......Footer logo styles.
+ *
  * NAVIGATION
- * Text.................Text helpers.
+ * Navigation............Navigation wrapper
+ * Nav Button............Nav Button Toggle.
+ * Nav List..............Nav List.
+ * Nav Item..............Nav List Item.
+ * Nav Link..............Links within Nav.
+ *
  * MAIN
- * Text.................Text helpers.
+ * Main..................Main content section except for homepage.
+ *
  * BANNER
- * Text.................Text helpers.
+ * Banner................Wrapper containing the main heading of the page .
+ * Banner Title..........Heading within the banner wrapper.
+ * Banner Feature........Featured banner (on the homepage).
+ *
  * DOCUMENTATION NAVIGATION
- * Text.................Text helpers.
+ * Doc Nav Section.......Section where the documentation navigation items live.
+ * Doc Nav Title.........Title of the doc nav section.
+ * Text..................Text helpers.
+ *
  * BUTTONS
- * Text.................Text helpers.
+ * Buttons................General button styles.
+ * Button Group...........Group of buttons' styles.
+ *
  * TABS
- * Text.................Text helpers.
+ * Tabs Wrapper...........Wrapper where tabs live.
+ * Tabs List..............List of tabs.
+ * Tabs Link..............Link within tabs list item.
+ *
  * TILE
- * Text.................Text helpers.
+ * Tile...................Block of content. Includes variations.
+ *
  * TILE LIST
- * Text.................Text helpers.
+ * Tile List..............List of tiles.
+ *
  * SECTION
- * Text.................Text helpers.
+ * Section Title..........Title of section.
+ * Section Body...........Body of section.
+ * Section Header.........Wrapper inside section where section-inner and intro live.
+ * Section Inner..........Inner wrapper of section header.
+ * Reversed Section.......Section that is in reverse order of default section class.
+ * Section Edition........Section for Edition of Downloads.
+ *
  * INTRO
- * Text.................Text helpers.
+ * Intro..................Styles for intro class.
+ *
  * GUTS
- * Text.................Text helpers.
+ * Guts...................Block of content within documentation pages.
+ *
  * BLOCKHEAD
- * Text.................Text helpers.
+ * Blockhead..............Block of images and text used for pattern lab credits.
+ *
  * LINK LIST
- * Text.................Text helpers.
+ * Link List..............List of links.
+ * Link List Item.........Item of the link list.
+ * Link List Link.........Link within link list item.
+ *
  * DOWNLOADS LIST
- * Text.................Text helpers.
+ * Downloads List.........List of downloads on downloads page.
+ * Downloads List Item....List item of downloads list.
+ * Downloads List Link....Link within downloads list item.
+ *
  * FOOTER
- * Text.................Text helpers.
+ * Footer.................Footer wrapper styles.
+ * Footer Nav.............Footer navigation styles.
+ * Footer Note............Note of text within the footer.
+ *
  * JAVASCRIPT ACTIVATED STYLES
- * Text.................Text helpers.
+ * JS Activated Styles....Various styles that act differently when javascript is running (.js class added)
+ *
  * DOCUMENTATION HOME
- * Text.................Text helpers.
+ * Docs Index.............docs-index class styles.
+ *
  * ANIMATIONS
- * Text.................Text helpers.
+ * Atom Logo Rotation.....Animation of atom logo.
+ *
  */
 /*------------------------------------*\
     #VARIABLES
 \*------------------------------------*/
+/**
+ * Colors
+ */
+/**
+ * Widths and Padding
+ */
+/**
+ * Breakpoints
+ */
+/**
+ * Border
+ */
+/**
+ * Animation
+ */
 /*------------------------------------*\
     #RESET
 \*------------------------------------*/
+/**
+ * Border Box
+ */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+/**
+ * Margin/Padding/Border
+ */
 html, body, div, object, iframe, fieldset {
   margin: 0;
   padding: 0;
   border: 0; }
 
+/**
+ * List Styles
+ */
 ol, ul {
   list-style: none;
   margin: 0;
   padding: 0; }
 
+/**
+ * Table
+ */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/**
+ * Display Block
+ */
 header, footer, nav, section, article, hgroup, figure {
   display: block; }
 
+/**
+ * Legend
+ */
 legend {
   display: none; }
 
 /*------------------------------------*\
     #BASE
 \*------------------------------------*/
+/**
+ * Body
+ */
 body {
   background: #f1f1f1;
   color: #222;
@@ -116,28 +210,46 @@ body {
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden; }
 
+/**
+ * Links
+ */
 a {
   color: #808080;
   text-decoration: none;
-  transition: all 0.2s ease; }
+  transition: all 0.2s ease;
+  /**
+   * Image Within Links
+   */ }
   a img {
     border: 0;
     outline: 0; }
   a:hover, a:focus {
     color: #222; }
 
+/**
+ * Paragraph
+ */
 p {
   margin: 0 0 1em; }
 
+/**
+ * Img/Object/Video Responsive
+ */
 img, object, video {
   max-width: 100%;
   height: auto;
   border: 0; }
 
+/**
+ * Video
+ */
 video {
   display: block;
   width: 100%; }
 
+/**
+ * Heading 1
+ */
 h1 {
   font-size: 2.3em;
   line-height: 1;
@@ -147,6 +259,9 @@ h1 {
     h1 {
       font-size: 2.5em; } }
 
+/**
+ * Heading 2
+ */
 h2 {
   line-height: 1.1;
   font-size: 1.5em;
@@ -155,17 +270,23 @@ h2 {
     h2 {
       font-size: 2em; } }
 
+/**
+ * Heading 3
+ */
 h3 {
   font-size: 1.3em;
   line-height: 1.1;
   margin: 0 0 0.2em; }
 
+/**
+ * Heading 4
+ */
 h4 {
   font-size: 1em;
   margin: 0.5em 0; }
 
 /**
- * Links within Heading 2 and Heading 3
+ * Links within h2/h3
  */
 h2 a, h3 a {
   color: #222; }
@@ -190,12 +311,15 @@ small {
   color: rgba(0, 0, 0, 0.8); }
 
 /**
- * Blockquote
+ * Input
  */
 input[type=search] {
   -webkit-appearance: none;
   border-radius: 0; }
 
+/**
+ * Input Placeholder Text
+ */
 ::-webkit-input-placeholder {
   color: #808080; }
 
@@ -270,7 +394,7 @@ pre {
     display: flex; } }
 
 /**
- * Featured Grid Item of the Split Grid
+ * Featured Grid Item
  */
 .g-split__feature {
   background: #222;
@@ -284,7 +408,7 @@ pre {
       width: 50%; } }
 
 /**
- * Secondary Grid Item of the Split Grid
+ * Secondary Grid Item
  */
 .g-split__secondary {
   display: flex;
@@ -307,7 +431,7 @@ pre {
     flex-direction: row; } }
 
 /**
- * Block of Content Becomes Sidebar on Larger Screens
+ * Sidebar Larger Screens
  */
 @media all and (min-width: 60em) {
   .sidebar {
@@ -317,7 +441,7 @@ pre {
     #CONTENT
 \*------------------------------------*/
 /**
- * Content of the 2 Column Grid Layout
+ * Content
  */
 .content {
   width: 100%;
@@ -378,6 +502,9 @@ pre {
 /*------------------------------------*\
     #HEADER
 \*------------------------------------*/
+/**
+ * Header
+ */
 .header {
   display: flex;
   flex-direction: row;
@@ -389,6 +516,9 @@ pre {
 /*------------------------------------*\
     #LOGO
 \*------------------------------------*/
+/**
+ * Logo
+ */
 .logo {
   text-transform: lowercase;
   font-size: 1.4rem;
@@ -415,7 +545,7 @@ pre {
   animation: rotation 10s linear infinite; }
 
 /**
- * Atomic Design Footer Logo Div
+ * Atomic Logo Footer
  */
 .atomic-design {
   display: block;
@@ -430,6 +560,9 @@ pre {
 /*------------------------------------*\
     #NAVIGATION
 \*------------------------------------*/
+/**
+ * Navigation
+ */
 .nav {
   margin-left: auto;
   position: relative; }
@@ -500,7 +633,7 @@ pre {
     #MAIN
 \*------------------------------------*/
 /**
- * Main Content Section (Except for Homepage)
+ * Main
  */
 main {
   margin: 0 auto;
@@ -784,7 +917,7 @@ main {
   color: #ddd; }
 
 /**
- * Section For Edition of Downloads
+ * Section Edition
  */
 .section-edition {
   padding: 1em;
@@ -1111,7 +1244,7 @@ main {
     #ANIMATIONS
 \*------------------------------------*/
 /**
- * Rotation Animation of Atom Logo
+ * Atom Logo Rotations
  */
 @-webkit-keyframes rotation {
   0% {
