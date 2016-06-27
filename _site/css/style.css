@@ -845,6 +845,9 @@ main {
   /**
    * Alternative Tile Style Fancy
    */
+    /**
+	 * Alternative Tile Style Fancy 2
+	 */
   /**
    * Alternative Tile Style Flexible (Fill Up Remaining Space)
    */ }
@@ -853,6 +856,8 @@ main {
   .tile--alt2 {
     background: #fff; }
   .tile--fancy {
+    background: url(../assets/bg-organism-pattern.svg); }
+  .tile--fancy-2 {
     background: url(../assets/organisms-scales.png); }
   .tile--flex {
     flex: 1; }
@@ -1024,14 +1029,12 @@ main {
  */
 .link-list {
   margin: 0;
-  padding: 0;
-  border-top: 1px solid #ddd; }
+  padding: 0; }
 
 /**
  * List Item Within Link List
  */
 .link-list__item {
-  border-bottom: 1px solid #ddd;
   /**
    * Link List Item When Item Is Selected/Current Page
    */ }
@@ -1163,10 +1166,11 @@ main {
   position: relative;
   display: block;
   font-weight: bold;
-  color: #fff;
   background: #222;
   text-align: center;
   padding: 0.5em 0; }
+  .footer-nav__link:hover, .footer-nav__link:focus {
+    color: #fff; }
 
 /**
  * Text Note Within Footer

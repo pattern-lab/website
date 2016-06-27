@@ -1118,6 +1118,13 @@ main {
 	 * Alternative Tile Style Fancy
 	 */	
     &--fancy {
+        background: url(../assets/bg-organism-pattern.svg);
+    }
+    
+    /**
+	 * Alternative Tile Style Fancy 2
+	 */	
+    &--fancy-2 {
         background: url(../assets/organisms-scales.png);
     }
 
@@ -1353,14 +1360,12 @@ main {
 .link-list {
     margin: 0;
     padding: 0;
-    border-top: 1px solid $color-gray-13;
 }
 
 /**
  * List Item Within Link List
  */
 .link-list__item {
-	border-bottom: 1px solid $color-gray-13;
 	
 	/**
 	 * Link List Item When Item Is Selected/Current Page
@@ -1532,10 +1537,13 @@ main {
 	position: relative;
 	display: block;
 	font-weight: bold;
-	color: $color-white;
 	background: $color-gray-87;
 	text-align: center;
-	padding: 0.5em 0;	
+	padding: 0.5em 0;
+	
+	&:hover, &:focus {
+		color: $color-white;
+	}	
 }
 
 /**
