@@ -518,6 +518,10 @@ pre {
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    
+    &--light {
+	    background: $color-gray-75;
+    }
 
     @media all and (min-width: 40em) {
         width: 50%;
@@ -1222,23 +1226,10 @@ main {
 }
 
 /**
- * Section Edition
- */
-.section-edition {
-	padding: 1em;
-	
-	/**
-	 * Section With Dark Background For Edition of Downloads
-	 */
-	&--dark {
-		background: $color-gray-25;	}
-}
-
-/**
  * Section Edition Title
  */
 .section-edition__title {
-	margin-top: 1em;
+	margin: 1rem 2rem;
 }
 
 /**
@@ -1246,6 +1237,7 @@ main {
  */
 .section-edition__intro {
 	font-size: 1.5rem;
+	margin: 0 2rem 1rem 2rem;
 }
 
 
@@ -1426,16 +1418,9 @@ main {
  * List of the PL Downloads
  */
 .downloads__list {
-	display: flex;
+	display: block;
 	align-items: center;
-	margin-bottom: 2rem;
-}
-
-/**
- * PL Downloads List Item
- */
-.downloads__item {
-	width: 50%;
+	width: 100%;
 }
 
 /**
@@ -1460,6 +1445,14 @@ main {
 		&:hover, &:focus {
 				background-position: 0 3%;
 			}
+	}
+	
+	.downloads__item:nth-child(3) & {
+		background: $color-gray-30;
+		
+		&:hover, &:focus {
+			background: $color-gray-50;
+		}
 	}
 	
 	&:hover, &:focus {
