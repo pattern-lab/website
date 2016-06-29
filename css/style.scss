@@ -374,6 +374,16 @@ h2 a, h3 a {
 }
 
 /**
+ * Horizontal Rule
+ */
+hr {
+    display: block;
+    height: 40px;
+    background: $color-gray-05;
+    margin: 0;
+}
+
+/**
  * Blockquote
  */
 blockquote {
@@ -1225,21 +1235,6 @@ main {
     color: $color-gray-13;
 }
 
-/**
- * Section Edition Title
- */
-.section-edition__title {
-	margin: 1rem 2rem;
-}
-
-/**
- * Section Edition Introduction Text
- */
-.section-edition__intro {
-	font-size: 1.5rem;
-	margin: 0 2rem 1rem 2rem;
-}
-
 
 
 
@@ -1404,61 +1399,6 @@ main {
 			color: $color-black;
 		}    
     }
-}
-
-
-
-
-
-/*------------------------------------*\
-    #DOWNLOADS LIST
-\*------------------------------------*/
-
-/**
- * List of the PL Downloads
- */
-.downloads__list {
-	display: block;
-	align-items: center;
-	width: 100%;
-}
-
-/**
- * PL Downloads Link
- */
-.downloads__link {
-	display: block;
-	padding: 2rem;
-	color: $color-white;
-	background: $color-gray-50;
-	font-weight: bold;
-	font-size: 2rem;
-	text-align: center;
-	
-	/**
-	 * Second Downloads List Item Styling
-	 */
-	.downloads__item:nth-child(2) & {
-		background: url(../assets/atoms-scales.png);
-		color: $color-white;
-		
-		&:hover, &:focus {
-				background-position: 0 3%;
-			}
-	}
-	
-	.downloads__item:nth-child(3) & {
-		background: $color-gray-30;
-		
-		&:hover, &:focus {
-			background: $color-gray-50;
-		}
-	}
-	
-	&:hover, &:focus {
-		background: $color-gray-75;
-		color: $color-white;
-	}
 }
 
 
