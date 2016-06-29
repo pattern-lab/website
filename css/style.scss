@@ -758,7 +758,7 @@ pre {
     background: none;
     cursor: pointer;
 
-    @media all and (min-width: $bp-med-2) {
+    @media all and (min-width: $bp-header) {
         display: none;
     }
 }
@@ -782,9 +782,13 @@ pre {
 		top: 100%;
 		right: 0;
 		background: $color-gray-87;
+		
+		@media all and (min-width: $bp-header) {
+			position: relative;
+		}
 	}
 
-    @media all and (min-width: $bp-med-2) {
+    @media all and (min-width: $bp-header) {
         display: flex;
     }
 }
@@ -795,7 +799,7 @@ pre {
 .nav__item {
     text-transform: lowercase;
 
-    @media all and (min-width: $bp-med-2) {
+    @media all and (min-width: $bp-header) {
         margin-left: 1.5rem;
     }
 }
@@ -987,7 +991,7 @@ main {
 	        color: $color-gray-10;
 	
 	        &:hover, &:focus {
-	            background-position: 0 3%;
+	            background-position: 0 30%;
 	        }
 	    }
 	
@@ -1540,6 +1544,7 @@ main {
 	background: $color-gray-87;
 	text-align: center;
 	padding: 0.5em 0;
+	text-transform: lowercase;
 	
 	&:hover, &:focus {
 		color: $color-white;
