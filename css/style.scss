@@ -1114,6 +1114,11 @@ main {
 	}
 }
 
+.tabs__panel {
+	@media all and (min-width: $bp-med) {
+		margin-left: 1em;
+	}
+}
 
 
 
