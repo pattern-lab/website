@@ -663,7 +663,7 @@ pre {
  * Links within feature blocks hover with light color
  */
 .g-split__feature__link {
-	&:hover {
+	&:hover, &:focus {
 		color: $color-white;
 	}
 }
