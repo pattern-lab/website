@@ -659,6 +659,14 @@ pre {
 	}
 }
 
+/**
+ * Links within feature blocks hover with light color
+ */
+.g-split__feature__link {
+	&:hover {
+		color: $color-white;
+	}
+}
 
 
 
