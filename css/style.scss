@@ -653,6 +653,10 @@ pre {
 	li {
 		margin-bottom: 0.5em;
 	}
+	
+	@media all and (min-width: $bp-med) {
+		padding-left: 2rem;
+	}
 
 	@media all and (min-width: $bp-large) {
 		width: 65%;
@@ -1114,12 +1118,6 @@ main {
 	}
 }
 
-.tabs__panel {
-	@media all and (min-width: $bp-med) {
-		margin-left: 1em;
-	}
-}
-
 
 
 
@@ -1539,7 +1537,11 @@ main {
  * Content in Documentation Pages Only When JS is Working
  */
 .js .content {
-	padding: 2.4rem 2rem 1rem 1rem; 
+	padding: 2.4rem 2rem 1rem 1rem;
+	
+	@media all and (min-width: $bp-med) {
+		padding-left: 2rem;
+	}
 }
 
 /**
