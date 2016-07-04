@@ -571,6 +571,7 @@ pre {
  */
  .sidebar {
 	@media all and (min-width: $bp-large) {
+		flex: 1;
 		border-left: 1px solid rgba(0,0,0,0.2);
 	}
 }
