@@ -316,6 +316,8 @@ img, object, video {
 video {
     display: block;
 	width: 100%;
+	max-width: 75em;
+	margin: 0 auto;
 }
 
 /**
