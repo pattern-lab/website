@@ -1,0 +1,55 @@
+---
+layout: default
+title: Pattern Lab Resources
+---
+
+
+<section class="banner">
+    <h1 class="banner__title">Resources</h1>
+</section><!--end .banner-->
+
+<div class="g g--2up">
+    <div class="gi">
+
+        <div class="tile tile--flex">
+    	    <h2 class="language-btn">Style guides and atomic design</h2>
+
+            <ul class="link-list">
+            	<li class="link-list__item{% if page.url == '/docs/data-json-mustache.html' %} link-list__item--is-selected{% endif %}"><a class="link-list__link" href="/docs/data-json-mustache.html">Intro to JSON &amp; Mustache</a></li>
+            	<li class="link-list__item{% if page.url == '/docs/data-pattern-specific.html' %} link-list__item--is-selected{% endif %}"><a class="link-list__link" href="/docs/data-pattern-specific.html">Pattern-specific data</a></li>
+            	<li class="link-list__item{% if page.url == '/docs/data-link-variable.html' %} link-list__item--is-selected{% endif %}"><a class="link-list__link" href="/docs/data-link-variable.html">link variable</a></li>
+            	<li class="link-list__item{% if page.url == '/docs/data-listitems.html' %} link-list__item--is-selected{% endif %}"><a class="link-list__link" href="/docs/data-listitems.html">listItems variable</a></li>
+            </ul>
+
+        </div>
+
+    </div><!--end .gi-->
+
+    <div class="gi">
+
+        <div class="tile tile--flex tile--fancy">
+		    <h2 class="language-btn">Pattern Lab Examples</h2>
+            {% include docs-nav-patterns.html %}
+        </div>
+
+    </div><!--end .gi-->
+
+    <div class="gi">
+
+        <div class="tile tile--flex tile--alt">
+    	    <h2 class="language-btn">Articles</h2>
+            {% include docs-nav-data.html %}
+        </div>
+
+    </div><!--end .gi-->
+
+	<div class="gi">
+
+	    <div class="tile tile--flex tile--alt2">
+		 	<h2 class="language-btn">Presentations</h2>
+
+            {% include docs-nav-advanced.html %}
+	    </div>
+
+	</div><!--end .gi-->
+</div><!--end .g--2up-->
