@@ -572,6 +572,8 @@ pre {
  * Sidebar Larger Screens
  */
  .sidebar {
+	 background: $color-gray-05;
+	 
 	@media all and (min-width: $bp-large) {
 		flex: 1;
 		-webkit-box-flex: 1; 
