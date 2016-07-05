@@ -582,7 +582,26 @@ pre {
 }
 
 
+/**
+ * 2-up 1-down Grid
+ * 1) 2 grid items split on top with 1 item below full width
+ */
+.g--2up-1down {
+	
+	@media all and (min-width: $bp-med) {
+		display: flex;
+        flex-wrap: wrap;
 
+		> .gi {
+			width: 50%;
+            display: flex;
+            
+            &:nth-child(3) {
+	            width: 100%;
+            }
+		}
+	}
+}
 
 
 /*------------------------------------*\
@@ -1441,6 +1460,98 @@ main {
 			color: $color-black;
 		}    
     }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #LINK DESCRIPTION LIST
+\*------------------------------------*/
+
+/**
+ * Link Desc List
+ * 1) Used for a list of links with descriptions underneath
+ */
+.link-desc-list {
+    margin: 0;
+    padding: 0;
+    
+    .g--2up-1down .gi:nth-child(3) & {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+}
+
+/**
+ * List Item Within Link Desc List
+ */
+.link-desc-list__item {
+	
+	.g--2up-1down .gi:nth-child(3) & {
+		
+		@media all and(min-width: $bp-med) {
+			width: 50%;
+			padding-right: 2rem;
+			
+			&:nth-child(2n) {
+				padding-right: 0;
+			}
+			
+		}
+		
+		@media all and(min-width: $bp-med-2) {
+			width: 33%;
+			
+			&:nth-child(2n) {
+				padding-right: 2rem;
+			}
+			
+			&:nth-child(3n) {
+				padding-right: 0;
+			}
+		}		
+	}
+}
+
+/**
+ * Link Within the Link Desc List Item
+ */
+.link-desc-list__link {
+	position: relative;
+	display: inline;
+    padding: 0.4rem 0 0;
+    font-size: 1.3rem;
+    color: $color-gray-75;
+    font-weight: bold;
+    
+    &:after {
+		position: absolute;
+		content: "";
+		height: 20px;
+		width: 20px;
+		background: url("../assets/emptycaret.svg") no-repeat;
+		top: 11px;
+		right: -24px;
+		transition: all 0.2s ease;
+	}
+    
+    &:hover, &:focus {
+	    color: $color-black;
+	    
+	    &:after {
+		    right: -28px;
+	    }
+    }
+}
+
+/**
+ * Link Desc List Item Description
+ */
+.link-desc-list__desc {
+	font-size: 1rem;
 }
 
 
