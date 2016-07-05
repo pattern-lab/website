@@ -961,6 +961,14 @@ main {
 	&:nth-child(3) {
 		background: $color-gray-10;
 	}
+	
+	@media all and (min-width: $bp-med) {
+		width: 50%;
+	}
+	
+	@media all and (min-width: $bp-large) {
+		width: 100%;
+	}
 }
 
 /**
@@ -974,7 +982,17 @@ main {
 }
 
 
-
+.docs-nav__list {
+	@media all and (min-width: $bp-med) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	@media all and (min-width: $bp-large) {
+		display: block;
+		flex-wrap: nowrap;
+	}
+}
 
 
 /*------------------------------------*\
