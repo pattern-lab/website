@@ -13,38 +13,26 @@ languages:
 
 {% capture m %}
 
-To upgrade the PHP version of Pattern Lab do the following:
+Pattern Lab 2 uses [Composer](https://getcomposer.org) to manage project dependencies. To upgrade an edition based on Pattern Lab 2 type the following in the terminal at the root of your project:
 
-1. **Important:** Make a back-up of `source/`. Also see the note below about upgrading pre-v0.7.0 installs.
-2. [Download the latest release](https://github.com/pattern-lab/patternlab-php/releases) of the PHP version of Pattern Lab.
-3. Copy the `core/` directory from your downloaded edition and copy it into your project.
-4. If you're using Mac OS X open `core/scripts/` and double-click on `generateSite.command`. If you're using Windows or Linux you will need to use [the command line options](/docs/command-line.html).
-5. Double-check that your files are intact in `source/`.
+    composer update
 
-During the upgrade process the PHP version of Pattern Lab will run migrations to move or add any files that are required for the new edition to work as well as copy any of your configuration options.
+During the upgrade process Pattern Lab 2 will move or add any files that are required for the new version to work. It will also update your configuration as appropriate. If you don't have Composer installed please [follow the directions for installing Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) that are available on the Composer website. We recommend you [install it globally](https://getcomposer.org/doc/00-intro.md#globally).
 
-## A Note About Upgrades for pre-v0.7.0 Editions of Pattern Lab
+## Upgrading Pattern Lab 1 to Pattern Lab 2
 
-By default the v0.7.0+ editions of the PHP version of Pattern Lab will clean out `public/` and replace it with the files from `source/`. This is the expected behavior. Some users may have manually disabled this feature in pre-v0.7.0 editions. To make sure your files in `public/` are saved do the following:
+Pattern Lab 2 was a complete rewrite and reorganization of Pattern Lab 1. To upgrade do the following:
 
-1. Make a back-up of `public/`.
-2. Upgrade using the instructions above.
-3. [turn off `cleanPublic` via the new configuration option](/docs/advanced-clean-public.html).
-4. replace `public/` with your back-up
-5. manually copy `core/styleguide/` to `public/styleguide/`. 
+1. [Download](http://patternlab.io/download.html) the PHP edition that matches your needs
 
-Future upgrades will respect your new `cleanPublic` setting. You can also drop your public files in `source/` and not worry about steps #3-5 above.
+If you chose a Mustache-based edition do the following:
 
-If you edited the pattern header and footer found in `source/_patternlab-files/pattern-header-footer` you'll want to copy those changes to `source/_patterns/00-atoms/00-meta` once you've completed the upgrade. `00-meta` is [the new location for the pattern header and footer](/docs/pattern-header-footer.html).
+1. Copy `./source` from your old project to your new edition
+2. Copy `./source/_patterns/00-atoms/00-meta/_00-head.mustache` to `./source/_meta/_00-head.mustache`
+3. Copy `./source/_patterns/00-atoms/00-meta/_01-foot.mustache` to `./source/_meta/_00-foot.mustache`
+4. Copy `./source/_data/annotations.js` to `./source/_annotations/annotations.js`
 
-## Cleaning Up Folders from pre-v0.7.0 Editions
-
-If you want to you can clean-up some of the directories that are left-over after upgrading pre-v0.7.0 editions of the PHP version of Pattern Lab. You can delete the following as they reference old paths or are no longer used:
-
-* `builder/`
-* `listeners/`
-* `scripts/`
-* `source/_patternlab-files/`
+If you chose another version do the above and convert the templates as appropriate.
 
 {% endcapture %}
 {{ m | markdownify }}
