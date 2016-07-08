@@ -1,0 +1,45 @@
+---
+layout: docs
+title: Viewing Patterns | Pattern Lab
+heading: Viewing Patterns
+languages:
+- language: php
+- language: node
+---
+
+<!--- start php -->
+
+<div class="tabs__panel" id="php">
+<h2 class="language-title">php</h2>
+
+{% capture m %}
+
+Pattern Lab utilizes PHP's [built-in web server](http://php.net/manual/en/features.commandline.webserver.php) to let you browse your generated patterns. To start the server do the following:
+
+1. In a terminal window navigate to the root of your project
+2. Type `php core/console --server`
+
+Your local Pattern Lab install should now be available for browsing at http://localhost:8080.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
+<!--- end php -->
+
+<!--- start node -->
+
+<div class="tabs__panel" id="node">
+<h2 class="language-title">node</h2>
+
+{% capture m %}
+
+Please fill in.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
+<!--- end node -->
