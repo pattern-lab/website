@@ -14,7 +14,7 @@ languages:
 
 {% capture m %}
 
-The requirements for the PHP version of Pattern Lab vary depending on what features you want to use.
+The requirements for Pattern Lab 2 vary depending on what features you want to use.
 
 ## Minimum Requirements
 
