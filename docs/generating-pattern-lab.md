@@ -21,7 +21,7 @@ Pattern Lab consists of an empty shell when you first install it. To populate th
 
 Your Pattern Lab install should now be populated and [available for viewing](/docs/viewing-pattern-lab.html). As you [make changes to your patterns](/docs/editing-source-files.html) you'll need re-generate your site using step 2 above.
 
-Manually re-generating your site after each change or collection of changes can be cumbersome. The PHP and Node versions of Pattern Lab come with the ability to [watch files in the `./source/` directory for changes and re-generate the site automatically](/docs/advanced-auto-regenerate.html). The Pattern Lab website can also be [automatically reloaded](/docs/advanced-reload-browser.html).
+Manually re-generating your site after each change or collection of changes can be cumbersome. Pattern Lab can [watch files in the `./source/` directory for changes and re-generate the site automatically](/docs/advanced-auto-regenerate.html). The Pattern Lab website can also be [automatically reloaded](/docs/advanced-reload-browser.html).
 
 {% endcapture %}
 {{ m | markdownify }}
