@@ -4,7 +4,9 @@ title: Reorganizing Patterns | Pattern Lab
 heading: Reorganizing Patterns
 ---
 
-By default, the PHP and Node versions of Pattern Lab organizes patterns alphabetically when displaying them in the drop-down navigation, pattern sub-type "view all" pages, and the style guide. This may not meet your needs. You can re-order pattern sub-types and patterns by prefixing them with two digit numbers. We'll look at how we can re-organize patterns as an example. Using alphabetical ordering the `lists` pattern sub-type in `atoms` looks like:
+By default, the PHP and Node versions of Pattern Lab organizes pattern types, pattern subtypes, and patterns alphabetically when displaying them in the drop-down navigation, pattern subtype "view all" pages, and the "all" style guide. This may not meet your needs. You can re-order pattern types, pattern subtypes and patterns by prefixing them with two digit numbers.
+
+For example, we'll look at how we can re-organize patterns. Using alphabetical ordering the `lists` pattern subtype in `atoms` looks like:
 
 ```
 definition.mustache
@@ -29,15 +31,3 @@ You may want to put some space between the numbers just in case you want to furt
 ```
 
 The numbers will not show up when Pattern Lab displays the name of the pattern in the drop-down navigation. They're simply a re-ordering mechanism.
-
-### Can Pattern Types & Pattern Sub-Types Be Reorganized in the Same Way?
-
-Yes.
-
-### Do Pattern Partials Need to be Updated to Reflect the Numbering?
-
-Assuming you use the partials shorthand then, no, you don't have to worry about including the numbering in the pattern partial. The PHP and Node versions Pattern Lab will find the pattern regardless of its numbering. For example, the partial call would look like this for `definition.mustache`, `03-definition.mustache` or `10-definition.mustache`:
-
-```
-{% raw %}{{> atoms-definition }}{% endraw %}
-```

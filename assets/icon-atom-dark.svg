@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="246px" height="246px" viewBox="0 0 246 246" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-atom</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-atom" transform="translate(-1.000000, 7.000000)">
+            <g id="atom" transform="translate(9.000000, 0.000000)">
+                <g id="Group">
+                    <g id="Oval">
+                        <circle stroke="#000000" stroke-width="15" cx="115.2" cy="115.6" r="115.1"></circle>
+                        <circle fill="#444444" cx="115.2" cy="115.6" r="66.3"></circle>
+                    </g>
+                    <path d="M234,44.3 C234,59.9 221.4,72.5 205.8,72.5 C190.2,72.5 177.6,59.9 177.6,44.3 C177.6,28.7 190.2,16.1 205.8,16.1 C221.3,16.1 234,28.7 234,44.3 L234,44.3 Z" id="Shape" fill="#444444"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
