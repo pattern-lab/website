@@ -1083,7 +1083,7 @@ main {
 	        }
 	    }
         
-        @media all and (min-width: 34em) {
+        @media all and (min-width: 41em) {
 	        flex: 1;
             display: flex;
             align-items: center;
@@ -1104,7 +1104,7 @@ main {
 .btn-group {
     width: 100%;
 
-    @media all and (min-width: 34em) {
+    @media all and (min-width: 41em) {
         display: flex;
         width: 100%;
     }
