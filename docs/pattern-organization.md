@@ -24,14 +24,17 @@ By default, pattern types, pattern subtypes and patterns are ordered alphabetica
 
 ## Deeper Nesting
 
-Both PHP and Node versions support nesting of folders under `patternSubtype`. For example, you may want to organize your Sass files alongside their mark-up like so:
+Both PHP and Node versions support nesting of folders under `patternSubtype`. For example, you may want to organize your [pattern documentation](docs/pattern-documenting.html), pattern, Sass files and [pseudo-patterns](docs/pattern-pseudo-patterns.html) in one directory like so:
 
     - molecules/
       - blocks/
         - media-block/
+          - media-block.md
           - media-block.mustache
           - media-block.scss
+          - media-block~variant1.json
+          - media-block~variant2.json
 
-In this example the `media-block/` directory is ignored for the purposes of generating breadcrumbs and navigation in the Pattern Lab front-end but `media-block.mustache` is compiled appropriately.
+In this example the `media-block/` directory is ignored for the purposes of generating breadcrumbs and navigation in the Pattern Lab front-end but the documenation, pattern and pseudo-patterns are compiled appropriately.
 
 Folders can be nested under `media-block/` if desired but this is discouraged because of possible collisions when using the [shorthand partial syntax](http://patternlab.io/docs/pattern-including.html).
