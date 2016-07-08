@@ -28,7 +28,7 @@ These files are added to every rendered pattern, "view all" page and style guide
 * a tag referencing `patternLabHead` in `_00-head.mustache`
 * a tag referencing `patternLabFoot` in `_00-foot.mustache`
 
-Pattern Lab will stop working if you do.
+Pattern Lab will not so mysteriously stop working if you do.
 
 {% endcapture %}
 {{ m | markdownify }}
