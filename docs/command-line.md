@@ -14,81 +14,22 @@ languages:
 
 {% capture m %}
 
-If you're using Mac OS X all of the options for using the PHP version of Pattern Lab are available under the `core/scripts/` directory. Simply double-click on the appropriate `.command` file and the service should run. 
+To use Pattern Lab you must use the command line interface. To view the available commands when using Pattern Lab do the following:
 
-If you'd rather use the command line or are using Linux or Windows you can use the following commands and options.
+1. In a terminal window navigate to the root of your project
+2. Type `php core/console --help`
 
-## The Generate Command and Options
+To get the options for a particular command, for example the `--generate` command, you can type:
 
-The generate command generates an entire site a single time. By default it removes old content in `public/`, compiles the patterns and moves content from `source/` into `public/`. Options can be mixed and matched.
+    php core/console --help --generate
 
-```
-Usage:
-  php core/builder.php --generate|-g [--patternsonly|-p] [--nocache|-n] [--enablecss|-c] 
+## A Special Note About Windows
 
-Available options:
-  --patternsonly (-p)    Generate only the patterns. Does NOT clean public/.
-  --nocache      (-n)    Set the cacheBuster value to 0.
-  --enablecss    (-c)    Generate CSS for each pattern. Resource intensive.
+To access the command prompt on Windows you can [follow the directions from Microsoft](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window). After getting to the command prompt type the following to make sure you have PHP installed:
 
-Samples:
+    php -v
 
- To generate only the patterns:
-   php core/builder.php --generate --patternsonly
-   php core/builder.php -g -p
-
- To turn off the cacheBuster:
-   php core/builder.php --generate --nocache
-   php core/builder.php -g -n
-
- To run and generate the CSS for each pattern:
-   php core/builder.php --generate --enablecss
-   php core/builder.php -g -c
-```
-
-## The Watch Command and Options
-
-The watch command builds Pattern Lab, watches for changes in `source/` and regenerates Pattern Lab when there are any. Options can be mixed and matched.
-
-```
-Usage:
-  php core/builder.php --watch|-w [--patternsonly|-p] [--autoreload|-r] 
-
-Available options:
-  --patternsonly (-p)    Watches only the patterns. Does NOT clean public/.
-  --autoreload   (-r)    Turn on the auto-reload service.
-
-Samples:
-
- To watch and generate only the patterns:
-   php core/builder.php --watch --patternsonly
-   php core/builder.php -w -p
-
- To turn on auto-reload:
-   php core/builder.php --watch --autoreload
-   php core/builder.php -w -r
-```
-
-## The Version Command
-
-The version command prints out the current version of Pattern Lab.
-
-```
-Usage:
-  php core/builder.php --version|-v
-```
-
-## Starting the Auto-Reload and Page Follow Services
-
-```
-php core/autoReloadServer.php
-  Starts the WebSocket-based server to monitor for and notify browsers of changes to content. Browser
-  windows will re-load.
-
-php core/pageFollowServer.php
-  Starts the WebSocket-based server to monitor for and notify browsers of changes to navigation. Browser
-  windows should update to match the browser window that changed.
-```
+If you get an error and know that you've installed PHP you may need to [update your path variable so Windows can find PHP](http://willj.co/2012/10/run-wamp-php-windows-7-command-line/).
       
 {% endcapture %}
 {{ m | markdownify }}
