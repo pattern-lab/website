@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Installation | Pattern Lab
-heading: Installation
+title: Installing Pattern Lab | Pattern Lab
+heading: Installing Pattern Lab
 languages:
 - language: php
 - language: node
