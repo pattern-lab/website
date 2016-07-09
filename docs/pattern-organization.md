@@ -24,7 +24,7 @@ By default, pattern types, pattern subtypes and patterns are ordered alphabetica
 
 ## Deeper Nesting
 
-Both PHP and Node versions support nesting of folders under `patternSubtype`. For example, you may want to organize your [pattern documentation](docs/pattern-documenting.html), pattern, Sass files and [pseudo-patterns](docs/pattern-pseudo-patterns.html) in one directory like so:
+Both PHP and Node versions support nesting of folders under `patternSubtype`. For example, you may want to organize your [pattern documentation](/docs/pattern-documenting.html), pattern, Sass files and [pseudo-patterns](/docs/pattern-pseudo-patterns.html) in one directory like so:
 
     - molecules/
       - blocks/
