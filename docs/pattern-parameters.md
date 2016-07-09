@@ -26,7 +26,7 @@ The attributes listed in the pattern parameters need to match Mustache variable 
 
 Again, pattern parameters are a simple find and replace of Mustache variables with the supplied values.
 
-## <span id="adding-pattern-paramters"></span>Adding Pattern Parameters to Your Pattern Partial
+## <span id="adding-pattern-parameters"></span>Adding Pattern Parameters to Your Pattern Partial
 
 Let's look at a simple example for how we might use pattern parameters. First we'll set-up a pattern that might be included multiple times. We'll make it a simple "message" pattern with a single Mustache variable of `message`.
 
