@@ -40,7 +40,7 @@ The logo image is an SVG file, which ensures that the logo displays crisply even
 Further reading: [Optimizing Web Experiences for High Resolution Screens](http://bradfrostweb.com/blog/mobile/hi-res-optimization/)
 ```
 
-To separate multiple annotations within one file use `~*~` between annotations.
+To separate multiple annotations within one file use between annotations.
 
 ## Viewing Annotations
 
