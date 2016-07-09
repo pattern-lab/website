@@ -28,7 +28,6 @@ The pattern type matches the top-level folder and is `atoms`. The pattern name m
 The following are examples of using the shorthand include syntax with our supported PatternEngines:
 
     {{> atoms-landscape-16x9 }}          // Mustache
-    {% include "atoms-landscape-16x9" %} // Twig
 
 The shorthand syntax also allows for fuzzy matching on pattern names. This means that if you feel your pattern name is going to be unique within a given pattern type you can supply just the unique part of the pattern name and the partial will be included correctly. For example, using the shorthand syntax the pattern `02-atoms-landscape-16x9.mustache` could be written as:
 
