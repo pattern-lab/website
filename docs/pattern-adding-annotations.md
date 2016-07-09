@@ -4,12 +4,19 @@ title: Adding Annotations | Pattern Lab
 heading: Adding Annotations
 ---
 
+Annotations provide an easy way to add notes to elements that may appear inside patterns. Annotations can be saved as a single JSON file at `./source/_annotations/annotations.js` or as multiple Markdown files in `./source/_annotations/`. You can use They're _not_ tied to any specific patterns. When annotations are active they are compared against every pattern using a CSS selector syntax.
 
-Annotations provide an easy way to add notes to elements within a pattern and they can be found in `source/_data/annotations.js`. They're _not_ pattern-specific. Rather, they're added to patterns using the same selector syntax you'd use for jQuery or CSS. 
+## The Elements of an Annotation
 
-## Explaining Annotations
+The elements of an annotation are:
 
-To explain how annotations are structured here is the annotation that's added to the logo:
+* **el** - the selector to be used to attach the annotation to a pattern
+* **title** - the title for a given annotation
+* **comment** - the description for a given annotation
+
+## JSON Example
+
+This is an example of an annotation saved as part of `annotations.js` that will be added to an element with the class `logo`:
 
 ```javascript
 {
@@ -19,24 +26,22 @@ To explain how annotations are structured here is the annotation that's added to
 }
 ```
 
-Breaking down the JSON:
+## Markdown Example
 
-* **el** - the selector to be used to attach the annotation to a pattern
-* **title** - the title for a given annotation
-* **comment** - the description for a given annotation
+This is an example of an annotation saved as part of `annotations.md` that will be added to an element with the class `logo`:
 
-## Making Changes to Annotations
+```
+---
+el: ".logo"
+title: "Logo"
+---
+The logo image is an SVG file, which ensures that the logo displays crisply even on high resolution displays. A PNG fallback is provided for browsers that don't support SVG images.
 
-In order to make changes or additions to annotations simply edit the `annotations.js` file. Once your changes have been made just make sure your site has been re-generated.
+Further reading: [Optimizing Web Experiences for High Resolution Screens](http://bradfrostweb.com/blog/mobile/hi-res-optimization/)
+```
+
+To separate multiple annotations within one file use `~*~` between annotations.
 
 ## Viewing Annotations
 
-In order to view annotations you'll need to click "Annotations" under the "eye" icon in the Pattern Lab toolbar. Depending on which view you're on the annotations will look slightly different. 
-
-### Pattern-only View
-
-After clicking the "annotations" menu item you can mouse over elements that have annotations and your cursor will turn to a question mark. If you click the element then the annotation should pop up.
-
-### Style Guide and List View
-
-After clicking the "annotations" menu item the annotations should show up listed under the appropriate patterns.
+In order to view annotations click "Show Pattern Info" in the Pattern Lab toolbar.
