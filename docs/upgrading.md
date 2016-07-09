@@ -41,8 +41,6 @@ If you chose another version do the above and convert the templates as appropria
 
 <!--- end php -->
 
-
-
 <!--- start node -->
 
 <div class="tabs__panel" id="node">
@@ -50,18 +48,23 @@ If you chose another version do the above and convert the templates as appropria
 
 {% capture m %}
 
-To upgrade the Node version of Pattern Lab do the following:
+Pattern Lab uses [npm](https://www.npmjs.com/) to manage project dependencies. To upgrade an edition based on Pattern Lab 2 type the following in the terminal at the root of your project:
 
-1. **Important:** Make a back-up of `source/` and `config.json` and your `Gruntfile`|`Gulpfile`.
-2. [Download the latest release](https://github.com/pattern-lab/patternlab-node/releases) of the Node version of Pattern Lab, or use `npm update patternlab-node` if you originally [installed](/docs/node/installation.html) Pattern Lab via `npm.`
-3. Restore files in `source/` and `config.json` if needed.
-4. Be mindful of whether you need to merge any customizations to `config.json` or your `Gruntfile`|`Gulpfile`
+    npm update
 
-If you encounter trouble - make sure your npm devDependencies are up to date. Assuming you have the latest `package.json` file, you can delete the contents of `./node_modules` and run `npm cache clear` before running `npm install` to pull down everything anew.
+During the upgrade process Pattern Lab 2 will move or add any files that are required for the new version to work. It will also update your configuration as appropriate.
 
-## Addenda
+It's recommended to review the [ChangeLog](https://github.com/pattern-lab/patternlab-node/wiki/ChangeLog) prior to any update so you are aware of upcoming changes. [Update Instructions](https://github.com/pattern-lab/patternlab-node/wiki/Upgrading) are also maintained on Github and may contain addenda should the normal upgrade process not apply.
 
-Some releases require a little extra file rearranging or reconfiguration. Please check the [addenda](https://github.com/pattern-lab/patternlab-node/wiki/Upgrading) on the wiki for more info.
+## Upgrading from Pattern Lab 1.X to 2.X
+
+1. Install a [node edition](https://github.com/pattern-lab?utf8=%E2%9C%93&query=edition-node) of Pattern Lab 2
+2. Move the following files:
+
+  * 1.X `source/*` to 2.X `source/`
+  * 1.X `source/_patterns/00-atoms/00-meta/*` to 2.X `source/_meta/` (you can then delete `source/_patterns/00-atoms/00-meta/`)
+  * 1.X `source/_data/annotations.js` to 2.X `source/_annotations/`
+3. Remap the paths configured in the edition's `patternlab-config.json` file with yours, if needed.
 
 {% endcapture %}
 {{ m | markdownify }}
