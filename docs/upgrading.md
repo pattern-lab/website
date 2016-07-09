@@ -20,6 +20,20 @@ Pattern Lab 2 uses [Composer](https://getcomposer.org) to manage project depende
 
 During the upgrade process Pattern Lab 2 will move or add any files that are required for the new version to work. It will also update your configuration as appropriate. If you don't have Composer installed please [follow the directions for installing Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) that are available on the Composer website. We recommend you [install it globally](https://getcomposer.org/doc/00-intro.md#globally).
 
+## Learning About Upgrades
+
+New releases and upgrades are announced in Pattern Lab's [PHP room on Gitter](https://gitter.im/pattern-lab/php) and on Twitter at [@patternlabio](https://twitter.com/patternlabio).
+
+You can also determine if your version of Pattern Lab 2 can be upgraded yourself by doing the following:
+
+1. In a terminal window navigate to the root of your project
+2. Type `composer outdated`
+
+Two components of Pattern Lab 2 maintain CHANGELOGs as part of their "Releases" page on GitHub:
+
+* [pattern-lab/core](https://github.com/pattern-lab/patternlab-php-core/releases)
+* [pattern-lab/styleguidekit-assets-default](https://github.com/pattern-lab/styleguidekit-assets-default/releases)
+
 ## Upgrading Pattern Lab 1 to Pattern Lab 2
 
 Pattern Lab 2 was a complete rewrite and reorganization of Pattern Lab 1. To upgrade do the following:
