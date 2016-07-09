@@ -17,7 +17,7 @@ The shorthand include syntax is less verbose than the default include syntax for
 
 For example, to include the following pattern in a molecule:
 
-    00-atoms/03-images/02-landscape-16x9.mustache
+    00-atoms/images/landscape-16x9.mustache
 
 The shorthand include syntax would be:
 
@@ -29,9 +29,10 @@ The following are examples of using the shorthand include syntax with our suppor
 
 ```
 {% raw %}{{> atoms-landscape-16x9 }}          // Mustache{% endraw %}
+{% raw %}{% include "atoms-landscape-16x9" %} // Twig{% endraw %}
 ```
 
-The shorthand syntax also allows for fuzzy matching on pattern names. This means that if you feel your pattern name is going to be unique within a given pattern type you can supply just the unique part of the pattern name and the partial will be included correctly. For example, using the shorthand syntax the pattern `02-atoms-landscape-16x9.mustache` could be written as:
+The shorthand syntax also allows for fuzzy matching on pattern names. This means that if you feel your pattern name is going to be unique within a given pattern type you can supply just the unique part of the pattern name and the partial will be included correctly. For example, using the shorthand syntax the pattern `atoms-landscape-16x9.mustache` could be written as:
 
     atoms-16x9
 
@@ -45,11 +46,11 @@ The shorthand syntax also allows for fuzzy matching on pattern names. This means
 
 If you need more specificity when including patterns the PHP and Node versions of Pattern Lab also support the include syntax for the template language that you're using. For example, the syntax for Mustache is the path to the pattern minus the `.mustache` extension. Let's say we wanted to include the following pattern in a molecule:
 
-    00-atoms/03-images/02-landscape-16x9.mustache
+    00-atoms/images/landscape-16x9.mustache
 
 The default Mustache include syntax would be:
 
-    {{> 00-atoms/03-images/02-landscape-16x9 }}
+    {% raw %}{{> 00-atoms/images/landscape-16x9 }}{% endraw %}
 
 **Important:** Unlike the shorthand include syntax the template language specific include syntax **must** include any digits used for ordering and subtype directories. Pattern paths need to be updated when either is changed for a given pattern.
 
@@ -58,19 +59,19 @@ The default Mustache include syntax would be:
 Here are some examples of how to include patterns as well as some gotchas.
 
 ```
-// partials to match
-00-atoms/00-global/04-test-with-picture.mustache
-00-atoms/00-global/05-test.mustache
-00-atoms/00-global/06-test.mustache
-00-atoms/00-global/test.mustache
+{% raw %}// partials to match
+00-atoms/global/05-test.mustache
+00-atoms/global/06-test.mustache
+00-atoms/global/test.mustache
+00-atoms/global/test-with-picture.mustache
 
 // using the shorthand partials syntax
-{{> atoms-test }}                 // will match 00-atoms/00-global/05-test.mustache
-                                  // using the shorthand syntax you'll never be able to match 06-test nor test in this scenario
-{{> atoms-test-with-picture }}    // will match 00-atoms/00-global/04-test-with-picture.mustache
-{{> atoms-test-wit }}             // will match 00-atoms/00-global/04-test-with-picture.mustache
+{{> atoms-test }}               // will match 00-atoms/global/05-test.mustache
+                                // using the shorthand syntax you'll never be able to match 06-test nor test in this scenario
+{{> atoms-test-with-picture }}  // will match 00-atoms/global/test-with-picture.mustache
+{{> atoms-test-wit }}           // will match 00-atoms/global/test-with-picture.mustache
 
 // using the default mustache partials syntax
-{{> atoms/global/05-test }}       // won't match anything because atoms & global are missing their digits
-{{> 00-atoms/00-global/06-test }} // will match 00-atoms/00-global/06-test.mustache
+{{> atoms/global/05-test }}     // won't match anything because atoms is missing its digits
+{{> 00-atoms/global/06-test }}  // will match 00-atoms/global/06-test.mustache{% endraw %}
 ```

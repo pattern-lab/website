@@ -20,36 +20,36 @@ From a navigation and naming perspective `patternName` and `pseudoPatternName` w
 
 Adding a pseudo-pattern is as simple as naming it correctly and following the [pattern-specific JSON file](/docs/data-pattern-specific.html) instructions for organizing its content. Let's look at a simple example where we want to show an emergency notification on our homepage Mustache template. Our `03-templates/` directory might look like this:
 
-    00-homepage.mustache
-    01-blog.mustache
-    02-article.mustache
+    article.mustache
+    blog.mustache
+    homepage.mustache
 
-Our `00-homepage.mustache` template might look like this:
+Our `homepage.mustache` template might look like this:
 
 ```html
-<div id="main-container">
+{% raw %}<div id="main-container">
     {{# emergency }}
         <div class="emergency">Oh Noes! Emergency!</div>
     {{/ emergency }}
     { ...a bunch of other content... }
-</div>
+</div>{% endraw %}
 ```
 
-If our `_data.json` file doesn't give a value for `emergency` that section will never show up when `00-homepage.mustache` is rendered. Obviously we'd need to show _both_ the regular and emergency states of the homepage but we don't want to duplicate the entire `00-homepage.mustache` template. That would be a maintenance nightmare. So let's add our pseudo-pattern:
+If our `_data.json` file doesn't give a value for `emergency` that section will never show up when `homepage.mustache` is rendered. Obviously we'd need to show _both_ the regular and emergency states of the homepage but we don't want to duplicate the entire `homepage.mustache` template. That would be a maintenance nightmare. So let's add our pseudo-pattern:
 
 ```
-00-homepage.mustache
-00-homepage~emergency.json
-01-blog.mustache
-02-article.mustache
+article.mustache
+blog.mustache
+homepage.mustache
+homepage~emergency.json
 ```
 
 In our pseudo-pattern, `00-homepage~emergency.json`, we add our `emergency` attribute:
 
 ```javascript
-{
+{% raw %}{
     "emergency": true
-}
+}{% endraw %}
 ```
 
 Now when we generate our site we'll have our homepage template rendered twice. Once as the regular template and once as a pseudo-pattern showing the emergency section. Note that the pseudo-pattern will show up in our navigation as `Homepage Emergency`.
