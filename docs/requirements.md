@@ -42,19 +42,20 @@ Pattern Lab uses [Composer](https://getcomposer.org/) to manage project dependen
 {% capture m %}
 
 
-The requirements for the Node version of Pattern Lab vary depending on what features you want to use, but are centrally managed using the `package.json` file.
+The requirements for the Pattern Lab 2 vary depending on what features you want to use, but all have the same foundation.
 
-## Minimum Requirements for Building Pattern Lab
+## Minimum Requirements
 
-It's expected that you'll use the Node version of Pattern Lab locally on your computer to develop your atoms, molecules, organisms, templates and pages. To use the basic features of Pattern Lab, most people will opt to use grunt with Node. This comes with any download you may pull down from [Github](https://github.com/pattern-lab/patternlab-node) or [npm](https://www.npmjs.com/package/patternlab-node).
+ Pattern compilation is done with [Node](https://nodejs.org), uses [npm](https://www.npmjs.com/) to manage project dependencies, and either [gulp.js](http://gulpjs.com/) or [grunt.js](http://gruntjs.com/) to run tasks and interface with the core library. **Node 4.X+ suffices**. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation will include npm. Pattern Lab comes with its own webserver.
 
-A templating engine called [Mustache](https://github.com/janl/mustache.js/) ships with Pattern Lab to construct patterns.
+Because Pattern Lab's output consists of HTML, CSS, and JavaScript there are **no requirements** for hosting your Pattern Lab site. Simply upload the `./public/` directory to your host and you should be good to go.
 
-You should _not_ need to set-up Apache, IIS or another web server to use Pattern Lab.
 
-## Minimum Requirements for Hosting Pattern Lab
+## Highly Recommended: Gulp and Grunt Globally Installed
 
-Once you want to show off your edition of Pattern Lab to a client you might want to put it on your web host. There are **no** requirements for hosting your Pattern Lab site. The Pattern Lab site consists of HTML, CSS, and JavaScript. Simply upload the `public/` directory to your host and you should be good to go.
+It's also highly recommended that you [install gulp](hhttps://github.com/gulpjs/gulp/blob/4.0/docs/getting-started.md) or [grunt](http://gruntjs.com/getting-started) globally.
+
+> Note: The Node Gulp Edition of Pattern Lab uses Gulp 4, which may require a new global install of the Gulp command line interface. Follow the [gulp upgrade instructions](https://github.com/pattern-lab/edition-node-gulp/wiki/Updating-to-Gulp-4) if you already have gulp installed and need to upgrade. Gulp 4 is in alpha, but brings many benefits to the table and is relatively stable.
 
 {% endcapture %}
 {{ m | markdownify }}
