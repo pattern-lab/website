@@ -16,8 +16,8 @@ languages:
 
 To add your own assets like JavaScript and CSS to your patterns' header and footer you need to modify two files:
 
-* `source/_meta/_00-head.mustache`
-* `source/_meta/_01-foot.mustache`
+* `./source/_meta/_00-head.mustache`
+* `./source/_meta/_01-foot.mustache`
 
 These files are added to every rendered pattern, "view all" page and style guide. To see your changes simply re-generate your site.
 
