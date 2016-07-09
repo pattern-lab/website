@@ -47,9 +47,9 @@ The three default states included with the PHP version of Pattern Lab might not 
 You can use the following as your CSS template for new pattern states:
 
 ```css
-.newpatternstate:before {
+{% raw %}.newpatternstate:before {
     color: #B10DC9 !important;
-}
+}{% endraw %}
 ```
 
 Then add `@newpatternstate` to your patterns to have the new look show up. If you want to add it to the cascade of the default patterns you can modify `./config/config.yml`. Simply add your new pattern state to the `patternStates` list.

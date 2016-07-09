@@ -17,11 +17,11 @@ The `title` attribute is used in Pattern Lab's navigation as well as in the styl
 
 Pattern documentation needs to have a `.md` file extension and match the name of the pattern it's documenting. For example, to document the following pattern:
 
-    00-atoms/03-images/02-landscape-16x9.mustache
+    00-atoms/images/landscape-16x9.mustache
 
 We'd name our documentation file:
 
-    00-atoms/03-images/02-landscape-16x9.md
+    00-atoms/images/landscape-16x9.md
 
 ## Adding More Attributes to the Front Matter
 
