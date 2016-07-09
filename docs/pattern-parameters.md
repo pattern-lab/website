@@ -4,27 +4,25 @@ title: Using Pattern Parameters | Pattern Lab
 heading: Using Pattern Parameters
 ---
 
-**Note:** *Pattern parameters were introduced in v0.7.0 of the PHP version and v0.10.0 of the Node version of Pattern Lab.*
+*Important:* Pattern parameters are only supported by the PHP and Node Mustache PatternEngines. Other template languages provide better solutions to this problem.
 
+Pattern parameters are a *simple* mechanism for replacing Mustache variables in an included pattern. They are limited to replacing variables in the included pattern and *only* the included pattern. They are especially useful when including a single pattern multiple times in a molecule, template, or page and you want to supply unique data to that pattern each time it's included. Pattern parameters **do not** currently support the following:
 
-Pattern parameters are a simple mechanism for replacing Mustache variables via attributes on a pattern partial tag rather than having to use a [pattern-specific JSON file](/docs/data-pattern-specific.html). They are especially useful when you want to supply distinct values for Mustache variables in a specific pattern partial instance that may be included multiple times in a molecule, template, or page. Pattern parameters **do not** currently support the following:
+* sub-lists (_e.g. iteration of a section_),
+* long strings of text (_can be unwieldy_)
+* modifying/replacing variables in patterns included _within_ the targeted pattern
 
-* sub-lists (e.g. iteration of a section),
-* and the use of long strings of text can be unwieldy
-
-Pattern parameters are Pattern Lab-specific and do not take advantage of the traditional Mustache syntax. Learn more about pattern parameters:
+Pattern parameters are Pattern Lab-specific, have no relationship to Mustache, and are implemented outside of Mustache. Learn more about pattern parameters:
 
 * [The Pattern Parameter Syntax](#pattern-parameter-syntax)
 * [Adding Pattern Parameters to Your Pattern Partial](#adding-pattern-parameters)
 * [Toggling Sections with Pattern Parameters](#toggling-sections)
 
-## <span id="pattern-parameter-syntax"></span>The Pattern Parameter Syntax 
+## <span id="pattern-parameter-syntax"></span>The Pattern Parameter Syntax
 
-The attributes listed in the pattern parameters should match Mustache variable names in your pattern. The values listed for each attribute will replace the Mustache variables. For example:
+The attributes listed in the pattern parameters need to match Mustache variable names in your pattern. The values listed for each attribute will replace the Mustache variables. For example:
 
-```
-{% raw %}{{> patternType-pattern(attribute1: value, attribute2: "value string") }}{% endraw %}
-```
+    {{> patternType-pattern(attribute1: value, attribute2: "value string") }}
 
 Again, pattern parameters are a simple find and replace of Mustache variables with the supplied values.
 
@@ -33,7 +31,7 @@ Again, pattern parameters are a simple find and replace of Mustache variables wi
 Let's look at a simple example for how we might use pattern parameters. First we'll set-up a pattern that might be included multiple times. We'll make it a simple "message" pattern with a single Mustache variable of `message`.
 
 ```html
-{% raw %}<div class="message">{{ message }}</div>{% endraw %}
+<div class="message">{{ message }}</div>
 ```
 
 We'll organize it under Atoms > Global and call it "message" so it'll have the pattern partial of `atoms-message`.
@@ -41,13 +39,13 @@ We'll organize it under Atoms > Global and call it "message" so it'll have the p
 Now let's create a pattern that includes our message pattern partial multiple times. It might look like this.
 
 ```html
-{% raw %}<div class="main-container">
+<div class="main-container">
     {{> atoms-message }}
     <div>
        A bunch of extra information
     </div>
     {{> atoms-message }}
-</div>{% endraw %}
+</div>
 ```
 
 Using `data.json` or a pattern-specific JSON file we wouldn't be able to supply separate messages to each pattern partial. For example, if we defined `message` in our `data.json` as "this is an alert" then "this is an alert" would show up twice when our parent pattern was rendered.
@@ -55,13 +53,13 @@ Using `data.json` or a pattern-specific JSON file we wouldn't be able to supply 
 Instead we can use pattern parameters to supply unique messages for each instance. So let's show what that would look like:
 
 ```html
-{% raw %}<div class="main-container">
+<div class="main-container">
     {{> atoms-message(message: "this is an alert message") }}
     <div>
         A bunch of extra information
     </div>
     {{> atoms-message(message: "this is an informational message") }}
-</div>{% endraw %}
+</div>
 ```
 
 Now each pattern would have its very own message.
@@ -71,30 +69,28 @@ Now each pattern would have its very own message.
 While pattern parameters are not a one-to-one match for Mustache they do offer the ability to toggle sections of content. For example we might have the following in a generic header pattern called `organisms-header`:
 
 ```html
-{% raw %}<div class="main-container">
+<div class="main-container">
     {{# emergency }}
         <div class="alert">Emergency!!!</div>
     {{/ emergency }}
     <div class="header">
         ... stuff ...
     </div>
-</div>{% endraw %}
+</div>{
 ```
 
 We call the header pattern in a template like so:
 
 ```
-{% raw %}{{> organisms-header }}
-... stuff ...{% endraw %}
+{{> organisms-header }}
+... stuff ...
 ```
 
 By default, if we don't have an `emergency` attribute in our `data.json` or the pattern-specific JSON file for the template the emergency alert will never be rendered. Instead of modifying either of those two files we can use a boolean pattern param to show it instead like so:
 
 ```
-{% raw %}{{> organisms-header(emergency: true) }}
-... stuff ...{% endraw %}
+{{> organisms-header(emergency: true) }}
+... stuff ...
 ```
 
 Again, because pattern parameters aren't leveraging Mustache this may not fit the normal Mustache workflow. We still wanted to offer a way to quickly turn on and off sections of an included pattern.
-
-
