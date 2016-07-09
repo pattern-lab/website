@@ -64,6 +64,7 @@ It's recommended to review the [ChangeLog](https://github.com/pattern-lab/patter
   * 1.X `source/*` to 2.X `source/`
   * 1.X `source/_patterns/00-atoms/00-meta/*` to 2.X `source/_meta/` (you can then delete `source/_patterns/00-atoms/00-meta/`)
   * 1.X `source/_data/annotations.js` to 2.X `source/_annotations/`
+  
 3. Remap the paths configured in the edition's `patternlab-config.json` file with yours, if needed.
 
 {% endcapture %}
