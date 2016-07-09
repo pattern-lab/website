@@ -74,7 +74,7 @@ This structure is meant to be extended to suit your purposes. Change targets, mo
 
 Pattern Lab has a configuration object which allows users to separate source patterns and assets from what is generated. The paths are managed within `patternlab-config.json`, found at the root of the edition project. The contents are sampled here:
 
-```
+```javascript
   "paths" : {
     "source" : {
       "root": "./source/",
