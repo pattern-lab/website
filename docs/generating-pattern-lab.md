@@ -40,9 +40,9 @@ Manually re-generating your site after each change or collection of changes can 
 Pattern Lab consists of an empty shell when you first install it. To populate the public-facing side of Pattern Lab with your content and patterns do the following:
 
 1. In a terminal window navigate to the root of your project
-2. Type `gulp patternlab`
+2. Type `gulp`
 
-If you don't include Pattern Lab in your default task, you can run the equivalent command, `gulp patternlab:build`.
+If you don't include Pattern Lab in your default task or otherwise change it, you can run the equivalent command, `gulp patternlab:build`.
 
 > If using grunt, substitute `grunt` for `gulp` above.
 
