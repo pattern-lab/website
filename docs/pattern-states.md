@@ -14,10 +14,7 @@ languages:
 
 {% capture m %}
 
-**Note:** *Pattern states were introduced in v0.7.5 of the PHP version of Pattern Lab.*
-
-
-Pattern states provide your team and your client a simple visual of the current state of patterns in Pattern Lab. Pattern states can track progress of a pattern from development, through client review, to completion or they can be used to give certain patterns specific classes. It's important to note that the state of a pattern can be influenced by its pattern partials.
+Pattern states provide your team and client a simple visual of the current state of patterns in Pattern Lab. Pattern states can track progress of a pattern from development, through client review, to completion or they can be used to give certain patterns specific classes. It's important to note that the state of a pattern can be influenced by its pattern partials.
 
 ## The Default Pattern States
 
@@ -34,13 +31,13 @@ Any pattern that includes a pattern partial that has a lower pattern state will 
 Giving patterns a state is simply a matter of modifying the file name. If we wanted to give our `molecules-media-block` pattern a state of `inprogress` we'd change the file name from:
 
 ```
-source/_patterns/01-molecules/02-blocks/00-media-block.mustache
+./source/_patterns/01-molecules/02-blocks/00-media-block.mustache
 ```
 
 to:
 
 ```
-source/_patterns/01-molecules/02-blocks/00-media-block@inprogress.mustache
+./source/_patterns/01-molecules/02-blocks/00-media-block@inprogress.mustache
 ```
 
 ## Adding Customized States
@@ -55,7 +52,7 @@ You can use the following as your CSS template for new pattern states:
 }
 ```
 
-Then add `@newpatternstate` to your patterns to have the new look show up. If you want to add it to the cascade of the default patterns you can modify your `config.ini`. Simply add your new pattern state to the `patternStates` list.
+Then add `@newpatternstate` to your patterns to have the new look show up. If you want to add it to the cascade of the default patterns you can modify `./config/config.yml`. Simply add your new pattern state to the `patternStates` list.
 
 {% endcapture %}
 {{ m | markdownify }}
