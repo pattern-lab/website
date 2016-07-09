@@ -4,9 +4,9 @@ title: Using Pattern Parameters | Pattern Lab
 heading: Using Pattern Parameters
 ---
 
-*Important:* Pattern parameters are only supported by the PHP and Node Mustache PatternEngines. Other template languages provide better solutions to this problem.
+**Important:** Pattern parameters are only supported by the PHP and Node Mustache PatternEngines. Other template languages provide better solutions to this problem.
 
-Pattern parameters are a *simple* mechanism for replacing Mustache variables in an included pattern. They are limited to replacing variables in the included pattern and *only* the included pattern. They are especially useful when including a single pattern multiple times in a molecule, template, or page and you want to supply unique data to that pattern each time it's included. Pattern parameters **do not** currently support the following:
+Pattern parameters are a **simple** mechanism for replacing Mustache variables in an included pattern. They are limited to replacing variables in the included pattern and **only** the included pattern. They are especially useful when including a single pattern multiple times in a molecule, template, or page and you want to supply unique data to that pattern each time it's included. Pattern parameters **do not** currently support the following:
 
 * sub-lists (_e.g. iteration of a section_),
 * long strings of text (_can be unwieldy_)
