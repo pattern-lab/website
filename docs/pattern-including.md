@@ -50,7 +50,7 @@ The default Mustache include syntax would be:
 
     {{> 00-atoms/03-images/02-landscape-16x9 }}
 
-**Important:** Unlike the shorthand partials syntax the template language specific include syntax **must** include any digits used for ordering and subtype directories. Pattern paths need to be updated when either is changed for a given pattern.
+**Important:** Unlike the shorthand include syntax the template language specific include syntax **must** include any digits used for ordering and subtype directories. Pattern paths need to be updated when either is changed for a given pattern.
 
 ## Examples and Gotchas
 
