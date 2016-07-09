@@ -4,49 +4,48 @@ title: Using styleModifiers | Pattern Lab
 heading: Using styleModifiers
 ---
 
-**Note:** *styleModifiers were introduced in v0.7.0 of the PHP version and v0.14.0 of the Node version of Pattern Lab.*
-
-
-styleModifiers allow you to create a base pattern that you can easily modify by adding a class name to the pattern partial.
+styleModifiers provide a way to extend the shorthand include syntax to quickly pass one or more class names to the included pattern.
 
 ## Syntax
 
 The basic syntax:
 
-```
-{% raw %}{{> patternType-pattern:styleModifier }}{% endraw %}
-```
+    {{> patternType-pattern:styleModifier }}
+
+To include multiple classes just separate styleModefiers by a pipe. For example:
+
+    {{> patternType-pattern:styleModifier1|styleModifier2 }}
 
 ## Example
 
 Let's look at a simple example where we add a `styleModifier` Mustache variable to a pattern called `atoms-message`. For this feature to work the Mustache variable *has* to be called `styleModifier`.
 
 ```html
-{% raw %}<div class="message {{ styleModifier }}">{{ message }}</div>{% endraw %}
+<div class="message {{ styleModifier }}">{{ message }}</div>
 ```
 
 Now let's include the pattern partial:
 
 ```html
-{% raw %}<div>
+<div>
     {{> atoms-message:error }}
-</div>{% endraw %}
+</div>
 ```
 
 This would render as:
 
 ```html
-{% raw %}<div>
+<div>
     <div class="message error"></div>
-</div>{% endraw %}
+</div>
 ```
 
 We forgot to provide a message so we can do that too with [pattern parameters](/docs/pattern-parameters.html):
 
 ```html
-{% raw %}<div>
+<div>
     {{> atoms-message:error(message: "some error message") }}
-</div>{% endraw %}
+</div>
 ```
 
 Which would render as:
@@ -56,5 +55,3 @@ Which would render as:
     <div class="message error">some error message</div>
 </div>
 ```
-
-This feature is in anticipation of a future release of the PHP version of Pattern Lab that will include support for [KSS](http://warpspire.com/kss/).
