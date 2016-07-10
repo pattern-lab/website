@@ -75,59 +75,21 @@ Instructions on how to ignore assets in other directories or with other file ext
 
 {% capture m %}
 
-The Node version of Pattern Lab has the ability to watch for changes to patterns and select files. When these files change, it will automatically rebuild the entire Pattern Lab website. You simply make your changes, save the file, and the Node version of Pattern Lab will take care of the rest.
+Pattern Lab has the ability to watch for changes to patterns and frontend assets. When these files change, it will automatically rebuild the entire Pattern Lab website. You simply make your changes, save the file, and Pattern Lab will take care of the rest.
+
+## How to Start the Watch
+
+Open your terminal and navigate to the root of your project. Type:
+
+```
+gulp patternlab:watch
+```
+
+> If using grunt, substitute `grunt` for `gulp` above.
 
 ## How to Start the Watch and Self-Host the Pattern Lab Website
 
-The watch configuration also tells Pattern Lab Node what files to reload when changes are made. Here's the excerpt from the [Gruntfile](https://github.com/pattern-lab/patternlab-node/blob/master/Gruntfile.js) again:
-
-```
-watch: {
-  all: {
-    files: [
-      'source/css/**/*.css',
-      'public/styleguide/css/*.css',
-      'source/_patterns/**/*.mustache',
-      'source/_patterns/**/*.json',
-      'source/_data/*.json'
-    ],
-    tasks: ['default']
-  },
-  patterns: {
-    files: [
-      'source/_patterns/**/*.mustache',
-      'source/_patterns/**/*.json',
-      'source/_data/*.json'
-    ],
-    tasks: ['default']
-  }
-},
-```
-By default, running `grunt serve` or `gulp serve` will compile the Pattern Lab website and open it at [http://localhost:3000](http://localhost:3000) on your default browser via the excellent [BrowserSync](http://www.browsersync.io/docs/) library. This is the recommended way to launch Pattern Lab Node versus using the filesystem.
-
-BrowserSync is a tool with a lot of depth, but Pattern Lab Node ships with the following task configurations inside the [Gruntfile](https://github.com/pattern-lab/patternlab-node/blob/master/Gruntfile.js):
-
-```
-browserSync: {
-  dev: {
-    options: {
-      server:  './public',
-      watchTask: true,
-      plugins: [
-        {
-          module: 'bs-html-injector',
-          options: {
-            files: './public/index.html'
-          }
-        }
-      ]
-    }
-  }
-},
-bsReload: {
-  css: './public/**/*.css'
-}
-```
+Rather than manually refreshing your browser when your patterns or frontend assets change you can have Pattern Lab watch for changes and [auto-reload your browser window](/docs/viewing-patterns.html#node) for you when it’s in watch mode.
 
 ## How to Stop the Watch
 
@@ -135,15 +97,17 @@ To stop watching files on Mac OS X and Windows you can press`CTRL+C` in the comm
 
 ## The Default Files That Are Watched
 
-By default, the Node version of Pattern Lab monitors the following files:
+By default, Pattern Lab monitors the following files:
 
-* all of the pattern templates under `source/_patterns/`
-* all of the JSON files under `source/_patterns/`
+* all of the JSON files under `source/_annotations/`
 * all of the JSON files under `source/_data/`
+* all of the files under `source/_meta/`
+* all of the pattern templates under `source/_patterns/`
 * all of the CSS files under `source/css/`
-* all of the CSS files under `public/styleguide/css/`
+* all of the files under `source/images/` and `source/fonts/`
+* all of the Javascript files under `source/js/`
 
-You may also uncomment the scss statements throughout the Gruntfile or Gulpfile to utilize the shipped CSS preprocessor configuration should you desire.
+The watch configuration is found within the Gruntfile or Gulpfile at the root of the project.
 
 {% endcapture %}
 {{ m | markdownify }}
