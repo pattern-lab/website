@@ -64,29 +64,50 @@ Static assets like Javascript and CSS **are not** added automagically to your pa
 
 {% capture m %}
 
-Assets for patterns, including JavaScript, CSS, and images, should be stored in the `source/` directory. The Node version of Pattern Lab will move these assets to the `public/` directory for you when you generate your site or when you watch the `source/` directory for changes. You can name and nest your assets however you like. Pattern Lab Node ships with copy tasks in the `Gruntfile.js` or `Gulpfile.js` that copy your assets for you. Here's an example of the from the `Gruntfile`:
+Assets for patterns - including JavaScript, CSS, and images - should be stored and edited in the `./source/` directory. Pattern Lab will move these assets to the `./public/` directory for you when you generate your site or when you watch the `./source/` directory for changes. *You can name and organize your assets however you like.* If you would like to use `./source/stylesheets/` to store your styles instead of `./source/css/` you can do that. The structure will be maintained when they're moved to the `./public/` directory.
+
+Pattern Lab ships with copy tasks in the `Gruntfile.js` or `Gulpfile.js` of [the Editions](https://github.com/pattern-lab/?utf8=%E2%9C%93&query=edition-node) that copy your assets for you.
+
+This structure is meant to be extended to suit your purposes. Change targets, move files, or ignore certain filetypes altogether. **Note**: If you make changes to `Gruntfile.js` or `Gulpfile.js`, such as to copy a new directory, and have [auto re-generation and browser reload enabled](/docs/advanced-auto-regenerate.html#node), you will need to stop and start your tasks to pick up the changes.
+
+## Configuring Asset Locations
+
+Pattern Lab has a configuration object which allows users to separate source patterns and assets from what is generated. The paths are managed within `patternlab-config.json`, found at the root of the edition project. The contents are sampled here:
 
 ```javascript
-copy: {
-  main: {
-    files: [
-    { expand: true, cwd: './source/js/', src: '*', dest: './public/js/'},
-    { expand: true, cwd: './source/css/', src: '*.css', dest: './public/css/' },
-    { expand: true, cwd: './source/images/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/' },
-    { expand: true, cwd: './source/images/sample/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/sample/'},
-    { expand: true, cwd: './source/fonts/', src: '*', dest: './public/fonts/'},
-    { expand: true, cwd: './source/_data/', src: 'annotations.js', dest: './public/data/' }
-    ]
-  },
-  css: {
-    files: [
-    { expand: true, cwd: './source/css/', src: '*.css', dest: './public/css/' }
-    ]
+  "paths" : {
+    "source" : {
+      "root": "./source/",
+      "patterns" : "./source/_patterns/",
+      "data" : "./source/_data/",
+      "meta": "./source/_meta/",
+      "annotations" : "./source/_annotations/",
+      "styleguide" : "./node_modules/styleguidekit-assets-default/dist/",
+      "patternlabFiles" : "./node_modules/styleguidekit-mustache-default/views/",
+      "js" : "./source/js",
+      "images" : "./source/images",
+      "fonts" : "./source/fonts",
+      "css" : "./source/css/"
+    },
+    "public" : {
+      "root" : "./public/",
+      "patterns" : "./public/patterns/",
+      "data" : "./public/styleguide/data/",
+      "annotations" : "./public/annotations/",
+      "styleguide" : "./public/styleguide/",
+      "js" : "./public/js",
+      "images" : "./public/images",
+      "fonts" : "./public/fonts",
+      "css" : "./public/css"
+    }
   }
-},
 ```
 
-This structure is meant to be extended to suit your purposes. Change targets, move files, or ignore certain filetypes altogether. **Note**: If you make changes to `Gruntfile.js` or `Gulpfile.js`, such as to copy a new directory, and have [auto re-generation and browser reload enabled](/docs/node/advanced-auto-reloading-the-browser.html), you will need to stop and start your tasks to pick up the changes.
+Note how some sets of files even extend into the "vendor" `./node_modules/` directory. Relative paths are the default but absolute paths are supported also. You may also use these paths within the Grunt or Gulp taskfiles by referring to the `paths()`  function.
+
+## Adding Assets to the Pattern Header &amp; Footer
+
+Static assets like Javascript and CSS **are not** added automagically to your patterns. You need to add them manually to the [shared pattern header and footer](/docs/advanced-auto-regenerate.html#node).
 
 {% endcapture %}
 {{ m | markdownify }}

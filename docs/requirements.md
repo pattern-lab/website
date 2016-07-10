@@ -42,11 +42,11 @@ Pattern Lab uses [Composer](https://getcomposer.org/) to manage project dependen
 {% capture m %}
 
 
-The requirements for the Pattern Lab 2 vary depending on what features you want to use, but all have the same foundation.
+The requirements for Pattern Lab 2 vary depending on what features you want to use, but all have the same foundation.
 
 ## Minimum Requirements
 
- Pattern compilation is done with [Node](https://nodejs.org), uses [npm](https://www.npmjs.com/) to manage project dependencies, and either [gulp.js](http://gulpjs.com/) or [grunt.js](http://gruntjs.com/) to run tasks and interface with the core library. **Node 4.X+ suffices**. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation will include npm. Pattern Lab comes with its own webserver.
+ Pattern compilation is done with [Node](https://nodejs.org), uses [npm](https://www.npmjs.com/) to manage project dependencies, and either [gulp.js](http://gulpjs.com/) or [grunt.js](http://gruntjs.com/) to run tasks and interface with the core library. **Node 4.X+** suffices. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation will include npm. Pattern Lab comes with its own webserver.
 
 Because Pattern Lab's output consists of HTML, CSS, and JavaScript there are **no requirements** for hosting your Pattern Lab site. Simply upload the `./public/` directory to your host and you should be good to go.
 
