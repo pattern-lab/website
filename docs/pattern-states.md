@@ -99,7 +99,7 @@ The media block consists of...
 
 ## Adding Customized States
 
-The three default states included with Pattern Lab might not be enough for everyone. To add customized states you should modify your own CSS files. **DO NOT** modify pattern states in `public/`. You cannot be assured these files won't be overwritten. Adding
+The three default states included with Pattern Lab might not be enough for everyone. To add customized states you should modify your own CSS files. **DO NOT** modify pattern states in `public/`. You cannot be assured these files won't be overwritten.
 
 You can use the following as your CSS template for new pattern states:
 
