@@ -4,7 +4,7 @@ title: Creating Lists with Pattern Lab's Default `listItems` Variable | Pattern 
 heading: Creating Lists with Pattern Lab's Default `listItems` Variable
 ---
 
-Many more complicated patterns may include lists of objects. For example, comments or headlines. The PHP and Node versions of Pattern Lab come with a simple way to fill out these lists with dynamic data so that you can quickly stub them out. The list data can be found in `source/_data/listitems.json` and is accessed in Mustache with the `listItems` key. Lists are randomized each time the Pattern Lab website is generated.
+Many more complicated patterns may include lists of objects. For example, comments or headlines. The PHP and Node versions of Pattern Lab come with a simple way to fill out these lists with dynamic data so that you can quickly stub them out. The list data can be found in `./source/_data/listitems.json` and is accessed in patterns using the `listItems` key. Lists are randomized each time the Pattern Lab website is generated.
 
 ## Using listItems Attributes to Create a Simple List
 
@@ -41,9 +41,9 @@ If you wanted six items in your list you'd write:
 </ul>{% endraw %}
 ```
 
-## Combining listItems with Partials
+## Combining listItems with Includes
 
-Let's look at how we might build a comment thread using `listItems` and partials. First we'll start with an organism called `comment-thread` that looks like:
+Let's look at how we might build a comment thread using `listItems` and includes. First we'll start with an organism called `comment-thread` that looks like:
 
 ```html
 <section class="comments section">
@@ -51,10 +51,10 @@ Let's look at how we might build a comment thread using `listItems` and partials
         <h2 class="section-title">Comment List</h2>
         <div class="comment-list">
             {% raw %}{{# listItems.five }}
-                {{> molecules-single-comment }} 
+                {{> molecules-single-comment }}
             {{/ listItems.five }}{% endraw %}
         </div>
-    </div> 
+    </div>
 </section>
 ```
 
