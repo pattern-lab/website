@@ -14,7 +14,7 @@ languages:
 
 {% capture m %}
 
-Assets for patterns - including JavaScript, CSS, and images - should be stored and edited in the `./source/` directory. Pattern Lab will move these assets to the `./public/` directory for you when you generate your site or when you watch the `./source/` directory for changes. *You can name and organize your assets however you like.* If you would like to use `./source/stylesheets/` to store your styles instead of `./source/css/` you can do that. The structure will be maintained when they're moved to the `./public/` directory.
+Assets for patterns - including JavaScript, CSS, and images - should be stored and edited in the `./source/` directory. Pattern Lab will move these assets to the `./public/` directory for you when you generate your site or when you watch the `./source/` directory for changes. **You can name and organize your assets however you like.** If you would like to use `./source/stylesheets/` to store your styles instead of `./source/css/` you can do that. There is nothing to configure. The structure will be maintained when they're moved to the `./public/` directory.
 
 ## Ignoring and Not Moving Assets Based on File Extension
 
@@ -32,9 +32,9 @@ To ignore more file extensions edit the `ie` configuration option in `./config/c
       - scss
       - png
 
-## Ignoring and Not Moving All Assets in a Directory
+## Ignoring and Not Moving Assets Based on Directory
 
-By default, the PHP version of Pattern Lab will ignore assets in directories with the following name:
+By default, the PHP version of Pattern Lab will ignore **all** assets in directories that exactly match:
 
 * `scss`
 
