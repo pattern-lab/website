@@ -41,7 +41,7 @@ metaDir:          "value" // default is _meta
 patternSourceDir: "value" // default is _patterns
 ```
 
-In the Node version of Pattern Lab you can modify or add the following configuration options in `patternlab-config.json`:
+In the Node version of Pattern Lab you can modify the following configuration options in `patternlab-config.json`:
 
 ```javascript
 "paths" : {
