@@ -79,7 +79,7 @@ cacheBusterOn = "true"
 
 Pattern Lab Node comes with a simple configuration file (`patternlab-config.json`) that allows you to modify certain aspects of the system. This file is found within [the editions](https://github.com/pattern-lab?utf8=%E2%9C%93&query=edition-node). It is used equally by edition tasks and the core library following example configuration is from [v2.1.1](https://github.com/pattern-lab/patternlab-node/releases/tag/v2.1.1) of Pattern Lab Node Core.
 
-```
+```javascript
 {
   "paths" : {
     "source" : {
