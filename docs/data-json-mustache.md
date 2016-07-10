@@ -4,7 +4,7 @@ title: Introduction to JSON & Mustache Variables | Pattern Lab
 heading: Introduction to JSON & Mustache Variables
 ---
 
-The best reference for this topic is the [Mustache documentation](http://mustache.github.io/mustache.5.html) but this should provide a good beginner's primer.
+> This documentation is provided as a simple introduction to using one of the supported data types and one of the supported PatternEngines. The best reference for this topic is the [Mustache documentation](http://mustache.github.io/mustache.5.html) but this should provide a good beginner's primer.
 
 ## Simple Variables
 
@@ -26,7 +26,7 @@ The Mustache variable is `{% raw %}{{ src }}{% endraw %}`. Note that `src` match
 <img src="../../images/fpo-avatar.png" alt="Avatar">
 ```
 
-Note that `{% raw %}{{ src }}{% endraw %}` was replaced by the value for `src` found in our JSON example. 
+Note that `{% raw %}{{ src }}{% endraw %}` was replaced by the value for `src` found in our JSON example.
 
 ## Nested Variables
 
