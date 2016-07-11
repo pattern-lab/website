@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Contribute | Pattern Lab
-heading: Contribute
+title: Contribute to the Pattern Lab Community | Pattern Lab
+heading: Contribute to the Pattern Lab Community
 ---
 
 Have an idea for or feedback about Pattern Lab? Want to fix some code or add a feature?
