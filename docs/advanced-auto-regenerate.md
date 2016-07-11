@@ -58,6 +58,8 @@ The ultimate solution for working with Pattern Lab if you're not using a task ru
 
 The Auto-Reload Plugin is automatically enabled when you install it. You can always [disable the plugin](https://github.com/pattern-lab/plugin-php-reload#disabling-the-plugin) if you need to.
 
+To stop the server, watching files, and auto-reload service use `CTRL+C` in the same terminal window.
+
 ## What Pattern Lab Will Watch
 
 By default, the PHP version of Pattern Lab will watch all files in `./source` except those that match the "ignore" configuration options in `config/config.yml`. When using `--patternsonly` Pattern Lab will only watch those directories in `./source` that start with an underscore. For example, `_patterns`. To learn how to modify what is ignored check out "[Managing Assets for a Pattern](/docs/pattern-managing-assets.html)".
