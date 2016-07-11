@@ -4,6 +4,8 @@ title: Keyboard Shortcuts | Pattern Lab
 heading: Keyboard Shortcuts
 ---
 
+> **Note:** This feature is currently disabled. It will be back in a future release of `styleguidekit-assets-default`.
+
 Pattern Lab comes with support for a number of special keyboard shortcuts to make using Pattern Lab easier. These are broken up by where they work or are most useful.
 
 Modifying the viewport:
