@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Modifying the Pattern Lab Nav | Pattern Lab
-heading: Modifying the Pattern Lab Nav
+title: Modifying Pattern Lab's Navigation | Pattern Lab
+heading: Modifying Pattern Lab's Navigation
 languages:
 - language: php
 - language: node
@@ -14,10 +14,13 @@ languages:
 
 {% capture m %}
 
-**Note:** *This option was introduced in v0.7.5 of the PHP version of Pattern Lab.*
+When sharing Pattern Lab with a client it may be beneficial to turn-off certain elements in the default navigation. To turn-off navigation elements do the following:
 
+1. Open `./config/config.yml`
+2. Add the keys for the elements you'd like to hide to the `ishControlsHide` configuration option
+3. Re-generate your Pattern Lab site
 
-When sharing Pattern Lab with a client it may be beneficial to turn-off certain elements in the default navigation. To turn-off navigation elements simply add their keys to the `ishControlsHide` option in `config/config.ini` and then re-generate the site. The following keys are supported and will hide their respective elements:
+The following keys are supported and will hide their respective elements:
 
 ```
 s
@@ -27,18 +30,13 @@ full
 random
 disco
 hay
-mqs
 find
-views-all
-views-annotations
-views-code
 views-new
 tools-all
-tools-follow
-tools-reload
-tools-shortcuts
 tools-docs
 ```
+
+`hay` is disabled by default.
 
 {% endcapture %}
 {{ m | markdownify }}
