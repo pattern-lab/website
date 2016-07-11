@@ -14,44 +14,14 @@ languages:
 
 {% capture m %}
 
+An auto-reload service was built into Pattern Lab 1. With Pattern Lab 2 this feature has been turned into the [Auto-Reload Plugin](https://github.com/pattern-lab/plugin-php-reload). To install this plugin do the following:
 
-Rather than manually refreshing your browser when your patterns or CSS change you can have the PHP version of Pattern Lab auto-reload your browser window for you.
+1. In a terminal window navigate to the root of your project
+2. Type `composer require pattern-lab/reload-plugin`
 
-## How to Start the Auto-Reload Server
+The Auto-Reload Plugin is automatically enabled when you install it. You can always [disable the plugin](https://github.com/pattern-lab/plugin-php-reload#disabling-the-plugin) if you need to.
 
-To start the service on Mac OS X you can do the following:
-
-1. Open `core/scripts/`
-2. Double-click `startAutoReloadServer.command`
-3. Refresh the Pattern Lab site
-
-For Linux and Windows users you can also start the service from the command line. To do so open your command prompt and navigate to the root of the patternlab-php directory. Type:
-
-```
-php core/autoReloadServer.php
-```
-
-Your browser should now be listening for auto-reload events and the Pattern Lab website toolbar should note that "Auto-Reload" is now "On." For this feature to work you **must** have the PHP version of Pattern Lab watching for changes. [Learn how to set this up](/docs/advanced-auto-regenerate.html).
-
-**Important:** If you find that content sync is not working properly please make sure your browser [supports WebSockets](http://caniuse.com/websockets).
-
-## How to Start the Watcher & Auto-Reload Server at the Same Time
-
-To start the watch and auto-reload services together on Mac OS X you can do the following:
-
-1. Open `core/scripts/`
-2. Double-click `startWatcherWithAutoReload.command`
-3. Refresh the Pattern Lab site
-
-For Linux and Windows users you can also start the service from the command line. To do so open your command prompt and navigate to the root of the `patternlab-php` directory. Type:
-
-```
-php core/builder.php -wr
-```
-
-## How to Stop the Service
-
-To stop the service on Mac OS X you can press `CTRL+C` in the Terminal window where the process is running. If you've used the method above to start the watch and the auto-reload server they  will both shut down when using `CTRL+C`.
+This service is enabled when using the `--watch` or `--server --with-watch` commands. Learn more about [watching for changes](/docs/advanced-auto-regenerate.html).
 
 {% endcapture %}
 {{ m | markdownify }}
