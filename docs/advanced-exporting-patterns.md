@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Exporting Patterns | Pattern Lab Node
+title: Exporting Patterns | Pattern Lab
 heading: Exporting Patterns
 languages:
 - language: php
@@ -19,7 +19,7 @@ Pattern Lab can export all of your patterns for you sans Pattern Lab's CSS and J
 1. In a terminal window navigate to the root of your project
 2. Type `php core/console --export`
 
-If you require your patterns to be exported without your global header and footer (_e.g. for a simple molecule_) do the following:
+If you require your patterns to be exported without your global header and footer (_e.g. to export a clean molecule_) do the following:
 
 1. In a terminal window navigate to the root of your project
 2. Type `php core/console --export --clean`
