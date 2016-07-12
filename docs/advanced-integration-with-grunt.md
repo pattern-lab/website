@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Integration with Grunt/Gulp | Pattern Lab
-heading: Integration with Grunt
+heading: Integration with Grunt/Gulp
 ---
 
 The PHP version of Pattern Lab can be integrated into an existing Grunt or Gulp workflow. Pattern Lab has been built to be YAT (Yet Another Task). The broad strokes of a solution:
