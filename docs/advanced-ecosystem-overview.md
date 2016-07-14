@@ -10,8 +10,6 @@ Pattern Lab 2 introduces the beginnings of an ecosystem that will allow teams to
 
 Editions let teams and agencies bundle all the things that support their unique workflows with Pattern Lab. An Edition can become the starting point for all of your projects while teams share and update functionality. The Node version of Pattern Lab uses [npm](https://www.npmjs.com/) to pull in separate components, while PHP version uses [Composer](https://getcomposer.org) to help you kick off your projects in a simple and standardized way.
 
-Editions let teams and agencies bundle all the things that support their unique workflows with Pattern Lab. An Edition can become the starting point for all of your projects while teams share and update functionality on the fly. The PHP version of Pattern Lab takes advantage of  and its `create-project` command to help you kick off your projects in a simple and standardized way.
-
 ## Components of an Edition
 
 The following is good overview of what components might make up an edition:
