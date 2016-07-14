@@ -8,37 +8,45 @@ Pattern Lab 2 introduces the beginnings of an ecosystem that will allow teams to
 
 ## Editions
 
-Editions let teams and agencies bundle all the things that support their unique workflows with Pattern Lab. An Edition can become the starting point for all of your projects while teams share and update functionality on the fly. The PHP version of Pattern Lab takes advantage of [Composer](https://getcomposer.org) and its `create-project` command to help you kick off your projects in a simple and standardized way.
+Editions let teams and agencies bundle all the things that support their unique workflows with Pattern Lab. An Edition can become the starting point for all of your projects while teams share and update functionality. The Node version of Pattern Lab uses [npm](https://www.npmjs.com/) to pull in separate components, while PHP version uses [Composer](https://getcomposer.org) to help you kick off your projects in a simple and standardized way.
+
+Editions let teams and agencies bundle all the things that support their unique workflows with Pattern Lab. An Edition can become the starting point for all of your projects while teams share and update functionality on the fly. The PHP version of Pattern Lab takes advantage of  and its `create-project` command to help you kick off your projects in a simple and standardized way.
 
 ## Components of an Edition
 
-The following is a partial list of the components that can make up a team's custom Edition of Pattern Lab:
+The following is good overview of what components might make up an edition:
+
+<img src="/assets/pattern-lab-2-image_18-large-opt.png">
+
+This is by no means exhaustive and can be added to as needed. Here is a description of each component:
 
 ### Pattern Lab Core
 
-This is what someone would traditionally think of as "Pattern Lab." Core is the guts of Pattern Lab and enables all of the other features. Because Core is standalone a team can update and stay current with the latest Pattern Lab features without disrupting the rest of their project.
-
-### PatternEngines
-
-PatternEngines are responsible for parsing patterns and turning them into HTML. PatternEngines give Pattern Lab Core the flexibility to render many different types of template languages. Patterns don't _have_ to be Mustache any longer.
-
-### Plugins
-
-Plugins allow developers to extend PL Core and other parts of the ecosystem. For example, the PHP version of Pattern Lab has a number of plugins like [Browser Auto-Reload](https://github.com/pattern-lab/plugin-php-reload), [Data Inheritance](https://github.com/pattern-lab/plugin-php-data-inheritance), and [Faker](https://github.com/pattern-lab/plugin-php-faker). An event-driven system allows developers to modify data at different stages, add their own commands or pattern rules, or change the front-end.
+Core is the guts of Pattern Lab and enables all of the other features. Because Core is standalone a team can update and stay current with the latest Pattern Lab features without disrupting the rest of their project.
 
 ### StarterKits
 
-StarterKits are sets of patterns, data, annotations, static assets and tools like Gulp that form the starting point of a project. For example, an agency may have a common set of basic patterns, Sass mix-ins, and JavaScript libraries that they know they'll use for every project. A StarterKit is perfect for bundling these assets together to make sure each project starts off on the right foot. And StarterKits are version-able. As your tools evolve so can your team's StarterKit.
+Have a trusty set of boilerplate code that you start every project with? Perhaps a common set of basic patterns, Sass mix-ins, and JavaScript libraries that are your go-to tools? A StarterKit is perfect for bundling these assets together into a boilerplate that makes sure each project starts off on the right foot.
 
-If you want a StarterKit to be a living project instead of a starting point then the PHP version of Pattern Lab can clone your StarterKit repository. This way multiple team members can push and pull a project repo that is just the assets they're working on and not all of Pattern Lab.
+[Several starterkits](https://github.com/pattern-lab/?utf8=✓&query=starterkit-mustache) already exist to kick your project off, whether you’re looking for a blank start, begin with a demo that showcases Pattern Lab’s features, or start with a popular framework like Bootstrap, Foundation, or Material Design. And you can roll your own, which can be fully version-controlled so your team’s StarterKit can evolve along with your tools.
+
+Importing a starterkit is only a few keystrokes away after installation. Eventually this feature will be built into a post-install phase like it is for Pattern Lab PHP via composer.
 
 ### StyleguideKits
 
-StyleguideKits are the front-end of Pattern Lab. We call this "The Viewer." StyleguideKits allow agencies to develop custom, branded layouts to show off their patterns.
+StyleguideKits are the front-end of Pattern Lab. We call this “The Viewer.” StyleguideKits allow agencies and organizations to develop custom, branded Pattern Lab UIs to show off their patterns.
+
+### PatternEngines
+
+PatternEngines are the templating engines that are responsible for parsing patterns and turning them into HTML. PatternEngines give Pattern Lab Core the flexibility to render many different types of template languages. Current PatternEngines include Mustache and Twig, with others like Handlebars and Underscore in development. And there’s no stopping you from adding another templating engine to Pattern Lab.
+
+### Plugins
+
+Plugins allow developers to extend Pattern Lab Core and other parts of the ecosystem. For example, the PHP version of Pattern Lab has a number of plugins like [Browser Auto-Reload](https://github.com/pattern-lab/plugin-php-reload), [Data Inheritance](https://github.com/pattern-lab/plugin-php-data-inheritance), and [Faker](https://github.com/pattern-lab/plugin-php-faker). Pattern Lab’s architecture allows developers to modify data at different stages, add their own commands or pattern rules, or change the front-end to modify and extend Pattern Lab’s capabilities.
 
 ### Other Types of Components
 
-The flexibility of the Pattern Lab ecosystem means that teams can develop tools on top of Pattern Lab that meet _their_ needs. Want to standardize and push entire data sets to teams? Want to develop with granular collections of components instead of entire StarterKits? Only want to customize the CSS for the default StyleguideKit and distribute it as part of your projects? All of this and more is possible. We feel we're just scratching the surface on what it means to develop projects and design systems with a tool like Pattern Lab.
+The flexibility of the Pattern Lab ecosystem means that teams can develop tools on top of Pattern Lab that meet _their_ needs. Want to standardize and push entire data sets to teams? Want to develop with granular collections of components instead of entire StarterKits? Only want to customize the CSS for the default StyleguideKit and distribute it as part of your projects? All of this and more is possible. We feel we're just scratching the surface on what it means to develop projects and design systems with a tool like Pattern Lab
 
 ## Guidance and Help
 
