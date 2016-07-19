@@ -53,7 +53,7 @@ Because Pattern Lab's output consists of HTML, CSS, and JavaScript there are **n
 
 ## Highly Recommended: Gulp and Grunt Globally Installed
 
-It's also highly recommended that you [install gulp](hhttps://github.com/gulpjs/gulp/blob/4.0/docs/getting-started.md) or [grunt](http://gruntjs.com/getting-started) globally.
+It's also highly recommended that you [install gulp](https://github.com/gulpjs/gulp/blob/4.0/docs/getting-started.md) or [grunt](http://gruntjs.com/getting-started) globally.
 
 > Note: The Node Gulp Edition of Pattern Lab uses Gulp 4, which may require a new global install of the Gulp command line interface. Follow the [gulp upgrade instructions](https://github.com/pattern-lab/edition-node-gulp/wiki/Updating-to-Gulp-4) if you already have gulp installed and need to upgrade. Gulp 4 is in alpha, but brings many benefits to the table and is relatively stable.
 
