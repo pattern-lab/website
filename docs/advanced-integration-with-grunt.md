@@ -4,10 +4,35 @@ title: Integration with Grunt/Gulp | Pattern Lab
 heading: Integration with Grunt/Gulp
 ---
 
-The PHP version of Pattern Lab can be integrated into an existing Grunt or Gulp workflow. Pattern Lab has been built to be YAT (Yet Another Task). The broad strokes of a solution:
+**Note:** _These directions may be incomplete. They also require **v0.7.9** of the PHP version of Pattern Lab._
 
-1. Use a shell package for your task runner of choice. [grunt-shell](https://www.npmjs.com/package/grunt-shell) or [gulp-shell](https://www.npmjs.com/package/gulp-shell) should work.
-2. For the shell task use `php core/console --generate --patternsonly`
-3. Make sure that your task runner is watching any of the `./source/_*` directories for changes. If a change happens run the shell task.
+# Integration with Grunt
 
-If you have written a blog post detailing how to get the PHP version of Pattern Lab working with Grunt or Gulp let us know and we'll add a link here.
+Setting up Grunt to work with the PHP version of Pattern Lab should be straightforward. To do so please do the following:
+
+1. Open a terminal window
+2. Type `npm install --save-dev grunt-shell` to install [grunt-shell](https://github.com/sindresorhus/grunt-shell)
+3. Add the following to your `grunt.initConfig`. The `-p` flag ensures that Pattern Lab only generates patterns.
+
+<pre><code>shell: {
+  patternlab: {
+    command: "php core/builder.php -gp"
+  }
+}</code></pre>
+
+4. Add `grunt.loadNpmTasks('grunt-shell');` to your list of plugins.
+5. Add `'shell:patternlab'` to your list of tasks in `grunt.registerTask`.
+
+You should also be using `grunt-contrib-watch` to monitor changes to Pattern Lab's patterns and data. The Pattern Lab section for your `watch` might look like:
+
+    html: {
+      files: ['source/_patterns/**/*.mustache', 'source/_patterns/**/*.json', 'source/_data/*.json'],
+      tasks: ['shell:patternlab'],
+      options: {
+        spawn: false
+      }
+    }
+
+You might be able to use `livereload` as well but that hasn't been tested by us yet.
+
+For more information, check out [this post about using Pattern Lab with Grunt](http://bradfrost.com/blog/post/using-grunt-with-pattern-lab/).
