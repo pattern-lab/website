@@ -30,8 +30,10 @@ If you chose a Mustache-based edition do the following:
 
 1. Copy `./source` from your old project to your new edition
 2. Copy `./source/_patterns/00-atoms/00-meta/_00-head.mustache` to `./source/_meta/_00-head.mustache`
-3. Copy `./source/_patterns/00-atoms/00-meta/_01-foot.mustache` to `./source/_meta/_00-foot.mustache`
-4. Copy `./source/_data/annotations.js` to `./source/_annotations/annotations.js`
+3. Copy `./source/_patterns/00-atoms/00-meta/_01-foot.mustache` to `./source/_meta/_00-foot.mustache` (you can then delete `source/_patterns/00-atoms/00-meta/` directory)
+4. In `./source/_meta/_00-head.mustache`, replace `{% pattern-lab-head %}` with `{{{ patternLabHead }}}`
+6. In `./source/_meta/_00-foot.mustache` replace `{% pattern-lab-foot %}` with `{{{ patternLabFoot }}}`
+7. Copy `./source/_data/annotations.js` to `./source/_annotations/annotations.js`
 
 If you chose another version do the above and convert the templates as appropriate.
 
@@ -82,7 +84,9 @@ It's recommended to review the [ChangeLog](https://github.com/pattern-lab/patter
   * 1.X `source/_patterns/00-atoms/00-meta/*` to 2.X `source/_meta/` (you can then delete `source/_patterns/00-atoms/00-meta/`)
   * 1.X `source/_data/annotations.js` to 2.X `source/_annotations/`
   
-3. Remap the paths configured in the edition's `patternlab-config.json` file with yours, if needed.
+3. In `./source/_meta/_00-head.mustache`, replace `{% pattern-lab-head %}` with `{{{ patternLabHead }}}`
+4. In `./source/_meta/_00-foot.mustache` replace `{% pattern-lab-foot %}` with `{{{ patternLabFoot }}}`
+4. Remap the paths configured in the edition's `patternlab-config.json` file with yours, if needed.
 
 {% endcapture %}
 {{ m | markdownify }}
