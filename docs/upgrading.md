@@ -84,8 +84,8 @@ It's recommended to review the [ChangeLog](https://github.com/pattern-lab/patter
   * 1.X `source/_patterns/00-atoms/00-meta/*` to 2.X `source/_meta/` (you can then delete `source/_patterns/00-atoms/00-meta/`)
   * 1.X `source/_data/annotations.js` to 2.X `source/_annotations/`
   
-3. In `./source/_meta/_00-head.mustache`, replace `{% raw %}{% pattern-lab-head %}{% endraw %}` with `{% raw %}{{{ patternLabHead }}}{% endraw %}`
-4. In `./source/_meta/_00-foot.mustache` replace `{% raw %}{% pattern-lab-foot %}{% endraw %}` with `{% raw %}{{{ patternLabFoot }}}{% endraw %}`
+3. In `source/_meta/_00-head.mustache`, replace `{% raw %}{% pattern-lab-head %}{% endraw %}` with `{% raw %}{{{ patternLabHead }}}{% endraw %}`
+4. In `source/_meta/_00-foot.mustache` replace `{% raw %}{% pattern-lab-foot %}{% endraw %}` with `{% raw %}{{{ patternLabFoot }}}{% endraw %}`
 4. Remap the paths configured in the edition's `patternlab-config.json` file with yours, if needed.
 
 {% endcapture %}
