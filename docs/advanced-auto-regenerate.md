@@ -53,7 +53,7 @@ To stop the server and watching files use `CTRL+C` in the same terminal window.
 The ultimate solution for working with Pattern Lab if you're not using a task runner is Pattern Lab's [Auto-Reload Plugin](https://github.com/pattern-lab/plugin-php-reload). Do the following:
 
 1. In a terminal window navigate to the root of your project
-2. Install the [Auto-Reload Plugin](https://github.com/pattern-lab/plugin-php-reload) using `composer require pattern-lab/reload-plugin`
+2. Install the [Auto-Reload Plugin](https://github.com/pattern-lab/plugin-php-reload) using `composer require pattern-lab/plugin-reload`
 3. Type `php core/console --server --with-watch`
 
 The Auto-Reload Plugin is automatically enabled when you install it. You can always [disable the plugin](https://github.com/pattern-lab/plugin-php-reload#disabling-the-plugin) if you need to.
