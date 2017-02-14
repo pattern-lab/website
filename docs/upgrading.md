@@ -34,7 +34,9 @@ If you chose a Mustache-based edition do the following:
 4. In `./source/_meta/_00-head.mustache`, replace `{% raw %}{% pattern-lab-head %}{% endraw %}` with `{% raw %}{{{ patternLabHead }}}{% endraw %}`
 5. In `./source/_meta/_00-foot.mustache` replace `{% raw %}{% pattern-lab-foot %}{% endraw %}` with `{% raw %}{{{ patternLabFoot }}}{% endraw %}`
 6. Copy `./source/_data/annotations.js` to `./source/_annotations/annotations.js`
-7. Your universal JSON files may not work. If that's the case do this: In `source/data`, if your files are named `_data.jason` and `_listitems.json`, remove the underscore so that they are named `data.json` and `listitems.json`.
+7. Your universal JSON files may not work. If that's the case, remove the underscore in front of the JSON files in `source/data`.
+
+
 
 If you chose another version do the above and convert the templates as appropriate.
 
