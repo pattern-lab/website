@@ -8,12 +8,26 @@ You can build patterns that link to one another to help simulate using a real we
 
     {% raw %}{{ link.pattern-name }}{% endraw %}
 
-For example, if you wanted to add a link to the `article` template from your `blog` template you could write the following:
+For example, if you wanted to add a link to the `article` page from your `blog` page you could write the following:
 
-    <a href="{% raw %}{{ link.templates-article }}{% endraw %}">Article Headline</a>
+    <a href="{% raw %}{{ link.pages-article }}{% endraw %}">Article Headline</a>
 
 This would compile to:
 
-    <a href="/patterns/templates-layouts-article/templates-layouts-article.html">Article Headline</a>
+    <a href="/patterns/pages-layouts-article/pages-layouts-article.html">Article Headline</a>
 
-As you can see, it's a much easier way of linking patterns to one another.
+Additionally, you can use pattern links within JSON to link to other pages, templates, or patterns within Pattern Lab. For instance, if you had a pattern containing the following:
+
+```
+<a href="{% raw %}{{ url }}{% endraw %}">This is a link</a>
+```
+
+You can set the URL to a pattern link via JSON like so:
+
+```
+{
+    "url" : "link.pages-article"
+}
+```
+
+Using pattern links in JSON is especially helpful at keeping the pattern's structure and content entirely separate. 
