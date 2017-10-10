@@ -21,14 +21,17 @@ Any pattern that includes a pattern partial that has a lower pattern state will 
 
 ## Giving Patterns a State
 
-Giving patterns a state is simply a matter of modifying the file name. If we wanted to give our `molecules-media-block` pattern a state of `inprogress` we'd change the file name from:
-
-    source/_patterns/01-molecules/02-blocks/00-media-block.mustache
-
-to:
-
-    source/_patterns/01-molecules/02-blocks/00-media-block@inprogress.mustache
-
+Giving patterns a state is accomplished by setting the `state` frontmatter key on any pattern’s companion `.md` file. Consider this media block pattern:
+    
+    ./source/_patterns/molecules/blocks/media-block.mustache
+    
+We would create or edit a file in the same location, calling it `media-block.md`:
+    
+    ---
+    state: inreview
+    ---
+    The media block consists of...
+    
 ## Adding Customized States
 
 The three default states included with the PHP version of Pattern Lab might not be enough for everyone. To add customized states you should modify your own CSS files. **DO NOT** modify `states.css` in `public/styleguide/css/`. This is because `states.css` will be overwritten in future upgrades.
