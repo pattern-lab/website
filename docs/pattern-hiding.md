@@ -14,3 +14,15 @@ To "hide" the pattern we add the underscore:
     molecules/media/_map.mustache
 
 Once the site has been re-generated the map pattern will no longer show up in the drop-down navigation, the media pattern sub-type "view all" page, nor the style guide.
+
+## Alternative approach
+
+Instead of renaming your file, you could make a file called `map.md` that contains:
+
+```
+---
+hidden: true
+---
+```
+
+PHP version requires core v2.8.4 or higher.
