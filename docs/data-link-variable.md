@@ -15,6 +15,8 @@ For example, if you wanted to add a link to the `article` page from your `blog` 
 This would compile to:
 
     <a href="/patterns/pages-layouts-article/pages-layouts-article.html">Article Headline</a>
+    
+If you are using Twig, instead of `{{ link.pattern-name }}`, you'd want to use `{{ link['pattern-name'] }}`.
 
 Additionally, you can use pattern links within JSON to link to other pages, templates, or patterns within Pattern Lab. For instance, if you had a pattern containing the following:
 
