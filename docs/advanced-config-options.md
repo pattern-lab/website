@@ -88,7 +88,7 @@ Sets whether or not to hide navigation options within the styleguide.
 }
 ```
 
-### ishControlsRange
+### ishViewportRange
 Sets the boundaries of each of the viewport toggles, 'S'mall, 'M'edium, and 'L'arge. Clicking on one of these buttons will randomly set the ish Viewport to a value within the given range. Setting the range to the same number can effectively set an exact value. The first entry in `ishViewportRange.s` is the `ishViewportMinimum`, which is now obsolete. The second entry in `ishViewportRange.l` is the `ishViewportMaximum`, which is now also obsolete.
 
 **default**:
