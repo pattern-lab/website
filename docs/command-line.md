@@ -3,9 +3,30 @@ layout: docs
 title: Using The Command Line Options | Pattern Lab
 heading: Using The Command Line Options
 languages:
-- language: php
 - language: node
+- language: php
 ---
+
+<!--- start node -->
+
+<div class="tabs__panel" id="node">
+<h2 class="language-title">node</h2>
+
+{% capture m %}
+
+To use Pattern Lab you must use the command line interface. Gulp or grunt tasks are the primary entry point to interact with the core library and manage frontend assets across all platforms. To view the available commands when using Pattern Lab do the following:
+
+1. In a terminal window navigate to the root of your project
+2. Type `gulp patternlab:help`
+
+> If using grunt, substitute `grunt` for `gulp` above.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
+<!--- end node -->
 
 <!--- start php -->
 
@@ -37,24 +58,3 @@ If you get an error and know that you've installed PHP you may need to [update y
 </div>      
 
 <!--- end php -->
-
-<!--- start node -->
-
-<div class="tabs__panel" id="node">
-<h2 class="language-title">node</h2>
-
-{% capture m %}
-
-To use Pattern Lab you must use the command line interface. Gulp or grunt tasks are the primary entry point to interact with the core library and manage frontend assets across all platforms. To view the available commands when using Pattern Lab do the following:
-
-1. In a terminal window navigate to the root of your project
-2. Type `gulp patternlab:help`
-
-> If using grunt, substitute `grunt` for `gulp` above.
-
-{% endcapture %}
-{{ m | markdownify }}
-
-</div>
-
-<!--- end node -->

@@ -3,26 +3,9 @@ layout: docs
 title: Editing the Configuration Options | Pattern Lab
 heading: Editing the Configuration Options
 languages:
-- language: php
 - language: node
+- language: php
 ---
-
-<!--- start php -->
-
-<div class="tabs__panel" id="php">
-<h2 class="language-title">php</h2>
-
-{% capture m %}
-
-Pattern Lab comes with a simple configuration file that allows you to modify certain aspects of the system. The configuration file can be found in `./config/config.yml`.
-
-{% endcapture %}
-{{ m | markdownify }}
-
-</div>
-
-<!--- end php -->
-
 
 <!--- start node -->
 
@@ -259,3 +242,19 @@ See the [initial release notes](https://github.com/pattern-lab/styleguidekit-ass
 </div>
 
 <!--- end node -->
+
+<!--- start php -->
+
+<div class="tabs__panel" id="php">
+<h2 class="language-title">php</h2>
+
+{% capture m %}
+
+Pattern Lab comes with a simple configuration file that allows you to modify certain aspects of the system. The configuration file can be found in `./config/config.yml`.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+
+<!--- end php -->

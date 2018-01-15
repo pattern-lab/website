@@ -3,9 +3,25 @@ layout: docs
 title: Pattern Lab 1 to Pattern Lab 2 Changes | Pattern Lab
 heading: Pattern Lab 1 to Pattern Lab 2 Changes
 languages:
-- language: php
 - language: node
+- language: php
 ---
+
+<!--- start node-->
+
+<div class="tabs__panel" id="node">
+<h2 class="language-title">node</h2>
+
+{% capture m %}
+
+
+The list of features is coming soon.
+
+{% endcapture %}
+{{ m | markdownify }}
+
+</div>
+<!--- end node -->
 
 <!--- start php -->
 
@@ -62,19 +78,3 @@ These are the features of Pattern Lab 1 that have been removed in Pattern Lab 2:
 
 <!--- end php -->
 
-
-<!--- start node-->
-
-<div class="tabs__panel" id="node">
-<h2 class="language-title">node</h2>
-
-{% capture m %}
-
-
-The list of features is coming soon.
-
-{% endcapture %}
-{{ m | markdownify }}
-
-</div>
-<!--- end node -->
