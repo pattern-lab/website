@@ -33,5 +33,5 @@ if(window.location.hash) {
 }
 else {
 	$('.tabs__item:nth-of-type(1) .tabs__link').addClass('tabs__link--is-active');
-	$('#php').addClass('tabs__item--is-active');
+	$('#node').addClass('tabs__item--is-active');
 }
