@@ -26,9 +26,11 @@ Core is the guts of Pattern Lab and enables all of the other features. Because C
 
 Have a trusty set of boilerplate code that you start every project with? Perhaps a common set of basic patterns, Sass mix-ins, and JavaScript libraries that are your go-to tools? A StarterKit is perfect for bundling these assets together into a boilerplate that makes sure each project starts off on the right foot.
 
-[Several starterkits](https://github.com/pattern-lab/?utf8=✓&query=starterkit-mustache) already exist to kick your project off, whether you’re looking for a blank start, begin with a demo that showcases Pattern Lab’s features, or start with a popular framework like Bootstrap, Foundation, or Material Design. And you can roll your own, which can be fully version-controlled so your team’s StarterKit can evolve along with your tools.
+[Several starterkits](https://github.com/pattern-lab?utf8=%E2%9C%93&q=starterkit&type=&language=) already exist to kick your project off, whether you’re looking for a blank start, begin with a demo that showcases Pattern Lab’s features, or start with a popular framework like Bootstrap, Foundation, or Material Design. And you can roll your own, which can be fully version-controlled so your team’s StarterKit can evolve along with your tools.
 
 Importing a starterkit is only a few keystrokes away after installation. Eventually this feature will be built into a post-install phase like it is for Pattern Lab PHP via composer.
+
+[Learn more about Starterkits](/docs/advanced-starterkits.html#node)
 
 ### StyleguideKits
 
