@@ -30,6 +30,8 @@ Have a trusty set of boilerplate code that you start every project with? Perhaps
 
 Importing a starterkit is only a few keystrokes away after installation. Eventually this feature will be built into a post-install phase like it is for Pattern Lab PHP via composer.
 
+[Learn more about Starterkits](/docs/advanced-starterkits.html#node)
+
 ### StyleguideKits
 
 StyleguideKits are the front-end of Pattern Lab. We call this “The Viewer.” StyleguideKits allow agencies and organizations to develop custom, branded Pattern Lab UIs to show off their patterns.

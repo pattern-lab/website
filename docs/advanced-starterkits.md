@@ -14,7 +14,7 @@ languages:
 
 {% capture m %}
 
-Starterkits are a potent way create or augment a Pattern Lab instance with a baseline set of patterns and assets. An agency or team could use it for each new client or project.
+Starterkits are a potent way create or augment a Pattern Lab instance with a baseline set of patterns and assets. They are an important part of the [Pattern Lab Ecosystem](/docs/advanced-ecosystem-overview.html) An agency or team could use it for each new client or project.
 
 ## Structure
 
