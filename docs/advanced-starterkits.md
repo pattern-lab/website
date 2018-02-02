@@ -48,8 +48,8 @@ where [starterkit-name] is the name of the Starterkit.
 so... a complete example:
 
 ```
-npm install starterkit-mustache-demo
-gulp patternlab:loadstarterkit --kit=starterkit-mustache-demo
+npm install @pattern-lab/starterkit-mustache-demo
+gulp patternlab:loadstarterkit --kit=@pattern-lab/starterkit-mustache-demo
 ```
 
 The [Pattern Lab Node CLI](https://github.com/pattern-lab/patternlab-node-cli) will also support installation of Starterkits should you not be using gulp.
