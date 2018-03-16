@@ -52,7 +52,7 @@ npm install @pattern-lab/starterkit-mustache-demo
 gulp patternlab:loadstarterkit --kit=@pattern-lab/starterkit-mustache-demo
 ```
 
-The [Pattern Lab Node CLI](https://github.com/pattern-lab/patternlab-node-cli) will also support installation of Starterkits should you not be using gulp.
+The [Pattern Lab Node CLI](https://github.com/pattern-lab/patternlab-node/tree/master/packages/cli) will also support installation of Starterkits should you not be using gulp.
 
 ## PSA
 
