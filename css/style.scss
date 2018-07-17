@@ -166,6 +166,7 @@ $color-white: #fff;
 
 $color-cream: #ffeec4;
 $color-orange: #f99813;
+$color-gold: #e4ac00;
 
 /**
  * Widths and Padding
@@ -1738,6 +1739,27 @@ main {
 
 
 /*------------------------------------*\
+    #ALERT
+\*------------------------------------*/
+.c-alert {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5rem;
+	background: $color-gray-15;
+	color: $color-black;
+	font-weight: bold;
+	animation: pulseIn 1s ease-in;
+
+	&:hover, &:focus {
+		background: $color-gold;
+		text-decoration: underline;
+	}
+}
+
+
+
+/*------------------------------------*\
     #ANIMATIONS
 \*------------------------------------*/
 /**
@@ -1759,4 +1781,12 @@ main {
 @keyframes rotation {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
+}
+
+
+@keyframes pulseIn {
+	0% { background: $color-gray-15; }
+	15% { background: $color-gold; }
+	60% { background: $color-gold; }
+	100% { background: $color-gray-15; }
 }
