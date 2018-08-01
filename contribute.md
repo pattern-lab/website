@@ -16,6 +16,10 @@ The [Pattern Lab organization on GitHub](https://github.com/pattern-lab/) is the
 
 The [Pattern Lab rooms on Gitter](https://gitter.im/orgs/pattern-lab/rooms) offer a place for the Pattern Lab community to ask questions and offer help to each other. The core team actively monitor the rooms. If you've built a tool using Pattern Lab or written a blog post please share it with us and the larger Pattern Lab community on Gitter. We'll also get it added to our [resources page](/resources.html).
 
+## Slack
+
+The stellar [Design Systems Slack](http://designsystems.herokuapp.com/) run by [@jina](https://twitter.com/jina) also has a #tool-pattern-lab channel that folks hang out in.
+
 ## Twitter
 
 If you're just looking to get updates about what's going on with Pattern Lab then [@patternlabio on Twitter](https://twitter.com/patternlabio) is our "talk-at-you" medium of choice.
