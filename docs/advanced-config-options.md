@@ -85,7 +85,7 @@ Sets the boundaries of each of the viewport toggles, 'S'mall, 'M'edium, and 'L'a
 ```javascript
 "ishViewportRange": {
   "s": [240, 500],
-  "m": [768, 768],
+  "m": [500, 800],
   "l": [800, 2600]
 },
 ```
