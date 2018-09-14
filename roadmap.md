@@ -6,7 +6,7 @@ heading: Roadmap
 
 Pattern Lab's many repositories across GitHub can lead to confusion about what's all going on within the ecosystem. This document serves as a narrative companion to the [issues](https://github.com/pattern-lab/patternlab-node/issues), [milestones](https://github.com/pattern-lab/patternlab-node/milestones), [projects](https://github.com/pattern-lab/patternlab-node/projects), and [pull requests](https://github.com/pattern-lab/patternlab-node/pulls) that make up the future of the project.
 
-## Pattern Lab 3.0 - Currently in Alpha
+## Pattern Lab 3.0 - Currently in Beta
 
 Pattern Lab 3.0 is an evolution of Pattern Lab 2.0 [ecosystem](/docs/advanced-ecosystem-overview.html), providing users and the internals more capabilities.
 
