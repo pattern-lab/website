@@ -3,8 +3,8 @@ layout: docs
 title: Requirements | Pattern Lab
 heading: Requirements
 languages:
-- language: node
-- language: php
+  - language: node
+  - language: php
 ---
 
 <!--- start node-->
@@ -14,21 +14,11 @@ languages:
 
 {% capture m %}
 
-
-The requirements for Pattern Lab 2 vary depending on what features you want to use, but all have the same foundation.
-
 ## Minimum Requirements
 
- Pattern compilation is done with [Node](https://nodejs.org), uses [npm](https://www.npmjs.com/) to manage project dependencies, and either [gulp.js](http://gulpjs.com/) or [grunt.js](http://gruntjs.com/) to run tasks and interface with the core library. **Node 4.X+** suffices. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation will include npm. Pattern Lab comes with its own webserver.
+Pattern compilation is done with [Node](https://nodejs.org), using [npm](https://www.npmjs.com/) to manage project dependencies. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation will include `npm`. The version of Node that maintainers develop against is documented [here](https://github.com/pattern-lab/patternlab-node/blob/dev/.nvmrc). Pattern Lab comes with its own local development webserver.
 
 Because Pattern Lab's output consists of HTML, CSS, and JavaScript there are **no requirements** for hosting your Pattern Lab site. Simply upload the `./public/` directory to your host and you should be good to go.
-
-
-## Highly Recommended: Gulp and Grunt Globally Installed
-
-It's also highly recommended that you [install gulp](https://github.com/gulpjs/gulp/blob/4.0/docs/getting-started.md) or [grunt](http://gruntjs.com/getting-started) globally.
-
-> Note: The Node Gulp Edition of Pattern Lab uses Gulp 4, which may require a new global install of the Gulp command line interface. Follow the [gulp upgrade instructions](https://github.com/pattern-lab/edition-node-gulp/wiki/Updating-to-Gulp-4) if you already have gulp installed and need to upgrade. Gulp 4 is in alpha, but brings many benefits to the table and is relatively stable.
 
 {% endcapture %}
 {{ m | markdownify }}
