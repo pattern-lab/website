@@ -21,7 +21,7 @@ Pattern Lab has the ability to watch for changes to patterns and frontend assets
 Open your terminal and navigate to the root of your project. Type:
 
 ```
-gulp patternlab:watch
+gulp patternlab:build --watch
 ```
 
 > If using grunt, substitute `grunt` for `gulp` above.
