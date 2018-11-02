@@ -1,9 +1,3 @@
----
-layout: docs
-title: Using Pattern States | Pattern Lab
-heading: Using Pattern States
----
-
 {% capture m %}
 
 Pattern states provide your team and client a simple visual of the current state of patterns in Pattern Lab. Pattern states can track progress of a pattern from development, through client review, to completion or they can be used to give certain patterns specific classes. It's important to note that the state of a pattern can be influenced by its pattern partials.
@@ -20,24 +14,21 @@ Any pattern that includes a pattern partial that has a lower pattern state will 
 
 ## Giving Patterns a State
 
-Giving patterns a state is accomplished by setting the `state` frontmatter key on any pattern's companion `.md` file. Consider this media block pattern:
+Giving patterns a state is simply a matter of modifying the file name. If we wanted to give our `molecules-media-block` pattern a state of `inprogress` we'd change the file name from:
 
 ```
-./source/_patterns/molecules/blocks/media-block.mustache
+./source/_patterns/01-molecules/02-blocks/00-media-block.mustache
 ```
 
-We would create or edit a file in the same location, calling it `media-block.md`:
+to:
 
 ```
----
-state: inreview
----
-The media block consists of...
+./source/_patterns/01-molecules/02-blocks/00-media-block@inprogress.mustache
 ```
 
 ## Adding Customized States
 
-The three default states included with Pattern Lab might not be enough for everyone. To add customized states you should modify your own CSS files. **DO NOT** modify pattern states in `public/`. You cannot be assured these files won't be overwritten.
+The three default states included with Pattern Lab might not be enough for everyone. To add customized states you should modify your own CSS files. **DO NOT** modify `states.css` in `public/styleguide/css/`. This is because `states.css` will be overwritten in future upgrades.
 
 You can use the following as your CSS template for new pattern states:
 
@@ -47,7 +38,7 @@ You can use the following as your CSS template for new pattern states:
 }{% endraw %}
 ```
 
-Place this class inside `./source/css/pattern-scaffolding.css` to separate it from your css. Then add `newpatternstate` to your patterns' markdown `state` to have the new look show up. If you want to add it to the cascade of the default patterns you can modify `./patternlab-config.json`. Simply add your new pattern state to the `patternStateCascade` array.
+Then add `@newpatternstate` to your patterns to have the new look show up. If you want to add it to the cascade of the default patterns you can modify `./config/config.yml`. Simply add your new pattern state to the `patternStates` list.
 
 {% endcapture %}
 {{ m | markdownify }}

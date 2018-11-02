@@ -2,15 +2,7 @@
 layout: docs
 title: Starterkits | Pattern Lab
 heading: Starterkits
-languages:
-- language: node
-- language: php
 ---
-
-<!--- start node -->
-
-<div class="tabs__panel" id="node">
-<h2 class="language-title">node</h2>
 
 {% capture m %}
 
@@ -64,37 +56,3 @@ The [Pattern Lab Node CLI](https://github.com/pattern-lab/patternlab-node/tree/m
 
 {% endcapture %}
 {{ m | markdownify }}
-
-</div>
-
-<!--- end node -->
-
-<!--- start php -->
-
-<div class="tabs__panel" id="php">
-<h2 class="language-title">php</h2>
-
-{% capture m %}
-
-StarterKits can be installed via the following commands:
-
-```
-php core/console --starterkit --install [starterkit-name]
-```
-
-where [starterkit-name] is the name of the Starterkit.
-
-so... a complete example:
-
-```
-php core/console --starterkit --install pattern-lab/starterkit-mustache-demo
-```
-
-It is recommended that you do not install this StarterKit as a dependency for your Pattern Lab project via Composer.
-
-{% endcapture %}
-{{ m | markdownify }}
-
-</div>
-
-<!--- end php -->

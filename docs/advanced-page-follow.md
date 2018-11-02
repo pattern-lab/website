@@ -2,15 +2,7 @@
 layout: docs
 title: Multi browser & Multi device Testing with Page Follow | Pattern Lab
 heading: Multi browser & Multi device Testing with Page Follow
-languages:
-- language: node
-- language: php
 ---
-
-<!--- start node -->
-
-<div class="tabs__panel" id="node">
-<h2 class="language-title">node</h2>
 
 {% capture m %}
 
@@ -50,23 +42,3 @@ It's strongly recommended to visit [BrowserSync](http://www.browsersync.io/) doc
 
 {% endcapture %}
 {{ m | markdownify }}
-
-</div>
-
-<!--- end node -->
-
-<!--- start php -->
-
-<div class="tabs__panel" id="php">
-<h2 class="language-title">php</h2>
-
-{% capture m %}
-
-An auto-reload service was built into Pattern Lab 1. With Pattern Lab 2 this feature has been removed. This feature may return as a plugin in the same way that the [Auto-Reload service](/docs/advanced-reload-browser.html) did.
-
-{% endcapture %}
-{{ m | markdownify }}
-
-</div>
-
-<!--- end php -->
