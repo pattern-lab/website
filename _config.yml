@@ -1,3 +1,5 @@
 name: Pattern Lab
 markdown: kramdown
 highlighter: rouge
+
+baseurl: "" # the subpath of your site, e.g. /blog (/1.0 for initial relase of Unity)

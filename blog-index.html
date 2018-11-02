@@ -1,0 +1,14 @@
+---
+layout: list
+---
+
+<ul class="stacked-block-list">
+    {% for post in site.posts %}
+    <li class="stacked-block-list__item">
+        <div class="stacked-block">
+        <h3 class="c-stacked-block__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <div class="c-stacked-block__description">{{ post.excerpt | truncatewords: 2}}</div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
