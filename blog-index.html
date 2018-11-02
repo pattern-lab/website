@@ -9,7 +9,7 @@ layout: list
 <div class="l">
     <ul class="c-stacked-block-list">
         {% assign posts = site.posts | sort: 'date' %}
-        {% for post in site.posts ! | sort: 'date' %}
+        {% for post in site.posts %}
         <li class="c-stacked-block-list__item">
             <div class="c-stacked-block">
             <h3 class="c-stacked-block__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
