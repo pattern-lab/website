@@ -266,6 +266,9 @@ legend {
  * Body
  */
 body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 	background: $color-gray-05;
 	color: $color-gray-87;
 	font: 120%/1.4 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
@@ -556,6 +559,10 @@ pre {
         width: 50%;
         flex-direction: column;
     }
+}
+
+.l {
+	padding: 0 1rem;
 }
 
 /**
@@ -889,6 +896,7 @@ pre {
  */
 main {
 	position: relative;
+	flex: 1 0 auto;
 }
 
 
@@ -1552,6 +1560,17 @@ main {
 
 
 /*------------------------------------*\
+    #STACKED BLOCK LIST
+\*------------------------------------*/
+.c-stacked-block__item {
+	margin-bottom: 2rem;
+}
+
+
+
+
+
+/*------------------------------------*\
     #FOOTER
 \*------------------------------------*/
 
@@ -1757,6 +1776,13 @@ main {
 }
 
 
+/*------------------------------------*\
+    #UTILITIES
+\*------------------------------------*/
+
+.u-margin-bottom-large {
+	margin-bottom: 2rem !important;
+}
 
 /*------------------------------------*\
     #ANIMATIONS

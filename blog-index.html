@@ -2,13 +2,20 @@
 layout: list
 ---
 
-<ul class="stacked-block-list">
-    {% for post in site.posts %}
-    <li class="stacked-block-list__item">
-        <div class="stacked-block">
-        <h3 class="c-stacked-block__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <div class="c-stacked-block__description">{{ post.excerpt | truncatewords: 2}}</div>
-        </div>
-    </li>
-    {% endfor %}
-</ul>
+<section class="banner u-margin-bottom-large">
+    <h1 class="banner__title">Updates</h1>
+</section><!--end .banner-->
+
+<div class="l">
+    <ul class="c-stacked-block-list">
+        {% assign posts = site.posts | sort: 'date' %}
+        {% for post in site.posts ! | sort: 'date' %}
+        <li class="c-stacked-block-list__item">
+            <div class="c-stacked-block">
+            <h3 class="c-stacked-block__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <div class="c-stacked-block__description">{{ post.excerpt | truncatewords: 2}}</div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
