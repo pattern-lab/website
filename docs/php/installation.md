@@ -1,5 +1,8 @@
-
-<h2 class="language-title">php</h2>
+---
+layout: docs
+title: Installing Pattern Lab | Pattern Lab
+heading: Installing Pattern Lab - PHP
+---
 
 {% capture m %}
 

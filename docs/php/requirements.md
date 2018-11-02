@@ -1,3 +1,9 @@
+---
+layout: docs
+title: Requirements | Pattern Lab
+heading: Requirements - PHP
+---
+
 {% capture m %}
 
 The requirements for Pattern Lab 2 vary depending on what features you want to use.

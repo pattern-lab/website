@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Command Prompt on Windows | Pattern Lab
-heading: Command Prompt on Windows 
+heading: Command Prompt on Windows
 ---
 
 
@@ -13,4 +13,4 @@ After getting to the command prompt type the following to make sure you have PHP
 php -v
 ```
 
-If you get an error you may need to [update your path variable so Windows can find PHP](http://willj.co/2012/10/run-wamp-php-windows-7-command-line/). 
+If you get an error you may need to [update your path variable so Windows can find PHP](http://willj.co/2012/10/run-wamp-php-windows-7-command-line/).

@@ -15,5 +15,7 @@ That said, developers might be more comfortable storing their static assets in `
 
 When you next generate your site or start the watch `public/` will no longer be cleaned. Identically named files will be overridden, however.
 
+<strong>The PHP version of Pattern Lab is being deprecated in favor of a new unified Pattern Lab core. <a href='./php/advanced-clean-public'>The PHP docs for this topic can be viewed here.</a></strong>
+
 {% endcapture %}
 {{ m | markdownify }}

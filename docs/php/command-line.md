@@ -1,3 +1,9 @@
+---
+layout: docs
+title: Using The Command Line Options | Pattern Lab
+heading: Using The Command Line Options - PHP
+---
+
 To use Pattern Lab you must use the command line interface. To view the available commands when using Pattern Lab do the following:
 
 1. In a terminal window navigate to the root of your project

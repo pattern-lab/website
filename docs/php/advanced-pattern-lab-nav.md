@@ -1,3 +1,9 @@
+---
+layout: docs
+title: Modifying Pattern Lab's Navigation | Pattern Lab
+heading: Modifying Pattern Lab's Navigation - PHP
+---
+
 When sharing Pattern Lab with a client it may be beneficial to turn-off certain elements in the default navigation. To turn-off navigation elements do the following:
 
 1. Open `./config/config.yml`

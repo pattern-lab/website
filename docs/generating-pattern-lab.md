@@ -19,5 +19,7 @@ Your Pattern Lab install should now be populated and [available for viewing](/do
 
 Manually re-generating your site after each change or collection of changes can be cumbersome. Pattern Lab can [watch files in the `./source/` directory for changes and re-generate the site automatically](/docs/advanced-auto-regenerate.html). The Pattern Lab website can also be [automatically reloaded](/docs/advanced-reload-browser.html).
 
+<strong>The PHP version of Pattern Lab is being deprecated in favor of a new unified Pattern Lab core. <a href='./php/generating-pattern-lab'>The PHP docs for this topic can be viewed here.</a></strong>
+
 {% endcapture %}
 {{ m | markdownify }}

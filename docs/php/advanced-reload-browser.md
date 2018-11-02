@@ -1,3 +1,9 @@
+---
+layout: docs
+title: Auto Reloading the Browser Window When Changes Are Made | Pattern Lab
+heading: Auto Reloading the Browser Window When Changes Are Made - PHP
+---
+
 An auto-reload service was built into Pattern Lab 1. With Pattern Lab 2 this feature has been turned into the [Auto-Reload Plugin](https://github.com/pattern-lab/plugin-php-reload). To install this plugin do the following:
 
 1. In a terminal window navigate to the root of your project

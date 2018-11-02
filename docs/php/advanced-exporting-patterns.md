@@ -1,3 +1,9 @@
+---
+layout: docs
+title: Exporting Patterns | Pattern Lab
+heading: Exporting Patterns - PHP
+---
+
 Pattern Lab can export all of your patterns for you sans Pattern Lab's CSS and JavaScript. To export your patterns do the following:
 
 1. In a terminal window navigate to the root of your project
