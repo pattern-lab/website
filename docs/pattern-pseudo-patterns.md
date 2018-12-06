@@ -59,3 +59,7 @@ Now when we generate our site we'll have our homepage template rendered twice. O
 By default, pseudo-patterns **cannot** be used as pattern includes. The data included in the pseudo-pattern, the bit that actually controls the magic, cannot be accessed when rendering the pattern include.
 
 To utilize pseudo-patterns as pattern includes for the PHP version of Pattern Lab you can install the [Data Inheritance Plugin](https://github.com/pattern-lab/plugin-php-data-inheritance).
+
+## Documenting Pseudo-Patterns
+
+On Pattern Lab we're allowed to add documentation on a pseudo-pattern basis. Check out [Documenting Patterns](pattern-documenting.md) to learn more.
