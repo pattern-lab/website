@@ -23,6 +23,22 @@ We'd name our documentation file:
 
     00-atoms/images/landscape-16x9.md
 
+## Documenting Pseudo-Patterns
+
+To add documentation to [pseudo-patterns](/docs/pattern-pseudo-patterns.html), replace the tilde sign (`~`) with a dash (`-`) when naming your documentation file.
+
+For example, to document the following pseudo-pattern:
+
+```
+00-atoms/button/button~red.mustache
+```
+
+We'd name our documentation file:
+
+```
+00-atoms/button/button-red.md
+```
+
 ## Adding More Attributes to the Front Matter
 
 A future update of Pattern Lab will support more front matter attributes including: state, order, hidden, links and tags.
