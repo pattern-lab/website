@@ -25,7 +25,7 @@ We'd name our documentation file:
 
 ## Documenting Pseudo-Patterns
 
-In case you want to add documentation to your pseudo-patterns, consider *replacing the tilde sign (`~`) by a dash (`-`)* when naming your documentation file.
+To add documentation to [pseudo-patterns](/docs/pattern-pseudo-patterns.html), replace the tilde sign (`~`) with a dash (`-`) when naming your documentation file.
 
 For example, to document the following pseudo-pattern:
 
