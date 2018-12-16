@@ -62,4 +62,4 @@ To utilize pseudo-patterns as pattern includes for the PHP version of Pattern La
 
 ## Re-ordering Pseudo-Patterns
 
-To learn how to re-order pseudo-patterns, check [Reorganizing Patterns](pattern-reorganizing.md).
+To learn how to re-order pseudo-patterns, check [Reorganizing Patterns](/docs/pattern-reorganizing.html).
