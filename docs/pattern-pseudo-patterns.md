@@ -60,6 +60,10 @@ By default, pseudo-patterns **cannot** be used as pattern includes. The data inc
 
 To utilize pseudo-patterns as pattern includes for the PHP version of Pattern Lab you can install the [Data Inheritance Plugin](https://github.com/pattern-lab/plugin-php-data-inheritance).
 
-## Documenting Pseudo-Patterns
 
-On Pattern Lab we're allowed to add documentation on a pseudo-pattern basis. Check out [Documenting Patterns](/docs/pattern-documenting.html) to learn more.
+## Re-ordering Pseudo-Patterns
+
+To learn how to re-order pseudo-patterns, check the documentation for [Reorganizing Patterns](/docs/pattern-reorganizing.html).
+
+## Documenting Pseudo-Patterns
+To leran how to document pseudo-patterns, check the documentation for [Documenting Patterns](/docs/pattern-documenting.html) to learn more.

@@ -31,3 +31,15 @@ You may want to put some space between the numbers just in case you want to furt
 ```
 
 The numbers will not show up when Pattern Lab displays the name of the pattern in the drop-down navigation. They're simply a re-ordering mechanism.
+
+##Re-ordering Pseudo-Patterns
+
+The rules for re-ordering [pseudo-patterns](/docs/pattern-pseudo-patterns.html) are slightly different than normal patterns. The numbers go **after** the tilde sign (`~`) rather than at the beginning of the file name. For instance:
+
+```
+- pattern.mustache
+- pattern.yml
+- pattern~01-variation2.yml
+- pattern~02-variation3.yml
+- pattern~03-variation1.yml
+```
