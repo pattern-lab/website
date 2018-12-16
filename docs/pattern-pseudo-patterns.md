@@ -62,4 +62,4 @@ To utilize pseudo-patterns as pattern includes for the PHP version of Pattern La
 
 ## Documenting Pseudo-Patterns
 
-On Pattern Lab we're allowed to add documentation on a pseudo-pattern basis. Check out [Documenting Patterns](pattern-documenting.md) to learn more.
+On Pattern Lab we're allowed to add documentation on a pseudo-pattern basis. Check out [Documenting Patterns](/docs/pattern-documenting.html) to learn more.
