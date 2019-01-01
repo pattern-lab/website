@@ -13,3 +13,5 @@ To "hide" the pattern we add the underscore and re-generate our site:
     molecules/media/_map.mustache
 
 A hidden pattern can still be included in other patterns.
+
+Not all PatternEngines support hiding patterns.
