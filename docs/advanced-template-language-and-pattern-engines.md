@@ -11,7 +11,7 @@ Right now the most mature PatternEngines are Handlebars, Mustache and Twig.
 ## Official PatternEngines for Node
 <ul id="pattern-engine-list">
   <!-- This list is automatically replaced by a script -->
-  <li>See the [Pattern Lab repository on GitHub](https://github.com/pattern-lab/patternlab-node/tree/master/packages) or [search on npmjs.com](https://www.npmjs.com/search?q=keywords%3A%27Pattern%20Lab%27%20engine)</li>
+  <li>See the <a href="https://github.com/pattern-lab/patternlab-node/tree/master/packages">Pattern Lab repository on GitHub</a> or <a href="https://www.npmjs.com/search?q=keywords%3A%27Pattern%20Lab%27%20engine">search on npmjs.com</a></li>
 </ul>
 
 ## Install and Configure a PatternEngine
