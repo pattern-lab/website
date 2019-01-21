@@ -14,7 +14,7 @@ languages:
 
 {% capture m %}
 
-Pattern Lab Node comes with a configuration file [(`patternlab-config.json`)](https://github.com/pattern-lab/patternlab-node/blob/master/packages/core/patternlab-config.json) that allows you to modify certain aspects of the system. The latest default values are included within This file is shipped within [the editions](https://github.com/pattern-lab?utf8=%E2%9C%93&query=edition-node) or can be supplied from core and the command line interface. Below is a description of each configuration option and how it affects Pattern Lab Node
+Pattern Lab Node comes with a configuration file [(`patternlab-config.json`)](https://github.com/pattern-lab/patternlab-node/blob/master/packages/core/patternlab-config.json) that allows you to modify certain aspects of the system. The latest default values are included within. This file is shipped within [the editions](https://github.com/pattern-lab?utf8=%E2%9C%93&query=edition-node) or can be supplied from core and the command line interface. Below is a description of each configuration option and how it affects Pattern Lab Node.
 
 ### cacheBust
 
@@ -258,10 +258,10 @@ See the [initial release notes](https://github.com/pattern-lab/styleguidekit-ass
 
 Introduced in Pattern Lab Node v3, UIKits are a new term in the Pattern Lab [Ecosystem](http://patternlab.io/docs/advanced-ecosystem-overview.html). They are an evolution of the original Styleguidekit pattern which separated front-end templates from front-end assets like stylesheets and code. The existing `styleguidekit-assets-default` and `styleguidekit-mustache-default` have merged into `uikit-workshop`.
 
-`uikits` accepts and array of UIKit objects, shipping with the one above.
+`uikits` accepts an array of UIKit objects, shipping with the one above.
 
 - `name`: the name of the UIKit
-- `outputDir` where to output this UIKit relative to the current root. By leaving this empty we retain the existing Pattern Lab 2.X behavior, outputting to `<project_root>/public`. If you had multiple UIKits, however, you would provided different values, such as:
+- `outputDir` where to output this UIKit relative to the current root. By leaving this empty we retain the existing Pattern Lab 2.X behavior, outputting to `<project_root>/public`. If you had multiple UIKits, however, you would provide different values, such as:
 
 ```javascript
   "uikits": [
