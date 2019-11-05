@@ -14,20 +14,12 @@
     <section class="banner">
 	    <h1 class="banner__title">{{ page.heading }}</h1>
     </section>
-    <div class="tabs-wrapper">
-        <ul class="tabs">
-	        {% for item in page.languages %}
-	        <li class="tabs__item"><a class="tabs__link"
-href="#{{ item.language }}">{{ item.language }}</a></li>
-		    {% endfor %}
-	    </ul>
-    </div>
     <div class="guts">
         <div class="l-two-col">
 	  		<div class="content">
 	  			{{content}}
 	    	</div><!--end .content-->
-	
+
 			<div class="sidebar">
 				{% include docs-navigation.html %}
 			</div><!--end .sidebar-->

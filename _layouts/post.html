@@ -1,0 +1,13 @@
+---
+layout: simple
+---
+
+<section class="banner u-margin-bottom-large">
+    <h1 class="banner__title">{{ page.title }}</h1>
+    <div class="banner__description">{{ page.date | date: "%B %-d, %Y"}}</div>
+</section><!--end .banner-->
+<div class="l">
+    <div class="c-text-passage l-linelength-container">
+        {{ content }}
+    </div>
+</div>

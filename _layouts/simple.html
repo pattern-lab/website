@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="{{'/css/style.css' | prepend: site.baseurl}}">
 </head>
 
-<body class="home">
-    {% include alert.html %}
+<body class="docs">
 
-      {{content}}
+    {% include header.html %}
+
+    {{ content }}
 
     {% include footer.html %}
 </body>

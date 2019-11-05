@@ -266,6 +266,9 @@ legend {
  * Body
  */
 body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 	background: $color-gray-05;
 	color: $color-gray-87;
 	font: 120%/1.4 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
@@ -281,7 +284,7 @@ a {
 	color: $color-gray-50;
 	text-decoration: none;
     transition: all $anim-speed-quick ease;
-	
+
 	/**
 	 * Image Within Links
 	 */
@@ -532,7 +535,7 @@ pre {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    
+
     &--light {
 	    background: $color-gray-75;
     }
@@ -548,7 +551,7 @@ pre {
 .g-split__secondary {
     display: flex;
     flex-direction: column;
-    
+
     @media all and (min-width: $bp-med) {
         flex-direction: row;
     }
@@ -557,6 +560,14 @@ pre {
         width: 50%;
         flex-direction: column;
     }
+}
+
+.l {
+	padding: 0 2rem;
+}
+
+.l-linelength-container {
+	max-width: 38rem;
 }
 
 /**
@@ -575,10 +586,10 @@ pre {
  */
  .sidebar {
 	 background: $color-gray-05;
-	 
+
 	@media all and (min-width: $bp-large) {
 		flex: 1;
-		-webkit-box-flex: 1; 
+		-webkit-box-flex: 1;
 		border-left: 1px solid rgba(0,0,0,0.2);
 	}
 }
@@ -589,7 +600,7 @@ pre {
  * 1) 2 grid items split on top with 1 item below full width
  */
 .g--2up-1down {
-	
+
 	@media all and (min-width: $bp-med) {
 		display: flex;
         flex-wrap: wrap;
@@ -597,7 +608,7 @@ pre {
 		> .gi {
 			width: 50%;
             display: flex;
-            
+
             &:nth-child(3) {
 	            width: 100%;
             }
@@ -617,30 +628,30 @@ pre {
 	width: 100%;
 	counter-reset: big-nums;
 	padding: 1rem 2rem 1rem 1rem;
-	
+
 	/**
 	 * Image Within Content
 	 */
-	 
+
 	img {
 		display: block;
 		margin-bottom: 1rem;
 	}
-	
+
 	/**
 	 * Paragraph Within Content
 	 */
 	p {
 		counter-reset: big-nums;
 	}
-	
+
 	/**
 	 * Code Within Pre Within Content
 	 */
 	pre code {
 		padding: 0;
 	}
-	
+
 	/**
 	 * Unordered List Within Content
 	 */
@@ -648,13 +659,13 @@ pre {
 		margin: 1.5em 3em;
 		list-style: square;
 	}
-	
+
 	/**
 	 * Ordered List Within Content
 	 */
 	ol {
 		margin: 1.5em 1em;
-		
+
 		/**
 		 * Ordered List Item Within Content
 		 */
@@ -663,7 +674,7 @@ pre {
 			position: relative;
 			padding-left: 2em;
 		}
-		
+
 		/**
 		 * Paragraph Within Content
 		 */
@@ -680,14 +691,14 @@ pre {
 
 		}
 	}
-	
+
 	/**
 	 * List Item Within Content
 	 */
 	li {
 		margin-bottom: 0.5em;
 	}
-	
+
 	@media all and (min-width: $bp-med) {
 		padding-left: 2rem;
 	}
@@ -772,7 +783,7 @@ pre {
 	display: block;
 	max-width: 20em;
 	margin: 0 auto;
-	
+
 	/**
 	 * Atomic Design Logo Image In Footer
 	 */
@@ -832,7 +843,7 @@ pre {
     padding: 0;
     list-style: none;
     z-index: 500;
-    
+
     /**
 	 * Nav List Is Active (Triggered by Nav Button Click)
 	 */
@@ -842,7 +853,7 @@ pre {
 		top: 100%;
 		right: 0;
 		background: $color-gray-87;
-		
+
 		@media all and (min-width: $bp-header) {
 			position: relative;
 		}
@@ -889,8 +900,8 @@ pre {
  * Main
  */
 main {
-	margin: 0 auto;
 	position: relative;
+	flex: 1 0 auto;
 }
 
 
@@ -903,45 +914,51 @@ main {
 
 /**
  * Banner
- * 1) Wrapper containing the main heading of the page 
+ * 1) Wrapper containing the main heading of the page
  */
 .banner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	background: $color-gray-87;
 	position: relative;
     height: 30vh;
-    display: flex;
-    align-items: center;
-    
+	padding: 0 2rem;
+
+
     @media all and (min-width: $bp-med) {
 	    height: 40vh;
     }
 }
 
 /**
- * Banner Title 
+ * Banner Title
  * 1) Heading within the banner
  */
 .banner__title {
     font-size: 2.5rem;
     margin: 0;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
     color: $color-gray-05;
-    
+
     .banner--feature & {
 	    flex: 1;
         display: flex;
         align-items: center;
         font-size: 3rem;
-        
+
         @media all and (min-width: 34em) {
 	        font-size: 4rem;
         }
     }
-    
+
     @media all and (min-width: $bp-med) {
         font-size: 4rem;
-        padding: 2rem;
     }
+}
+
+.banner__description {
+	color: $color-white;
 }
 
 /**
@@ -974,11 +991,11 @@ main {
 .docs-nav__section {
 	padding: 1rem 1rem 1rem 2rem;
 	background: $color-gray-05;
-	
+
 	@media all and (min-width: $bp-med) {
 		width: 50%;
 	}
-	
+
 	@media all and (min-width: $bp-large) {
 		width: 100%;
 	}
@@ -1001,7 +1018,7 @@ main {
 		display: flex;
 		flex-wrap: wrap;
 	}
-	
+
 	@media all and (min-width: $bp-large) {
 		display: block;
 		flex-wrap: nowrap;
@@ -1024,7 +1041,7 @@ main {
 	background: $color-gray-75;
 	color: $color-white;
 	transition: all $anim-speed-quick ease;
-	
+
 	/**
 	 * Button With Display Flex Property
 	 */
@@ -1034,50 +1051,50 @@ main {
 	    justify-content: center;
 	    align-items: center;
 	}
-	
+
 	/**
 	 * Button Within Button Group
 	 */
 	.btn-group & {
 		display: block;
         margin: 0;
-        
+
         /**
 		 * First Button Within Button Group
 		 */
         &:nth-of-type(1) {
 	        background: $color-gray-10;
 	        color: $color-gray-87;
-	
+
 	        &:hover, &:focus {
 	            background: $color-gray-50;
 	        }
 	    }
-	    
+
 	    /**
 		 * Second Button Within Button Group
 		 */
 	    &:nth-of-type(2) {
 	        background: url(../assets/atoms-scales.png);
 	        color: $color-gray-10;
-	
+
 	        &:hover, &:focus {
 	            background-position: 0 30%;
 	        }
 	    }
-	
+
 		/**
 		 * Third Button Within Button Group
 		 */
 	    &:nth-of-type(3) {
 	        background: $color-gray-50;
-	
+
 	        &:hover, &:focus {
 	            color: $color-gray-05;
 	            background: $color-gray-75;
 	        }
 	    }
-        
+
         @media all and (min-width: 41em) {
 	        flex: 1;
             display: flex;
@@ -1146,17 +1163,17 @@ main {
 	color: white;
 	padding: 1em 3em;
 	font-weight: bold;
-	
+
 	&--is-active {
 		background: $color-white;
 		position: relative;
 		color: $color-black;
-		
+
 		&:hover {
 			color: $color-white;
 		}
 	}
-	
+
 	&:hover {
 		background: $color-gray-35;
 		transition: background $anim-speed-quick ease;
@@ -1173,31 +1190,31 @@ main {
 .tile {
     background: $color-gray-05;
     padding: 2rem;
-	
+
 	/**
 	 * Alternative Tile Style 1
 	 */
     &--alt {
         background: $color-gray-10;
     }
-	
+
 	/**
 	 * Alternative Tile Style 2
 	 */
     &--alt2 {
         background: $color-white;
     }
-		
+
 	/**
 	 * Alternative Tile Style Fancy
-	 */	
+	 */
     &--fancy {
         background: url(../assets/bg-organism-pattern.svg);
     }
-    
+
     /**
 	 * Alternative Tile Style Fancy 2
-	 */	
+	 */
     &--fancy-2 {
         background: url(../assets/organisms-scales.png);
     }
@@ -1246,7 +1263,7 @@ main {
  */
 .section__body {
 	padding: 0.5em 0 1.5em;
-	
+
 	/**
 	 * Section Body Within Center Aligned Section
 	 */
@@ -1259,7 +1276,7 @@ main {
  * Section Header
  */
 .section__header {
-	
+
 	/**
 	 * Section Header Within Center Aligned Section
 	 */
@@ -1272,7 +1289,7 @@ main {
  * Inner Div of a Section
  */
 .section__inner {
-	
+
 	/**
 	 * Inner Div Within The Section Header
 	 */
@@ -1413,13 +1430,13 @@ main {
  * List Item Within Link List
  */
 .link-list__item {
-	
+
 	/**
 	 * Link List Item When Item Is Selected/Current Page
 	 */
 	&--is-selected {
 		position: relative;
-		
+
 		/**
 		* Image Before The Selected Link List Item
 		*/
@@ -1444,7 +1461,7 @@ main {
 	display: block;
     padding: 0.4rem 0;
     font-weight: bold;
-    
+
     /**
 	 * Link Within the Selected List Item
 	 */
@@ -1453,7 +1470,7 @@ main {
 
 		&:hover {
 			color: $color-black;
-		}    
+		}
     }
 }
 
@@ -1472,7 +1489,7 @@ main {
 .link-desc-list {
     margin: 0;
     padding: 0;
-    
+
     .g--2up-1down .gi:nth-child(3) & {
 		display: flex;
 		flex-wrap: wrap;
@@ -1484,30 +1501,30 @@ main {
  * List Item Within Link Desc List
  */
 .link-desc-list__item {
-	
+
 	.g--2up-1down .gi:nth-child(3) & {
-		
+
 		@media all and(min-width: $bp-med) {
 			width: 50%;
 			padding-right: 2rem;
-			
+
 			&:nth-child(2n) {
 				padding-right: 0;
 			}
-			
+
 		}
-		
+
 		@media all and(min-width: $bp-med-2) {
 			width: 33%;
-			
+
 			&:nth-child(2n) {
 				padding-right: 2rem;
 			}
-			
+
 			&:nth-child(3n) {
 				padding-right: 0;
 			}
-		}		
+		}
 	}
 }
 
@@ -1521,7 +1538,7 @@ main {
     font-size: 1.3rem;
     color: $color-gray-75;
     font-weight: bold;
-    
+
     &:after {
 		position: absolute;
 		content: "";
@@ -1532,10 +1549,10 @@ main {
 		right: -24px;
 		transition: all 0.2s ease;
 	}
-    
+
     &:hover, &:focus {
 	    color: $color-black;
-	    
+
 	    &:after {
 		    right: -28px;
 	    }
@@ -1547,6 +1564,29 @@ main {
  */
 .link-desc-list__desc {
 	font-size: 1rem;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #STACKED BLOCK
+\*------------------------------------*/
+.c-stacked-block__kicker {
+	font-size: 0.875rem;
+	color: $color-gray-50;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #STACKED BLOCK LIST
+\*------------------------------------*/
+.c-stacked-block__item {
+	margin-bottom: 2rem;
 }
 
 
@@ -1588,7 +1628,7 @@ main {
  */
 .footer-nav__list {
 	margin: 0 auto;
-	padding: 0;	
+	padding: 0;
 	display: flex;
 	list-style: none;
 	flex-wrap: wrap;
@@ -1605,11 +1645,11 @@ main {
 .footer-nav__item {
 	width: 100%;
 	flex: 1 0 auto;
-	
+
 	@media all and (min-width: 470px) and (max-width: 760px) {
 		width: 50%;
 	}
-	
+
 	@media all and (min-width: 760px) {
 		width: auto;
 	}
@@ -1626,10 +1666,10 @@ main {
 	text-align: center;
 	padding: 0.5em 0;
 	text-transform: lowercase;
-	
+
 	&:hover, &:focus {
 		color: $color-white;
-	}	
+	}
 }
 
 /**
@@ -1640,7 +1680,7 @@ main {
     margin-bottom: 2rem;
     color: $color-gray-50;
     text-align: center;
-	
+
 	/**
 	 * Link within the Footer Note
 	 */
@@ -1663,7 +1703,7 @@ main {
  */
 .js .nav {
 	position: relative;
-  
+
 	@media all and (min-width: $bp-med-2) {
 		position: relative;;
 		overflow: visible;
@@ -1675,7 +1715,7 @@ main {
  */
 .js .content {
 	padding: 2.4rem 2rem 1rem 1rem;
-	
+
 	@media all and (min-width: $bp-med) {
 		padding-left: 2rem;
 	}
@@ -1757,6 +1797,118 @@ main {
 		text-decoration: underline;
 	}
 }
+
+
+
+
+
+/*------------------------------------*\
+    #TEXT PASSAGE
+\*------------------------------------*/
+.c-text-passage {
+	p {
+		margin-bottom: 1rem;
+	}
+
+	/**
+	 * Blockquote within text passage
+	 */
+	blockquote {
+		padding-left: 1rem;
+		border-left: 3px solid $color-gray-75;
+		color: $color-gray-50;
+		font-size: 1rem;
+	 }
+
+	 /**
+	  * First-level heading within text passage
+	  */
+	 h1 {
+		 margin-bottom: 1rem;
+	 }
+
+	/**
+	 * Second-level heading within text passage
+	 */
+	h2 {
+		margin: 1rem 0 1rem;
+		font-weight: bold;
+	}
+
+	/**
+	 * Third-level heading within text passage
+	 */
+	h3 {
+		margin: 1rem 0 1rem;
+	}
+
+	/**
+	 * Fourth-level heading within text passage
+	 */
+	h4 {
+		margin: 1rem 0 1rem;
+	}
+
+	/**
+	 * Fifth-level heading within text passage
+	 */
+	h5 {
+		margin: 1rem 0 1rem;
+	}
+
+	/**
+	 * Sixth-level heading within text passage
+	 */
+	h6 {
+		margin: 1rem 0 1rem;
+	}
+
+
+	/**
+	 * Unordered list within text passage
+	 */
+	ul {
+		list-style: disc;
+		margin-left: 1.25rem;
+		margin-bottom: 1rem;
+
+		li:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	/**
+	 * Ordered list within text passage
+	 */
+	ol {
+		list-style: decimal;
+		margin-left: 1.25rem;
+		margin-bottom: 1rem;
+
+		li:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	li {
+		margin-bottom: 0.5rem;
+		line-height: 1.6;
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #UTILITIES
+\*------------------------------------*/
+
+.u-margin-bottom-large {
+	margin-bottom: 2rem !important;
+}
+
+
 
 
 
